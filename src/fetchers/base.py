@@ -50,29 +50,34 @@ class BaseFetcher(ABC):
         # TODO: send email
         # TODO: write to dead-letter queue
     
-    def save(self, policies: List[Dict]):
-        """保存到 data/policies.json"""
-        policy_file = Path("data/policies.json")
-        if policy_file.exists():
-            with open(policy_file, 'r', encoding='utf-8') as f:
-                existing = json.load(f)
-        else:
+    def save(self, policies: List[Dict], target: Optional[str] = None):
+        """保存到 data/policies.json (或指定路径)。
+
+        W1-D4 重构（B4 原子写入）:
+          * 改用 utils.atomic_write，提供 fsync+rename 强保证
+          * safe_read_json 兜底: 即便上次写崩留了半 JSON，也不会阻塞本次
+          * 去重+追加 逻辑保持
+        """
+        from utils.atomic_write import atomic_write_json, safe_read_json
+        policy_file = Path(target) if target else Path("data/policies.json")
+
+        existing = safe_read_json(policy_file, default={"version": "1.0", "policies": []})
+        if not isinstance(existing, dict):
             existing = {"version": "1.0", "policies": []}
-        
+
         # 去重 + 追加
-        existing_ids = {p['id'] for p in existing['policies']}
+        existing_ids = {p['id'] for p in existing.get('policies', [])}
+        added = 0
         for p in policies:
             if p['id'] not in existing_ids:
-                existing['policies'].append(p)
-        
+                existing.setdefault('policies', []).append(p)
+                existing_ids.add(p['id'])
+                added += 1
+
         existing['generated_at'] = datetime.utcnow().isoformat() + 'Z'
-        
-        # 原子写入
-        tmp_file = policy_file.with_suffix('.tmp')
-        with open(tmp_file, 'w', encoding='utf-8') as f:
-            json.dump(existing, f, ensure_ascii=False, indent=2)
-        tmp_file.replace(policy_file)
-        print(f"✅ [{self.name}] Saved {len(policies)} policies")
+
+        atomic_write_json(policy_file, existing, ensure_ascii=False, indent=2)
+        print(f"✅ [{self.name}] Saved {added} new policies (total {len(existing.get('policies', []))}) → {policy_file}")
     
     async def run(self):
         """主流程"""
