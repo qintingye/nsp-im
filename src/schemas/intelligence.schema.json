@@ -1,0 +1,33 @@
+{
+  "date": "YYYY-MM-DD",
+  "generated_at": "ISO8601",
+  "summary": "今日新增 N 份政策，N 个项目更新",
+  "highlights": [
+    {
+      "id": "HL-YYYY-MM-DD-NN",
+      "category": "policy|project|monitor",
+      "severity": "high|medium|low",
+      "title": "标题",
+      "one_liner": "一句话描述（≤100字）",
+      "action_items": ["南网需做..."],
+      "related_policies": ["P-YYYY-NNNN"],
+      "related_scenes": ["S-C1","S-T1"],
+      "captured_at": "ISO8601"
+    }
+  ],
+  "new_policies": ["P-2026-XXXX"],
+  "updated_scenes": ["S-C1"],
+  "by_net": {
+    "water": 0,
+    "compute": 1,
+    "telecom": 0,
+    "pipe": 0,
+    "logi": 0,
+    "monitor": 2
+  },
+  "data_freshness": {
+    "last_successful_fetch": "ISO8601",
+    "failed_sources": [],
+    "next_scheduled": "ISO8601"
+  }
+}

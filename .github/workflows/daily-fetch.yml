@@ -1,0 +1,48 @@
+name: NSP-IM Daily Fetch
+
+on:
+  schedule:
+    # 每日北京时间 9:00（UTC 1:00）
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install aiohttp beautifulsoup4 lxml requests
+      
+      - name: Run fetchers
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: |
+          cd src
+          python main_fetcher.py
+      
+      - name: Validate JSON
+        run: |
+          python -c "import json; json.load(open('data/policies.json'))"
+      
+      - name: Commit & Push
+        run: |
+          git config user.email "nsp-im-bot@hermes.local"
+          git config user.name "NSP-IM Bot"
+          git add data/
+          git commit -m "auto: 数据更新 $(date +%Y-%m-%d)" || exit 0
+          git push
+      
+      - name: Notify
+        if: failure()
+        run: |
+          echo "❌ NSP-IM 抓取失败，需要人工检查"
+          # TODO: webhook 飞书

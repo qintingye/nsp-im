@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "scenes": [
+    {
+      "id": "S-C1",
+      "name": "阳江海底算力",
+      "net": "compute",
+      "region": "广东",
+      "score": 4.25,
+      "invest": "1100亿",
+      "year": "2026",
+      "key_data": "1.15GW·算电协同",
+      "source_url": "https://...",
+      "captured_at": "ISO8601"
+    }
+  ]
+}
