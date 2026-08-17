@@ -14,7 +14,11 @@
         "type": "object",
         "required": ["id", "title", "department", "publish_date"],
         "properties": {
-          "id": { "type": "string", "pattern": "^P-[A-Z]+-[0-9]+-[0-9]{4}$" },
+          "id": {
+            "type": "string",
+            "pattern": "^P-[A-Z]+-[0-9]{8}-[0-9]{4}$",
+            "description": "政策 ID 格式 P-<源>-YYYYMMDD-<4位序号>，与 src/fetchers/ndrc.py L46 fetcher 输出对齐（fetcher 用 date.replace('-','') 生成 8 位日期段，hash(...)%10000:04d 生成 4 位序号）"
+          },
           "title": { "type": "string" },
           "department": { "type": "string" },
           "doc_number": { "type": ["string", "null"] },

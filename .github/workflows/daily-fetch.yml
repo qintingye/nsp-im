@@ -20,7 +20,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install aiohttp beautifulsoup4 lxml requests
+          pip install aiohttp beautifulsoup4 lxml requests jsonschema
       
       - name: Run fetchers
         env:
@@ -29,9 +29,35 @@ jobs:
           cd src
           python main_fetcher.py
       
-      - name: Validate JSON
+      - name: Validate JSON (schema)
         run: |
-          python -c "import json; json.load(open('data/policies.json'))"
+          python -c "
+          import json, sys
+          from pathlib import Path
+          from jsonschema import Draft7Validator
+          root = Path('.')
+          schema_map = {
+            'data/policies.json':      'src/schemas/policies.schema.json',
+            'data/intelligence.json':  'src/schemas/intelligence.schema.json',
+            'data/scenes.json':        'src/schemas/scenes.schema.json',
+          }
+          rc = 0
+          for data_rel, schema_rel in schema_map.items():
+            d, s = root/data_rel, root/schema_rel
+            if not d.exists():
+              print(f'[skip] {data_rel} 不存在')
+              continue
+            validator = Draft7Validator(json.loads(s.read_text(encoding='utf-8')))
+            errs = list(validator.iter_errors(json.loads(d.read_text(encoding='utf-8'))))
+            if errs:
+              print(f'[FAIL] {data_rel} 有 {len(errs)} 处 schema 错误:')
+              for e in errs[:5]:
+                print(f'  - {list(e.absolute_path)}: {e.message}')
+              rc = 1
+            else:
+              print(f'[OK]   {data_rel} 通过 schema 校验')
+          sys.exit(rc)
+          "
       
       - name: Commit & Push
         run: |

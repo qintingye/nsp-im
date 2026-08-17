@@ -1,17 +1,77 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NSP-IM Scenes Schema",
   "version": "1.0",
-  "scenes": [
-    {
-      "id": "S-C1",
-      "name": "阳江海底算力",
-      "net": "compute",
-      "region": "广东",
-      "score": 4.25,
-      "invest": "1100亿",
-      "year": "2026",
-      "key_data": "1.15GW·算电协同",
-      "source_url": "https://...",
-      "captured_at": "ISO8601"
+  "description": "六网协同场景主数据（Tab4/5 消费）。顶层为单文件对象，scenes 为场景列表。net 限定六网枚举。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["version", "scenes"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$",
+      "description": "场景数据文件版本号，遵循 semver 主.次"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": { "type": "string" },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "name", "net", "region", "score"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^S-[A-Z][0-9]+$",
+            "description": "场景 ID，形式 S-<网代号字母><序号>（如 S-C1=算力场景 1，S-T12=通信场景 12）"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "场景名称"
+          },
+          "net": {
+            "type": "string",
+            "enum": ["water", "compute", "telecom", "pipe", "logi", "monitor"],
+            "description": "归属六网（水/算/通/管/流/监）"
+          },
+          "region": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "所在省级行政区或跨省区域"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5,
+            "description": "综合评分 0-5（含小数）"
+          },
+          "invest": {
+            "type": ["string", "null"],
+            "description": "投资额文本，如 '1100亿'；允许 null"
+          },
+          "year": {
+            "type": ["string", "integer", "null"],
+            "description": "关键年份；允许 null"
+          },
+          "key_data": {
+            "type": ["string", "null"],
+            "description": "关键指标文本，如 '1.15GW·算电协同'；允许 null"
+          },
+          "source_url": {
+            "type": ["string", "null"],
+            "format": "uri"
+          },
+          "captured_at": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
     }
-  ]
+  }
 }

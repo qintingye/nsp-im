@@ -1,33 +1,116 @@
 {
-  "date": "YYYY-MM-DD",
-  "generated_at": "ISO8601",
-  "summary": "今日新增 N 份政策，N 个项目更新",
-  "highlights": [
-    {
-      "id": "HL-YYYY-MM-DD-NN",
-      "category": "policy|project|monitor",
-      "severity": "high|medium|low",
-      "title": "标题",
-      "one_liner": "一句话描述（≤100字）",
-      "action_items": ["南网需做..."],
-      "related_policies": ["P-YYYY-NNNN"],
-      "related_scenes": ["S-C1","S-T1"],
-      "captured_at": "ISO8601"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NSP-IM Intelligence Schema",
+  "version": "1.0",
+  "description": "每日情报摘要（Tab3 消费）。顶层为单日对象；highlights 为重点条目；by_net 按六网维度统计；data_freshness 记录抓取健康度。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["date", "generated_at", "summary", "highlights", "by_net", "data_freshness"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "情报日期 YYYY-MM-DD（与 generated_at 同日）"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "生成时间 ISO8601（建议 UTC + 后缀 Z）"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "一句话总览，如 '今日新增 3 份政策，2 个项目更新'"
+    },
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "category", "severity", "title", "one_liner", "captured_at"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HL-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}$",
+            "description": "高亮条目 ID，HL-YYYY-MM-DD-NN"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["policy", "project", "monitor"]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "title": { "type": "string", "maxLength": 100 },
+          "one_liner": { "type": "string", "maxLength": 100 },
+          "action_items": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "related_policies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^P-[A-Z]+-[0-9]{8}-[0-9]{4}$"
+            }
+          },
+          "related_scenes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^S-[A-Z][0-9]+$"
+            }
+          },
+          "captured_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "new_policies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^P-[A-Z]+-[0-9]{8}-[0-9]{4}$"
+      },
+      "description": "本日新增政策 ID 列表（可空）"
+    },
+    "updated_scenes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^S-[A-Z][0-9]+$"
+      },
+      "description": "本日发生更新的场景 ID 列表（可空）"
+    },
+    "by_net": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["water", "compute", "telecom", "pipe", "logi", "monitor"],
+      "properties": {
+        "water":   { "type": "integer", "minimum": 0 },
+        "compute": { "type": "integer", "minimum": 0 },
+        "telecom": { "type": "integer", "minimum": 0 },
+        "pipe":    { "type": "integer", "minimum": 0 },
+        "logi":    { "type": "integer", "minimum": 0 },
+        "monitor": { "type": "integer", "minimum": 0 }
+      },
+      "description": "六网维度条目计数（六网=水/算/通/管/流/监）"
+    },
+    "data_freshness": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["last_successful_fetch", "failed_sources", "next_scheduled"],
+      "properties": {
+        "last_successful_fetch": { "type": "string", "format": "date-time" },
+        "failed_sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ndrc", "nea", "csg", "sgcc", "bjx"]
+          }
+        },
+        "next_scheduled": { "type": "string", "format": "date-time" }
+      }
     }
-  ],
-  "new_policies": ["P-2026-XXXX"],
-  "updated_scenes": ["S-C1"],
-  "by_net": {
-    "water": 0,
-    "compute": 1,
-    "telecom": 0,
-    "pipe": 0,
-    "logi": 0,
-    "monitor": 2
-  },
-  "data_freshness": {
-    "last_successful_fetch": "ISO8601",
-    "failed_sources": [],
-    "next_scheduled": "ISO8601"
   }
 }
