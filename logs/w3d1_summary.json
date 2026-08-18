@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-08-18T02:56:05Z",
+  "concurrency": 3,
+  "sources": [
+    {
+      "name": "发改委",
+      "raw": 10,
+      "parsed": 10,
+      "added": 0,
+      "total": 61,
+      "duplicates": 11,
+      "duration_ms": 1718,
+      "fallback": false,
+      "error": null
+    },
+    {
+      "name": "能源局",
+      "raw": 3,
+      "parsed": 3,
+      "added": 0,
+      "total": 61,
+      "duplicates": 4,
+      "duration_ms": 1593,
+      "fallback": false,
+      "error": null
+    },
+    {
+      "name": "南网",
+      "raw": 2,
+      "parsed": 2,
+      "added": 0,
+      "total": 61,
+      "duplicates": 3,
+      "duration_ms": 1311,
+      "fallback": false,
+      "error": null
+    },
+    {
+      "name": "国网",
+      "raw": 4,
+      "parsed": 4,
+      "added": 0,
+      "total": 61,
+      "duplicates": 5,
+      "duration_ms": 61858,
+      "fallback": true,
+      "error": null
+    },
+    {
+      "name": "北极星",
+      "raw": 5,
+      "parsed": 5,
+      "added": 0,
+      "total": 61,
+      "duplicates": 6,
+      "duration_ms": 3593,
+      "fallback": false,
+      "error": null
+    }
+  ],
+  "totals": {
+    "added": 0,
+    "parsed": 24,
+    "raw": 24,
+    "fallback": 1,
+    "errors": 0
+  }
+}
