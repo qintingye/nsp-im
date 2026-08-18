@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSP-IM 政策雷达 · 内网部署预览 (W1-D4)</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a73e8">
+<style>
+  :root {
+    --primary: #1a73e8;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #202124;
+    --muted: #5f6368;
+    --border: #e0e0e0;
+    --grid: #34a853; --water: #4285f4; --compute: #ea4335;
+    --telecom: #fbbc04; --pipe: #9c27b0; --logi: #00acc1; --monitor: #607d8b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
+  header { background: linear-gradient(135deg, var(--primary), #0d47a1); color: white; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 6px 0 0; opacity: 0.9; font-size: 14px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; padding: 14px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .toolbar input, .toolbar select { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; }
+  .toolbar input { flex: 1; min-width: 220px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat { background: var(--card-bg); padding: 14px; border-radius: 8px; text-align: center; }
+  .stat .num { font-size: 28px; font-weight: 700; color: var(--primary); }
+  .stat .label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .policies { display: grid; gap: 12px; }
+  .card { background: var(--card-bg); border-radius: 8px; padding: 16px; border-left: 4px solid var(--primary); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .card[data-scope~="grid"]    { border-left-color: var(--grid); }
+  .card[data-scope~="water"]   { border-left-color: var(--water); }
+  .card[data-scope~="compute"] { border-left-color: var(--compute); }
+  .card[data-scope~="telecom"] { border-left-color: var(--telecom); }
+  .card[data-scope~="pipe"]    { border-left-color: var(--pipe); }
+  .card[data-scope~="logi"]    { border-left-color: var(--logi); }
+  .card[data-scope~="monitor"] { border-left-color: var(--monitor); }
+  .card h3 { margin: 0 0 8px; font-size: 15px; line-height: 1.4; }
+  .card .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .card .meta span { background: #f0f2f5; padding: 2px 8px; border-radius: 4px; }
+  .card .summary { font-size: 13px; line-height: 1.6; color: #3c4043; margin: 8px 0; }
+  .card .scopes { display: flex; gap: 4px; flex-wrap: wrap; }
+  .card .scope { font-size: 11px; padding: 2px 8px; border-radius: 10px; color: white; background: var(--primary); }
+  .card .scope[data-s="grid"]    { background: var(--grid); }
+  .card .scope[data-s="water"]   { background: var(--water); }
+  .card .scope[data-s="compute"] { background: var(--compute); }
+  .card .scope[data-s="telecom"] { background: var(--telecom); }
+  .card .scope[data-s="pipe"]    { background: var(--pipe); }
+  .card .scope[data-s="logi"]    { background: var(--logi); }
+  .card .scope[data-s="monitor"] { background: var(--monitor); }
+  .card a { font-size: 12px; color: var(--primary); text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+  .empty { text-align: center; padding: 40px; color: var(--muted); }
+</style>
+</head>
+<body>
+<!-- ===== W3-D2 公网 PoC 访问密码门（ADR-004 合规） ===== -->
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:var(--bg,#f5f7fa);display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:36px 32px;width:min(92vw,360px);text-align:center;">
+    <div style="font-size:38px;line-height:1;">📡</div>
+    <h2 style="margin:12px 0 4px;font-size:20px;color:#202124;">NSP-IM 政策雷达</h2>
+    <p style="margin:0 0 20px;font-size:13px;color:#5f6368;">公网预览 PoC · 请输入访问密码</p>
+    <input id="gate-pwd" type="password" placeholder="访问密码" autocomplete="off"
+      style="width:100%;padding:12px 14px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;box-sizing:border-box;" />
+    <button id="gate-btn" style="width:100%;margin-top:12px;padding:12px;background:#1a73e8;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;">进入</button>
+    <p id="gate-err" style="margin:12px 0 0;font-size:13px;color:#d93025;display:none;">密码错误，请重试</p>
+  </div>
+</div>
+<script>
+  // W3-D2 访问密码（SHA-256 比对，PoC 级保护，符合 ADR-004）
+  (function () {
+    var GATE_HASH = '843a6775fe97e053ff4d72aa4e4d80ab4ecae3fc86c6e1bd452410e845539af6';
+    var GATE_KEY = 'nspim_gate_ok';
+    var gate = document.getElementById('gate');
+    if (gate && sessionStorage.getItem(GATE_KEY) === '1') { gate.style.display = 'none'; }
+    function sha256hex(str) {
+      if (window.crypto && crypto.subtle) {
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function (buf) {
+          return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        });
+      }
+      return Promise.reject(new Error('no-subtle'));
+    }
+    function tryEnter() {
+      var inp = document.getElementById('gate-pwd');
+      var err = document.getElementById('gate-err');
+      sha256hex(inp.value).then(function (h) {
+        if (h === GATE_HASH) {
+          sessionStorage.setItem(GATE_KEY, '1');
+          gate.style.transition = 'opacity .25s';
+          gate.style.opacity = '0';
+          setTimeout(function () { gate.style.display = 'none'; }, 250);
+        } else {
+          err.style.display = 'block';
+          inp.value = '';
+          inp.focus();
+        }
+      }).catch(function () {
+        // 极低概率：无 crypto.subtle 环境（非 HTTPS）→ 直接放行并提示
+        err.textContent = '提示：当前环境不支持密码校验，已放行（请使用 HTTPS 访问）';
+        err.style.display = 'block';
+        sessionStorage.setItem(GATE_KEY, '1');
+        setTimeout(function () { gate.style.display = 'none'; }, 1200);
+      });
+    }
+    document.getElementById('gate-btn').addEventListener('click', tryEnter);
+    document.getElementById('gate-pwd').addEventListener('keydown', function (e) { if (e.key === 'Enter') tryEnter(); });
+  })();
+</script>
+<header>
+  <h1>📡 NSP-IM 政策雷达 · 内网部署预览</h1>
+  <p>W1-D4 BE 集成 · 数据源: <code>data/policies.json</code></p>
+</header>
+<div class="container">
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="搜索政策标题 / 摘要 / 部门...">
+    <select id="filter-scope">
+      <option value="">全部六网</option>
+      <option value="grid">电网</option>
+      <option value="water">水务</option>
+      <option value="compute">算力</option>
+      <option value="telecom">通信</option>
+      <option value="pipe">管网</option>
+      <option value="logi">物流</option>
+      <option value="monitor">监测</option>
+    </select>
+    <select id="filter-priority">
+      <option value="">全部优先级</option>
+      <option value="1">P1 (高)</option>
+      <option value="2">P2 (中)</option>
+      <option value="3">P3 (低)</option>
+    </select>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="policies" id="policies"><div class="empty">加载中...</div></div>
+</div>
+<footer>
+  NSP-IM · 内网预览版本 · 数据仅供演示 · W1-D4
+</footer>
+<script>
+  // ----- 加载数据 -----
+  let ALL = [];
+  async function load() {
+    try {
+      const r = await fetch('./data/policies.json', { cache: 'no-cache' });
+      const j = await r.json();
+      ALL = (j.policies || []).map(p => ({
+        id: p.id, title: p.title, department: p.department,
+        publish_date: p.publish_date, effective_date: p.effective_date,
+        summary: p.summary, source_url: p.source_url, scope: p.scope || [],
+        priority: p.priority || 3, key_points: p.key_points || [],
+        tags: p.tags || []
+      }));
+      render();
+    } catch (e) {
+      document.getElementById('policies').innerHTML =
+        `<div class="empty">❌ 加载失败：${e.message}<br>请确认 <code>data/policies.json</code> 已部署到内网</div>`;
+    }
+  }
+
+  // ----- 统计 -----
+  function renderStats(items) {
+    const byScope = {};
+    items.forEach(p => (p.scope || []).forEach(s => byScope[s] = (byScope[s]||0)+1));
+    const topScope = Object.entries(byScope).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('stats').innerHTML = `
+      <div class="stat"><div class="num">${items.length}</div><div class="label">政策总数</div></div>
+      <div class="stat"><div class="num">${new Set(items.map(p=>p.department)).size}</div><div class="label">涉及部门</div></div>
+      <div class="stat"><div class="num">${topScope ? topScope[0] : '-'}</div><div class="label">主导六网</div></div>
+      <div class="stat"><div class="num">${items.filter(p=>p.priority===1).length}</div><div class="label">P1 高优先级</div></div>
+    `;
+  }
+
+  // ----- 渲染 -----
+  function render() {
+    const q = (document.getElementById('search').value || '').toLowerCase();
+    const fs = document.getElementById('filter-scope').value;
+    const fp = document.getElementById('filter-priority').value;
+
+    const filtered = ALL.filter(p => {
+      if (q && !(`${p.title} ${p.summary} ${p.department} ${(p.tags||[]).join(' ')}`.toLowerCase().includes(q))) return false;
+      if (fs && !(p.scope || []).includes(fs)) return false;
+      if (fp && String(p.priority) !== fp) return false;
+      return true;
+    });
+
+    renderStats(filtered);
+
+    if (filtered.length === 0) {
+      document.getElementById('policies').innerHTML = '<div class="empty">无匹配政策</div>';
+      return;
+    }
+
+    document.getElementById('policies').innerHTML = filtered.map(p => `
+      <div class="card" data-scope="${(p.scope||[]).join(' ')}">
+        <h3>${escapeHtml(p.title)}</h3>
+        <div class="meta">
+          <span>🏛 ${escapeHtml(p.department || '—')}</span>
+          <span>📅 ${escapeHtml(p.publish_date || '—')}</span>
+          <span>⚡ P${p.priority}</span>
+        </div>
+        <div class="summary">${escapeHtml(p.summary || '')}</div>
+        <div class="scopes">${(p.scope||[]).map(s => `<span class="scope" data-s="${s}">${s}</span>`).join('')}</div>
+        ${p.source_url ? `<p style="margin:8px 0 0;"><a href="${escapeHtml(p.source_url)}" target="_blank">查看原文 →</a></p>` : ''}
+      </div>
+    `).join('');
+  }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, c =>
+      ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // ----- 事件 -----
+  document.getElementById('search').addEventListener('input', render);
+  document.getElementById('filter-scope').addEventListener('change', render);
+  document.getElementById('filter-priority').addEventListener('change', render);
+
+  // ----- SW 注册 -----
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  }
+
+  load();
+</script>
+</body>
+</html>
