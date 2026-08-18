@@ -1,0 +1,58 @@
+{
+  "local": {
+    "pc_1920": {
+      "ok": true,
+      "state": {
+        "tabs_count": 7,
+        "btabs_count": 6,
+        "grid_exists": true,
+        "cells_count": 108,
+        "pwd_passed": true,
+        "body_visible": true,
+        "doc_title": "NSP-IM 六网协同情报平台 v1.0 · 2026-08-22"
+      },
+      "errors": 0
+    },
+    "tablet_768": {
+      "ok": true,
+      "state": {
+        "tabs_count": 7,
+        "btabs_count": 6,
+        "grid_exists": true,
+        "cells_count": 108,
+        "pwd_passed": true,
+        "body_visible": true,
+        "doc_title": "NSP-IM 六网协同情报平台 v1.0 · 2026-08-22"
+      },
+      "errors": 0
+    },
+    "mobile_375": {
+      "ok": true,
+      "state": {
+        "tabs_count": 7,
+        "btabs_count": 6,
+        "grid_exists": true,
+        "cells_count": 108,
+        "pwd_passed": true,
+        "body_visible": true,
+        "doc_title": "NSP-IM 六网协同情报平台 v1.0 · 2026-08-22"
+      },
+      "errors": 0
+    }
+  },
+  "public": {
+    "pc_1280": {
+      "ok": true,
+      "state": {
+        "tabs_count": 7,
+        "btabs_count": 6,
+        "grid_exists": true,
+        "cells_count": 0,
+        "pwd_passed": true,
+        "body_visible": true,
+        "doc_title": "NSP-IM 六网协同情报平台 v1.0 · 2026-08-22"
+      },
+      "errors": 5
+    }
+  }
+}
