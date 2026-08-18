@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T03:03:11Z",
+  "generated_at": "2026-08-18T09:12:28Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -31,10 +31,11 @@
         "数据中心"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 2,
+      "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260603-0002",
@@ -67,7 +68,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260618-0003",
@@ -98,10 +100,11 @@
         "能源"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 3,
+      "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260705-0004",
@@ -134,7 +137,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-0005",
@@ -167,7 +171,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260802-0006",
@@ -197,10 +202,11 @@
         "能源"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260812-0007",
@@ -230,10 +236,11 @@
         "算力计量"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 2,
+      "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-0001",
@@ -263,10 +270,11 @@
         "六网"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-MWR-20260817-0002",
@@ -297,7 +305,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260816-0003",
@@ -326,10 +335,11 @@
         "绿电"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 2,
+      "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260815-0004",
@@ -356,10 +366,11 @@
         "工业"
       ],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 3,
+      "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260814-0005",
@@ -388,10 +399,11 @@
         "PUE"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20240415-3621",
@@ -413,10 +425,11 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20240509-1134",
@@ -438,10 +451,11 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20240618-7986",
@@ -463,10 +477,11 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20240702-1076",
@@ -491,7 +506,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20240808-9532",
@@ -513,10 +529,11 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-9775",
@@ -539,7 +556,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260817-7609",
@@ -561,9 +579,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260810-3231",
@@ -585,9 +604,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-8093",
@@ -610,7 +630,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-3328",
@@ -632,9 +653,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260723-3087",
@@ -656,9 +678,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-2956",
@@ -681,7 +704,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260716-1302",
@@ -705,7 +729,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260710-6116",
@@ -727,9 +752,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260625-0563",
@@ -751,9 +777,10 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260801-8064",
@@ -783,10 +810,11 @@
         "5万亿"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260715-0533",
@@ -816,10 +844,11 @@
         "重点工程"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260720-3800",
@@ -849,10 +878,11 @@
         "主网架"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260805-5792",
@@ -882,10 +912,11 @@
         "合作"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 5,
+      "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260802-7906",
@@ -915,10 +946,11 @@
         "直流工程"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260718-8306",
@@ -948,10 +980,11 @@
         "高质量发展"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260808-9092",
@@ -981,10 +1014,11 @@
         "消纳"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260812-4186",
@@ -1014,10 +1048,11 @@
         "主设备"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240422-3209",
@@ -1039,10 +1074,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240506-6484",
@@ -1065,10 +1101,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 2,
+      "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240612-4615",
@@ -1091,10 +1128,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 3,
+      "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240725-4628",
@@ -1116,10 +1154,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240808-0463",
@@ -1143,10 +1182,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 1,
+      "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6245",
@@ -1169,10 +1209,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 3,
-      "carrier_relation": "抽蓄↔电网",
+      "support_direction": 1,
+      "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240418-3452",
@@ -1194,10 +1235,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240510-4206",
@@ -1219,10 +1261,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 2,
+      "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240528-2098",
@@ -1245,10 +1288,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 3,
-      "carrier_relation": "抽蓄↔电网",
+      "support_direction": 1,
+      "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240620-2658",
@@ -1271,10 +1315,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 3,
+      "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240715-8501",
@@ -1297,10 +1342,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "交能↔电网",
+      "support_direction": 5,
+      "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240810-4899",
@@ -1323,10 +1369,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240828-3166",
@@ -1348,10 +1395,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20240912-6658",
@@ -1372,10 +1420,11 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "电碳算↔电网",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6718",
@@ -1398,10 +1447,11 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 3,
-      "carrier_relation": "抽蓄↔电网",
+      "support_direction": 1,
+      "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-5331",
@@ -1424,7 +1474,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-1392",
@@ -1447,7 +1498,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20260818-0862",
@@ -1471,7 +1523,8 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v6_cers_dccib": true
+      "v6_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20260810-1279",
@@ -1492,9 +1545,10 @@
       "captured_by": "nea-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20260731-5746",
@@ -1515,9 +1569,10 @@
       "captured_by": "nea-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-NEA-20260727-7523",
@@ -1538,9 +1593,10 @@
       "captured_by": "nea-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-5473",
@@ -1564,7 +1620,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-0965",
@@ -1588,7 +1645,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-7771",
@@ -1610,9 +1668,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-1422",
@@ -1633,9 +1692,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "数智↔电网",
-      "v4_cers_dccib": true
+      "support_direction": 6,
+      "carrier_relation": "电网↔5网综合",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     },
     {
       "id": "P-BJX-20260909-9380",
@@ -1659,7 +1719,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true
     }
   ],
   "v4_upgraded_at": "2026-08-18T08:20:00Z",
@@ -1667,5 +1728,8 @@
   "v6_upgraded_at": "2026-08-18T10:50:00Z",
   "v6_source": "CERS DCICB 演讲第(二)节 发展机遇",
   "v6_chapter": "机遇三 + 机遇四",
-  "v5_source": "CERS DCICB 演讲第(二)节第2张 v5 修正"
+  "v5_source": "CERS DCICB 演讲第(二)节第2张 v5 修正",
+  "v7_upgraded_at": "2026-08-18T10:50:00Z",
+  "v7_source": "CERS DCICB 演讲第(二)节 发展机遇",
+  "v7_chapter": "机遇三 + 机遇四"
 }
