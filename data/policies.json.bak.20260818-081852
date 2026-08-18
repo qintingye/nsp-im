@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T00:20:32Z",
+  "generated_at": "2026-08-18T00:18:52Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -465,7 +465,7 @@
       "summary": "通知",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -486,7 +486,7 @@
       "summary": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260817_1407041.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -507,7 +507,7 @@
       "summary": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260810_1406952.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -527,7 +527,7 @@
       "summary": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406880.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -548,7 +548,7 @@
       "summary": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406883.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -569,7 +569,7 @@
       "summary": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260723_1406641.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -589,7 +589,7 @@
       "summary": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260722_1406623.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -610,7 +610,7 @@
       "summary": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260716_1406539.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -631,7 +631,7 @@
       "summary": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260710_1406431.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -652,7 +652,7 @@
       "summary": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202606/t20260625_1406079.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T00:18:52.414585Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending"
@@ -1228,7 +1228,7 @@
       "summary": "习近平总书记指引企业坚定不移走高质量发展之路",
       "key_points": [],
       "source_url": "http://politics.people.com.cn/n1/2026/0816/c461001-40780427.html",
-      "captured_at": "2026-08-18T00:19:39.911372Z",
+      "captured_at": "2026-08-18T00:18:52.378692Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1248,7 +1248,7 @@
       "summary": "新时代铸就文化自信的思想指引和实践遵循",
       "key_points": [],
       "source_url": "http://opinion.people.com.cn/n1/2026/0811/c461530-40777133.html",
-      "captured_at": "2026-08-18T00:19:39.911372Z",
+      "captured_at": "2026-08-18T00:18:52.378692Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1268,7 +1268,7 @@
       "summary": "习近平总书记指引企业坚定不移走高质量发展之路",
       "key_points": [],
       "source_url": "https://www.news.cn/politics/leaders/20260816/73bf8d114b2943649d897f9f0306d1cd/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T00:18:52.486073Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1288,7 +1288,7 @@
       "summary": "国家发展改革委 国家能源局关于印发《煤炭工业发展“十五五”规划》的通知",
       "key_points": [],
       "source_url": "https://www.nea.gov.cn20260810/78279aaa5a884a5fbdcf771fccbdf417/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T00:18:52.486073Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1308,7 +1308,7 @@
       "summary": "国家能源局综合司关于就部分规范性文件废止和延长有效期公开征求意见的函",
       "key_points": [],
       "source_url": "https://www.nea.gov.cn20260731/abb5fb7f81ee475fa7d07923c8178e70/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T00:18:52.486073Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1328,7 +1328,7 @@
       "summary": "国家能源局关于印发《鄂尔多斯盆地东部区域煤层气增储上产行动方案（2026—2030年）》的通知",
       "key_points": [],
       "source_url": "http://www.nea.gov.cn/20260727/a331c1b872314b86a428a846a0bfd38e/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T00:18:52.486073Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1349,7 +1349,7 @@
       "summary": "风电场投资及运营",
       "key_points": [],
       "source_url": "https://fdjob.bjx.com.cn/industry/flfd/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T00:18:52.646458Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1370,7 +1370,7 @@
       "summary": "光伏原材料及辅料",
       "key_points": [],
       "source_url": "https://gfjob.bjx.com.cn/industry/gfcljsb/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T00:18:52.646458Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1391,7 +1391,7 @@
       "summary": "储能材料及零部件",
       "key_points": [],
       "source_url": "https://cnjob.bjx.com.cn/industry/dccl/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T00:18:52.646458Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1411,7 +1411,7 @@
       "summary": "北极星学社APP职场人的职业力充电平台",
       "key_points": [],
       "source_url": "https://news.bjx.com.cn/zt/app/index.html?type=PC",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T00:18:52.646458Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"
@@ -1432,7 +1432,7 @@
       "summary": "2026年光储新时代论坛暨第十五届“北极星杯”光伏影...",
       "key_points": [],
       "source_url": "https://guangfu.bjx.com.cn/zt/zt2026gfxsdlt",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T00:18:52.646458Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending"

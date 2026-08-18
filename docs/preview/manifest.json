@@ -1,0 +1,22 @@
+{
+  "name": "NSP-IM 政策雷达",
+  "short_name": "NSP-IM",
+  "description": "六网协同 · 新能源政策智能监测 (内网部署预览)",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#1a73e8",
+  "lang": "zh-CN",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data/policies.json",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "version": "1.0.0-w1d4"
+}

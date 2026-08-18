@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "fetchers": {
+    "发改委": {
+      "name": "发改委",
+      "success_count": 1,
+      "fail_count": 0,
+      "last_run_at": "2026-08-17T19:09:29Z",
+      "last_status": "success",
+      "last_latency_ms": 281.0,
+      "last_error": null,
+      "total_latency_ms": 280.9999999990396
+    },
+    "integrate-demo": {
+      "name": "integrate-demo",
+      "success_count": 4,
+      "fail_count": 0,
+      "last_run_at": "2026-08-17T19:11:22Z",
+      "last_status": "success",
+      "last_latency_ms": 15.0,
+      "last_error": null,
+      "total_latency_ms": 14.999999999417923
+    }
+  }
+}
