@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T02:25:15Z",
+  "generated_at": "2026-08-18T02:33:59Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -31,8 +31,8 @@
         "数据中心"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "support_direction": 1,
+      "carrier_relation": "算力←绿电",
       "v4_cers_dccib": true
     },
     {
@@ -96,8 +96,8 @@
         "能源"
       ],
       "review_status": "pending",
-      "support_direction": 2,
-      "carrier_relation": "通信→稳定供电",
+      "support_direction": 4,
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -193,7 +193,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -225,7 +225,7 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "carrier_relation": "算力←绿电",
       "v4_cers_dccib": true
     },
     {
@@ -257,7 +257,7 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "carrier_relation": "算力←绿电",
       "v4_cers_dccib": true
     },
     {
@@ -317,8 +317,8 @@
         "绿电"
       ],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "support_direction": 4,
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -378,7 +378,7 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "carrier_relation": "算力←绿电",
       "v4_cers_dccib": true
     },
     {
@@ -402,7 +402,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -426,7 +426,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -450,7 +450,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -498,7 +498,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -545,7 +545,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -569,7 +569,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -616,7 +616,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -640,7 +640,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -711,7 +711,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -735,7 +735,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -767,7 +767,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -799,7 +799,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -831,7 +831,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -863,7 +863,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -895,7 +895,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -926,8 +926,8 @@
         "高质量发展"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "support_direction": 3,
+      "carrier_relation": "城市/物流←能源支撑",
       "v4_cers_dccib": true
     },
     {
@@ -959,7 +959,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -991,7 +991,7 @@
       ],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1015,7 +1015,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1039,8 +1039,8 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "support_direction": 4,
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1065,7 +1065,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 2,
-      "carrier_relation": "通信→稳定供电",
+      "carrier_relation": "通信←稳定供电",
       "v4_cers_dccib": true
     },
     {
@@ -1089,7 +1089,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1115,7 +1115,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1140,7 +1140,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1164,7 +1164,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1187,8 +1187,8 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "算力→绿电",
+      "support_direction": 4,
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1213,7 +1213,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1237,8 +1237,8 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1262,8 +1262,8 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 3,
-      "carrier_relation": "物流→能源保障",
+      "support_direction": 1,
+      "carrier_relation": "算力←绿电",
       "v4_cers_dccib": true
     },
     {
@@ -1288,7 +1288,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1312,7 +1312,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1360,7 +1360,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1452,7 +1452,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1475,7 +1475,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1498,7 +1498,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1570,7 +1570,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
@@ -1593,7 +1593,7 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
-      "carrier_relation": "基建→电力兜底",
+      "carrier_relation": "水网/能源转型←源网荷储",
       "v4_cers_dccib": true
     },
     {
