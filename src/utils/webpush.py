@@ -144,7 +144,7 @@ def send_push(
     payload: PushPayload,
     *,
     ttl: int = 86400,
-    timeout: int = 10,
+    timeout: int = 5,
 ) -> bool:
     """发送一条 Web Push 通知.
 
