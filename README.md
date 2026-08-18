@@ -50,8 +50,9 @@ python main_fetcher.py
 
 ## 部署
 
-- **Vercel** 部署前端（HTML/manifest/sw.js）
-- **GitHub Actions** 每日 09:00 抓取 → git commit → Vercel 自动重新部署
+- **公网 PoC（已上线）**：GitHub Pages → https://qintingye.github.io/nsp-im/（访问密码见 `docs/W3-D2-公网部署-实际执行.md`，2026-08-18 W3-D2）
+- **Vercel（备选）**：`vercel.json` + `docs/W3-D2-Vercel部署.md` 已就绪，拿到账号后 5 分钟迁移
+- **GitHub Actions** 每日 09:00 抓取 → git commit → 重新部署
 
 ## 团队
 
