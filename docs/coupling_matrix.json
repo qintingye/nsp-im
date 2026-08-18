@@ -1,0 +1,2044 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-08-19",
+  "algorithm": "f(N)×4 + g(W)×4 + h(V)×2 (满分 10)",
+  "nets": [
+    "grid",
+    "water",
+    "compute",
+    "telecom",
+    "pipe",
+    "logi"
+  ],
+  "nets_cn": {
+    "grid": "电网",
+    "water": "水网",
+    "compute": "算力网",
+    "telecom": "通信网",
+    "pipe": "地下管网",
+    "logi": "物流网"
+  },
+  "total_projects": 30,
+  "matrix": {
+    "grid": {
+      "grid": {
+        "net_a": "grid",
+        "net_b": "grid",
+        "n_projects": 30,
+        "f_N": 4.0,
+        "g_W": 2.699,
+        "h_V": 2.0,
+        "score": 3.35,
+        "level": "自身"
+      },
+      "water": {
+        "net_a": "grid",
+        "net_b": "water",
+        "n_projects": 7,
+        "f_N": 4.0,
+        "g_W": 2.616,
+        "h_V": 2.0,
+        "score": 8.62,
+        "level": "高分协同"
+      },
+      "compute": {
+        "net_a": "grid",
+        "net_b": "compute",
+        "n_projects": 21,
+        "f_N": 4.0,
+        "g_W": 2.705,
+        "h_V": 2.0,
+        "score": 8.71,
+        "level": "高分协同"
+      },
+      "telecom": {
+        "net_a": "grid",
+        "net_b": "telecom",
+        "n_projects": 11,
+        "f_N": 4.0,
+        "g_W": 2.537,
+        "h_V": 2.0,
+        "score": 8.54,
+        "level": "高分协同"
+      },
+      "pipe": {
+        "net_a": "grid",
+        "net_b": "pipe",
+        "n_projects": 2,
+        "f_N": 1.6,
+        "g_W": 2.285,
+        "h_V": 2.0,
+        "score": 5.88,
+        "level": "弱协同"
+      },
+      "logi": {
+        "net_a": "grid",
+        "net_b": "logi",
+        "n_projects": 15,
+        "f_N": 4.0,
+        "g_W": 2.638,
+        "h_V": 2.0,
+        "score": 8.64,
+        "level": "高分协同"
+      }
+    },
+    "water": {
+      "grid": {
+        "net_a": "water",
+        "net_b": "grid",
+        "n_projects": 7,
+        "f_N": 4.0,
+        "g_W": 2.616,
+        "h_V": 2.0,
+        "score": 8.62,
+        "level": "高分协同"
+      },
+      "water": {
+        "net_a": "water",
+        "net_b": "water",
+        "n_projects": 7,
+        "f_N": 4.0,
+        "g_W": 0.631,
+        "h_V": 2.0,
+        "score": 2.32,
+        "level": "自身"
+      },
+      "compute": {
+        "net_a": "water",
+        "net_b": "compute",
+        "n_projects": 4,
+        "f_N": 3.2,
+        "g_W": 2.512,
+        "h_V": 2.0,
+        "score": 7.71,
+        "level": "中等协同"
+      },
+      "telecom": {
+        "net_a": "water",
+        "net_b": "telecom",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "pipe": {
+        "net_a": "water",
+        "net_b": "pipe",
+        "n_projects": 2,
+        "f_N": 1.6,
+        "g_W": 2.456,
+        "h_V": 2.0,
+        "score": 6.06,
+        "level": "中等协同"
+      },
+      "logi": {
+        "net_a": "water",
+        "net_b": "logi",
+        "n_projects": 3,
+        "f_N": 2.4,
+        "g_W": 2.68,
+        "h_V": 2.0,
+        "score": 7.08,
+        "level": "中等协同"
+      }
+    },
+    "compute": {
+      "grid": {
+        "net_a": "compute",
+        "net_b": "grid",
+        "n_projects": 21,
+        "f_N": 4.0,
+        "g_W": 2.705,
+        "h_V": 2.0,
+        "score": 8.71,
+        "level": "高分协同"
+      },
+      "water": {
+        "net_a": "compute",
+        "net_b": "water",
+        "n_projects": 4,
+        "f_N": 3.2,
+        "g_W": 2.512,
+        "h_V": 2.0,
+        "score": 7.71,
+        "level": "中等协同"
+      },
+      "compute": {
+        "net_a": "compute",
+        "net_b": "compute",
+        "n_projects": 21,
+        "f_N": 4.0,
+        "g_W": 1.877,
+        "h_V": 2.0,
+        "score": 2.94,
+        "level": "自身"
+      },
+      "telecom": {
+        "net_a": "compute",
+        "net_b": "telecom",
+        "n_projects": 5,
+        "f_N": 4.0,
+        "g_W": 2.577,
+        "h_V": 2.0,
+        "score": 8.58,
+        "level": "高分协同"
+      },
+      "pipe": {
+        "net_a": "compute",
+        "net_b": "pipe",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "logi": {
+        "net_a": "compute",
+        "net_b": "logi",
+        "n_projects": 7,
+        "f_N": 4.0,
+        "g_W": 2.271,
+        "h_V": 2.0,
+        "score": 8.27,
+        "level": "高分协同"
+      }
+    },
+    "telecom": {
+      "grid": {
+        "net_a": "telecom",
+        "net_b": "grid",
+        "n_projects": 11,
+        "f_N": 4.0,
+        "g_W": 2.537,
+        "h_V": 2.0,
+        "score": 8.54,
+        "level": "高分协同"
+      },
+      "water": {
+        "net_a": "telecom",
+        "net_b": "water",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "compute": {
+        "net_a": "telecom",
+        "net_b": "compute",
+        "n_projects": 5,
+        "f_N": 4.0,
+        "g_W": 2.577,
+        "h_V": 2.0,
+        "score": 8.58,
+        "level": "高分协同"
+      },
+      "telecom": {
+        "net_a": "telecom",
+        "net_b": "telecom",
+        "n_projects": 11,
+        "f_N": 4.0,
+        "g_W": 0.894,
+        "h_V": 2.0,
+        "score": 2.45,
+        "level": "自身"
+      },
+      "pipe": {
+        "net_a": "telecom",
+        "net_b": "pipe",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "logi": {
+        "net_a": "telecom",
+        "net_b": "logi",
+        "n_projects": 8,
+        "f_N": 4.0,
+        "g_W": 2.446,
+        "h_V": 2.0,
+        "score": 8.45,
+        "level": "高分协同"
+      }
+    },
+    "pipe": {
+      "grid": {
+        "net_a": "pipe",
+        "net_b": "grid",
+        "n_projects": 2,
+        "f_N": 1.6,
+        "g_W": 2.285,
+        "h_V": 2.0,
+        "score": 5.88,
+        "level": "弱协同"
+      },
+      "water": {
+        "net_a": "pipe",
+        "net_b": "water",
+        "n_projects": 2,
+        "f_N": 1.6,
+        "g_W": 2.456,
+        "h_V": 2.0,
+        "score": 6.06,
+        "level": "中等协同"
+      },
+      "compute": {
+        "net_a": "pipe",
+        "net_b": "compute",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "telecom": {
+        "net_a": "pipe",
+        "net_b": "telecom",
+        "n_projects": 0,
+        "f_N": 0.0,
+        "g_W": 0.0,
+        "h_V": 2.0,
+        "score": 2.0,
+        "level": "弱协同"
+      },
+      "pipe": {
+        "net_a": "pipe",
+        "net_b": "pipe",
+        "n_projects": 2,
+        "f_N": 4.0,
+        "g_W": 0.141,
+        "h_V": 2.0,
+        "score": 2.07,
+        "level": "自身"
+      },
+      "logi": {
+        "net_a": "pipe",
+        "net_b": "logi",
+        "n_projects": 1,
+        "f_N": 0.8,
+        "g_W": 2.22,
+        "h_V": 2.0,
+        "score": 5.02,
+        "level": "弱协同"
+      }
+    },
+    "logi": {
+      "grid": {
+        "net_a": "logi",
+        "net_b": "grid",
+        "n_projects": 15,
+        "f_N": 4.0,
+        "g_W": 2.638,
+        "h_V": 2.0,
+        "score": 8.64,
+        "level": "高分协同"
+      },
+      "water": {
+        "net_a": "logi",
+        "net_b": "water",
+        "n_projects": 3,
+        "f_N": 2.4,
+        "g_W": 2.68,
+        "h_V": 2.0,
+        "score": 7.08,
+        "level": "中等协同"
+      },
+      "compute": {
+        "net_a": "logi",
+        "net_b": "compute",
+        "n_projects": 7,
+        "f_N": 4.0,
+        "g_W": 2.271,
+        "h_V": 2.0,
+        "score": 8.27,
+        "level": "高分协同"
+      },
+      "telecom": {
+        "net_a": "logi",
+        "net_b": "telecom",
+        "n_projects": 8,
+        "f_N": 4.0,
+        "g_W": 2.446,
+        "h_V": 2.0,
+        "score": 8.45,
+        "level": "高分协同"
+      },
+      "pipe": {
+        "net_a": "logi",
+        "net_b": "pipe",
+        "n_projects": 1,
+        "f_N": 0.8,
+        "g_W": 2.22,
+        "h_V": 2.0,
+        "score": 5.02,
+        "level": "弱协同"
+      },
+      "logi": {
+        "net_a": "logi",
+        "net_b": "logi",
+        "n_projects": 15,
+        "f_N": 4.0,
+        "g_W": 1.304,
+        "h_V": 2.0,
+        "score": 2.65,
+        "level": "自身"
+      }
+    }
+  },
+  "pairs": {
+    "grid__self": {
+      "type": "self",
+      "net_a": "grid",
+      "net_b": "grid",
+      "score": 3.35,
+      "level": "自身",
+      "n_projects": 30,
+      "f_N": 4.0,
+      "g_W": 2.699,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight": 0.55
+        },
+        {
+          "idx": 2,
+          "name": "南方五省区电碳协同体系研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.686
+        },
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.686
+        },
+        {
+          "idx": 4,
+          "name": "南方五省区算电协同调度市场化交易机制与场景研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.686
+        },
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight": 0.586
+        },
+        {
+          "idx": 6,
+          "name": "南方五省区电碳协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.736
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.736
+        },
+        {
+          "idx": 8,
+          "name": "广西边境绿色能源流电直供示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.736
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight": 0.686
+        },
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.721
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.736
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.721
+        },
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.615
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.615
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.698
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.698
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.665
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.665
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight": 0.652
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight": 0.55
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight": 0.735
+        },
+        {
+          "idx": 22,
+          "name": "深圳能源互联网数字平台示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.684
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.684
+        },
+        {
+          "idx": 24,
+          "name": "深城能源互联网综合能源工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.684
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight": 0.691
+        },
+        {
+          "idx": 26,
+          "name": "南网综合供能链新型电力系统数字认证平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.675
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight": 0.643
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.675
+        },
+        {
+          "idx": 29,
+          "name": "多网协同市场化平台升级工程",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.675
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.675
+        }
+      ]
+    },
+    "grid__water": {
+      "type": "couple",
+      "net_a": "grid",
+      "net_b": "water",
+      "score": 8.62,
+      "level": "高分协同",
+      "n_projects": 7,
+      "f_N": 4.0,
+      "g_W": 2.616,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight_a": 0.55,
+          "weight_b": 0.851,
+          "w_prod": 0.684
+        },
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight_a": 0.586,
+          "weight_b": 0.726,
+          "w_prod": 0.652
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.671,
+          "w_prod": 0.703
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.686,
+          "weight_b": 0.726,
+          "w_prod": 0.706
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.665,
+          "weight_b": 0.611,
+          "w_prod": 0.637
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight_a": 0.55,
+          "weight_b": 0.689,
+          "w_prod": 0.616
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.735,
+          "weight_b": 0.459,
+          "w_prod": 0.581
+        }
+      ]
+    },
+    "compute__grid": {
+      "type": "couple",
+      "net_a": "grid",
+      "net_b": "compute",
+      "score": 8.71,
+      "level": "高分协同",
+      "n_projects": 21,
+      "f_N": 4.0,
+      "g_W": 2.705,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight_a": 0.55,
+          "weight_b": 0.5,
+          "w_prod": 0.524
+        },
+        {
+          "idx": 2,
+          "name": "南方五省区电碳协同体系研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight_a": 0.686,
+          "weight_b": 0.809,
+          "w_prod": 0.745
+        },
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight_a": 0.686,
+          "weight_b": 0.659,
+          "w_prod": 0.672
+        },
+        {
+          "idx": 4,
+          "name": "南方五省区算电协同调度市场化交易机制与场景研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight_a": 0.686,
+          "weight_b": 0.819,
+          "w_prod": 0.75
+        },
+        {
+          "idx": 6,
+          "name": "南方五省区电碳协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.88,
+          "w_prod": 0.805
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.811,
+          "w_prod": 0.773
+        },
+        {
+          "idx": 8,
+          "name": "广西边境绿色能源流电直供示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.721,
+          "w_prod": 0.728
+        },
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.721,
+          "weight_b": 0.686,
+          "w_prod": 0.703
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.905,
+          "w_prod": 0.816
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.721,
+          "weight_b": 0.526,
+          "w_prod": 0.616
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.698,
+          "weight_b": 0.588,
+          "w_prod": 0.641
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight_a": 0.55,
+          "weight_b": 0.576,
+          "w_prod": 0.563
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.735,
+          "weight_b": 0.528,
+          "w_prod": 0.623
+        },
+        {
+          "idx": 22,
+          "name": "深圳能源互联网数字平台示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight_a": 0.684,
+          "weight_b": 0.669,
+          "w_prod": 0.676
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight_a": 0.684,
+          "weight_b": 0.484,
+          "w_prod": 0.575
+        },
+        {
+          "idx": 24,
+          "name": "深城能源互联网综合能源工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight_a": 0.684,
+          "weight_b": 0.576,
+          "w_prod": 0.628
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight_a": 0.691,
+          "weight_b": 0.821,
+          "w_prod": 0.753
+        },
+        {
+          "idx": 26,
+          "name": "南网综合供能链新型电力系统数字认证平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.661,
+          "w_prod": 0.668
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.628,
+          "w_prod": 0.651
+        },
+        {
+          "idx": 29,
+          "name": "多网协同市场化平台升级工程",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.663,
+          "w_prod": 0.669
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.569,
+          "w_prod": 0.62
+        }
+      ]
+    },
+    "grid__telecom": {
+      "type": "couple",
+      "net_a": "grid",
+      "net_b": "telecom",
+      "score": 8.54,
+      "level": "高分协同",
+      "n_projects": 11,
+      "f_N": 4.0,
+      "g_W": 2.537,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.721,
+          "weight_b": 0.636,
+          "w_prod": 0.677
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.736,
+          "weight_b": 0.536,
+          "w_prod": 0.628
+        },
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.615,
+          "weight_b": 0.845,
+          "w_prod": 0.721
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.615,
+          "weight_b": 0.845,
+          "w_prod": 0.721
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.698,
+          "weight_b": 0.588,
+          "w_prod": 0.641
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.665,
+          "weight_b": 0.369,
+          "w_prod": 0.495
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight_a": 0.652,
+          "weight_b": 0.481,
+          "w_prod": 0.56
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight_a": 0.691,
+          "weight_b": 0.681,
+          "w_prod": 0.686
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight_a": 0.643,
+          "weight_b": 0.681,
+          "w_prod": 0.662
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.521,
+          "w_prod": 0.593
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.521,
+          "w_prod": 0.593
+        }
+      ]
+    },
+    "grid__pipe": {
+      "type": "couple",
+      "net_a": "grid",
+      "net_b": "pipe",
+      "score": 5.88,
+      "level": "弱协同",
+      "n_projects": 2,
+      "f_N": 1.6,
+      "g_W": 2.285,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight_a": 0.586,
+          "weight_b": 0.671,
+          "w_prod": 0.627
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.686,
+          "weight_b": 0.387,
+          "w_prod": 0.515
+        }
+      ]
+    },
+    "grid__logi": {
+      "type": "couple",
+      "net_a": "grid",
+      "net_b": "logi",
+      "score": 8.64,
+      "level": "高分协同",
+      "n_projects": 15,
+      "f_N": 4.0,
+      "g_W": 2.638,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight_a": 0.686,
+          "weight_b": 0.587,
+          "w_prod": 0.635
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.686,
+          "weight_b": 0.796,
+          "w_prod": 0.739
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.721,
+          "weight_b": 0.526,
+          "w_prod": 0.616
+        },
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.615,
+          "weight_b": 0.465,
+          "w_prod": 0.535
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.615,
+          "weight_b": 0.588,
+          "w_prod": 0.601
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.698,
+          "weight_b": 0.705,
+          "w_prod": 0.701
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.698,
+          "weight_b": 0.656,
+          "w_prod": 0.677
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.665,
+          "weight_b": 0.773,
+          "w_prod": 0.717
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.665,
+          "weight_b": 0.878,
+          "w_prod": 0.764
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight_a": 0.652,
+          "weight_b": 0.832,
+          "w_prod": 0.737
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.735,
+          "weight_b": 0.689,
+          "w_prod": 0.712
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight_a": 0.684,
+          "weight_b": 0.576,
+          "w_prod": 0.628
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight_a": 0.643,
+          "weight_b": 0.748,
+          "w_prod": 0.694
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.486,
+          "w_prod": 0.573
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.675,
+          "weight_b": 0.477,
+          "w_prod": 0.567
+        }
+      ]
+    },
+    "water__self": {
+      "type": "self",
+      "net_a": "water",
+      "net_b": "water",
+      "score": 2.32,
+      "level": "自身",
+      "n_projects": 7,
+      "f_N": 4.0,
+      "g_W": 0.631,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight": 0.851
+        },
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight": 0.726
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.671
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight": 0.726
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.611
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight": 0.689
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight": 0.459
+        }
+      ]
+    },
+    "compute__water": {
+      "type": "couple",
+      "net_a": "water",
+      "net_b": "compute",
+      "score": 7.71,
+      "level": "中等协同",
+      "n_projects": 4,
+      "f_N": 3.2,
+      "g_W": 2.512,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight_a": 0.851,
+          "weight_b": 0.5,
+          "w_prod": 0.652
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.671,
+          "weight_b": 0.811,
+          "w_prod": 0.738
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight_a": 0.689,
+          "weight_b": 0.576,
+          "w_prod": 0.63
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.459,
+          "weight_b": 0.528,
+          "w_prod": 0.492
+        }
+      ]
+    },
+    "telecom__water": {
+      "type": "couple",
+      "net_a": "water",
+      "net_b": "telecom",
+      "score": 2.0,
+      "level": "弱协同",
+      "n_projects": 0,
+      "f_N": 0.0,
+      "g_W": 0.0,
+      "h_V": 2.0,
+      "projects": []
+    },
+    "pipe__water": {
+      "type": "couple",
+      "net_a": "water",
+      "net_b": "pipe",
+      "score": 6.06,
+      "level": "中等协同",
+      "n_projects": 2,
+      "f_N": 1.6,
+      "g_W": 2.456,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight_a": 0.726,
+          "weight_b": 0.671,
+          "w_prod": 0.698
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.726,
+          "weight_b": 0.387,
+          "w_prod": 0.53
+        }
+      ]
+    },
+    "logi__water": {
+      "type": "couple",
+      "net_a": "water",
+      "net_b": "logi",
+      "score": 7.08,
+      "level": "中等协同",
+      "n_projects": 3,
+      "f_N": 2.4,
+      "g_W": 2.68,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.726,
+          "weight_b": 0.796,
+          "w_prod": 0.76
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.611,
+          "weight_b": 0.773,
+          "w_prod": 0.687
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.459,
+          "weight_b": 0.689,
+          "w_prod": 0.562
+        }
+      ]
+    },
+    "compute__self": {
+      "type": "self",
+      "net_a": "compute",
+      "net_b": "compute",
+      "score": 2.94,
+      "level": "自身",
+      "n_projects": 21,
+      "f_N": 4.0,
+      "g_W": 1.877,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 1,
+          "name": "南方电网水风光储一体化开发与联合调度示范工程",
+          "batch": "研究一批",
+          "category": "水网",
+          "weight": 0.5
+        },
+        {
+          "idx": 2,
+          "name": "南方五省区电碳协同体系研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.809
+        },
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.659
+        },
+        {
+          "idx": 4,
+          "name": "南方五省区算电协同调度市场化交易机制与场景研究",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.819
+        },
+        {
+          "idx": 6,
+          "name": "南方五省区电碳协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.88
+        },
+        {
+          "idx": 7,
+          "name": "黔电送粤\"云电+绿电\"项目",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.811
+        },
+        {
+          "idx": 8,
+          "name": "广西边境绿色能源流电直供示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.721
+        },
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.686
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.905
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.526
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.588
+        },
+        {
+          "idx": 20,
+          "name": "云贵粤港澳大湾区\"外电入粤\"重点工程",
+          "batch": "储备一批",
+          "category": "水网",
+          "weight": 0.576
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight": 0.528
+        },
+        {
+          "idx": 22,
+          "name": "深圳能源互联网数字平台示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.669
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.484
+        },
+        {
+          "idx": 24,
+          "name": "深城能源互联网综合能源工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.576
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight": 0.821
+        },
+        {
+          "idx": 26,
+          "name": "南网综合供能链新型电力系统数字认证平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.661
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.628
+        },
+        {
+          "idx": 29,
+          "name": "多网协同市场化平台升级工程",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.663
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.569
+        }
+      ]
+    },
+    "compute__telecom": {
+      "type": "couple",
+      "net_a": "compute",
+      "net_b": "telecom",
+      "score": 8.58,
+      "level": "高分协同",
+      "n_projects": 5,
+      "f_N": 4.0,
+      "g_W": 2.577,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.686,
+          "weight_b": 0.636,
+          "w_prod": 0.661
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight_a": 0.905,
+          "weight_b": 0.536,
+          "w_prod": 0.696
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight_a": 0.821,
+          "weight_b": 0.681,
+          "w_prod": 0.748
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.628,
+          "weight_b": 0.521,
+          "w_prod": 0.572
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.569,
+          "weight_b": 0.521,
+          "w_prod": 0.544
+        }
+      ]
+    },
+    "compute__pipe": {
+      "type": "couple",
+      "net_a": "compute",
+      "net_b": "pipe",
+      "score": 2.0,
+      "level": "弱协同",
+      "n_projects": 0,
+      "f_N": 0.0,
+      "g_W": 0.0,
+      "h_V": 2.0,
+      "projects": []
+    },
+    "compute__logi": {
+      "type": "couple",
+      "net_a": "compute",
+      "net_b": "logi",
+      "score": 8.27,
+      "level": "高分协同",
+      "n_projects": 7,
+      "f_N": 4.0,
+      "g_W": 2.271,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight_a": 0.659,
+          "weight_b": 0.587,
+          "w_prod": 0.622
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight_a": 0.526,
+          "weight_b": 0.526,
+          "w_prod": 0.526
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.588,
+          "weight_b": 0.656,
+          "w_prod": 0.621
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight_a": 0.528,
+          "weight_b": 0.689,
+          "w_prod": 0.603
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight_a": 0.484,
+          "weight_b": 0.576,
+          "w_prod": 0.528
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.628,
+          "weight_b": 0.486,
+          "w_prod": 0.552
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.569,
+          "weight_b": 0.477,
+          "w_prod": 0.521
+        }
+      ]
+    },
+    "telecom__self": {
+      "type": "self",
+      "net_a": "telecom",
+      "net_b": "telecom",
+      "score": 2.45,
+      "level": "自身",
+      "n_projects": 11,
+      "f_N": 4.0,
+      "g_W": 0.894,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 10,
+          "name": "多站合一示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.636
+        },
+        {
+          "idx": 11,
+          "name": "贵安电算协同示范工程",
+          "batch": "实施一批",
+          "category": "算力网",
+          "weight": 0.536
+        },
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.845
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.845
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.588
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.369
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight": 0.481
+        },
+        {
+          "idx": 25,
+          "name": "算网融合超高速协同网络示范工程",
+          "batch": "谋划一批",
+          "category": "算力网",
+          "weight": 0.681
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight": 0.681
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.521
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.521
+        }
+      ]
+    },
+    "pipe__telecom": {
+      "type": "couple",
+      "net_a": "telecom",
+      "net_b": "pipe",
+      "score": 2.0,
+      "level": "弱协同",
+      "n_projects": 0,
+      "f_N": 0.0,
+      "g_W": 0.0,
+      "h_V": 2.0,
+      "projects": []
+    },
+    "logi__telecom": {
+      "type": "couple",
+      "net_a": "telecom",
+      "net_b": "logi",
+      "score": 8.45,
+      "level": "高分协同",
+      "n_projects": 8,
+      "f_N": 4.0,
+      "g_W": 2.446,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.845,
+          "weight_b": 0.465,
+          "w_prod": 0.627
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight_a": 0.845,
+          "weight_b": 0.588,
+          "w_prod": 0.705
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight_a": 0.588,
+          "weight_b": 0.705,
+          "w_prod": 0.644
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight_a": 0.369,
+          "weight_b": 0.878,
+          "w_prod": 0.569
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight_a": 0.481,
+          "weight_b": 0.832,
+          "w_prod": 0.633
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight_a": 0.681,
+          "weight_b": 0.748,
+          "w_prod": 0.714
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.521,
+          "weight_b": 0.486,
+          "w_prod": 0.503
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight_a": 0.521,
+          "weight_b": 0.477,
+          "w_prod": 0.499
+        }
+      ]
+    },
+    "pipe__self": {
+      "type": "self",
+      "net_a": "pipe",
+      "net_b": "pipe",
+      "score": 2.07,
+      "level": "自身",
+      "n_projects": 2,
+      "f_N": 4.0,
+      "g_W": 0.141,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 5,
+          "name": "贵阳防灾减灾与综合能源调度示范工程",
+          "batch": "实施一批",
+          "category": "水网",
+          "weight": 0.671
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight": 0.387
+        }
+      ]
+    },
+    "logi__pipe": {
+      "type": "couple",
+      "net_a": "pipe",
+      "net_b": "logi",
+      "score": 5.02,
+      "level": "弱协同",
+      "n_projects": 1,
+      "f_N": 0.8,
+      "g_W": 2.22,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight_a": 0.387,
+          "weight_b": 0.796,
+          "w_prod": 0.555
+        }
+      ]
+    },
+    "logi__self": {
+      "type": "self",
+      "net_a": "logi",
+      "net_b": "logi",
+      "score": 2.65,
+      "level": "自身",
+      "n_projects": 15,
+      "f_N": 4.0,
+      "g_W": 1.304,
+      "h_V": 2.0,
+      "projects": [
+        {
+          "idx": 3,
+          "name": "广州、深圳城域级车网互动与共享虚拟电厂",
+          "batch": "研究一批",
+          "category": "算力网",
+          "weight": 0.587
+        },
+        {
+          "idx": 9,
+          "name": "平陆运河交能融合示范工程",
+          "batch": "实施一批",
+          "category": "物流网",
+          "weight": 0.796
+        },
+        {
+          "idx": 12,
+          "name": "汕头国际风电城零碳综合能源示范工程",
+          "batch": "实施一批",
+          "category": "综合",
+          "weight": 0.526
+        },
+        {
+          "idx": 13,
+          "name": "\"空中一张车\"应急通信保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.465
+        },
+        {
+          "idx": 14,
+          "name": "大湾区低空基础设施保障工程",
+          "batch": "前期一批",
+          "category": "通信网",
+          "weight": 0.588
+        },
+        {
+          "idx": 15,
+          "name": "广州深圳临空区综合能源融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.705
+        },
+        {
+          "idx": 16,
+          "name": "广州深圳湾区大湾区融合示范区",
+          "batch": "前期一批",
+          "category": "综合",
+          "weight": 0.656
+        },
+        {
+          "idx": 17,
+          "name": "钦州平陆运河电网综合示范工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.773
+        },
+        {
+          "idx": 18,
+          "name": "广深超充走廊工程",
+          "batch": "前期一批",
+          "category": "物流网",
+          "weight": 0.878
+        },
+        {
+          "idx": 19,
+          "name": "广州深圳交能融合电网综合工程",
+          "batch": "储备一批",
+          "category": "物流网",
+          "weight": 0.832
+        },
+        {
+          "idx": 21,
+          "name": "广深\"快慢+通道\"氢储能协同与多元应用",
+          "batch": "储备一批",
+          "category": "储能",
+          "weight": 0.689
+        },
+        {
+          "idx": 23,
+          "name": "海南自贸港\"多能合一\"示范工程",
+          "batch": "储备一批",
+          "category": "综合",
+          "weight": 0.576
+        },
+        {
+          "idx": 27,
+          "name": "大湾区无人机输配电物流综合示范",
+          "batch": "谋划一批",
+          "category": "物流网",
+          "weight": 0.748
+        },
+        {
+          "idx": 28,
+          "name": "南网\"六网\"协同产业平台",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.486
+        },
+        {
+          "idx": 30,
+          "name": "智能化零碳园区与\"六网\"调控体系建设",
+          "batch": "谋划一批",
+          "category": "综合",
+          "weight": 0.477
+        }
+      ]
+    }
+  }
+}
