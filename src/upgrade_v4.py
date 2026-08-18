@@ -1,6 +1,6 @@
 """
-W2.5 · v4 升级：现有 61 条 policies 添加 support_direction 字段
-基于 CERS DCICB 演讲核心论点（新型电网=承载方）
+W2.5 → v6 · 升级：现有 61 条 policies 添加 support_direction 字段
+基于 CERS DCICB 演讲《发展机遇》板块（4 方向协同融合版）
 """
 import sys
 import json
@@ -29,7 +29,7 @@ def main():
             reevaluated += 1
         p["support_direction"] = direction
         p["carrier_relation"] = new_relation
-        p["v4_cers_dccib"] = True
+        p["v6_cers_dccib"] = True
         upgraded += 1
     
     # 统计
@@ -37,24 +37,29 @@ def main():
     direction_count = Counter(p["support_direction"] for p in policies)
     carrier_count = Counter(p.get("carrier_relation") for p in policies)
     
-    data["v4_upgraded_at"] = "2026-08-18T08:20:00Z"
+    data["v6_upgraded_at"] = "2026-08-18T10:50:00Z"
+    data["v6_source"] = "CERS DCICB 演讲第(二)节 发展机遇"
+    data["v6_chapter"] = "机遇三 + 机遇四"
+    # 保留 v4/v5 标记
     data["v4_source"] = "CERS DCICB 演讲第(二)节第2张"
+    data["v5_source"] = "CERS DCICB 演讲第(二)节第2张 v5 修正"
     
     # 原子写入
     tmp = POLICY_FILE.with_suffix(".tmp")
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     tmp.replace(POLICY_FILE)
     
-    print(f"✅ v4 升级完成")
+    print(f"✅ v6 升级完成")
     print(f"   - 升级条数: {upgraded}")
     print(f"   - 重新评估: {reevaluated}")
     print(f"   - 总条数: {len(policies)}")
-    print(f"\n📊 4 方向分布:")
+    print(f"\n📊 4 方向分布（v6 协同融合版）:")
     for d in [1, 2, 3, 4]:
-        name = ["", "算力→绿电", "通信→稳定供电", "物流→能源保障", "基建→电力兜底"][d]
-        print(f"   方向{d} {name}: {direction_count.get(d, 0)} 条")
+        names = ["", "电碳算协同", "数智融合", "抽蓄互补", "交能融合"]
+        rels = ["", "电碳算↔电网", "数智↔电网", "抽蓄↔电网", "交能↔电网"]
+        print(f"   D{d} {names[d]} ({rels[d]}): {direction_count.get(d, 0)} 条")
     if 0 in direction_count:
-        print(f"   方向0 未识别: {direction_count[0]} 条")
+        print(f"   D0 未识别: {direction_count[0]} 条")
     
     return upgraded
 

@@ -1,22 +1,45 @@
 {
   "name": "NSP-IM 政策雷达",
   "short_name": "NSP-IM",
-  "description": "六网协同 · 新能源政策智能监测 (内网部署预览)",
+  "description": "六网协同 · 新型电力系统政策智能监测（内网部署预览 · W3-D4 升级）",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f5f7fa",
   "theme_color": "#1a73e8",
   "lang": "zh-CN",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
     {
-      "src": "data/policies.json",
+      "src": "./icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["productivity", "utilities"],
-  "version": "1.0.0-w1d4"
+  "categories": ["productivity", "utilities", "government"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "刷新政策数据",
+      "short_name": "刷新",
+      "description": "重新拉取最新政策清单",
+      "url": "./index.html?refresh=1",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "version": "3.4.0-w3d4"
 }

@@ -8,6 +8,10 @@ W1-D4 BE 重构要点:
   去重升级: 集成 utils.dedup, URL 归一化兜底, 多策略 (freshest/first)
   健康探针: 集成 utils.health._HealthProbe
   合并策略: 重复源不互相覆盖 - 用 dedup 后的 unique 列表参与合并
+
+W3-D1 升级:
+  v5 字段继承: dedup "freshest" 不会覆盖已有 policy 的
+    support_direction / carrier_relation / v4_cers_dccib / v5_source
 """
 from __future__ import annotations
 
@@ -29,6 +33,10 @@ import sys
 SRC_DIR = str(REPO_ROOT / "src")
 if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
+
+
+# W3-D1: dedup "freshest" 不应覆盖已有 policy 的 v5 字段
+_V5_INHERIT_KEYS = ("support_direction", "carrier_relation", "v4_cers_dccib", "v5_source")
 
 
 class BaseFetcher(ABC):
@@ -98,6 +106,8 @@ class BaseFetcher(ABC):
           - 全部走 utils.atomic_write, 防止半写 (fetcher 崩溃后旧 JSON 仍可用)
           - safe_read_json 兜底: 上次写崩留了半 JSON, 不会阻塞本次
           - 失败时不抛, 让 fetcher 的 health 探针负责告警
+          - W3-D1: dedup "freshest" 不应覆盖已有 v5 字段, 新抓到的相同 id 会
+            继承 _V5_INHERIT_KEYS (support_direction / carrier_relation / ...).
         """
         from utils.atomic_write import atomic_write_json, safe_read_json  # noqa: PLC0415
         from utils.dedup import deduplicate  # noqa: PLC0415
@@ -111,8 +121,25 @@ class BaseFetcher(ABC):
         if not isinstance(existing_policies, list):
             existing_policies = []
 
+        # W3-D1 兜底: 用 id 索引已有 policies, 让新抓到的相同 id 继承 v5 字段
+        #   (避免 dedup "freshest" 把已升级字段覆盖掉)
+        existing_by_id: Dict[str, Dict[str, Any]] = {}
+        for p in existing_policies:
+            if isinstance(p, dict) and p.get("id"):
+                existing_by_id[p["id"]] = p
+
+        def _inherit_v5_fields(new_p: Dict[str, Any]) -> Dict[str, Any]:
+            old = existing_by_id.get(new_p.get("id", ""))
+            if not old:
+                return new_p
+            for k in _V5_INHERIT_KEYS:
+                if k not in new_p and k in old:
+                    new_p[k] = old[k]
+            return new_p
+
         # 1. 合并: 把新 policies 与旧 policies 一起, 用 dedup 统一去重
-        merged_input: List[Dict[str, Any]] = list(existing_policies) + list(policies or [])
+        new_policies = [_inherit_v5_fields(dict(p)) for p in (policies or [])]
+        merged_input: List[Dict[str, Any]] = list(existing_policies) + new_policies
         if dedup:
             result = deduplicate(merged_input, prefer="freshest")
             merged_unique = result["unique"]

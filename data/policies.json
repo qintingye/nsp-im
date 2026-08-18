@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T02:33:59Z",
+  "generated_at": "2026-08-18T02:49:22Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -32,8 +32,9 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力←绿电",
-      "v4_cers_dccib": true
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260603-0002",
@@ -65,7 +66,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260618-0003",
@@ -96,9 +98,10 @@
         "能源"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260705-0004",
@@ -130,7 +133,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-0005",
@@ -162,7 +166,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260802-0006",
@@ -192,9 +197,10 @@
         "能源"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260812-0007",
@@ -225,8 +231,9 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力←绿电",
-      "v4_cers_dccib": true
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-0001",
@@ -257,8 +264,9 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力←绿电",
-      "v4_cers_dccib": true
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-MWR-20260817-0002",
@@ -288,7 +296,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260816-0003",
@@ -317,9 +326,10 @@
         "绿电"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 1,
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260815-0004",
@@ -348,7 +358,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260814-0005",
@@ -378,8 +389,9 @@
       ],
       "review_status": "pending",
       "support_direction": 1,
-      "carrier_relation": "算力←绿电",
-      "v4_cers_dccib": true
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20240415-3621",
@@ -401,9 +413,10 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20240509-1134",
@@ -425,9 +438,10 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20240618-7986",
@@ -449,9 +463,10 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20240702-1076",
@@ -475,7 +490,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20240808-9532",
@@ -497,9 +513,10 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-9775",
@@ -516,13 +533,14 @@
       "summary": "通知",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260817-7609",
@@ -540,13 +558,14 @@
       "summary": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260817_1407041.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260810-3231",
@@ -564,13 +583,14 @@
       "summary": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260810_1406952.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-8093",
@@ -587,13 +607,14 @@
       "summary": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406880.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-3328",
@@ -611,13 +632,14 @@
       "summary": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406883.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260723-3087",
@@ -635,13 +657,14 @@
       "summary": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260723_1406641.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-2956",
@@ -658,13 +681,14 @@
       "summary": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260722_1406623.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260716-1302",
@@ -682,13 +706,14 @@
       "summary": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260716_1406539.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260710-6116",
@@ -706,13 +731,14 @@
       "summary": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202607/t20260710_1406431.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260625-0563",
@@ -730,13 +756,14 @@
       "summary": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn./202606/t20260625_1406079.html",
-      "captured_at": "2026-08-18T00:19:39.950711Z",
+      "captured_at": "2026-08-18T02:43:56.449922Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260801-8064",
@@ -766,9 +793,10 @@
         "5万亿"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260715-0533",
@@ -798,9 +826,10 @@
         "重点工程"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260720-3800",
@@ -830,9 +859,10 @@
         "主网架"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260805-5792",
@@ -862,9 +892,10 @@
         "合作"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260802-7906",
@@ -894,9 +925,10 @@
         "直流工程"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260718-8306",
@@ -926,9 +958,10 @@
         "高质量发展"
       ],
       "review_status": "pending",
-      "support_direction": 3,
-      "carrier_relation": "城市/物流←能源支撑",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260808-9092",
@@ -958,9 +991,10 @@
         "消纳"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260812-4186",
@@ -990,9 +1024,10 @@
         "主设备"
       ],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240422-3209",
@@ -1014,9 +1049,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240506-6484",
@@ -1039,9 +1075,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 1,
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240612-4615",
@@ -1065,8 +1102,9 @@
       "tags": [],
       "review_status": "pending",
       "support_direction": 2,
-      "carrier_relation": "通信←稳定供电",
-      "v4_cers_dccib": true
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240725-4628",
@@ -1088,9 +1126,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240808-0463",
@@ -1114,9 +1153,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6245",
@@ -1139,9 +1179,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 3,
+      "carrier_relation": "抽蓄↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240418-3452",
@@ -1163,9 +1204,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240510-4206",
@@ -1187,9 +1229,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 1,
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240528-2098",
@@ -1212,9 +1255,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 3,
+      "carrier_relation": "抽蓄↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240620-2658",
@@ -1237,9 +1281,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240715-8501",
@@ -1262,9 +1307,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 1,
-      "carrier_relation": "算力←绿电",
-      "v4_cers_dccib": true
+      "support_direction": 4,
+      "carrier_relation": "交能↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240810-4899",
@@ -1287,9 +1333,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240828-3166",
@@ -1311,9 +1358,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20240912-6658",
@@ -1334,9 +1382,10 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "support_direction": 1,
+      "carrier_relation": "电碳算↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6718",
@@ -1359,9 +1408,10 @@
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 3,
+      "carrier_relation": "抽蓄↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-5331",
@@ -1378,13 +1428,14 @@
       "summary": "习近平总书记指引企业坚定不移走高质量发展之路",
       "key_points": [],
       "source_url": "http://politics.people.com.cn/n1/2026/0816/c461001-40780427.html",
-      "captured_at": "2026-08-18T00:19:39.911372Z",
+      "captured_at": "2026-08-18T02:43:56.627143Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-1392",
@@ -1401,13 +1452,14 @@
       "summary": "新时代铸就文化自信的思想指引和实践遵循",
       "key_points": [],
       "source_url": "http://opinion.people.com.cn/n1/2026/0811/c461530-40777133.html",
-      "captured_at": "2026-08-18T00:19:39.911372Z",
+      "captured_at": "2026-08-18T02:43:56.627143Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20260818-0862",
@@ -1430,7 +1482,8 @@
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20260810-1279",
@@ -1447,13 +1500,14 @@
       "summary": "国家发展改革委 国家能源局关于印发《煤炭工业发展“十五五”规划》的通知",
       "key_points": [],
       "source_url": "https://www.nea.gov.cn20260810/78279aaa5a884a5fbdcf771fccbdf417/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T02:43:56.829455Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20260731-5746",
@@ -1470,13 +1524,14 @@
       "summary": "国家能源局综合司关于就部分规范性文件废止和延长有效期公开征求意见的函",
       "key_points": [],
       "source_url": "https://www.nea.gov.cn20260731/abb5fb7f81ee475fa7d07923c8178e70/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T02:43:56.829455Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-NEA-20260727-7523",
@@ -1493,13 +1548,14 @@
       "summary": "国家能源局关于印发《鄂尔多斯盆地东部区域煤层气增储上产行动方案（2026—2030年）》的通知",
       "key_points": [],
       "source_url": "http://www.nea.gov.cn/20260727/a331c1b872314b86a428a846a0bfd38e/c.html",
-      "captured_at": "2026-08-18T00:19:40.032068Z",
+      "captured_at": "2026-08-18T02:43:56.829455Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-5473",
@@ -1517,13 +1573,14 @@
       "summary": "风电场投资及运营",
       "key_points": [],
       "source_url": "https://fdjob.bjx.com.cn/industry/flfd/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T02:43:58.497832Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-0965",
@@ -1541,13 +1598,14 @@
       "summary": "光伏原材料及辅料",
       "key_points": [],
       "source_url": "https://gfjob.bjx.com.cn/industry/gfcljsb/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T02:43:58.497832Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-7771",
@@ -1565,13 +1623,14 @@
       "summary": "储能材料及零部件",
       "key_points": [],
       "source_url": "https://cnjob.bjx.com.cn/industry/dccl/",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T02:43:58.497832Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-1422",
@@ -1588,13 +1647,14 @@
       "summary": "北极星学社APP职场人的职业力充电平台",
       "key_points": [],
       "source_url": "https://news.bjx.com.cn/zt/app/index.html?type=PC",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T02:43:58.497832Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 4,
-      "carrier_relation": "水网/能源转型←源网荷储",
-      "v4_cers_dccib": true
+      "support_direction": 2,
+      "carrier_relation": "数智↔电网",
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     },
     {
       "id": "P-BJX-20260909-9380",
@@ -1612,15 +1672,20 @@
       "summary": "2026年光储新时代论坛暨第十五届“北极星杯”光伏影...",
       "key_points": [],
       "source_url": "https://guangfu.bjx.com.cn/zt/zt2026gfxsdlt",
-      "captured_at": "2026-08-18T00:19:40.188055Z",
+      "captured_at": "2026-08-18T02:43:58.497832Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
       "carrier_relation": "未识别",
-      "v4_cers_dccib": true
+      "v4_cers_dccib": true,
+      "v6_cers_dccib": true
     }
   ],
   "v4_upgraded_at": "2026-08-18T08:20:00Z",
-  "v4_source": "CERS DCICB 演讲第(二)节第2张"
+  "v4_source": "CERS DCICB 演讲第(二)节第2张",
+  "v6_upgraded_at": "2026-08-18T10:50:00Z",
+  "v6_source": "CERS DCICB 演讲第(二)节 发展机遇",
+  "v6_chapter": "机遇三 + 机遇四",
+  "v5_source": "CERS DCICB 演讲第(二)节第2张 v5 修正"
 }

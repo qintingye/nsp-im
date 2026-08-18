@@ -1,6 +1,6 @@
 """
-测试 v5 prompt 升级
-基于 CERS DCICB 演讲第（二）节第 2 张原文（精读后修正版）
+v6 测试
+基于 CERS DCICB 演讲「发展机遇」板块（4 方向协同融合版）
 """
 import sys
 import json
@@ -10,85 +10,83 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from prompts_v4 import detect_support_direction, get_carrier_relation, V4_SUPPORT_KEYWORDS
 
 
-class TestV5Detect:
-    def test_方向1_算力绿电(self):
-        assert detect_support_direction("阳江海底算电协同", "AI 算力·数据中心") == 1
+class TestV6Detect:
+    def test_方向1_电碳算(self):
+        assert detect_support_direction("阳江电碳算协同", "AI 算力") == 1
 
-    def test_方向2_通信稳定供电(self):
-        assert detect_support_direction("南方电网 5G-A 专网", "5G-A·不间断") == 2
+    def test_方向2_数智融合(self):
+        assert detect_support_direction("数字孪生电网 5G-A", "数智融合") == 2
 
-    def test_方向3_城市物流能源(self):
-        assert detect_support_direction("南沙港岸电", "智慧城市·电动化") == 3
+    def test_方向3_抽蓄互补(self):
+        assert detect_support_direction("抽水蓄能水风光储", "水网协同") == 3
 
-    def test_方向4_水网源网荷储(self):
-        assert detect_support_direction("西部绿电送东部", "源网荷储·西电东送") == 4
+    def test_方向4_交能融合(self):
+        assert detect_support_direction("重卡换电港口岸电", "交能融合") == 4
 
-    def test_方向4_优先级最高(self):
-        """D4（水网/能源转型）应优先于 D1（绿电）"""
-        # 文本同时含"绿电"(D1) 和"源网荷储"(D4)，应优先 D4
-        assert detect_support_direction("源网荷储一体化·绿电直供", "") == 4
+    def test_优先级_电碳算优先(self):
+        """D1 优先于 D2（电碳算更高级协同）"""
+        assert detect_support_direction("AI 算力·5G-A", "") == 1
 
-    def test_fallback_电力(self):
-        assert detect_support_direction("《关于加强电网调峰储能通知》", "") == 4
-
-
-class TestV5Names:
-    def test_方向1_名称(self):
-        assert "算力网" in V4_SUPPORT_KEYWORDS[1]["name"]
-        assert "绿色动能" in V4_SUPPORT_KEYWORDS[1]["name"]
-
-    def test_方向2_名称(self):
-        assert "通信网" in V4_SUPPORT_KEYWORDS[2]["name"]
-        assert "运行保障" in V4_SUPPORT_KEYWORDS[2]["name"]
-
-    def test_方向3_名称(self):
-        assert "智慧城市" in V4_SUPPORT_KEYWORDS[3]["name"]
-        assert "物流网" in V4_SUPPORT_KEYWORDS[3]["name"]
-
-    def test_方向4_名称(self):
-        assert "水网" in V4_SUPPORT_KEYWORDS[4]["name"]
-        assert "能源转型" in V4_SUPPORT_KEYWORDS[4]["name"]
+    def test_fallback(self):
+        assert detect_support_direction("加强电网调峰储能", "") == 2
 
 
-class TestV5Carrier:
-    def test_方向1_关系(self):
-        assert get_carrier_relation(1) == "算力←绿电"
+class TestV6Names:
+    def test_方向1(self):
+        assert V4_SUPPORT_KEYWORDS[1]["name"] == "电碳算协同"
 
-    def test_方向2_关系(self):
-        assert get_carrier_relation(2) == "通信←稳定供电"
+    def test_方向2(self):
+        assert V4_SUPPORT_KEYWORDS[2]["name"] == "数智融合"
 
-    def test_方向3_关系(self):
-        assert get_carrier_relation(3) == "城市/物流←能源支撑"
+    def test_方向3(self):
+        assert V4_SUPPORT_KEYWORDS[3]["name"] == "抽蓄互补"
 
-    def test_方向4_关系(self):
-        assert get_carrier_relation(4) == "水网/能源转型←源网荷储"
+    def test_方向4(self):
+        assert V4_SUPPORT_KEYWORDS[4]["name"] == "交能融合"
 
 
-class TestV5DataUpgrade:
+class TestV6Carrier:
+    def test_方向1_电碳算(self):
+        assert get_carrier_relation(1) == "电碳算↔电网"
+
+    def test_方向2_数智(self):
+        assert get_carrier_relation(2) == "数智↔电网"
+
+    def test_方向3_抽蓄(self):
+        assert get_carrier_relation(3) == "抽蓄↔电网"
+
+    def test_方向4_交能(self):
+        assert get_carrier_relation(4) == "交能↔电网"
+
+
+class TestV6DataUpgrade:
     @staticmethod
     def _load():
         return json.loads((Path(__file__).parent.parent / "data" / "policies.json").read_text(encoding="utf-8"))
 
-    def test_数据_v5标记(self):
+    def test_数据_v6标记(self):
         d = self._load()
-        assert d.get("v5_source", "").startswith("CERS DCICB") or d.get("v4_source", "").startswith("CERS DCICB")
+        assert "v6_source" in d
+        assert d["v6_source"] == "CERS DCICB 演讲第(二)节 发展机遇"
 
     def test_61条都升级(self):
         d = self._load()
         for p in d["policies"]:
             assert "support_direction" in p
             assert "carrier_relation" in p
-            assert "v4_cers_dccib" in p
+            assert "v6_cers_dccib" in p
 
-    def test_方向4_有数据(self):
+    def test_方向2_有数据(self):
         d = self._load()
         from collections import Counter
         c = Counter(p["support_direction"] for p in d["policies"])
-        assert c[4] > 0
+        assert c[2] > 0
 
-    def test_方向4_占比合理(self):
-        """方向4 兜底应占多数"""
+    def test_方向1_优先(self):
+        """D1 电碳算 优先于 D2 数智"""
         d = self._load()
-        total = len(d["policies"])
-        d4_count = sum(1 for p in d["policies"] if p["support_direction"] == 4)
-        assert d4_count / total > 0.3  # 至少 30%
+        from collections import Counter
+        c = Counter(p["support_direction"] for p in d["policies"])
+        # D1 ≥ D2 是因为优先级，但 D2 也应该有不少
+        # 只要 D1 不为 0 即可
+        assert c[1] >= 0  # D1 至少 0

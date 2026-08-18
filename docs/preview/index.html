@@ -59,6 +59,59 @@
 </style>
 </head>
 <body>
+<!-- ===== W3-D2 公网 PoC 访问密码门（ADR-004 合规） ===== -->
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:var(--bg,#f5f7fa);display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:36px 32px;width:min(92vw,360px);text-align:center;">
+    <div style="font-size:38px;line-height:1;">📡</div>
+    <h2 style="margin:12px 0 4px;font-size:20px;color:#202124;">NSP-IM 政策雷达</h2>
+    <p style="margin:0 0 20px;font-size:13px;color:#5f6368;">公网预览 PoC · 请输入访问密码</p>
+    <input id="gate-pwd" type="password" placeholder="访问密码" autocomplete="off"
+      style="width:100%;padding:12px 14px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;box-sizing:border-box;" />
+    <button id="gate-btn" style="width:100%;margin-top:12px;padding:12px;background:#1a73e8;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;">进入</button>
+    <p id="gate-err" style="margin:12px 0 0;font-size:13px;color:#d93025;display:none;">密码错误，请重试</p>
+  </div>
+</div>
+<script>
+  // W3-D2 访问密码（SHA-256 比对，PoC 级保护，符合 ADR-004）
+  (function () {
+    var GATE_HASH = '843a6775fe97e053ff4d72aa4e4d80ab4ecae3fc86c6e1bd452410e845539af6';
+    var GATE_KEY = 'nspim_gate_ok';
+    var gate = document.getElementById('gate');
+    if (gate && sessionStorage.getItem(GATE_KEY) === '1') { gate.style.display = 'none'; }
+    function sha256hex(str) {
+      if (window.crypto && crypto.subtle) {
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function (buf) {
+          return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        });
+      }
+      return Promise.reject(new Error('no-subtle'));
+    }
+    function tryEnter() {
+      var inp = document.getElementById('gate-pwd');
+      var err = document.getElementById('gate-err');
+      sha256hex(inp.value).then(function (h) {
+        if (h === GATE_HASH) {
+          sessionStorage.setItem(GATE_KEY, '1');
+          gate.style.transition = 'opacity .25s';
+          gate.style.opacity = '0';
+          setTimeout(function () { gate.style.display = 'none'; }, 250);
+        } else {
+          err.style.display = 'block';
+          inp.value = '';
+          inp.focus();
+        }
+      }).catch(function () {
+        // 极低概率：无 crypto.subtle 环境（非 HTTPS）→ 直接放行并提示
+        err.textContent = '提示：当前环境不支持密码校验，已放行（请使用 HTTPS 访问）';
+        err.style.display = 'block';
+        sessionStorage.setItem(GATE_KEY, '1');
+        setTimeout(function () { gate.style.display = 'none'; }, 1200);
+      });
+    }
+    document.getElementById('gate-btn').addEventListener('click', tryEnter);
+    document.getElementById('gate-pwd').addEventListener('keydown', function (e) { if (e.key === 'Enter') tryEnter(); });
+  })();
+</script>
 <header>
   <h1>📡 NSP-IM 政策雷达 · 内网部署预览</h1>
   <p>W1-D4 BE 集成 · 数据源: <code>data/policies.json</code></p>

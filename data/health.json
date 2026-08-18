@@ -13,13 +13,13 @@
     },
     "integrate-demo": {
       "name": "integrate-demo",
-      "success_count": 24,
+      "success_count": 30,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:59Z",
+      "last_run_at": "2026-08-18T02:49:22Z",
       "last_status": "success",
-      "last_latency_ms": 0.0,
+      "last_latency_ms": 15.0,
       "last_error": null,
-      "total_latency_ms": 126.0000000038417
+      "total_latency_ms": 173.0000000097789
     },
     "能源局": {
       "name": "能源局",
@@ -33,9 +33,9 @@
     },
     "a": {
       "name": "a",
-      "success_count": 30,
+      "success_count": 36,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:53Z",
+      "last_run_at": "2026-08-18T02:49:16Z",
       "last_status": "success",
       "last_latency_ms": 0.0,
       "last_error": null,
@@ -43,9 +43,9 @@
     },
     "b": {
       "name": "b",
-      "success_count": 30,
-      "fail_count": 30,
-      "last_run_at": "2026-08-18T02:33:53Z",
+      "success_count": 36,
+      "fail_count": 36,
+      "last_run_at": "2026-08-18T02:49:16Z",
       "last_status": "success",
       "last_latency_ms": 0.0,
       "last_error": null,
@@ -54,8 +54,8 @@
     "c": {
       "name": "c",
       "success_count": 0,
-      "fail_count": 89,
-      "last_run_at": "2026-08-18T02:33:54Z",
+      "fail_count": 107,
+      "last_run_at": "2026-08-18T02:49:17Z",
       "last_status": "fail",
       "last_latency_ms": 0.0,
       "last_error": "RuntimeError: fake-c-always-fail",
@@ -64,8 +64,8 @@
     "d": {
       "name": "d",
       "success_count": 0,
-      "fail_count": 30,
-      "last_run_at": "2026-08-18T02:33:54Z",
+      "fail_count": 36,
+      "last_run_at": "2026-08-18T02:49:17Z",
       "last_status": "fail",
       "last_latency_ms": 0.0,
       "last_error": "RuntimeError: fake-d-always-fail",
@@ -73,9 +73,9 @@
     },
     "e": {
       "name": "e",
-      "success_count": 31,
+      "success_count": 37,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:54Z",
+      "last_run_at": "2026-08-18T02:49:17Z",
       "last_status": "success",
       "last_latency_ms": 0.0,
       "last_error": null,
@@ -83,59 +83,59 @@
     },
     "src0": {
       "name": "src0",
-      "success_count": 48,
+      "success_count": 66,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:55Z",
+      "last_run_at": "2026-08-18T02:49:18Z",
       "last_status": "success",
       "last_latency_ms": 47.0,
       "last_error": null,
-      "total_latency_ms": 5150.000000016007
+      "total_latency_ms": 7057.000000022526
     },
     "src2": {
       "name": "src2",
-      "success_count": 48,
+      "success_count": 66,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:55Z",
+      "last_run_at": "2026-08-18T02:49:18Z",
       "last_status": "success",
-      "last_latency_ms": 47.0,
+      "last_latency_ms": 63.0,
       "last_error": null,
-      "total_latency_ms": 5235.999999989872
+      "total_latency_ms": 7140.999999988708
     },
     "src4": {
       "name": "src4",
-      "success_count": 32,
+      "success_count": 44,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:55Z",
+      "last_run_at": "2026-08-18T02:49:18Z",
       "last_status": "success",
-      "last_latency_ms": 15.0,
+      "last_latency_ms": 16.0,
       "last_error": null,
-      "total_latency_ms": 3983.0000000147265
+      "total_latency_ms": 5452.000000019325
     },
     "src1": {
       "name": "src1",
-      "success_count": 48,
+      "success_count": 66,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:55Z",
+      "last_run_at": "2026-08-18T02:49:18Z",
       "last_status": "success",
-      "last_latency_ms": 47.0,
+      "last_latency_ms": 63.0,
       "last_error": null,
-      "total_latency_ms": 5418.999999987136
+      "total_latency_ms": 7419.000000001688
     },
     "src3": {
       "name": "src3",
-      "success_count": 32,
+      "success_count": 44,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:55Z",
+      "last_run_at": "2026-08-18T02:49:18Z",
       "last_status": "success",
-      "last_latency_ms": 31.0,
+      "last_latency_ms": 16.0,
       "last_error": null,
-      "total_latency_ms": 4248.0000000141445
+      "total_latency_ms": 5795.000000012806
     },
     "transient": {
       "name": "transient",
-      "success_count": 16,
-      "fail_count": 16,
-      "last_run_at": "2026-08-18T02:33:56Z",
+      "success_count": 22,
+      "fail_count": 22,
+      "last_run_at": "2026-08-18T02:49:19Z",
       "last_status": "success",
       "last_latency_ms": 0.0,
       "last_error": null,
@@ -144,8 +144,8 @@
     "always_fail": {
       "name": "always_fail",
       "success_count": 0,
-      "fail_count": 48,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "fail_count": 66,
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "fail",
       "last_latency_ms": 0.0,
       "last_error": "RuntimeError: fake-always_fail-always-fail",
@@ -153,103 +153,103 @@
     },
     "good_a": {
       "name": "good_a",
-      "success_count": 16,
+      "success_count": 22,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "success",
-      "last_latency_ms": 62.0,
+      "last_latency_ms": 63.0,
       "last_error": null,
-      "total_latency_ms": 997.0000000248547
+      "total_latency_ms": 1373.0000000068685
     },
     "good_c": {
       "name": "good_c",
-      "success_count": 16,
+      "success_count": 22,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "success",
-      "last_latency_ms": 78.0,
+      "last_latency_ms": 79.0,
       "last_error": null,
-      "total_latency_ms": 1170.0000000128057
+      "total_latency_ms": 1592.9999999934807
     },
     "good_e": {
       "name": "good_e",
-      "success_count": 16,
+      "success_count": 22,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "success",
-      "last_latency_ms": 93.0,
+      "last_latency_ms": 94.0,
       "last_error": null,
-      "total_latency_ms": 1232.0000000036089
+      "total_latency_ms": 1685.9999999869615
     },
     "bad_b": {
       "name": "bad_b",
       "success_count": 0,
-      "fail_count": 16,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "fail_count": 22,
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "fail",
-      "last_latency_ms": 93.0,
+      "last_latency_ms": 94.0,
       "last_error": "RuntimeError: fake-bad_b-always-fail",
       "total_latency_ms": 0.0
     },
     "good_d": {
       "name": "good_d",
-      "success_count": 16,
+      "success_count": 22,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:57Z",
+      "last_run_at": "2026-08-18T02:49:20Z",
       "last_status": "success",
-      "last_latency_ms": 109.0,
+      "last_latency_ms": 94.0,
       "last_error": null,
-      "total_latency_ms": 1406.0000000172295
+      "total_latency_ms": 1924.0000000136206
     },
     "bench_0": {
       "name": "bench_0",
-      "success_count": 38,
+      "success_count": 50,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:58Z",
+      "last_run_at": "2026-08-18T02:49:21Z",
       "last_status": "success",
-      "last_latency_ms": 204.0,
+      "last_latency_ms": 203.0,
       "last_error": null,
-      "total_latency_ms": 8891.999999985273
+      "total_latency_ms": 11343.999999975495
     },
     "bench_1": {
       "name": "bench_1",
-      "success_count": 38,
+      "success_count": 50,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:58Z",
+      "last_run_at": "2026-08-18T02:49:21Z",
       "last_status": "success",
-      "last_latency_ms": 235.0,
+      "last_latency_ms": 234.0,
       "last_error": null,
-      "total_latency_ms": 9500.999999996566
+      "total_latency_ms": 12109.000000004016
     },
     "bench_2": {
       "name": "bench_2",
-      "success_count": 38,
+      "success_count": 50,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:58Z",
+      "last_run_at": "2026-08-18T02:49:21Z",
       "last_status": "success",
-      "last_latency_ms": 219.0,
+      "last_latency_ms": 218.0,
       "last_error": null,
-      "total_latency_ms": 9142.999999967287
+      "total_latency_ms": 11657.999999973981
     },
     "bench_3": {
       "name": "bench_3",
-      "success_count": 38,
+      "success_count": 50,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:58Z",
+      "last_run_at": "2026-08-18T02:49:21Z",
       "last_status": "success",
-      "last_latency_ms": 235.0,
+      "last_latency_ms": 234.0,
       "last_error": null,
-      "total_latency_ms": 9547.00000002049
+      "total_latency_ms": 12201.000000008207
     },
     "bench_4": {
       "name": "bench_4",
-      "success_count": 38,
+      "success_count": 50,
       "fail_count": 0,
-      "last_run_at": "2026-08-18T02:33:58Z",
+      "last_run_at": "2026-08-18T02:49:21Z",
       "last_status": "success",
-      "last_latency_ms": 219.0,
+      "last_latency_ms": 218.0,
       "last_error": null,
-      "total_latency_ms": 9343.000000000757
+      "total_latency_ms": 11903.000000005704
     },
     "南网": {
       "name": "南网",
