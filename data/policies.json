@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T11:19:55Z",
+  "generated_at": "2026-08-18T12:00:53Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -35,7 +35,10 @@
       "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260603-0002",
@@ -69,7 +72,10 @@
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260618-0003",
@@ -104,7 +110,10 @@
       "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260705-0004",
@@ -138,7 +147,10 @@
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "2026起步",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-0005",
@@ -172,7 +184,10 @@
       "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "现代物流",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260802-0006",
@@ -206,7 +221,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260812-0007",
@@ -240,7 +258,10 @@
       "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-0001",
@@ -274,7 +295,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-MWR-20260817-0002",
@@ -306,7 +330,10 @@
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260816-0003",
@@ -339,7 +366,10 @@
       "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260815-0004",
@@ -370,7 +400,10 @@
       "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260814-0005",
@@ -403,7 +436,10 @@
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20240415-3621",
@@ -429,7 +465,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20240509-1134",
@@ -455,7 +494,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20240618-7986",
@@ -481,7 +523,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20240702-1076",
@@ -507,7 +552,10 @@
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20240808-9532",
@@ -533,7 +581,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-9775",
@@ -557,7 +608,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260817-7609",
@@ -582,7 +636,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260810-3231",
@@ -607,7 +664,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-8093",
@@ -631,7 +691,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-3328",
@@ -656,7 +719,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260723-3087",
@@ -681,7 +747,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-2956",
@@ -705,7 +774,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260716-1302",
@@ -730,7 +802,10 @@
       "support_direction": 4,
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260710-6116",
@@ -755,7 +830,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260625-0563",
@@ -780,7 +858,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260801-8064",
@@ -814,7 +895,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260715-0533",
@@ -848,7 +932,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "2026起步",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260720-3800",
@@ -882,7 +969,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260805-5792",
@@ -916,7 +1006,10 @@
       "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260802-7906",
@@ -950,7 +1043,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260718-8306",
@@ -984,7 +1080,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260808-9092",
@@ -1018,7 +1117,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260812-4186",
@@ -1052,7 +1154,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240422-3209",
@@ -1078,7 +1183,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240506-6484",
@@ -1105,7 +1213,10 @@
       "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240612-4615",
@@ -1132,7 +1243,10 @@
       "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240725-4628",
@@ -1158,7 +1272,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240808-0463",
@@ -1186,7 +1303,10 @@
       "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "工程与机械",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6245",
@@ -1213,7 +1333,10 @@
       "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240418-3452",
@@ -1239,7 +1362,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240510-4206",
@@ -1265,7 +1391,10 @@
       "carrier_relation": "电网↔算力网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240528-2098",
@@ -1292,7 +1421,10 @@
       "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240620-2658",
@@ -1319,7 +1451,10 @@
       "carrier_relation": "电网↔通信网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "算力与通信",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240715-8501",
@@ -1346,7 +1481,10 @@
       "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "现代物流",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240810-4899",
@@ -1373,7 +1511,10 @@
       "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240828-3166",
@@ -1399,7 +1540,10 @@
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20240912-6658",
@@ -1424,7 +1568,10 @@
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6718",
@@ -1451,7 +1598,10 @@
       "carrier_relation": "电网↔水网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-5331",
@@ -1475,7 +1625,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-1392",
@@ -1499,7 +1652,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20260818-0862",
@@ -1524,7 +1680,10 @@
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20260810-1279",
@@ -1548,7 +1707,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "十五五全周期",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20260731-5746",
@@ -1572,7 +1734,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-NEA-20260727-7523",
@@ -1596,7 +1761,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-5473",
@@ -1621,7 +1789,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-0965",
@@ -1646,7 +1817,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-7771",
@@ -1671,7 +1845,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-1422",
@@ -1695,7 +1872,10 @@
       "support_direction": 6,
       "carrier_relation": "电网↔5网综合",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "未识别",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     },
     {
       "id": "P-BJX-20260909-9380",
@@ -1720,7 +1900,10 @@
       "support_direction": 0,
       "carrier_relation": "未识别",
       "v4_cers_dccib": true,
-      "v7_cers_dccib": true
+      "v7_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "未明确",
+      "v8_cers_dccib": true
     }
   ],
   "v4_upgraded_at": "2026-08-18T08:20:00Z",
@@ -1731,5 +1914,15 @@
   "v5_source": "CERS DCICB 演讲第(二)节第2张 v5 修正",
   "v7_upgraded_at": "2026-08-18T10:50:00Z",
   "v7_source": "CERS DCICB 演讲第(二)节 发展机遇",
-  "v7_chapter": "机遇三 + 机遇四"
+  "v7_chapter": "机遇三 + 机遇四",
+  "v8_upgraded_at": "2026-08-18T12:00:00Z",
+  "v8_source": "CERS DCICB 演讲第（三）张：4大核心受益产业链；十五五期间26.9万亿元",
+  "v8_chapter": "4产业链 + 26.9万亿元投资规模 + 三阶段节奏",
+  "v8_investment_scale": {
+    "total": "26.9万亿元",
+    "annual": "5.4万亿元",
+    "2026": ">7万亿元",
+    "period": "十五五期间"
+  },
+  "v8_cers_dccib": true
 }
