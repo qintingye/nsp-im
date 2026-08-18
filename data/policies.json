@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T09:12:28Z",
+  "generated_at": "2026-08-18T11:19:55Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -65,8 +65,8 @@
         "DMA"
       ],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -134,8 +134,8 @@
         "投资"
       ],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -168,8 +168,8 @@
         "数据平台"
       ],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 5,
+      "carrier_relation": "电网↔物流网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -302,8 +302,8 @@
         "DMA"
       ],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -503,8 +503,8 @@
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -727,8 +727,8 @@
       "captured_by": "ndrc-fetcher-v2.0",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 0,
-      "carrier_relation": "未识别",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v7_cers_dccib": true
     },
@@ -1369,8 +1369,8 @@
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
       "review_status": "pending",
-      "support_direction": 6,
-      "carrier_relation": "电网↔5网综合",
+      "support_direction": 4,
+      "carrier_relation": "电网↔地下管网",
       "v4_cers_dccib": true,
       "v6_cers_dccib": true,
       "v7_cers_dccib": true
@@ -1726,7 +1726,7 @@
   "v4_upgraded_at": "2026-08-18T08:20:00Z",
   "v4_source": "CERS DCICB 演讲第(二)节第2张",
   "v6_upgraded_at": "2026-08-18T10:50:00Z",
-  "v6_source": "CERS DCICB 演讲第(二)节 发展机遇",
+  "v6_source": "CERS DCICB 演讲第(二)节 发展机遇 v6",
   "v6_chapter": "机遇三 + 机遇四",
   "v5_source": "CERS DCICB 演讲第(二)节第2张 v5 修正",
   "v7_upgraded_at": "2026-08-18T10:50:00Z",

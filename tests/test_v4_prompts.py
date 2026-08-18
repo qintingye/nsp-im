@@ -57,14 +57,14 @@ class TestV7Carrier:
 
 class TestV7Tasks:
     def test_6_方向_任务数(self):
-        expected = {1: 5, 2: 4, 3: 2, 4: 2, 5: 2, 6: 3}
+        expected = {1: 5, 2: 4, 3: 2, 4: 2, 5: 2, 6: 9}
         for d, n in expected.items():
             assert len(V7_TASKS[d]["tasks"]) == n, f"D{d} 应有 {n} 任务"
 
     def test_总任务数_18(self):
         """5+4+2+2+2+3 = 18（原 24 任务，部分子项合并）"""
         total = sum(len(V7_TASKS[d]["tasks"]) for d in V7_TASKS)
-        assert total >= 15
+        assert total == 24
 
 
 class TestV7Projects:
