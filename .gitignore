@@ -3,3 +3,10 @@ data/today.json
 __pycache__/
 *.log
 .env
+logs/
+*.log
+*.tmp
+.venv/
+venv/
+__pycache__/
+*.pyc
