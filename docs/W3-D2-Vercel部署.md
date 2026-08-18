@@ -74,7 +74,7 @@
   ```
   ✅ Deployed to https://nsp-im.vercel.app
   ```
-- 点击 URL 访问 → 应该看到密码门禁页（输入 `g8JoSB7ZavUiYn`）
+- 点击 URL 访问 → 应该看到密码门禁页（输入 `nsp2026`）
 
 **可选**：在 Project Settings → Domains 添加自定义域名。
 
@@ -86,7 +86,7 @@
 
 `docs/preview/index.html` 已硬编码密码门禁：
 - 密码哈希：`843a6775fe97e053ff4d72aa4e4d80ab4ecae3fc86c6e1bd452410e845539af6`（SHA-256）
-- 正确密码明文：**`g8JoSB7ZavUiYn`**（v1.0 内测密码）
+- 正确密码明文：**`nsp2026`**（v1.0 内测密码）
 - 验证后 `sessionStorage.setItem('nspim_gate_ok', '1')`，刷新不重复询问
 - 关闭浏览器标签即失效
 
@@ -113,7 +113,7 @@ Project Settings → Security → **Password Protection**：
 ## 6. 验证清单（部署后必跑）
 
 - [ ] 访问 URL → 看到密码门禁页
-- [ ] 输入 `g8JoSB7ZavUiYn` → 进入主页
+- [ ] 输入 `nsp2026` → 进入主页
 - [ ] 看到 61 条政策卡片
 - [ ] 打开 DevTools → Application → Manifest，验证 PWA 可安装
 - [ ] DevTools → Application → Service Workers，验证 SW 已注册（v3.4.0-w3d4）
@@ -138,7 +138,7 @@ Project Settings → Security → **Password Protection**：
 
 ```
 URL 格式：https://nsp-im.vercel.app
-访问密码：g8JoSB7ZavUiYn（v1.0 内测）
+访问密码：nsp2026（v1.0 内测）
 内测人数：25 人
 预计上线时间：5 分钟（含域名解析则 10 分钟）
 ```
