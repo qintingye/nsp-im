@@ -6,7 +6,19 @@
 <title>NSP-IM 政策雷达 · 内网部署预览 (W1-D4)</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1a73e8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NSP-IM">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <style>
+  /* ===== W3-D4 字体本地化（去 Google Fonts 依赖） ===== */
+  @font-face {
+    font-family: 'NotoSansSC';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('./fonts/NotoSansSC-gb2312.woff2') format('woff2');
+  }
   :root {
     --primary: #1a73e8;
     --bg: #f5f7fa;
@@ -18,7 +30,7 @@
     --telecom: #fbbc04; --pipe: #9c27b0; --logi: #00acc1; --monitor: #607d8b;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
+  body { margin: 0; font-family: "NotoSansSC", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
   header { background: linear-gradient(135deg, var(--primary), #0d47a1); color: white; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
   header h1 { margin: 0; font-size: 22px; }
   header p { margin: 6px 0 0; opacity: 0.9; font-size: 14px; }
@@ -56,6 +68,116 @@
   .card a:hover { text-decoration: underline; }
   footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
   .empty { text-align: center; padding: 40px; color: var(--muted); }
+
+  /* ===== W3-D4 PWA 安装按钮 + 更新/数据 toast ===== */
+  .install-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+  }
+  .install-btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .install-btn.show { display: inline-flex; }
+  .toast-host {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 9000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+    width: min(92vw, 480px);
+  }
+  .toast {
+    pointer-events: auto;
+    background: #202124;
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: toastIn 0.28s ease-out;
+  }
+  .toast.info { background: #1a73e8; }
+  .toast.success { background: #137333; }
+  .toast .toast-msg { flex: 1; }
+  .toast .toast-action {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+  .toast .toast-close {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    border: none;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    font-family: inherit;
+  }
+  @keyframes toastIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* iOS 添加主屏说明弹层 */
+  .ios-hint {
+    position: fixed;
+    inset: 0;
+    z-index: 9500;
+    background: rgba(32, 33, 36, 0.78);
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+  }
+  .ios-hint.show { display: flex; }
+  .ios-hint .panel {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 20px 18px;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    color: var(--text);
+  }
+  .ios-hint h3 { margin: 0 0 10px; font-size: 17px; }
+  .ios-hint ol { margin: 0 0 16px; padding-left: 22px; font-size: 14px; line-height: 1.7; color: #3c4043; }
+  .ios-hint .close-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: inherit;
+  }
 </style>
 </head>
 <body>
@@ -113,8 +235,13 @@
   })();
 </script>
 <header>
-  <h1>📡 NSP-IM 政策雷达 · 内网部署预览</h1>
-  <p>W1-D4 BE 集成 · 数据源: <code>data/policies.json</code></p>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:0;">
+      <h1>📡 NSP-IM 政策雷达 · 内网部署预览</h1>
+      <p>W3-D4 离线可用 · 数据源: <code>data/policies.json</code></p>
+    </div>
+    <button id="install-btn" class="install-btn" type="button" hidden>＋ 加到主屏</button>
+  </div>
 </header>
 <div class="container">
   <div class="toolbar">
@@ -140,12 +267,34 @@
   <div class="policies" id="policies"><div class="empty">加载中...</div></div>
 </div>
 <footer>
-  NSP-IM · 内网预览版本 · 数据仅供演示 · W1-D4
+  NSP-IM · 内网预览版本 · 数据仅供演示 · W3-D4
 </footer>
+
+<!-- ===== W3-D4: Toast 容器 + iOS 安装说明 ===== -->
+<div id="toast-host" class="toast-host" aria-live="polite" aria-atomic="false"></div>
+
+<div id="ios-hint" class="ios-hint" role="dialog" aria-modal="true" aria-labelledby="ios-hint-title">
+  <div class="panel">
+    <h3 id="ios-hint-title">📱 iOS 添加到主屏</h3>
+    <ol>
+      <li>点击底部的 <strong>分享</strong> 按钮 <span aria-hidden="true">⎋</span></li>
+      <li>向下滚动，选择 <strong>添加到主屏幕</strong></li>
+      <li>确认名称 <strong>NSP-IM</strong>，点 <strong>添加</strong></li>
+    </ol>
+    <button class="close-btn" type="button" onclick="document.getElementById('ios-hint').classList.remove('show')">我知道了</button>
+  </div>
+</div>
 <script>
   // ----- 加载数据 -----
   let ALL = [];
-  async function load() {
+  let loadInFlight = false;
+  async function load(silent = false) {
+    if (loadInFlight && silent) return;
+    loadInFlight = true;
+    if (!silent) {
+      const ph = document.getElementById('policies');
+      if (ph) ph.innerHTML = '<div class="empty">加载中...</div>';
+    }
     try {
       const r = await fetch('./data/policies.json', { cache: 'no-cache' });
       const j = await r.json();
@@ -158,8 +307,12 @@
       }));
       render();
     } catch (e) {
-      document.getElementById('policies').innerHTML =
-        `<div class="empty">❌ 加载失败：${e.message}<br>请确认 <code>data/policies.json</code> 已部署到内网</div>`;
+      if (!silent) {
+        document.getElementById('policies').innerHTML =
+          `<div class="empty">❌ 加载失败：${e.message}<br>请确认 <code>data/policies.json</code> 已部署到内网</div>`;
+      }
+    } finally {
+      loadInFlight = false;
     }
   }
 
@@ -221,9 +374,177 @@
   document.getElementById('filter-scope').addEventListener('change', render);
   document.getElementById('filter-priority').addEventListener('change', render);
 
-  // ----- SW 注册 -----
+  // ----- SW 注册 + PWA 安装引导 + 更新/数据通知 -----
+  const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const IS_STANDALONE = window.matchMedia('(display-mode: standalone)').matches
+                     || window.navigator.standalone === true;
+  const INSTALL_DISMISSED_KEY = 'nspim_install_dismissed_at';
+  // iOS 用户主动关闭说明后 7 天内不再主动弹
+  const INSTALL_DISMISS_DAYS = 7;
+
+  // ---- Toast 工具 ----
+  function showToast(msg, opts = {}) {
+    const host = document.getElementById('toast-host');
+    if (!host) return;
+    const el = document.createElement('div');
+    el.className = 'toast ' + (opts.kind || '');
+    const msgEl = document.createElement('span');
+    msgEl.className = 'toast-msg';
+    msgEl.textContent = msg;
+    el.appendChild(msgEl);
+    if (opts.actionLabel && opts.onAction) {
+      const btn = document.createElement('button');
+      btn.className = 'toast-action';
+      btn.type = 'button';
+      btn.textContent = opts.actionLabel;
+      btn.addEventListener('click', () => {
+        try { opts.onAction(); } finally { el.remove(); }
+      });
+      el.appendChild(btn);
+    }
+    const close = document.createElement('button');
+    close.className = 'toast-close';
+    close.type = 'button';
+    close.setAttribute('aria-label', '关闭');
+    close.textContent = '×';
+    close.addEventListener('click', () => el.remove());
+    el.appendChild(close);
+    host.appendChild(el);
+    if (opts.timeout !== 0) {
+      setTimeout(() => el.remove(), opts.timeout || 6000);
+    }
+    return el;
+  }
+
+  // ---- 安装提示：通用（Chromium / Edge / Android）----
+  let deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // 阻止浏览器自动 mini-infobar
+    e.preventDefault();
+    deferredPrompt = e;
+    // 用户已经安装 → 不显示
+    if (IS_STANDALONE) return;
+    // 7 天内手动关闭过 → 不再弹
+    const dismissedAt = parseInt(localStorage.getItem(INSTALL_DISMISSED_KEY) || '0', 10);
+    if (dismissedAt && (Date.now() - dismissedAt) < INSTALL_DISMISS_DAYS * 86400 * 1000) return;
+
+    const btn = document.getElementById('install-btn');
+    if (btn) {
+      btn.hidden = false;
+      btn.classList.add('show');
+    }
+  });
+
+  // 安装按钮点击 → 触发原生安装
+  const installBtn = document.getElementById('install-btn');
+  if (installBtn) {
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) {
+        // iOS 走单独流程
+        if (IS_IOS) {
+          document.getElementById('ios-hint').classList.add('show');
+        } else {
+          showToast('您的浏览器暂不支持一键安装，请使用 Chrome / Edge 打开本站', { kind: 'info' });
+        }
+        return;
+      }
+      deferredPrompt.prompt();
+      const choice = await deferredPrompt.userChoice;
+      if (choice.outcome === 'accepted') {
+        showToast('✅ 安装中…安装完成后将从主屏启动', { kind: 'success', timeout: 4000 });
+        installBtn.classList.remove('show');
+        installBtn.hidden = true;
+      } else {
+        localStorage.setItem(INSTALL_DISMISSED_KEY, String(Date.now()));
+      }
+      deferredPrompt = null;
+    });
+  }
+
+  // 安装完成
+  window.addEventListener('appinstalled', () => {
+    showToast('🎉 已添加到主屏', { kind: 'success', timeout: 4000 });
+    deferredPrompt = null;
+    if (installBtn) { installBtn.classList.remove('show'); installBtn.hidden = true; }
+  });
+
+  // iOS 用户：如果从未在 standalone 且未主动关闭 → 显示一次安装说明
+  if (IS_IOS && !IS_STANDALONE) {
+    const dismissedAt = parseInt(localStorage.getItem(INSTALL_DISMISSED_KEY) || '0', 10);
+    const expired = !dismissedAt || (Date.now() - dismissedAt) > INSTALL_DISMISS_DAYS * 86400 * 1000;
+    if (expired) {
+      // 给浏览器 1.5s 时间触发 beforeinstallprompt（虽然 iOS 不会触发，但保险）
+      setTimeout(() => {
+        const btn = document.getElementById('install-btn');
+        if (btn) {
+          btn.hidden = false;
+          btn.textContent = '📱 iOS 加到主屏';
+          btn.classList.add('show');
+        }
+      }, 1500);
+    }
+  }
+
+  // ---- SW 注册 + 监听更新 ----
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+    navigator.serviceWorker.register('./sw.js').then((reg) => {
+      // 主动检查更新（每小时一次，配合 CI 推新版）
+      setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+
+      // 检测到 waiting 状态的新 SW
+      function promptUpdate(worker) {
+        showToast('🆕 检测到新版本，是否立即刷新？', {
+          kind: 'info',
+          actionLabel: '立即刷新',
+          onAction: () => {
+            worker.postMessage('SKIP_WAITING');
+            // 等控制权变更后刷新
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              window.location.reload();
+            });
+            // 兜底：3s 后强制刷新
+            setTimeout(() => window.location.reload(), 3000);
+          }
+        });
+      }
+      if (reg.waiting) promptUpdate(reg.waiting);
+      reg.addEventListener('updatefound', () => {
+        const newSw = reg.installing;
+        if (!newSw) return;
+        newSw.addEventListener('statechange', () => {
+          if (newSw.state === 'installed' && navigator.serviceWorker.controller) {
+            promptUpdate(newSw);
+          }
+        });
+      });
+    }).catch((err) => {
+      console.warn('[SW] 注册失败:', err);
+    });
+
+    // 监听 SW 主动发来的消息（兼容 SW_UPDATED / DATA_UPDATED 两条链路）
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      const data = event.data || {};
+      if (data.channel === 'nspim-update' && data.type === 'SW_UPDATED') {
+        showToast('🔄 已加载新版本 v' + (data.version || ''), { kind: 'success', timeout: 5000 });
+      } else if (data.channel === 'nspim-data' && data.type === 'DATA_UPDATED') {
+        // 数据在后台被 SW 拉新 → 重新渲染
+        load(true);
+        showToast('✨ 政策数据已更新', { kind: 'success', timeout: 3000 });
+      }
+    });
+  }
+
+  // ---- 监听数据更新（BroadcastChannel 路径）----
+  if ('BroadcastChannel' in window) {
+    try {
+      const bc = new BroadcastChannel('nspim-data');
+      bc.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'DATA_UPDATED') {
+          load(true);
+          showToast('✨ 政策数据已更新', { kind: 'success', timeout: 3000 });
+        }
+      });
+    } catch (e) { /* ignore */ }
   }
 
   load();
