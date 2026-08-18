@@ -1,62 +1,21 @@
-# NSP-IM v1.0 · 六网协同情报平台
+# NSP-IM v2.0
 
-> **状态**：W1 启动中（2026-08-18）
-> **目标**：8 周 MVP → 内部 25 人内测
+> NSP-IM v2.0 · 六网协同情报平台
+> 启动日期: 2026-08-19
+> 状态: 全新开发 (V1 已归档)
 
-## 目录结构
+## V1 归档位置
+- `../nsp-im-v1/` (V1 完整原貌)
+- `../nsp-im-v1-cleanup/` (V1 第二次备份)
 
-```
-nsp-im/
-├── data/                      # 数据
-│   ├── policies.json          # 政策清单（主）
-│   ├── intelligence/          # 每日情报（YYYY-MM-DD.json）
-│   └── cases/                 # 同类案例（Tab5）
-├── src/
-│   ├── main_fetcher.py        # 每日抓取主程序
-│   ├── fetchers/              # 各源抓取器
-│   │   ├── base.py            # 基础类
-│   │   └── ndrc.py            # 发改委
-│   ├── schemas/               # JSON schemas
-│   └── utils/
-├── tests/                     # 单元测试
-├── .github/workflows/         # CI/CD
-│   └── daily-fetch.yml        # 每日 9:00 抓取
-├── scripts/                   # 运维脚本
-├── docs/                      # 文档
-└── logs/                      # 日志
-```
+## V2 原则
+- 极简 (≤500 行, 1 文件)
+- 内嵌 (0 fetch, 25 项目内嵌)
+- 简单 (0-10 算法)
+- 纯净 (0 V1 残留)
 
-## W1 任务
-
-- [ ] Git 仓库 + 目录结构
-- [ ] 3 个 JSON schema（policies/intelligence/scenes）
-- [ ] 1 个 fetcher 跑通（发改委）
-- [ ] 健康探针 + 失败告警
-- [ ] GitHub Actions CI 跑通
-- [ ] 移动端 UI 改造（Frontend）
-
-## 运行方式
-
-```bash
-# 安装依赖
-pip install aiohttp beautifulsoup4 lxml requests
-
-# 手动跑一次
-cd src
-python main_fetcher.py
-
-# 每日自动（GitHub Actions 09:00）
-```
-
-## 部署
-
-- **公网 PoC（已上线）**：GitHub Pages → https://qintingye.github.io/nsp-im/（访问密码见 `docs/W3-D2-公网部署-实际执行.md`，2026-08-18 W3-D2）
-- **Vercel（备选）**：`vercel.json` + `docs/W3-D2-Vercel部署.md` 已就绪，拿到账号后 5 分钟迁移
-- **GitHub Actions** 每日 09:00 抓取 → git commit → 重新部署
-
-## 团队
-
-- **PM**: 项目管家
-- **Backend**: 抓取 + 数据流
-- **Frontend**: PWA 移动端
-- **测试**: 25 人内测
+## 技术栈
+- 前端: HTML + CSS + JS (单文件)
+- 后端: CloudBase 云函数 (W2)
+- 触发器: CloudBase 定时 (Cron 0 0 1 * * *)
+- 部署: CloudBase 静态托管
