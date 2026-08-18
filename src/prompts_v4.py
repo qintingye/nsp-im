@@ -314,6 +314,279 @@ def detect_investment_year(title: str, summary: str = "") -> str:
     return "未明确"
 
 
+# =====================================================================
+# ============ W5-Day1 · 耦合算法 v1.0 ===============================
+# =====================================================================
+# 参考：docs/耦合算法-v1.0.md
+# 核心公式：耦合分(网A, 网B) = f(N)×4 + g(W)×4 + h(V)×2   (满分 10)
+#   f(N) = min(协同项目数 / 5, 1.0) × 4
+#   g(W) = (1/N) × Σ √(W_Ai × W_Bi) × 4
+#   h(V) = (有政策×0.7 + 有投资×0.8 + 有工程×1.0) / 2.5 × 2
+# =====================================================================
+
+# 6 网常量（顺序与权重数组严格一致）
+COUPLING_NETS = ("grid", "water", "compute", "telecom", "pipe", "logi")
+COUPLING_NETS_CN = {
+    "grid":    "电网",
+    "water":   "水网",
+    "compute": "算力网",
+    "telecom": "通信网",
+    "pipe":    "地下管网",
+    "logi":    "物流网",
+}
+# 网格基础权重：电网作为承载主体，所有项目至少包含电网
+GRID_BASELINE = 0.55
+
+# 推进批次 → 工程成熟度系数（用于验证因子 h(V) 的"工程"维度与 W 校准）
+BATCH_MATURITY = {
+    "研究一批": 0.40,
+    "实施一批": 0.95,
+    "前期一批": 0.70,
+    "储备一批": 0.55,
+    "谋划一批": 0.45,
+}
+
+# 4 因子权重（投资 40 + 技术 30 + 政策 20 + 工程 10 = 100%）
+WEIGHT_FACTORS = {
+    "invest":  0.40,   # 投资占比
+    "tech":    0.30,   # 技术依赖
+    "policy":  0.20,   # 政策提及
+    "engineer": 0.10,  # 工程阶段
+}
+
+# 主网 → (投资, 技术, 政策, 工程) 4 因子模板；非主网按名称关键字补充
+# 数字 0-1，越高代表该项目对该网的依赖越强
+_PRIMARY_TEMPLATES = {
+    # 水网项目：水电/抽蓄/水库为主，但所有电网项目都依赖电网
+    "水网":   {"water": (0.65, 0.95, 0.90, 0.95), "grid": (0.30, 0.70, 0.85, 0.90)},
+    # 算力网：电算协同，数据中心依赖电网+算力
+    "算力网": {"compute": (0.70, 0.95, 0.95, 0.90), "grid": (0.50, 0.90, 0.90, 0.90)},
+    # 通信网：5G/6G/低空，主电网+通信
+    "通信网": {"telecom": (0.70, 0.95, 0.90, 0.90), "grid": (0.40, 0.75, 0.85, 0.85)},
+    # 地下管网：综合管廊/电力隧道入廊，电网与管网共建
+    "管":     {"pipe":    (0.60, 0.90, 0.85, 0.85), "grid": (0.45, 0.85, 0.80, 0.85)},
+    # 物流网：重卡/岸电/超充走廊，强电网依赖
+    "物流网": {"logi":    (0.65, 0.90, 0.90, 0.90), "grid": (0.45, 0.85, 0.85, 0.85)},
+    # 储能：跨算力/水/电的综合，多网共济
+    "储能":   {"compute": (0.40, 0.80, 0.85, 0.80), "grid": (0.55, 0.95, 0.90, 0.90), "water": (0.30, 0.60, 0.60, 0.70)},
+    # 综合：六网都沾，按项目名字细调
+    "综合":   {"grid": (0.50, 0.85, 0.90, 0.90)},
+}
+
+# 各项目名 → 次级 (net, factors) 调整项（项目级精度微调）
+_PROJECT_OVERRIDES = {
+    # 项目 9 平陆运河交能融合：水运+能源
+    "平陆运河交能融合示范工程": {"water": (0.55, 0.85, 0.85, 0.85), "pipe": (0.20, 0.50, 0.50, 0.60)},
+    # 项目 17 钦州平陆运河：水运+电
+    "钦州平陆运河电网综合示范工程": {"water": (0.45, 0.75, 0.75, 0.80)},
+    # 多站合一：变电站+储能+5G+数据 → 通信/算力加成
+    "多站合一示范工程": {"compute": (0.45, 0.85, 0.85, 0.85), "telecom": (0.40, 0.80, 0.80, 0.80)},
+    # 贵安电算协同
+    "贵安电算协同示范工程": {"compute": (0.85, 0.95, 0.95, 0.95), "telecom": (0.30, 0.70, 0.70, 0.70)},
+    # 电碳算 + 算电协同
+    "南方五省区电碳协同体系研究": {"compute": (0.75, 0.95, 0.95, 0.85)},
+    "南方五省区电碳协同示范工程": {"compute": (0.80, 0.95, 0.95, 0.90)},
+    "南方五省区算电协同调度市场化交易机制与场景研究": {"compute": (0.80, 0.95, 0.90, 0.85)},
+    # 车网互动/虚拟电厂
+    "广州、深圳城域级车网互动与共享虚拟电厂": {"compute": (0.50, 0.85, 0.85, 0.85), "logi": (0.45, 0.75, 0.75, 0.80)},
+    # 黔电送粤 / 云电+绿电：远距离输电+算力消纳
+    "黔电送粤\"云电+绿电\"项目": {"water": (0.45, 0.80, 0.85, 0.85), "compute": (0.70, 0.90, 0.90, 0.85)},
+    # 广西边境绿色能源流电直供
+    "广西边境绿色能源流电直供示范工程": {"compute": (0.55, 0.85, 0.85, 0.80)},
+    # 贵阳防灾减灾
+    "贵阳防灾减灾与综合能源调度示范工程": {"pipe": (0.45, 0.80, 0.85, 0.85), "water": (0.55, 0.85, 0.85, 0.85)},
+    # 汕头国际风电城零碳
+    "汕头国际风电城零碳综合能源示范工程": {"compute": (0.30, 0.65, 0.70, 0.75), "logi": (0.30, 0.65, 0.70, 0.75)},
+    # 空中一张车应急通信
+    "\"空中一张车\"应急通信保障工程": {"telecom": (0.80, 0.95, 0.90, 0.85), "logi": (0.30, 0.60, 0.60, 0.65)},
+    # 大湾区低空基础设施
+    "大湾区低空基础设施保障工程": {"telecom": (0.80, 0.95, 0.90, 0.85), "logi": (0.40, 0.75, 0.75, 0.75)},
+    # 广州深圳临空区综合能源
+    "广州深圳临空区综合能源融合示范区": {"telecom": (0.40, 0.75, 0.75, 0.75), "logi": (0.55, 0.85, 0.85, 0.85)},
+    # 湾区大湾区融合
+    "广州深圳湾区大湾区融合示范区": {"logi": (0.50, 0.80, 0.80, 0.80), "compute": (0.40, 0.75, 0.75, 0.75)},
+    # 广深超充走廊
+    "广深超充走廊工程": {"logi": (0.85, 0.95, 0.95, 0.90), "telecom": (0.20, 0.50, 0.50, 0.55)},
+    # 广州深圳交能融合
+    "广州深圳交能融合电网综合工程": {"logi": (0.80, 0.95, 0.90, 0.85), "telecom": (0.30, 0.65, 0.65, 0.65)},
+    # 云贵粤港澳大湾区"外电入粤"
+    "云贵粤港澳大湾区\"外电入粤\"重点工程": {"water": (0.55, 0.85, 0.85, 0.80), "compute": (0.40, 0.75, 0.75, 0.75)},
+    # 广深氢储能
+    "广深\"快慢+通道\"氢储能协同与多元应用": {"logi": (0.55, 0.85, 0.85, 0.80), "compute": (0.35, 0.70, 0.70, 0.70)},
+    # 深圳能源互联网数字平台
+    "深圳能源互联网数字平台示范工程": {"compute": (0.50, 0.85, 0.85, 0.80)},
+    # 海南自贸港多能合一
+    "海南自贸港\"多能合一\"示范工程": {"logi": (0.40, 0.75, 0.75, 0.75), "compute": (0.30, 0.65, 0.65, 0.70)},
+    # 深城能源互联网综合能源
+    "深城能源互联网综合能源工程": {"compute": (0.40, 0.75, 0.75, 0.75)},
+    # 算网融合超高速协同网络
+    "算网融合超高速协同网络示范工程": {"compute": (0.80, 0.95, 0.90, 0.80), "telecom": (0.55, 0.85, 0.85, 0.80)},
+    # 南网综合供能链数字认证
+    "南网综合供能链新型电力系统数字认证平台": {"compute": (0.50, 0.85, 0.85, 0.80)},
+    # 大湾区无人机输配电物流
+    "大湾区无人机输配电物流综合示范": {"telecom": (0.55, 0.85, 0.85, 0.80), "logi": (0.65, 0.90, 0.90, 0.85)},
+    # 南网六网协同产业平台
+    "南网\"六网\"协同产业平台": {"compute": (0.45, 0.80, 0.85, 0.85), "telecom": (0.35, 0.70, 0.70, 0.70), "logi": (0.30, 0.65, 0.70, 0.70)},
+    # 多网协同市场化平台升级
+    "多网协同市场化平台升级工程": {"compute": (0.50, 0.85, 0.85, 0.85)},
+    # 智能化零碳园区与六网调控
+    "智能化零碳园区与\"六网\"调控体系建设": {"compute": (0.40, 0.75, 0.75, 0.75), "telecom": (0.35, 0.70, 0.70, 0.70), "logi": (0.30, 0.65, 0.65, 0.70)},
+    # 水风光储一体化
+    "南方电网水风光储一体化开发与联合调度示范工程": {"water": (0.85, 0.95, 0.95, 0.90), "compute": (0.30, 0.70, 0.70, 0.75)},
+}
+
+
+def _factors_to_weight(factors: tuple, batch: str) -> float:
+    """4 因子加权合成单网权重 W = 投资×0.4 + 技术×0.3 + 政策×0.2 + 工程×0.1"""
+    inv, tech, pol, eng = factors
+    eng *= BATCH_MATURITY.get(batch, 0.5)
+    w = (inv * WEIGHT_FACTORS["invest"]
+         + tech * WEIGHT_FACTORS["tech"]
+         + pol * WEIGHT_FACTORS["policy"]
+         + eng * WEIGHT_FACTORS["engineer"])
+    # 截断到 [0, 1]
+    return max(0.0, min(1.0, round(w, 3)))
+
+
+def get_project_weights(project: dict) -> dict:
+    """为单个项目生成 6 网权重向量 W_Ai（电网/水/算/通/管/物）"""
+    cat = project.get("category", "综合")
+    batch = project.get("batch", "研究一批")
+    name = project.get("name", "")
+
+    # 1) 主网模板
+    factors_map = {}
+    primary = _PRIMARY_TEMPLATES.get(cat, _PRIMARY_TEMPLATES["综合"])
+    for net, fac in primary.items():
+        factors_map.setdefault(net, fac)
+
+    # 2) 项目级 override（精度微调）
+    override = _PROJECT_OVERRIDES.get(name, {})
+    for net, fac in override.items():
+        factors_map[net] = fac
+
+    # 3) 计算 6 网权重
+    weights = {}
+    for net in COUPLING_NETS:
+        if net == "grid":
+            # 电网：所有项目都至少给 GRID_BASELINE，叠加项目 override
+            fac_grid = factors_map.get("grid", (0.50, 0.85, 0.90, 0.90))
+            w = _factors_to_weight(fac_grid, batch)
+            weights[net] = max(GRID_BASELINE, w)
+        else:
+            if net in factors_map:
+                weights[net] = _factors_to_weight(factors_map[net], batch)
+            else:
+                weights[net] = 0.0
+    return weights
+
+
+# 全量项目权重表（缓存）
+PROJECT_WEIGHTS = [get_project_weights(p) for p in V7_PROJECTS]
+
+
+def _fN(projects_count: int) -> float:
+    """项目数因子 f(N) = min(N/5, 1) × 4"""
+    return round(min(projects_count / 5.0, 1.0) * 4.0, 3)
+
+
+def _gW(net_a: str, net_b: str) -> float:
+    """利益因子 g(W) = (1/N) Σ √(W_Ai × W_Bi) × 4"""
+    if not PROJECT_WEIGHTS:
+        return 0.0
+    s = 0.0
+    n = 0
+    for w in PROJECT_WEIGHTS:
+        wa = w.get(net_a, 0.0)
+        wb = w.get(net_b, 0.0)
+        if wa <= 0 or wb <= 0:
+            continue
+        s += (wa * wb) ** 0.5
+        n += 1
+    if n == 0:
+        return 0.0
+    return round((s / n) * 4.0, 3)
+
+
+def _hV() -> float:
+    """验证因子 h(V)：5 源政策 + 投资金额 + 在建/规划工程 三维度
+
+    南网 5 源政策已完整入库，假设 3 维度均有 → 取 0.7 + 0.8 + 1.0 = 2.5 / 2.5 × 2 = 2.0
+    """
+    return round((0.7 + 0.8 + 1.0) / 2.5 * 2.0, 3)
+
+
+def calc_coupling_score(net_a: str, net_b: str) -> dict:
+    """耦合综合分 v1.0：f(N)×4 + g(W)×4 + h(V)×2 (满分 10)
+
+    Args:
+        net_a: 网 A 英文 key (grid/water/compute/telecom/pipe/logi)
+        net_b: 网 B 英文 key
+
+    Returns:
+        {
+          "net_a": ..., "net_b": ...,
+          "f_N": ..., "g_W": ..., "h_V": ...,
+          "score": ...,
+          "level": "高分协同/中等协同/弱协同",
+        }
+    """
+    if net_a not in COUPLING_NETS or net_b not in COUPLING_NETS:
+        raise ValueError(f"net must be one of {COUPLING_NETS}")
+    # 协同项目数：两网权重都 > 0 的项目数
+    n = sum(1 for w in PROJECT_WEIGHTS
+            if w.get(net_a, 0) > 0 and w.get(net_b, 0) > 0)
+    fN = _fN(n)
+    gW = _gW(net_a, net_b)
+    hV = _hV()
+    score = round(fN + gW + hV, 2)
+    score = min(score, 10.0)
+    if score >= 8.0:
+        level = "高分协同"
+    elif score >= 6.0:
+        level = "中等协同"
+    else:
+        level = "弱协同"
+    return {
+        "net_a": net_a,
+        "net_b": net_b,
+        "n_projects": n,
+        "f_N": fN,
+        "g_W": gW,
+        "h_V": hV,
+        "score": score,
+        "level": level,
+    }
+
+
+def calc_coupling_matrix() -> dict:
+    """计算完整 6×6 耦合矩阵（含 15 对非对角 + 6 自身）"""
+    matrix = {}
+    for a in COUPLING_NETS:
+        matrix[a] = {}
+        for b in COUPLING_NETS:
+            if a == b:
+                # 自身对：取 max(g_W) × 0.5 + h_V，反映单网成熟度
+                w_self = [w.get(a, 0) for w in PROJECT_WEIGHTS]
+                if not w_self:
+                    score = 0.0
+                else:
+                    avg = sum(w_self) / len(w_self)
+                    score = round(min(avg * 0.5, 1.0) * 4.0 + _hV(), 2)
+                matrix[a][b] = {
+                    "net_a": a, "net_b": b,
+                    "n_projects": sum(1 for x in w_self if x > 0),
+                    "f_N": 4.0 if any(x > 0 for x in w_self) else 0.0,
+                    "g_W": round(avg * 4.0, 3) if w_self else 0.0,
+                    "h_V": _hV(),
+                    "score": score,
+                    "level": "自身",
+                }
+            else:
+                matrix[a][b] = calc_coupling_score(a, b)
+    return matrix
+
+
 PROMPT_V8 = """你是 NSP-IM 政策情报官。基于 CERS DCICB 演讲第（三）张，提取六网协同政策的产业链与投资节奏。
 
 【v8 必检】
