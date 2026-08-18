@@ -180,13 +180,24 @@ class NdrcFetcher(BaseFetcher):
         return ""
 
     async def _fetch_detail(self, url: str) -> Optional[Dict[str, Any]]:
-        """抓详情页提 doc_number / publish_date (软失败, 不抛)."""
+        """抓详情页提 doc_number / publish_date (软失败, 不抛).
+
+        抛出:
+            BlockedError: 已被 BlockedError 传递, 调用方处理降级
+            其他异常 → 包装成 None 返回 (不阻断列表数据)
+        """
+        from utils.http_client import HttpClientError
         try:
             html = await self.client.get_text(
                 url,
                 referer=_NDRC_LIST_URL,
             )
         except BlockedError:
+            # 详情页被风控 → 列表数据保留, doc_number 留空
+            raise  # 让 fetch_raw() 的外层 except 统一处理
+        except HttpClientError as e:
+            # 404 / 其他客户端错误 → 软失败, 返回 None
+            log.debug("NDRC 详情页失败 %s: %s", url, e)
             return None
         # doc_number
         m = _DOCNO_RE.search(html)

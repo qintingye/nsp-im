@@ -10,3 +10,9 @@ data/cases/.tmp
 venv/
 .DS_Store
 Thumbs.db
+
+# Push 私钥与订阅数据 (敏感, 不入仓)
+data/.vapid.json
+data/.vapid.json.tmp
+data/.subscriptions.json
+data/.subscriptions.json.tmp

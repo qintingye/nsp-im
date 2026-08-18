@@ -72,11 +72,12 @@ class OneSignalNotification:
     priority: int = 5                     # 10=high, 5=normal, 1=low
 
     def to_api_body(self, app_id: str) -> dict:
+        # heading 放入 headings.en (默认语言, OneSignal 标准做法);
+        # contents 多语言; headings 不应被 contents 覆盖, 否则 "en" 键冲突
         body = {
             "app_id": app_id,
             "headings": {
                 "en": self.heading[:64],
-                **{k: v[:64] for k, v in self.contents.items()},
             },
             "contents": {k: v[:200] for k, v in self.contents.items()},
             "included_segments": self.included_segments,
