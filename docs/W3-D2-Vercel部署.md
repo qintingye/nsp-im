@@ -1,5 +1,10 @@
 # W3-D2 · Vercel 公网部署指南（NSP-IM 政策雷达）
 
+> ⚠️ **实际执行情况（2026-08-18 10:50）**：Vercel 部署需要账号 OAuth / VERCEL_TOKEN（本机无），
+> 已用 **GitHub Pages 等价交付公网 PoC**（见 `docs/W3-D2-公网部署-实际执行.md`）。
+> 本文件保留作为「将来拿到 Vercel 账号后的迁移指南」。访问密码以实际部署文档为准。
+
+
 > 目标：把 `docs/preview/`（PWA 静态站）5 分钟内部署到 Vercel 公网域名，供 25 人内测使用。
 > 部署材料：仓库根目录 `vercel.json` + `docs/preview/` 全部静态文件（已就绪）。
 > **不需要后端，不需要构建。Vercel 仅作为静态 CDN。**
@@ -69,7 +74,7 @@
   ```
   ✅ Deployed to https://nsp-im.vercel.app
   ```
-- 点击 URL 访问 → 应该看到密码门禁页（输入 `nsp2026`）
+- 点击 URL 访问 → 应该看到密码门禁页（输入 `g8JoSB7ZavUiYn`）
 
 **可选**：在 Project Settings → Domains 添加自定义域名。
 
@@ -81,7 +86,7 @@
 
 `docs/preview/index.html` 已硬编码密码门禁：
 - 密码哈希：`843a6775fe97e053ff4d72aa4e4d80ab4ecae3fc86c6e1bd452410e845539af6`（SHA-256）
-- 正确密码明文：**`nsp2026`**（v1.0 内测密码）
+- 正确密码明文：**`g8JoSB7ZavUiYn`**（v1.0 内测密码）
 - 验证后 `sessionStorage.setItem('nspim_gate_ok', '1')`，刷新不重复询问
 - 关闭浏览器标签即失效
 
@@ -108,7 +113,7 @@ Project Settings → Security → **Password Protection**：
 ## 6. 验证清单（部署后必跑）
 
 - [ ] 访问 URL → 看到密码门禁页
-- [ ] 输入 `nsp2026` → 进入主页
+- [ ] 输入 `g8JoSB7ZavUiYn` → 进入主页
 - [ ] 看到 61 条政策卡片
 - [ ] 打开 DevTools → Application → Manifest，验证 PWA 可安装
 - [ ] DevTools → Application → Service Workers，验证 SW 已注册（v3.4.0-w3d4）
@@ -133,7 +138,7 @@ Project Settings → Security → **Password Protection**：
 
 ```
 URL 格式：https://nsp-im.vercel.app
-访问密码：nsp2026（v1.0 内测）
+访问密码：g8JoSB7ZavUiYn（v1.0 内测）
 内测人数：25 人
 预计上线时间：5 分钟（含域名解析则 10 分钟）
 ```
