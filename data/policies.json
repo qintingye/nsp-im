@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18T00:20:32Z",
+  "generated_at": "2026-08-18T02:25:15Z",
   "source": "manual-demo",
   "policies": [
     {
@@ -30,7 +30,10 @@
         "直连",
         "数据中心"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260603-0002",
@@ -59,7 +62,10 @@
         "漏损",
         "DMA"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260618-0003",
@@ -89,7 +95,10 @@
         "专网",
         "能源"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 2,
+      "carrier_relation": "通信→稳定供电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260705-0004",
@@ -118,7 +127,10 @@
         "管网改造",
         "投资"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-0005",
@@ -147,7 +159,10 @@
         "物流",
         "数据平台"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260802-0006",
@@ -176,7 +191,10 @@
         "预警",
         "能源"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260812-0007",
@@ -205,7 +223,10 @@
         "PUE",
         "算力计量"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-0001",
@@ -234,7 +255,10 @@
         "算电协同",
         "六网"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-MWR-20260817-0002",
@@ -261,7 +285,10 @@
         "供水",
         "DMA"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260816-0003",
@@ -289,7 +316,10 @@
         "数据中心",
         "绿电"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-MIIT-20260815-0004",
@@ -315,7 +345,10 @@
         "5G",
         "工业"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260814-0005",
@@ -343,7 +376,10 @@
         "算力枢纽",
         "PUE"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20240415-3621",
@@ -364,7 +400,10 @@
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20240509-1134",
@@ -385,7 +424,10 @@
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20240618-7986",
@@ -406,7 +448,10 @@
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20240702-1076",
@@ -427,7 +472,10 @@
       "captured_at": "2026-08-18T00:01:54.629577Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20240808-9532",
@@ -448,7 +496,10 @@
       "captured_at": "2026-08-18T00:01:54.629577Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260818-9775",
@@ -468,7 +519,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260817-7609",
@@ -489,7 +543,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260810-3231",
@@ -510,7 +567,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-8093",
@@ -530,7 +590,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260803-3328",
@@ -551,7 +614,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260723-3087",
@@ -572,7 +638,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260722-2956",
@@ -592,7 +661,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260716-1302",
@@ -613,7 +685,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260710-6116",
@@ -634,7 +709,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NDRC-20260625-0563",
@@ -655,7 +733,10 @@
       "captured_at": "2026-08-18T00:19:39.950711Z",
       "captured_by": "ndrc-fetcher-v1.0",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260801-8064",
@@ -684,7 +765,10 @@
         "新型电力系统",
         "5万亿"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260715-0533",
@@ -713,7 +797,10 @@
         "投资计划",
         "重点工程"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260720-3800",
@@ -742,7 +829,10 @@
         "招标",
         "主网架"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260805-5792",
@@ -771,7 +861,10 @@
         "粤港澳",
         "合作"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260802-7906",
@@ -800,7 +893,10 @@
         "特高压",
         "直流工程"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260718-8306",
@@ -829,7 +925,10 @@
         "配电网",
         "高质量发展"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260808-9092",
@@ -858,7 +957,10 @@
         "新能源",
         "消纳"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-SGCC-20260812-4186",
@@ -887,7 +989,10 @@
         "招标",
         "主设备"
       ],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240422-3209",
@@ -908,7 +1013,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240506-6484",
@@ -930,7 +1038,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240612-4615",
@@ -952,7 +1063,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 2,
+      "carrier_relation": "通信→稳定供电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240725-4628",
@@ -973,7 +1087,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240808-0463",
@@ -996,7 +1113,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6245",
@@ -1018,7 +1138,10 @@
       "captured_at": "2026-08-18T00:04:53.558204Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240418-3452",
@@ -1039,7 +1162,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240510-4206",
@@ -1060,7 +1186,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "算力→绿电",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240528-2098",
@@ -1082,7 +1211,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240620-2658",
@@ -1104,7 +1236,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240715-8501",
@@ -1126,7 +1261,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 3,
+      "carrier_relation": "物流→能源保障",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240810-4899",
@@ -1148,7 +1286,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240828-3166",
@@ -1169,7 +1310,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20240912-6658",
@@ -1189,7 +1333,10 @@
       "captured_at": "2026-08-18T00:16:11.880057Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20240905-6718",
@@ -1211,7 +1358,10 @@
       "captured_at": "2026-08-18T00:16:11.854456Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-5331",
@@ -1231,7 +1381,10 @@
       "captured_at": "2026-08-18T00:19:39.911372Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-CSG-20260818-1392",
@@ -1251,7 +1404,10 @@
       "captured_at": "2026-08-18T00:19:39.911372Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20260818-0862",
@@ -1271,7 +1427,10 @@
       "captured_at": "2026-08-18T00:19:40.032068Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20260810-1279",
@@ -1291,7 +1450,10 @@
       "captured_at": "2026-08-18T00:19:40.032068Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20260731-5746",
@@ -1311,7 +1473,10 @@
       "captured_at": "2026-08-18T00:19:40.032068Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-NEA-20260727-7523",
@@ -1331,7 +1496,10 @@
       "captured_at": "2026-08-18T00:19:40.032068Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-5473",
@@ -1352,7 +1520,10 @@
       "captured_at": "2026-08-18T00:19:40.188055Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-0965",
@@ -1373,7 +1544,10 @@
       "captured_at": "2026-08-18T00:19:40.188055Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-7771",
@@ -1394,7 +1568,10 @@
       "captured_at": "2026-08-18T00:19:40.188055Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20260818-1422",
@@ -1414,7 +1591,10 @@
       "captured_at": "2026-08-18T00:19:40.188055Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "基建→电力兜底",
+      "v4_cers_dccib": true
     },
     {
       "id": "P-BJX-20260909-9380",
@@ -1435,7 +1615,12 @@
       "captured_at": "2026-08-18T00:19:40.188055Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "support_direction": 0,
+      "carrier_relation": "未识别",
+      "v4_cers_dccib": true
     }
-  ]
+  ],
+  "v4_upgraded_at": "2026-08-18T08:20:00Z",
+  "v4_source": "CERS DCICB 演讲第(二)节第2张"
 }
