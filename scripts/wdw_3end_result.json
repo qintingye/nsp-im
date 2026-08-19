@@ -1,0 +1,107 @@
+{
+  "pc_1920": {
+    "password_gate": true,
+    "tabs_switch": true,
+    "tab_details": {
+      "view-1": true,
+      "view-2": true,
+      "view-3": true,
+      "view-5": true,
+      "view-6": true,
+      "view-7": true
+    },
+    "tab1": true,
+    "tab1_modals": true,
+    "tab2": true,
+    "tab2_subtabs": 0,
+    "tab2_modal": true,
+    "tab3": true,
+    "tab5": true,
+    "tab6": true,
+    "tab7": true,
+    "overflow": true,
+    "overflow_details": {
+      "view-1": false,
+      "view-2": false,
+      "view-3": false,
+      "view-5": false,
+      "view-6": false,
+      "view-7": false
+    },
+    "touch_targets": false,
+    "fonts": {
+      "body": "16px",
+      "h1": "20px"
+    }
+  },
+  "tablet_768": {
+    "password_gate": true,
+    "tabs_switch": true,
+    "tab_details": {
+      "view-1": true,
+      "view-2": true,
+      "view-3": true,
+      "view-5": true,
+      "view-6": true,
+      "view-7": true
+    },
+    "tab1": true,
+    "tab1_modals": true,
+    "tab2": true,
+    "tab2_subtabs": 0,
+    "tab2_modal": true,
+    "tab3": true,
+    "tab5": true,
+    "tab6": true,
+    "tab7": true,
+    "overflow": true,
+    "overflow_details": {
+      "view-1": false,
+      "view-2": false,
+      "view-3": false,
+      "view-5": false,
+      "view-6": false,
+      "view-7": false
+    },
+    "touch_targets": false,
+    "fonts": {
+      "body": "16px",
+      "h1": "20px"
+    }
+  },
+  "mobile_375": {
+    "password_gate": true,
+    "tabs_switch": true,
+    "tab_details": {
+      "view-1": true,
+      "view-2": true,
+      "view-3": true,
+      "view-5": true,
+      "view-6": true,
+      "view-7": true
+    },
+    "tab1": true,
+    "tab1_modals": true,
+    "tab2": true,
+    "tab2_subtabs": 0,
+    "tab2_modal": true,
+    "tab3": true,
+    "tab5": true,
+    "tab6": true,
+    "tab7": true,
+    "overflow": false,
+    "overflow_details": {
+      "view-1": false,
+      "view-2": false,
+      "view-3": false,
+      "view-5": false,
+      "view-6": true,
+      "view-7": false
+    },
+    "touch_targets": false,
+    "fonts": {
+      "body": "16px",
+      "h1": "20px"
+    }
+  }
+}

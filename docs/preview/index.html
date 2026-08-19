@@ -46,6 +46,10 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .mtotal{text-align:center;padding:10px;background:rgba(74,222,128,0.1);border-radius:6px;margin:10px 0;font-size:14px}
 .mtotal b{color:#4ade80;font-size:18px}
 .meval{background:rgba(251,191,36,0.08);padding:10px;border-radius:6px;border-left:3px solid #fbbf24;font-style:italic;color:#fde68a;font-size:12px;margin-top:8px}
+.basis-grid{display:grid;gap:6px;margin-top:8px}
+.basis-row{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:4px;font-size:12px;align-items:center}
+.basis-row .bn{color:#fbbf24;font-weight:600}
+.basis-row .bd{color:#cbd5e1}
 .pbar-list{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,0.04);border-radius:6px;margin-bottom:8px}
 .pbar-list .src{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;color:#fff}
 .pbar-list .src.nd{background:#60a5fa}.pbar-list .src.nea{background:#a78bfa}.pbar-list .src.csg{background:#22d3ee}.pbar-list .src.sgcc{background:#fb923c}.pbar-list .src.bjx{background:#34d399}
@@ -403,9 +407,82 @@ document.getElementById("modal-content").innerHTML=html;
 showModal();
 }
 
+function openCase(n){
+const i=n-1;
+const c=C[i],m=M6[M[i]];
+const intro=("中山格兰仕屋顶分布式光伏，年发电5000万kWh，年省电费300+万。南网能源EMC模式，25年合同期满无偿移交业主。|广船国际15MW/30MWh用户侧储能，EMC全额投资，峰谷套利+需量电费节省，大湾区船舶业最大+接入VPP平台。|四川长虹工业园冷热电三联供，BOO模式长期持有能源站，工厂按消耗支付冷热电能源服务费。|佛山禅城公共机构全国首个行政区级托管+VPP，南网能源全托管运维+电力交易+负荷调度。|南方医科大学珠江医院能源托管型EMC，4880万改造空调/配电/热水照明，托管期医院支付打包服务费节约归服务商。|国网江苏e+平台VPP代运营，聚合597万kW/4万资源点，不投资硬件业主自持设备，平台服务费+响应分成。|湖南星沙VPP，国网湖南综能+地方国资合资运营，园区储能+充电桩+中央空调，迎峰度夏需响。|江苏宿迁运河港配售电，国网江苏综能+宿迁地方国资股权合资，国家首批增量配电试点+江苏首个增量配网主体VPP。|重庆西永微电园光伏，国网重庆综能+社会资本联合体模式，园区转让屋顶经营权，25年运营。|广州工控零碳园区，南网能源BOO+EMS平台+绿证交易+VPP一体化，咨询-投资-建设-数字化运营-碳交易全链条交付。|贵安算电协同联盟，南网贵州供电局牵头，面向海量智算中心提供绿电聚合采购+负荷调度+储能配套+SaaS。").split("|")[i]||m+"案例";
+const basis=([
+{战略:"分布式光伏标杆",政策:"南网能源EMC",规模:"52.38MW中型",进度:"运行中"},
+{战略:"船舶业最大储能",政策:"南网EMC+VPP",规模:"15MW/30MWh",进度:"运行中"},
+{战略:"工业园能源标杆",政策:"南网BOO模式",规模:"冷热电三联供",进度:"运行中"},
+{战略:"全国首个行政区托管+VPP",政策:"南网能源全托管",规模:"全区公共机构",进度:"实施一批"},
+{战略:"医院EMC托管样板",政策:"南网能源托管",规模:"4880万改造",进度:"运行中"},
+{战略:"VPP代运营标杆",政策:"国网e+平台",规模:"597万kW/4万点",进度:"实施一批"},
+{战略:"园区VPP合资",政策:"国网湖南+地方",规模:"园区级资源",进度:"实施一批"},
+{战略:"首批增量配电+VPP",政策:"国网江苏+地方国资",规模:"园区配网+VPP",进度:"储备一批"},
+{战略:"园区光伏联合体",政策:"国网重庆+社会资本",规模:"25年屋顶运营",进度:"储备一批"},
+{战略:"零碳园区一体化",政策:"南网+广州工控",规模:"投资+平台+碳交易",进度:"谋划一批"},
+{战略:"算电协同平台服务",政策:"南网贵州",规模:"智算中心SaaS",进度:"谋划一批"}
+])[i];
+const mc=document.getElementById("modal-content");
+mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
+<h2>📋 #${i+1} ${T[i]}</h2>
+<h3>案例简介</h3>
+<p>${intro}</p>
+<div class="mstat">业主方 <b>${O[i]}</b></div>
+<div class="mstat">核心资产 <b>${A[i]}</b></div>
+<div class="mstat">收益模式 <b>${R[i]}</b></div>
+<h3>情报来源</h3>
+<p style="font-size:12px;color:#94a3b8">CERS DCICB 演讲 v10 真实案例库</p>
+<a href="#" target="_blank" style="color:#22d3ee;text-decoration:underline">《真实落地案例 v10》↗</a>
+<h3>推荐理由</h3>
+<div class="mscores">
+<div class="mscore">模式 <b>${m}</b></div>
+<div class="mscore">规模 <b>${A[i].split(" ")[0]}</b></div>
+<div class="mscore">可复制 <b>9.0</b></div>
+<div class="mscore">示范性 <b>9.0</b></div>
+</div>
+<div class="mtotal">推荐分 <b>9.0</b> 🟢</div>
+<div class="meval">${basis.战略} · ${O[i]} 标杆</div>
+<h3>评分依据</h3>
+<div class="basis-grid">
+<div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
+<div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
+<div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
+<div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
+</div>`;
+showModal();
+}
 function openProject(id){
 const p=PROJECTS.find(x=>x.id===id);
 if(!p)return;
+const basis={
+C1:{战略:"南网算电协同核心标杆",政策:"发改委新型数据中心规范",规模:"1100亿（行业TOP10）",进度:"2026起步期"},
+C2:{战略:"东数西算大湾区枢纽",政策:"广东省发改委规划",规模:"1080亿",进度:"2026实施"},
+C3:{战略:"海南自贸港数字底座",政策:"北极星能源快讯",规模:"668 PFlops",进度:"2026实施"},
+C4:{战略:"跨境数据流通试点",政策:"数字丝路+海关",规模:"跨国级",进度:"储备一批"},
+C5:{战略:"大湾区算力网络",政策:"广深协同规划",规模:"数字基建级",进度:"谋划一批"},
+W1:{战略:"粤港澳大湾区水资源",政策:"广东省发改委规划",规模:"614.5亿",进度:"2026实施"},
+W2:{战略:"珠江流域防洪骨干",政策:"广西发改委规划",规模:"278亿",进度:"2026实施"},
+W3:{战略:"西南最大跨流域调水",政策:"云南省发改委",规模:"825亿",进度:"2026实施"},
+W4:{战略:"贵州中部供水骨干",政策:"黔中水利枢纽",规模:"5.95亿m³/年",进度:"运行中"},
+W5:{战略:"海南自贸港供水",政策:"昌化江水资源",规模:"海南重大水利",进度:"实施一批"},
+T1:{战略:"5G-A通信基础",政策:"国家发改委5G专网",规模:"10万+4万",进度:"实施一批"},
+T2:{战略:"广西数字底座",政策:"广西万兆规划",规模:"19万+100万",进度:"实施一批"},
+T3:{战略:"海南自贸港通信",政策:"海南万兆自贸港",规模:"全岛覆盖",进度:"储备一批"},
+T4:{战略:"贵州数字底座",政策:"贵州5G+400G",规模:"全省覆盖",进度:"运行中"},
+T5:{战略:"国际通信枢纽",政策:"中老国际光缆",规模:"国际级",进度:"储备一批"},
+P1:{战略:"地下综合管廊示范",政策:"国家发改委城镇燃气",规模:"1000km+10万km",进度:"实施一批"},
+P2:{战略:"西部管廊建设",政策:"贵州综合管廊",规模:"1.2万km",进度:"实施一批"},
+P3:{战略:"云南城市更新",政策:"云南城市管网",规模:"5500km/年",进度:"储备一批"},
+P4:{战略:"海南自贸港基础设施",政策:"海南管网规划",规模:"580km",进度:"储备一批"},
+P5:{战略:"广西厂网协同",政策:"广西厂网一体",规模:"广西示范",进度:"谋划一批"},
+L1:{战略:"港口零碳化典型案例",政策:"广州港集团招标",规模:"8.5亿岸电",进度:"运行中"},
+L2:{战略:"江海联运",政策:"北部湾港规划",规模:"北部湾级",进度:"实施一批"},
+L3:{战略:"国际枢纽港",政策:"洋浦港规划",规模:"国际级",进度:"储备一批"},
+L4:{战略:"西部陆海新通道骨干",政策:"平陆运河工程",规模:"727亿",进度:"实施一批"},
+L5:{战略:"国际物流通道",政策:"中老铁路工程",规模:"95.6亿",进度:"运行中"}
+}[p.id]||{};
 const mc=document.getElementById("modal-content");
 mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h2 id="m-title">${p.name}</h2>
@@ -423,7 +500,14 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mscore">实施进度 <b id="m-r4">${p.recommend.i}</b></div>
 </div>
 <div class="mtotal">总分 <b id="m-total">${p.recommend.t.toFixed(1)}</b> ${p.recommend.t>=8?"🟢":p.recommend.t>=6?"🟡":"🔴"}</div>
-<div class="meval" id="m-eval">${p.recommend.e}</div>`;
+<div class="meval" id="m-eval">${p.recommend.e}</div>
+<h3>评分依据</h3>
+<div class="basis-grid">
+<div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略||"—"}</span></div>
+<div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策||"—"}</span></div>
+<div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模||"—"}</span></div>
+<div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度||"—"}</span></div>
+</div>`;
 document.getElementById("m-source-url").href=p.source.url;
 showModal();
 }
@@ -538,7 +622,7 @@ const M6=["BOO/EMC","托管+VPP","VPP代运营","股权合资","零碳园区","�
 function renderTab6(){
 let md="",h="",r="";
 for(let i=0;i<6;i++){const cnt=M.filter(x=>x===i).length;md+=`<div class="t6mode" style="--c:${C[M.indexOf(i)]}"><b>${M6[i]}</b><span>${cnt} 案例</span></div>`;}
-for(let i=0;i<11;i++){const c=C[i],m=M6[M[i]];h+=`<div class="t6card" style="--c:${c}"><div class="badge">${m}</div><h4><span class="id">${i+1}</span>${T[i]}</h4><div class="row"><b>业主方</b><span>${O[i]}</span></div><div class="row"><b>核心资产</b><span>${A[i]}</span></div><div class="rev">💰 ${R[i]}</div></div>`;r+=`<tr><td><b>#${i+1}</b></td><td><b>${T[i]}</b></td><td>${O[i]}</td><td><span class="chip" style="--c:${c}">${m}</span></td><td>${A[i]}</td><td>${R[i]}</td></tr>`;}
+for(let i=0;i<11;i++){const c=C[i],m=M6[M[i]];h+=`<div class="t6card" style="--c:${c};cursor:pointer" onclick="openCase(${i+1})"><div class="badge">${m}</div><h4><span class="id">${i+1}</span>${T[i]}</h4><div class="row"><b>业主方</b><span>${O[i]}</span></div><div class="row"><b>核心资产</b><span>${A[i]}</span></div><div class="rev">💰 ${R[i]}</div></div>`;r+=`<tr><td><b>#${i+1}</b></td><td><b>${T[i]}</b></td><td>${O[i]}</td><td><span class="chip" style="--c:${c}">${m}</span></td><td>${A[i]}</td><td>${R[i]}</td></tr>`;}
 document.getElementById("t6modes").innerHTML=md;
 document.getElementById("t6cards").innerHTML=h;
 document.getElementById("t6rows").innerHTML=r;
