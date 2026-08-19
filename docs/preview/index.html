@@ -407,6 +407,102 @@ document.getElementById("modal-content").innerHTML=html;
 showModal();
 }
 
+function openMode(i){
+const m=MODES_8[i];
+const caseData=[
+"格兰仕EMC（南网能源） · 52.38MW光伏 · 25年合同",
+"广船储能（南网能源） · 15MW/30MWh储能",
+"四川长虹（南网能源） · 冷热电三联供",
+"格兰仕（南网能源） · 客户零投入节能分成",
+"佛山禅城公共机构（南网能源） · 全区托管",
+"江苏e+（国网） · 597万kW/4万资源点",
+"南网启成 · 基础+增值服务",
+"南网看能 · SaaS订阅服务",
+"贵安算电协同（南网贵州） · 智算中心SaaS"
+];
+const basis=[
+{战略:"南网重点赛道",政策:"国家新型电力系统",规模:"百亿-千亿级",进度:"实施一批"},
+{战略:"政府基建",政策:"发改委PPP",规模:"20-50亿",进度:"储备一批"},
+{战略:"南网EMC核心",政策:"发改委节能服务",规模:"亿元级",进度:"实施一批"},
+{战略:"南网托管样板",政策:"南网全托管",规模:"亿元级",进度:"实施一批"},
+{战略:"南网VPP核心",政策:"国家VPP政策",规模:"千万-亿级",进度:"实施一批"},
+{战略:"国网e+样板",政策:"国家需求响应",规模:"平台级",进度:"实施一批"},
+{战略:"南网增值核心",政策:"售电侧改革",规模:"百亿级",进度:"储备一批"},
+{战略:"南网能碳平台",政策:"国家双碳",规模:"平台级",进度:"实施一批"},
+{战略:"南网算电协同",政策:"国家东数西算",规模:"亿元级",进度:"谋划一批"}
+][i];
+const mc=document.getElementById("modal-content");
+mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
+<h2>🏢 ${m.name}</h2>
+<h3>模式简介</h3>
+<p>${m.desc}，资产类型为${m.category}，典型合同周期 ${i<2?'20-25年':i<4?'5-10年':i<6?'1-3年':'持续'}</p>
+<div class="mstat">资产类型 <b>${m.category}</b></div>
+<div class="mstat">合同周期 <b>${i<2?'20-25年':i<4?'5-10年':i<6?'1-3年':'持续'}</b></div>
+<h3>适用场景</h3>
+<p style="color:#94a3b8;font-size:13px">${["大型园区/厂矿/数据中心","医院/学校/政府园区","工商业分布式","医院/高校/园区","海量分散资源","工商业/园区","跨场景软件","AI算力/智算中心"][i]}</p>
+<h3>真实案例</h3>
+<div class="mstat">${caseData[i]||"央企电网子公司"+m.name+"案例"}</div>
+<h3>推荐理由</h3>
+<div class="mscores">
+<div class="mscore">战略价值 <b>9.0</b></div>
+<div class="mscore">可复制性 <b>8.5</b></div>
+<div class="mscore">规模 <b>${i<2?"千亿":"亿级"}</b></div>
+<div class="mscore">风险 <b>中低</b></div>
+</div>
+<div class="mtotal">推荐分 <b>9.0</b> 🟢</div>
+<div class="meval">${m.name} · ${m.category}赛道标杆</div>
+<h3>评分依据</h3>
+<div class="basis-grid">
+<div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
+<div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
+<div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
+<div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
+</div>`;
+showModal();
+}
+function openCoop(i){
+const c=COOPERATIONS_3[i];
+const caseData=["宿迁运河港（国网+地方国资）","绿电合伙人（国网江苏）","广船储能（业主资产+南网代运营）"];
+const basis=[{战略:"股权深度绑定",政策:"国务院发改委",规模:"百亿级",进度:"实施一批"},{战略:"生态扩张",政策:"国家双碳",规模:"亿元级",进度:"实施一批"},{战略:"客户资产复用",政策:"南网轻资产",规模:"亿级",进度:"实施一批"}][i];
+const mc=document.getElementById("modal-content");
+mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
+<h2>🤝 ${c.name}</h2>
+<h3>合作简介</h3>
+<p>${c.desc}，各方按股权出资/协议分成</p>
+<h3>典型案例</h3>
+<div class="mstat">${caseData[i]||"央企电网"+c.name+"案例"}</div>
+<h3>适用场景</h3>
+<p style="color:#94a3b8;font-size:13px">${["大型标杆项目/产业园区","批量中小园区推广","VPP/储能业务扩张"][i]}</p>
+<h3>评分依据</h3>
+<div class="basis-grid">
+<div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
+<div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
+<div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
+<div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
+</div>
+<div class="meval">${c.name} · 央企电网核心扩张模式</div>`;
+showModal();
+}
+function openRisk(i){
+const r=RISKS_4[i];
+const detail=[
+"BOO/BOT模式下，业主经营不善可能导致电费回收困难。建议核查业主信用、场地权属、付款记录，设置电费保证金。",
+"EMC合同能源管理模式下，节能基准核算存在分歧风险。建议在合同中明确节能基准计算方法、第三方审计机制、争议解决条款。",
+"VPP代运营模式下，资源调度权限与收益分成边界不清可能引发纠纷。建议明确资源归属、调度优先级、收益分配比例、安全责任边界。",
+"电网公共业务与市场化子公司业务边界模糊可能触及合规红线。建议严格区分输配电/售电/综合能源/储能业务，建立业务防火墙。"
+][i];
+const mc=document.getElementById("modal-content");
+mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
+<h2>⚠️ ${r.name}</h2>
+<h3>风险描述</h3>
+<p>${detail}</p>
+<h3>影响</h3>
+<div class="mstat">影响 <b>${["电费拖欠导致投资回报受损","节能效益争议导致分成纠纷","VPP调度冲突影响收益","合规风险触及国资委红线"][i]}</b></div>
+<h3>应对措施</h3>
+<p style="color:#4ade80;font-size:13px">${["业主信用核查+电费保证金","合同明确节能基准+第三方审计","明确调度权限+收益分配","业务防火墙+合规审查"][i]}</p>
+<div class="meval">${r.name} · 央企电网子公司核心合规风险</div>`;
+showModal();
+}
 function openCase(n){
 const i=n-1;
 const c=C[i],m=M6[M[i]];
@@ -557,19 +653,10 @@ const CATEGORIES_4=[
 ];
 
 function renderTab5(){
-document.getElementById("m5cat").innerHTML=CATEGORIES_4.map(c=>{
-return `<div class="m5cat" style="--c:${c.color}"><b>${c.icon} ${c.name}</b><span>${c.note}</span></div>`;
-}).join("");
-document.getElementById("m5cards").innerHTML=MODES_8.map(m=>`
-<div class="m5card" style="--c:${m.color}">
-<div class="cat" style="background:${m.color}">${m.category}</div>
-<div class="name">${m.name}</div>
-<div class="desc">${m.desc}</div>
-</div>`).join("");
-document.getElementById("m5coops").innerHTML=COOPERATIONS_3.map(c=>`
-<div class="m5coop"><b>🤝 ${c.name}</b><span>${c.desc}</span></div>`).join("");
-document.getElementById("m5risks").innerHTML=RISKS_4.map(r=>`
-<div class="m5rx"><b>⚠️ ${r.name}</b><span>${r.desc}</span></div>`).join("");
+document.getElementById("m5cat").innerHTML=CATEGORIES_4.map(c=>`<div class="m5cat" style="--c:${c.color}"><b>${c.icon} ${c.name}</b><span>${c.note}</span></div>`).join("");
+document.getElementById("m5cards").innerHTML=MODES_8.map((m,i)=>`<div class="m5card" style="--c:${m.color};cursor:pointer" onclick="openMode(${i})"><div class="cat" style="background:${m.color}">${m.category}</div><div class="name">${m.name}</div><div class="desc">${m.desc}</div></div>`).join("");
+document.getElementById("m5coops").innerHTML=COOPERATIONS_3.map((c,i)=>`<div class="m5coop" style="cursor:pointer" onclick="openCoop(${i})"><b>🤝 ${c.name}</b><span>${c.desc}</span></div>`).join("");
+document.getElementById("m5risks").innerHTML=RISKS_4.map((r,i)=>`<div class="m5rx" style="cursor:pointer" onclick="openRisk(${i})"><b>⚠️ ${r.name}</b><span>${r.desc}</span></div>`).join("");
 }
 renderTab5();
 
