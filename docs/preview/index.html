@@ -282,7 +282,7 @@ const pcount=document.getElementById("pcount");
 const data=(typeof TODAY!=="undefined"?TODAY:{items:[]});
 const items=data.items||[];
 if(pdate)pdate.textContent=data.date||"2026-08-19";
-if(pcount)pcount.textContent=items.length;
+if(pcount)pcount.textContent=String(items.length);
 plist.innerHTML=items.map(it=>{
 const src=it.source||"";
 const srcCls=src.slice(0,2);
