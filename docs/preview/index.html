@@ -38,6 +38,12 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .modal p{color:#cbd5e1;font-size:13px;line-height:1.6;margin-bottom:8px}
 .modal a{color:#22d3ee;text-decoration:underline;font-size:13px}
 .modal .close{position:absolute;top:10px;right:14px;background:none;border:none;color:#94a3b8;font-size:24px;cursor:pointer}
+.basis-toggle{background:rgba(251,191,36,0.06);border-radius:6px;padding:8px 12px;margin-top:8px;border:1px solid rgba(251,191,36,0.15);cursor:pointer}
+.basis-toggle summary{cursor:pointer;color:#fbbf24;font-size:12px;font-weight:700;list-style:none}
+.basis-toggle summary::-webkit-details-marker{display:none}
+.basis-toggle summary::before{content:"▸ ";display:inline-block}
+.basis-toggle[open] summary::before{content:"▾ "}
+.basis-toggle[open] summary{margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid rgba(251,191,36,0.15)}
 .mstat{display:flex;justify-content:space-between;padding:8px 12px;background:rgba(251,191,36,0.08);border-radius:6px;margin:8px 0;font-size:13px}
 .mstat b{color:#fbbf24}
 .mscores{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
@@ -102,22 +108,26 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .m5cat span{color:#cbd5e1;font-size:12px;display:block;margin-top:4px;font-weight:600}
 .m5head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:10px 14px;background:rgba(251,191,36,0.06);border-left:3px solid #fbbf24;border-radius:6px}
 .m5head b{color:#fbbf24;font-size:13px}
-.m5head span{color:#94a3b8;font-size:11px}
 .m5main{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:20px}
 .m5cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.m5card{background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;border-left:3px solid var(--c,#60a5fa);position:relative;cursor:pointer;transition:transform .2s}
-.m5card:hover{transform:translateY(-2px);background:rgba(255,255,255,0.06)}
+.m5card{background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 30px 10px 10px;border-left:3px solid var(--c,#60a5fa);position:relative;cursor:pointer;transition:all .2s;overflow:hidden}
+.m5card:hover{transform:translateY(-2px);background:rgba(255,255,255,0.08);box-shadow:0 4px 12px rgba(0,0,0,0.4),0 0 0 1px var(--c)}
+.m5card::after{content:"→";position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--c);font-size:16px;font-weight:700;opacity:.4}
+.m5card:hover::after{opacity:1}
 .m5card .name{color:var(--c,#60a5fa);font-size:13px;font-weight:700;margin-bottom:6px}
 .m5card .cat{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c,#60a5fa);font-weight:600;margin-bottom:6px}
 .m5card .desc{color:#cbd5e1;font-size:11px;line-height:1.5}
 .m5side{background:rgba(255,255,255,0.04);border-radius:10px;padding:14px;border-top:3px solid #fbbf24}
 .m5side h3{color:#fbbf24;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
-.m5coop{background:rgba(251,191,36,0.06);padding:10px;border-radius:6px;margin-bottom:8px;border-left:2px solid #fbbf24}
+.m5coop{background:rgba(251,191,36,0.06);padding:8px 28px 8px 10px;border-radius:6px;margin-bottom:6px;border-left:2px solid #fbbf24;cursor:pointer;position:relative}
+.m5coop:hover{background:rgba(251,191,36,0.12)}
+.m5coop::after{content:"›";position:absolute;right:8px;top:50%;transform:translateY(-50%);color:#fbbf24;font-size:16px;font-weight:700;opacity:.5}
 .m5coop b{color:#fbbf24;font-size:12px;display:block;margin-bottom:4px}
 .m5coop span{color:#cbd5e1;font-size:11px;line-height:1.5}
 .m5risk{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px;background:rgba(239,68,68,0.06);border-radius:8px;border-left:3px solid #ef4444}
 .m5risk h3{color:#ef4444;font-size:13px;margin-bottom:10px}
-.m5rx{background:rgba(0,0,0,0.2);padding:10px;border-radius:6px}
+.m5rx{background:rgba(0,0,0,0.2);padding:10px;border-radius:6px;cursor:pointer;border:1px solid transparent}
+.m5rx:hover{background:rgba(239,68,68,0.15);border-color:#ef4444}
 .m5rx b{color:#fbbf24;font-size:12px;display:block;margin-bottom:4px}
 .m5rx span{color:#94a3b8;font-size:11px;line-height:1.5}
 @media (max-width:768px){.m5main{grid-template-columns:1fr}.m5cards{grid-template-columns:1fr}.m5top,.m5risk{grid-template-columns:repeat(2,1fr)}}
@@ -259,7 +269,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <!-- Tab5: 商业模式 -->
 <section class="view" id="view-5">
 <div class="m5top" id="m5cat"></div>
-<div class="m5head"><b>🏢 8 大成熟商业模式</b><span>重资产 → 轻资产（提升 ROE）</span></div>
+<div class="m5head"><b>🏢 8 大成熟商业模式</b><span style="color:#fbbf24">💡 点击卡片查看详情 →</span></div>
 <div class="m5main">
 <div class="m5cards" id="m5cards"></div>
 <div class="m5side">
@@ -454,11 +464,14 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mtotal">推荐分 <b>9.0</b> 🟢</div>
 <div class="meval">${m.name} · ${m.category}赛道标杆</div>
 <h3>评分依据</h3>
+<details class="basis-toggle"><summary>📊 查看评分依据（4 维度）</summary>
 <div class="basis-grid">
 <div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
 <div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
 <div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
+</div>
+</details>
 </div>`;
 showModal();
 }
@@ -475,13 +488,14 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mstat">${caseData[i]||"央企电网"+c.name+"案例"}</div>
 <h3>适用场景</h3>
 <p style="color:#94a3b8;font-size:13px">${["大型标杆项目/产业园区","批量中小园区推广","VPP/储能业务扩张"][i]}</p>
-<h3>评分依据</h3>
+<details class="basis-toggle"><summary>📊 查看评分依据</summary>
 <div class="basis-grid">
 <div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
 <div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
 <div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
 </div>
+</details>
 <div class="meval">${c.name} · 央企电网核心扩张模式</div>`;
 showModal();
 }
@@ -543,12 +557,14 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mtotal">推荐分 <b>9.0</b> 🟢</div>
 <div class="meval">${basis.战略} · ${O[i]} 标杆</div>
 <h3>评分依据</h3>
+<details class="basis-toggle"><summary>📊 查看评分依据（4 维度）</summary>
 <div class="basis-grid">
 <div class="basis-row"><span class="bn">战略价值</span><span class="bd">${basis.战略}</span></div>
 <div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策}</span></div>
 <div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模}</span></div>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
-</div>`;
+</div>
+</details>`;
 showModal();
 }
 function openProject(id){
