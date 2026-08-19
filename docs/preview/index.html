@@ -408,6 +408,8 @@ showModal();
 }
 
 function openMode(i){
+if(typeof MODES_8==='undefined'){alert('MODES_8未定义');return;}
+if(typeof MODES_8[i]==='undefined'){alert('MODES_8['+i+']未定义');return;}
 const m=MODES_8[i];
 const caseData=[
 "格兰仕EMC（南网能源） · 52.38MW光伏 · 25年合同",
