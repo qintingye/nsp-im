@@ -55,6 +55,31 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .action-card p{color:#cbd5e1;font-size:12px;line-height:1.6}
 .action-card a{color:#4ade80;text-decoration:underline;font-size:12px}
 @media (max-width:768px){.nb{grid-template-columns:repeat(2,1fr)}.nbg{grid-template-columns:1fr}nav{flex-wrap:wrap}.tab-btn{flex:1 0 33%}}
+.m5top{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.m5cat{background:rgba(255,255,255,0.04);padding:10px;border-radius:6px;text-align:center;border-top:2px solid var(--c,#60a5fa)}
+.m5cat b{color:var(--c,#60a5fa);font-size:11px;display:block;letter-spacing:1px}
+.m5cat span{color:#cbd5e1;font-size:12px;display:block;margin-top:4px;font-weight:600}
+.m5head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:10px 14px;background:rgba(251,191,36,0.06);border-left:3px solid #fbbf24;border-radius:6px}
+.m5head b{color:#fbbf24;font-size:13px}
+.m5head span{color:#94a3b8;font-size:11px}
+.m5main{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:20px}
+.m5cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.m5card{background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;border-left:3px solid var(--c,#60a5fa);position:relative;cursor:pointer;transition:transform .2s}
+.m5card:hover{transform:translateY(-2px);background:rgba(255,255,255,0.06)}
+.m5card .name{color:var(--c,#60a5fa);font-size:13px;font-weight:700;margin-bottom:6px}
+.m5card .cat{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c,#60a5fa);font-weight:600;margin-bottom:6px}
+.m5card .desc{color:#cbd5e1;font-size:11px;line-height:1.5}
+.m5side{background:rgba(255,255,255,0.04);border-radius:10px;padding:14px;border-top:3px solid #fbbf24}
+.m5side h3{color:#fbbf24;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+.m5coop{background:rgba(251,191,36,0.06);padding:10px;border-radius:6px;margin-bottom:8px;border-left:2px solid #fbbf24}
+.m5coop b{color:#fbbf24;font-size:12px;display:block;margin-bottom:4px}
+.m5coop span{color:#cbd5e1;font-size:11px;line-height:1.5}
+.m5risk{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px;background:rgba(239,68,68,0.06);border-radius:8px;border-left:3px solid #ef4444}
+.m5risk h3{color:#ef4444;font-size:13px;margin-bottom:10px}
+.m5rx{background:rgba(0,0,0,0.2);padding:10px;border-radius:6px}
+.m5rx b{color:#fbbf24;font-size:12px;display:block;margin-bottom:4px}
+.m5rx span{color:#94a3b8;font-size:11px;line-height:1.5}
+@media (max-width:768px){.m5main{grid-template-columns:1fr}.m5cards{grid-template-columns:1fr}.m5top,.m5risk{grid-template-columns:repeat(2,1fr)}}
 .gate-mask{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center}
 .gate-mask.hide{display:none}
 .gate-box{background:#0a1628;border:1px solid rgba(251,191,36,0.3);border-radius:12px;padding:32px;width:320px;text-align:center}
@@ -89,6 +114,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <button class="tab-btn active" data-view="view-1">战略总览</button>
 <button class="tab-btn" data-view="view-2">每日情报</button>
 <button class="tab-btn" data-view="view-3">行动建议</button>
+<button class="tab-btn" data-view="view-5">商业模式</button>
 </nav>
 <main>
 <!-- Tab1 -->
@@ -116,6 +142,22 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <div class="action-card" style="text-align:left;cursor:default">
 <h3>🔋 下期重点：抽水蓄能</h3>
 <p>水网+电网双联动，建议在 W2 重点关注水风光储一体化项目</p>
+</div>
+</section>
+<!-- Tab5: 商业模式 -->
+<section class="view" id="view-5">
+<div class="m5top" id="m5cat"></div>
+<div class="m5head"><b>🏢 8 大成熟商业模式</b><span>重资产 → 轻资产（提升 ROE）</span></div>
+<div class="m5main">
+<div class="m5cards" id="m5cards"></div>
+<div class="m5side">
+<h3>🤝 3 大对外合作模式</h3>
+<div id="m5coops"></div>
+</div>
+</div>
+<div class="m5risk">
+<h3>⚠️ 4 大实操风险</h3>
+<div id="m5risks" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px"></div>
 </div>
 </section>
 </main>
@@ -274,6 +316,51 @@ document.getElementById(b.dataset.view).classList.add("active");
 });
 
 renderTab1();
+
+const MODES_8=[
+{name:"BOO 建设-拥有-运营",category:"重资产",desc:"永久持有，20-25 年合同",color:"#60a5fa"},
+{name:"BOT 建设-运营-移交",category:"重资产",desc:"到期移交业主",color:"#a78bfa"},
+{name:"EMC 合同能源管理",category:"中重",desc:"客户零投入，节能效益分成",color:"#22d3ee"},
+{name:"能源托管",category:"轻资产",desc:"全委托运营，打包服务费",color:"#fb923c"},
+{name:"VPP 虚拟电厂",category:"极轻",desc:"资源聚合，平台分成",color:"#34d399"},
+{name:"售电+增值",category:"轻资产",desc:"基础+增值服务",color:"#fbbf24"},
+{name:"能碳平台",category:"极轻",desc:"SaaS 订阅",color:"#f472b6"},
+{name:"算电协同",category:"中",desc:"AI 算力+绿电+储能",color:"#a3e635"}
+];
+const COOPERATIONS_3=[
+{name:"股权合资",desc:"电网+地方+设备厂商"},
+{name:"加盟合伙人",desc:"生态协议模式"},
+{name:"业主代运营",desc:"客户资产+我方服务"}
+];
+const RISKS_4=[
+{name:"业主信用",desc:"BOO/BOT 电费拖欠"},
+{name:"节能基准",desc:"EMC 效益核算"},
+{name:"VPP 权限",desc:"调度权限/收益分成"},
+{name:"业务边界",desc:"电网公共 vs 市场化"}
+];
+const CATEGORIES_4=[
+{name:"重资产",color:"#60a5fa",icon:"🏗️",note:"BOO/BOT/EPC"},
+{name:"中重",color:"#22d3ee",icon:"⚙️",note:"EMC 合同能源"},
+{name:"轻资产",color:"#fb923c",icon:"📦",note:"托管/售电+增值"},
+{name:"极轻",color:"#34d399",icon:"☁️",note:"VPP/能碳/SaaS"}
+];
+
+function renderTab5(){
+document.getElementById("m5cat").innerHTML=CATEGORIES_4.map(c=>{
+return `<div class="m5cat" style="--c:${c.color}"><b>${c.icon} ${c.name}</b><span>${c.note}</span></div>`;
+}).join("");
+document.getElementById("m5cards").innerHTML=MODES_8.map(m=>`
+<div class="m5card" style="--c:${m.color}">
+<div class="cat" style="background:${m.color}">${m.category}</div>
+<div class="name">${m.name}</div>
+<div class="desc">${m.desc}</div>
+</div>`).join("");
+document.getElementById("m5coops").innerHTML=COOPERATIONS_3.map(c=>`
+<div class="m5coop"><b>🤝 ${c.name}</b><span>${c.desc}</span></div>`).join("");
+document.getElementById("m5risks").innerHTML=RISKS_4.map(r=>`
+<div class="m5rx"><b>⚠️ ${r.name}</b><span>${r.desc}</span></div>`).join("");
+}
+renderTab5();
 
 function renderTab2(){
 const plist=document.getElementById("plist");
