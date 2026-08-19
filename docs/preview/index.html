@@ -54,7 +54,44 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .action-card h3{color:#fbbf24;font-size:14px;margin-bottom:6px}
 .action-card p{color:#cbd5e1;font-size:12px;line-height:1.6}
 .action-card a{color:#4ade80;text-decoration:underline;font-size:12px}
-@media (max-width:768px){.nb{grid-template-columns:repeat(2,1fr)}.nbg{grid-template-columns:1fr}nav{flex-wrap:wrap}.tab-btn{flex:1 0 33%}}
+.v3head{text-align:center;margin-bottom:20px}.v3head h2{color:#fbbf24;font-size:22px;margin-bottom:6px}.v3head p{color:#94a3b8;font-size:13px}
+.v3chains{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.chain-card{background:rgba(255,255,255,0.04);border-radius:8px;padding:14px;border-top:3px solid var(--c,#fbbf24)}
+.chain-tag{display:inline-block;padding:3px 10px;border-radius:10px;font-size:11px;color:#0a1628;background:var(--c,#fbbf24);font-weight:700;margin-bottom:8px}
+.chain-card h3{color:#fff;font-size:14px;margin-bottom:6px}
+.chain-card p{color:#94a3b8;font-size:11px;line-height:1.5;margin-bottom:8px}
+.chain-share{display:inline-block;color:#4ade80;font-size:10px;font-weight:700;background:rgba(74,222,128,0.1);padding:2px 8px;border-radius:8px}
+.v3phases{background:rgba(255,255,255,0.03);border-radius:8px;padding:16px;border-left:3px solid #fbbf24}
+.v3phases h3{color:#fbbf24;font-size:14px;margin-bottom:12px}
+.v3phases .phase-row{display:flex;gap:10px;margin-bottom:14px}
+.phase{flex:1;background:rgba(255,255,255,0.04);border-radius:6px;padding:12px;border-top:2px solid var(--pc,#fbbf24)}
+.phase-start{--pc:#fbbf24}.phase-mid{--pc:#60a5fa}.phase-late{--pc:#34d399}
+.phase b{display:block;color:#fff;font-size:13px;margin-bottom:4px}
+.phase span{display:block;color:var(--pc);font-size:11px;margin-bottom:6px;font-weight:700}
+.phase p{color:#cbd5e1;font-size:11px;line-height:1.5}
+.v3fusion{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08)}
+.v3fusion>span{font-size:11px;background:rgba(251,191,36,0.08);color:#fbbf24;padding:4px 10px;border-radius:10px;font-weight:600}
+.v4head{text-align:center;margin-bottom:20px}.v4head h2{color:#60a5fa;font-size:22px;margin-bottom:6px}.v4head p{color:#94a3b8;font-size:13px}
+.v4dirs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.dir-card{display:flex;gap:10px;background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;border-left:3px solid #60a5fa}
+.dir-num{flex:0 0 36px;height:36px;background:#60a5fa;color:#0a1628;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;margin-top:2px}
+.dir-card h3{color:#fff;font-size:13px;margin-bottom:4px}
+.dir-count{display:inline-block;color:#60a5fa;font-size:10px;font-weight:700;background:rgba(96,165,250,0.1);padding:1px 7px;border-radius:8px;margin-bottom:6px}
+.dir-card p{color:#cbd5e1;font-size:11px;line-height:1.5}
+.v4dims{background:rgba(96,165,250,0.05);border-radius:8px;padding:14px;margin-bottom:20px;border-top:2px solid #60a5fa}
+.v4dims h3{color:#60a5fa;font-size:14px;margin-bottom:10px}
+.dim-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dim-grid>span{background:rgba(255,255,255,0.04);padding:8px 4px;border-radius:6px;text-align:center;color:#cbd5e1;font-size:10px;font-weight:600}
+.v4batches{background:rgba(255,255,255,0.03);border-radius:8px;padding:16px;border-left:3px solid #34d399}
+.v4batches h3{color:#34d399;font-size:14px;margin-bottom:12px}
+.batch-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.batch{background:rgba(255,255,255,0.04);border-radius:6px;padding:10px;border-top:2px solid var(--bc,#fbbf24)}
+.batch b{display:block;color:#fff;font-size:12px;margin-bottom:4px}
+.batch-count{display:inline-block;color:var(--bc);font-size:10px;font-weight:700;background:rgba(251,191,36,0.1);padding:1px 6px;border-radius:6px;margin-bottom:6px}
+.batch p{color:#94a3b8;font-size:10px;line-height:1.5}
+.batch-study{--bc:#a78bfa}.batch-do{--bc:#34d399}.batch-pre{--bc:#fbbf24}.batch-save{--bc:#60a5fa}.batch-plan{--bc:#f87171}
+@media (max-width:980px){.v4dirs{grid-template-columns:repeat(2,1fr)}.dim-grid{grid-template-columns:repeat(4,1fr)}.batch-grid{grid-template-columns:repeat(2,1fr)}.v3chains{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:768px){.nb{grid-template-columns:repeat(2,1fr)}.nbg{grid-template-columns:1fr}nav{flex-wrap:wrap}.tab-btn{flex:1 0 33%;font-size:12px;padding:10px 4px}.v3chains{grid-template-columns:repeat(2,1fr)}.v4dirs{grid-template-columns:1fr}.batch-grid{grid-template-columns:1fr}.v3phases .phase-row{flex-direction:column}.v3fusion{flex-direction:column;align-items:flex-start}.dim-grid{grid-template-columns:repeat(2,1fr)}}
 .m5top{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
 .m5cat{background:rgba(255,255,255,0.04);padding:10px;border-radius:6px;text-align:center;border-top:2px solid var(--c,#60a5fa)}
 .m5cat b{color:var(--c,#60a5fa);font-size:11px;display:block;letter-spacing:1px}
@@ -111,7 +148,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .t6card .rev{color:#4ade80;font-size:11px;font-weight:700;margin-top:5px;text-align:right}
 .t6sum{background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;border-top:3px solid #fbbf24}
 .t6sum h3{color:#fbbf24;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.t6table{width:100%;border-collapse:collapse;font-size:12px}
+.t6sum{overflow-x:auto;-webkit-overflow-scrolling:touch}.t6table{width:100%;border-collapse:collapse;font-size:12px;min-width:560px}
 .t6table th{color:#fbbf24;text-align:left;padding:6px 8px;background:rgba(251,191,36,0.08);font-weight:700;font-size:11px}
 .t6table td{padding:6px 8px;color:#cbd5e1;border-bottom:1px solid rgba(255,255,255,0.05)}
 .t6table td b{color:#fff;font-weight:600}.t6table td .chip{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c);font-weight:700}
@@ -139,7 +176,8 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <nav>
 <button class="tab-btn active" data-view="view-1">战略总览</button>
 <button class="tab-btn" data-view="view-2">每日情报</button>
-<button class="tab-btn" data-view="view-3">行动建议</button>
+<button class="tab-btn" data-view="view-3">26.9 万亿</button>
+<button class="tab-btn" data-view="view-4">协同方向</button>
 <button class="tab-btn" data-view="view-5">商业模式</button>
 <button class="tab-btn" data-view="view-6">真实案例</button>
 <button class="tab-btn" data-view="view-7">智能简报</button>
@@ -156,20 +194,62 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <div id="plist"></div>
 </section>
 <!-- Tab3 -->
-<section class="view" id="view-3" style="text-align:center;padding:60px 20px">
-<h2 style="color:#fbbf24;margin-bottom:16px">📋 3 条行动建议</h2>
-<p style="color:#94a3b8;margin-bottom:30px">💡 建议每周复盘</p>
-<div class="action-card" style="text-align:left;cursor:default">
-<h3>🎯 重点布局：算电协同</h3>
-<p>电网↔算力网协同分 8.71/10（5 网最高），21 项目协同，是南网核心赛道</p>
+<section class="view" id="view-3">
+<div class="v3head">
+<h2>💰 26.9 万亿元 · 核心机会</h2>
+<p>年均约 5.4 万亿元 · 2026 开局之年 &gt;7 万亿元</p>
 </div>
-<div class="action-card" style="text-align:left;cursor:default">
-<h3>⚠️ 协同洼地：地下管网</h3>
-<p>电网↔地下管网协同分 5.88/10（最低），仅 2 项目协同，需补 3+ 项目</p>
+<div class="v3chains">
+<div class="chain-card"><div class="chain-tag" style="--c:#fbbf24">⚡ 电力与新能源</div><h3>能源转型</h3><p>特高压 / 数字化配网 / 储能配套 / 高压设备 / 构网型储能 / 虚拟电厂 / 能源大数据</p><span class="chain-share">27 条 · 44.3%</span></div>
+<div class="chain-card"><div class="chain-tag" style="--c:#60a5fa">🧮 算力与通信</div><h3>数字底座</h3><p>智算中心土建 / 5G-A 微基站 / 高速光模块 / AI 芯片 / 光通信网 / 卫星互联网 / 工业互联网</p><span class="chain-share">7 条 · 11.5%</span></div>
+<div class="chain-card"><div class="chain-tag" style="--c:#f87171">🏗️ 工程与机械</div><h3>基建提质</h3><p>地下管廊盾构 / 水利枢纽 / 港口建设 / 非开挖修复 / 工程机械 / 智能探测设备</p><span class="chain-share">8 条 · 13.1%</span></div>
+<div class="chain-card"><div class="chain-tag" style="--c:#34d399">🚚 现代物流</div><h3>降本增效</h3><p>冷链多温仓储 / 多式联运枢纽 / 无人分拣 / 数字孪生物流平台 / 智慧供应链</p><span class="chain-share">2 条 · 3.3%</span></div>
 </div>
-<div class="action-card" style="text-align:left;cursor:default">
-<h3>🔋 下期重点：抽水蓄能</h3>
-<p>水网+电网双联动，建议在 W2 重点关注水风光储一体化项目</p>
+<div class="v3phases">
+<h3>📈 3 阶段投资节奏</h3>
+<div class="phase-row">
+<div class="phase phase-start"><b>起步</b><span>2026</span><p>政策驱动 + 大基建，开局之年 &gt;7 万亿元</p></div>
+<div class="phase phase-mid"><b>中期</b><span>2027-2028</span><p>5 网主线铺开，年均 5.4 万亿元</p></div>
+<div class="phase phase-late"><b>后期</b><span>2029-2030</span><p>城市地下管网 + 算力网中后期放量</p></div>
+</div>
+<div class="v3fusion">
+<span>🔗 算电协同 · 绿电直供算力 · 虚拟电厂 · 源网荷储</span>
+<span>🌆 城市生命线 · AI 巡检 · 地下管网数字化预警</span>
+<span>💧 水网物流 · 水道兴物流旺 · 数字孪生水利</span>
+</div>
+</div>
+</section>
+<!-- Tab4: 协同方向 -->
+<section class="view" id="view-4">
+<div class="v4head">
+<h2>🤝 六网协同方向 · 24 任务 / 30 项目</h2>
+<p>6 大方向 + 7 维度 + 5 批次谋划</p>
+</div>
+<div class="v4dirs">
+<div class="dir-card"><b class="dir-num">01</b><div><h3>深化与水网协同</h3><span class="dir-count">5 任务</span><p>流域水风光 / 中小型水库 / 水网绿色灵活用能 / 顶层规划 / 工程建设</p></div></div>
+<div class="dir-card"><b class="dir-num">02</b><div><h3>深化与算力网协同</h3><span class="dir-count">4 任务</span><p>算力基础设施供电 / 电碳算调度 / 算力参与市场 / 同产业集群</p></div></div>
+<div class="dir-card"><b class="dir-num">03</b><div><h3>深化与新一代通信网协同</h3><span class="dir-count">2 任务</span><p>电网通信双向支撑 / 通信资源共享</p></div></div>
+<div class="dir-card"><b class="dir-num">04</b><div><h3>深化与地下管网协同</h3><span class="dir-count">2 任务</span><p>空间资源整合 / 管廊协同运维</p></div></div>
+<div class="dir-card"><b class="dir-num">05</b><div><h3>深化与物流网协同</h3><span class="dir-count">2 任务</span><p>绿色物流能源基础设施 / 数字凭证服务</p></div></div>
+<div class="dir-card"><b class="dir-num">06</b><div><h3>深化"六网"综合协同</h3><span class="dir-count">3 任务</span><p>关键技术 / 多站合一 / 城市级综合</p></div></div>
+</div>
+<div class="v4dims">
+<h3>🧭 7 大维度协同重点</h3>
+<div class="dim-grid">
+<span>📐 顶层规划协同</span><span>🏗️ 工程建设协同</span><span>⚙️ 运行调度协同</span>
+<span>📊 数据要素协同</span><span>💼 市场业态协同</span><span>🛡️ 安全韧性协同</span>
+<span>📜 体制机制协同</span>
+</div>
+</div>
+<div class="v4batches">
+<h3>🚀 30 项重点项目 · 分 5 批次</h3>
+<div class="batch-grid">
+<div class="batch batch-study"><b>研究一批</b><span class="batch-count">4 项</span><p>水风光储一体化 / 电碳算协同研究 / 车网互动 / 算电协同市场化</p></div>
+<div class="batch batch-do"><b>实施一批</b><span class="batch-count">8 项</span><p>贵阳防灾减灾 / 南方五省电碳算 / 黔电送粤 / 平陆运河交能 / 多站合一 / 贵安电算 / 汕头国际风电城零碳</p></div>
+<div class="batch batch-pre"><b>前期一批</b><span class="batch-count">6 项</span><p>空中一张车 / 大湾区低空 / 临空区综合能源 / 湾区融合 / 平陆运河电网 / 广深超充</p></div>
+<div class="batch batch-save"><b>储备一批</b><span class="batch-count">6 项</span><p>广深交能融合 / 外电入粤 / 氢储能 / 深圳数字平台 / 海南多能合一 / 深城能源互联网</p></div>
+<div class="batch batch-plan"><b>谋划一批</b><span class="batch-count">6 项</span><p>算网融合超高速 / 南网数字认证 / 无人机输配电 / "六网"协同产业平台 / 市场化平台 / 零碳园区</p></div>
+</div>
 </div>
 </section>
 <!-- Tab5: 商业模式 -->
