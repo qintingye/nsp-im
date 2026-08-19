@@ -95,6 +95,26 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .pmeta .org{color:#cbd5e1}
 .pmeta .date{color:#94a3b8}
 .plink{color:#4ade80;text-decoration:underline;font-size:12px}
+.t6top{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:14px}
+.t6mode{background:rgba(255,255,255,0.04);padding:8px 4px;border-radius:6px;text-align:center;border-top:2px solid var(--c,#60a5fa)}
+.t6mode b{color:var(--c);font-size:11px;display:block;letter-spacing:1px}
+.t6mode span{color:#cbd5e1;font-size:10px;display:block;margin-top:3px;font-weight:600}
+.t6head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding:8px 12px;background:rgba(251,191,36,0.06);border-left:3px solid #fbbf24;border-radius:6px}
+.t6head b{color:#fbbf24;font-size:13px}.t6head span{color:#94a3b8;font-size:11px}
+.t6grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.t6card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;border-left:3px solid var(--c)}
+.t6card .badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c);font-weight:700;margin-bottom:5px}
+.t6card .id{display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:var(--c);color:#0a1628;font-size:11px;font-weight:700;margin-right:5px;float:left}
+.t6card h4{color:var(--c);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.3;min-height:34px}
+.t6card .row{display:flex;justify-content:space-between;padding:2px 0;font-size:11px}
+.t6card .row b{color:#94a3b8;font-weight:500}.t6card .row span{color:#cbd5e1;font-weight:600;text-align:right;max-width:62%}
+.t6card .rev{color:#4ade80;font-size:11px;font-weight:700;margin-top:5px;text-align:right}
+.t6sum{background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;border-top:3px solid #fbbf24}
+.t6sum h3{color:#fbbf24;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.t6table{width:100%;border-collapse:collapse;font-size:12px}
+.t6table th{color:#fbbf24;text-align:left;padding:6px 8px;background:rgba(251,191,36,0.08);font-weight:700;font-size:11px}
+.t6table td{padding:6px 8px;color:#cbd5e1;border-bottom:1px solid rgba(255,255,255,0.05)}
+.t6table td b{color:#fff;font-weight:600}.t6table td .chip{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c);font-weight:700}
 </style>
 </head>
 <body>
@@ -115,6 +135,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <button class="tab-btn" data-view="view-2">每日情报</button>
 <button class="tab-btn" data-view="view-3">行动建议</button>
 <button class="tab-btn" data-view="view-5">商业模式</button>
+<button class="tab-btn" data-view="view-6">真实案例</button>
 </nav>
 <main>
 <!-- Tab1 -->
@@ -159,6 +180,13 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <h3>⚠️ 4 大实操风险</h3>
 <div id="m5risks" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px"></div>
 </div>
+</section>
+<!-- Tab6: 真实案例 -->
+<section class="view" id="view-6">
+<div class="t6top" id="t6modes"></div>
+<div class="t6head"><b>🏛️ 11 个央企电网子公司落地案例</b><span>6 大商业化模式 · 跨 5 网协同</span></div>
+<div class="t6grid" id="t6cards"></div>
+<div class="t6sum"><h3>📊 模式归类速览 · 按业务模式分组</h3><table class="t6table"><thead><tr><th>#</th><th>项目名称</th><th>业主方</th><th>模式</th><th>核心资产/规模</th><th>收益模型</th></tr></thead><tbody id="t6rows"></tbody></table></div>
 </section>
 </main>
 <!-- Modal -->
@@ -400,6 +428,23 @@ document.getElementById("gate-err").textContent="❌ 密码错误";
 try{if(sessionStorage.getItem("nsp_gate")==="ok"){document.getElementById("gate").classList.add("hide");}}catch(e){}
 
 renderTab2();
+
+const C=["#60a5fa","#60a5fa","#60a5fa","#22d3ee","#22d3ee","#34d399","#34d399","#a78bfa","#a78bfa","#fbbf24","#f472b6"];
+const M=[0,0,0,1,1,2,2,3,3,4,5];
+const T=["中山格兰仕屋顶光伏","广船国际储能","四川长虹工业园能源站","佛山禅城公共机构","南方医科大学珠江医院","国网江苏 e+ 平台","湖南星沙 VPP","宿迁运河港配售电","重庆西永微电园光伏","广州工控零碳园区","贵安算电协同联盟"];
+const O=["南网能源","南网能源","南网能源","南网能源","南网能源","国网江苏","国网湖南","国网江苏+地方","国网重庆","南网能源","南网贵州"];
+const A=["52.38MW 光伏","15MW/30MWh 储能","冷热电三联供","全区公共机构","4880 万改造","597 万 kW/4 万资源点","园区储能+充电桩","增量配网+首个 VPP","联合体模式","BOO+平台+碳交易","智算中心 SaaS"];
+const R=["年省电费 300+ 万","峰谷套利+需响","长期能源服务费","打包服务费+响应分成","托管 EMC","平台费+响应分成","响应补偿+分成","配电费+售电+VPP","25 年运营","投资+服务费+佣金","电力代理+订阅"];
+const M6=["BOO/EMC","托管+VPP","VPP代运营","股权合资","零碳园区","算电协同"];
+function renderTab6(){
+let md="",h="",r="";
+for(let i=0;i<6;i++){const cnt=M.filter(x=>x===i).length;md+=`<div class="t6mode" style="--c:${C[M.indexOf(i)]}"><b>${M6[i]}</b><span>${cnt} 案例</span></div>`;}
+for(let i=0;i<11;i++){const c=C[i],m=M6[M[i]];h+=`<div class="t6card" style="--c:${c}"><div class="badge">${m}</div><h4><span class="id">${i+1}</span>${T[i]}</h4><div class="row"><b>业主方</b><span>${O[i]}</span></div><div class="row"><b>核心资产</b><span>${A[i]}</span></div><div class="rev">💰 ${R[i]}</div></div>`;r+=`<tr><td><b>#${i+1}</b></td><td><b>${T[i]}</b></td><td>${O[i]}</td><td><span class="chip" style="--c:${c}">${m}</span></td><td>${A[i]}</td><td>${R[i]}</td></tr>`;}
+document.getElementById("t6modes").innerHTML=md;
+document.getElementById("t6cards").innerHTML=h;
+document.getElementById("t6rows").innerHTML=r;
+}
+renderTab6();
 </script>
 </body>
 </html>
