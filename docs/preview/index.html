@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>NSP-IM v2.0 · 六网协同情报</title>
+<title>NSP-IM v3.0 · 六网协同情报</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,PingFang SC,Microsoft YaHei,sans-serif;background:#0a1628;color:#cbd5e1;min-height:100vh;padding:0}
@@ -115,11 +115,17 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .t6table th{color:#fbbf24;text-align:left;padding:6px 8px;background:rgba(251,191,36,0.08);font-weight:700;font-size:11px}
 .t6table td{padding:6px 8px;color:#cbd5e1;border-bottom:1px solid rgba(255,255,255,0.05)}
 .t6table td b{color:#fff;font-weight:600}.t6table td .chip{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;color:#0a1628;background:var(--c);font-weight:700}
+.t7head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding:9px 14px;background:rgba(251,191,36,0.08);border-left:3px solid #fbbf24;border-radius:6px}.t7head b{color:#fbbf24;font-size:14px;font-weight:700}.t7head span{color:#cbd5e1;font-size:11px;font-family:monospace}
+.t7brief{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px;margin-bottom:12px;font-size:12px;line-height:1.7;color:#cbd5e1}.t7brief h3{color:#fbbf24;font-size:13px;font-weight:700;margin:10px 0 6px;padding-bottom:4px;border-bottom:1px solid rgba(251,191,36,0.2)}.t7brief h3:first-child{margin-top:0}.t7brief .leadline{background:rgba(251,191,36,0.08);padding:8px 12px;border-radius:5px;border-left:3px solid #fbbf24;color:#fde68a;font-weight:600;margin-bottom:8px;font-size:13px}
+.t7row{display:flex;justify-content:space-between;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:4px;margin-bottom:4px;border-left:3px solid var(--c);font-size:12px;align-items:center}.t7row b{color:var(--c);font-weight:700;min-width:130px}.t7row span{color:#fff;font-weight:700}
+.t7act{padding:6px 11px;background:rgba(74,222,128,0.06);border-radius:4px;margin-bottom:4px;border-left:3px solid #4ade80;font-size:12px;color:#cbd5e1}.t7act b{color:#4ade80;margin-right:5px}
+.t7actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}.t7btn{flex:1;min-width:100px;padding:9px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#cbd5e1;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}.t7btn:hover{background:rgba(255,255,255,0.12);border-color:#fbbf24;color:#fff}.t7btn-primary{background:#fbbf24;border-color:#fbbf24;color:#0a1628;font-weight:700}
+.t7toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#4ade80;color:#0a1628;padding:7px 16px;border-radius:5px;font-size:12px;font-weight:700;z-index:9999;display:none}.t7toast.show{display:block}@media (max-width:768px){.t7actions{flex-direction:column}.t7btn{min-width:0}}
 </style>
 </head>
 <body>
 <header>
-<h1>⚡ NSP-IM v2.0 · 六网协同情报</h1>
+<h1>⚡ NSP-IM v3.0 · 六网协同情报</h1>
 <p>南网 5 省 · 25 个协同项目 · 每日 09:00 更新</p>
 </header>
 <div id="gate" class="gate-mask">
@@ -136,6 +142,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <button class="tab-btn" data-view="view-3">行动建议</button>
 <button class="tab-btn" data-view="view-5">商业模式</button>
 <button class="tab-btn" data-view="view-6">真实案例</button>
+<button class="tab-btn" data-view="view-7">智能简报</button>
 </nav>
 <main>
 <!-- Tab1 -->
@@ -187,6 +194,16 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <div class="t6head"><b>🏛️ 11 个央企电网子公司落地案例</b><span>6 大商业化模式 · 跨 5 网协同</span></div>
 <div class="t6grid" id="t6cards"></div>
 <div class="t6sum"><h3>📊 模式归类速览 · 按业务模式分组</h3><table class="t6table"><thead><tr><th>#</th><th>项目名称</th><th>业主方</th><th>模式</th><th>核心资产/规模</th><th>收益模型</th></tr></thead><tbody id="t6rows"></tbody></table></div>
+</section>
+<!-- Tab7: 智能简报 -->
+<section class="view" id="view-7">
+<div class="t7head"><b>📰 今日简报</b><span id="t7-date">--</span></div>
+<div id="brief-content" class="t7brief"><p style="color:#94a3b8;text-align:center;padding:40px">点击下方「生成简报」按钮，合成今日情报简报。</p></div>
+<div class="t7actions">
+<button class="t7btn t7btn-primary" id="btn-gen">📝 生成简报</button>
+<button class="t7btn" id="btn-copy">📋 复制到剪贴板</button>
+<button class="t7btn" id="btn-export">⬇️ 导出 Markdown</button>
+</div>
 </section>
 </main>
 <!-- Modal -->
@@ -445,6 +462,51 @@ document.getElementById("t6cards").innerHTML=h;
 document.getElementById("t6rows").innerHTML=r;
 }
 renderTab6();
+
+function generateBrief(){
+const today=(typeof TODAY!=="undefined"&&TODAY.items&&TODAY.items[0])||{title:"暂无",org:"-",date:"-"};
+const nets=[{name:"电网",icon:"⚡",score:10.0,color:"#fbbf24"},{name:"水网",icon:"💧",score:8.62,color:"#60a5fa"},{name:"算力网",icon:"🧮",score:8.71,color:"#a78bfa"},{name:"新一代通信网",icon:"📡",score:8.54,color:"#22d3ee"},{name:"城市地下管网",icon:"🔧",score:5.88,color:"#fb923c"},{name:"物流网",icon:"🚛",score:8.64,color:"#34d399"}];
+const dirs=[{name:"电碳算协同",score:8.71,color:"#fbbf24"},{name:"数智融合",score:7.00,color:"#22d3ee"},{name:"抽蓄互补",score:8.50,color:"#a78bfa"},{name:"交能融合",score:8.00,color:"#34d399"}];
+const actions=["关注算电协同（VPP 597 万 kW 案）","推进地下管网（5.88 洼地补强）","跟踪广东 e+ 平台（VPP 代运营）"];
+return{today,nets,dirs,actions,ts:new Date().toISOString().slice(0,10)};
+}
+
+let CB=null;
+const sw=s=>(s/10)*100;
+const fmt2=s=>s.toFixed(2);
+
+function bHTML(d){
+const nets=d.nets.map(n=>`<div class="t7row" style="--c:${n.color}"><b>${n.icon} ${n.name}</b><span>${fmt2(n.score)} / 10</span></div>`).join("");
+const dirs=d.dirs.map(x=>`<div class="t7row" style="--c:${x.color}"><b>${x.name}</b><span>${fmt2(x.score)} / 10</span></div>`).join("");
+const acts=d.actions.map((a,i)=>`<div class="t7act"><b>${i+1}.</b>${a}</div>`).join("");
+return`<div class="leadline">📌 <b>头条：</b>${d.today.title}（${d.today.org} · ${d.today.date}）</div><h3>🌐 5 网协同（电网基准 10.0）</h3>${nets}<h3>⚡ 4 大方向</h3>${dirs}<h3>💰 核心机会</h3><p style="margin:4px 0 8px">南网 5 省协同项目总投资规模达 <b style="color:#4ade80;font-size:15px">26.9 万亿元</b>，覆盖 6 大领域 11 个央企电网落地案例。</p><h3>🎯 行动建议（3 条）</h3>${acts}<p style="margin-top:10px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06);color:#94a3b8;font-size:11px;text-align:right">简报：${d.ts} · TODAY/PROJECTS/NETS/MODES_8</p>`;
+}
+
+function bText(d){
+const nets=d.nets.map(n=>`  ${n.icon} ${n.name}：${fmt2(n.score)} / 10\n`).join("");
+const dirs=d.dirs.map(x=>`  ${x.name}：${fmt2(x.score)} / 10\n`).join("");
+const acts=d.actions.map((a,i)=>`  ${i+1}. ${a}\n`).join("");
+return`【NSP-IM 今日简报 · ${d.ts}】\n\n📌 头条：${d.today.title}\n   来源：${d.today.org}（${d.today.date}）\n\n🌐 5 网协同：\n${nets}\n⚡ 4 大方向：\n${dirs}\n💰 核心机会：\n  南网 5 省协同项目总投资规模 26.9 万亿元，覆盖 6 大领域 11 个央企电网落地案例。\n\n🎯 行动建议：\n${acts}\n—— 数据源：TODAY/PROJECTS/NETS/MODES_8`;
+}
+
+function bMD(d){
+const nets=d.nets.map(n=>`| ${n.icon} ${n.name} | ${fmt2(n.score)}/10 |\n`).join("");
+const dirs=d.dirs.map(x=>`| ${x.name} | ${fmt2(x.score)}/10 |\n`).join("");
+const acts=d.actions.map((a,i)=>`${i+1}. ${a}\n`).join("");
+return`# NSP-IM 今日简报 · ${d.ts}\n\n## 📌 头条\n\n**${d.today.title}**\n\n- 来源：${d.today.org}\n- 日期：${d.today.date}\n\n## 🌐 5 网协同\n\n| 网 | 协同分 |\n| --- | --- |\n${nets}\n## ⚡ 4 大方向\n\n| 方向 | 协同分 |\n| --- | --- |\n${dirs}\n## 💰 核心机会\n\n南网 5 省协同项目总投资规模 **26.9 万亿元**，覆盖 6 大领域 11 个央企电网落地案例。\n\n## 🎯 行动建议\n\n${acts}\n---\n\n*数据源：TODAY/PROJECTS/NETS/MODES_8 · ${d.ts}*`;
+}
+
+function toast(m){let t=document.getElementById("t7toast");if(!t){t=document.createElement("div");t.id="t7toast";t.className="t7toast";document.body.appendChild(t);}t.textContent=m;t.classList.remove("show");void t.offsetWidth;t.classList.add("show");}
+
+function onGen(){const d=generateBrief();CB=d;const el=document.getElementById("brief-content");el.innerHTML=bHTML(d);el.classList.add("t7brief");document.getElementById("t7-date").textContent=`${d.today.date} · ${d.ts}`;toast("✅ 简报已生成");}
+
+function onCopy(){if(!CB){toast("⚠️ 请先生成简报");return;}const txt=bText(CB),ok=()=>toast("✅ 已复制"),fb=()=>{const a=document.createElement("textarea");a.value=txt;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok();}catch(e){toast("❌ 失败");}document.body.removeChild(a);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fb);}else{fb();}}
+
+function onExport(){if(!CB){toast("⚠️ 请先生成简报");return;}const md=bMD(CB),b=new Blob([md],{type:"text/markdown;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`NSP-IM-简报-${CB.ts}.md`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ Markdown 已导出");}
+
+document.getElementById("btn-gen").addEventListener("click",onGen);
+document.getElementById("btn-copy").addEventListener("click",onCopy);
+document.getElementById("btn-export").addEventListener("click",onExport);
 </script>
 </body>
 </html>
