@@ -283,6 +283,8 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <button class="t7btn t7btn-primary" id="btn-gen">📝 生成简报</button>
 <button class="t7btn" id="btn-copy">📋 复制到剪贴板</button>
 <button class="t7btn" id="btn-export">⬇️ 导出 Markdown</button>
+<button class="t7btn" id="btn-export-html">📄 导出 HTML（Word 可打开）</button>
+<button class="t7btn" id="btn-export-pdf">🖨️ 导出 PDF</button>
 </div>
 </section>
 </main>
@@ -584,9 +586,15 @@ function onCopy(){if(!CB){toast("⚠️ 请先生成简报");return;}const txt=b
 
 function onExport(){if(!CB){toast("⚠️ 请先生成简报");return;}const md=bMD(CB),b=new Blob([md],{type:"text/markdown;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`NSP-IM-简报-${CB.ts}.md`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ Markdown 已导出");}
 
+function onExportHTML(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML.replace(/class="[^"]*"/g,"").replace(/style="[^"]*"/g,"");const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NSP-IM 简报 - ${ts}</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;background:#fff;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;margin-top:24px;padding-bottom:6px;border-bottom:1px solid #ddd}h3{color:#0a1628;margin-top:18px}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;border-radius:6px;font-weight:600;margin:12px 0}.section{margin:20px 0}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}</style></head><body><h1>📊 NSP-IM 每日简报</h1><p><b>${ts}</b></p>${inner}</body></html>`;const b=new Blob([html],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`NSP-IM-简报-${ts}.html`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ HTML 已下载（Word 可打开）");}
+
+function onExportPDF(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML;const w=window.open("","_blank");if(!w){toast("⚠️ 浏览器拦截了弹窗，请允许弹窗后重试");return;}w.document.write(`<!DOCTYPE html><html><head><title>NSP-IM 简报 PDF 打印</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;border-bottom:2px solid #fbbf24;padding-bottom:6px;margin-top:20px}h3{color:#0a1628;margin-top:16px}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;margin:12px 0;border-radius:6px;font-weight:600}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}@media print{body{margin:15mm}.no-print{display:none}}</style></head><body><h1>📊 NSP-IM 每日简报 - ${ts}</h1>${inner}<script>setTimeout(function(){window.print();},500);<\/script></body></html>`);w.document.close();toast("✅ 打印窗口已打开（可另存为 PDF）");}
+
 document.getElementById("btn-gen").addEventListener("click",onGen);
 document.getElementById("btn-copy").addEventListener("click",onCopy);
 document.getElementById("btn-export").addEventListener("click",onExport);
+document.getElementById("btn-export-html").addEventListener("click",onExportHTML);
+document.getElementById("btn-export-pdf").addEventListener("click",onExportPDF);
 </script>
 </body>
 </html>
