@@ -435,9 +435,9 @@ const mc=document.getElementById("modal-content");
 mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h2>🏢 ${m.name}</h2>
 <h3>模式简介</h3>
-<p>${m.desc}，资产类型为${m.category}，典型合同周期 ${i<2?'20-25年':i<4?'5-10年':i<6?'1-3年':'持续'}</p>
+<p>${m.desc}，资产类型为${m.category}，典型合同周期 ${(i<2)?'20-25年':(i<4)?'5-10年':(i<6)?'1-3年':'持续'}</p>
 <div class="mstat">资产类型 <b>${m.category}</b></div>
-<div class="mstat">合同周期 <b>${i<2?'20-25年':i<4?'5-10年':i<6?'1-3年':'持续'}</b></div>
+<div class="mstat">合同周期 <b>${(i<2)?'20-25年':(i<4)?'5-10年':(i<6)?'1-3年':'持续'}</b></div>
 <h3>适用场景</h3>
 <p style="color:#94a3b8;font-size:13px">${["大型园区/厂矿/数据中心","医院/学校/政府园区","工商业分布式","医院/高校/园区","海量分散资源","工商业/园区","跨场景软件","AI算力/智算中心"][i]}</p>
 <h3>真实案例</h3>
@@ -446,7 +446,7 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mscores">
 <div class="mscore">战略价值 <b>9.0</b></div>
 <div class="mscore">可复制性 <b>8.5</b></div>
-<div class="mscore">规模 <b>${i<2?"千亿":"亿级"}</b></div>
+<div class="mscore">规模 <b>${(i<2)?"千亿":"亿级"}</b></div>
 <div class="mscore">风险 <b>中低</b></div>
 </div>
 <div class="mtotal">推荐分 <b>9.0</b> 🟢</div>
