@@ -252,6 +252,7 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <!-- Tab2 -->
 <section class="view" id="view-2">
 <div class="pbar"><span>📅 <span id="pdate"></span></span><span class="pcount"><span id="pcount">0</span> 条政策</span></div>
+<div class="demo-tip" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);padding:8px 12px;border-radius:6px;margin-bottom:12px;font-size:12px;color:#fde68a">⚠️ <b>演示数据</b> · 当前显示的是 demo 政策 · 真实政策由每日 10:00 cron 自动抓取并替换</div>
 <div id="plist"></div>
 </section>
 <!-- Tab3 -->
@@ -375,12 +376,14 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 </div>
 </div>
 <script>
+// D32: 5 条政策为演示数据(demo),URL 改为占位 #,避免 404 误导
+// 真实政策由每日 10:00 cron 自动抓取并替换
 const TODAY={date:"2026-08-19",items:[
-{id:"P-ND-20260819-0001",title:"《新型数据中心算力计量与运行监测技术规范》",org:"国家发改委",url:"https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260812_144600.html",date:"2026-08-12",source:"发改委"},
-{id:"P-NE-20260819-0001",title:"《新型电力系统行动方案（2026-2030）》",org:"国家能源局",url:"https://www.nea.gov.cn/",date:"2026-08-08",source:"能源局"},
-{id:"P-CS-20260819-0001",title:"《南方电网新型电力系统建设方案》",org:"南方电网",url:"https://www.csg.cn/",date:"2026-08-05",source:"南网"},
-{id:"P-BJ-20260819-0001",title:"《算电协同六网融合指导意见（示范版）》",org:"北极星电力",url:"https://www.bjx.com.cn/",date:"2026-08-18",source:"北极星"},
-{id:"P-ND-20260819-0002",title:"《多用户绿电直连通知》",org:"国家发改委",url:"https://www.ndrc.gov.cn/",date:"2026-08-15",source:"发改委"}
+{id:"P-ND-20260819-0001",title:"《新型数据中心算力计量与运行监测技术规范》",org:"国家发改委",url:"#",date:"2026-08-12",source:"发改委"},
+{id:"P-NE-20260819-0001",title:"《新型电力系统行动方案（2026-2030）》",org:"国家能源局",url:"#",date:"2026-08-08",source:"能源局"},
+{id:"P-CS-20260819-0001",title:"《南方电网新型电力系统建设方案》",org:"南方电网",url:"#",date:"2026-08-05",source:"南网"},
+{id:"P-BJ-20260819-0001",title:"《算电协同六网融合指导意见（示范版）》",org:"北极星电力",url:"#",date:"2026-08-18",source:"北极星"},
+{id:"P-ND-20260819-0002",title:"《多用户绿电直连通知》",org:"国家发改委",url:"#",date:"2026-08-15",source:"发改委"}
 ]};
 const PROJECTS=[
 {id:"W1",net:"water",name:"环北部湾广东",intro:"广东 614.5 亿重大水利，覆盖 1800 万人",invest:"614.5 亿",source:{type:"官方",org:"广东省发改委",title:"环北部湾广东水资源配置工程 2024-2030 规划",url:"https://www.ndrc.gov.cn/"},recommend:{s:9,p:10,v:9,i:7,t:8.8,e:"粤港澳大湾区水资源保障核心项目"}},
