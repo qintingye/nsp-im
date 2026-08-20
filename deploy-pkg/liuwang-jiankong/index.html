@@ -26,6 +26,20 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .nsi .cpl{font-size:9px;color:#94a3b8;font-style:normal;margin-left:4px;opacity:0.7;font-weight:400}
 .nsi:hover .cpl{opacity:1;color:#fbbf24}
 .nbg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+/* 耦合分值热力图 (V3.0 D31) */
+.heatmap-wrap{overflow-x:auto;margin:16px 0}
+.heatmap{width:100%;border-collapse:collapse;font-size:13px}
+.heatmap th,.heatmap td{padding:10px 12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}
+.heatmap th{background:rgba(251,191,36,0.15);color:#fbbf24;font-weight:700}
+.heatmap td:first-child{text-align:left;font-weight:600;color:#cbd5e1}
+.heatmap td.total{font-weight:700;color:#fff}
+/* 绿黄红三色 (按分值 0-4) */
+.heatmap .s-1_5,.heatmap .s-1_7,.heatmap .s-1_8,.heatmap .s-1_9{background:rgba(239,68,68,0.25);color:#fca5a5}
+.heatmap .s-3_1,.heatmap .s-3_2,.heatmap .s-3_3,.heatmap .s-3_4{background:rgba(251,191,36,0.2);color:#fde68a}
+.heatmap .s-3_7,.heatmap .s-3_8,.heatmap .s-3_9{background:rgba(34,197,94,0.25);color:#86efac}
+.heatmap .s-4_0{background:rgba(34,197,94,0.4);color:#fff}
+.heatmap .s-8_0,.heatmap .s-8_8,.heatmap .s-8_9{background:rgba(251,191,36,0.2);color:#fde68a}
+.heatmap .s-9_6,.heatmap .s-9_7{background:rgba(34,197,94,0.3);color:#fff}
 .nbx{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px;border-top:3px solid var(--c,#60a5fa);cursor:pointer;transition:transform .2s}
 .nbx:hover{transform:translateY(-2px)}
 .nbt{color:var(--c,#60a5fa);font-size:15px;font-weight:700;margin-bottom:10px}
@@ -211,6 +225,29 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <section class="view active" id="view-1">
 <div class="nb" id="nb"></div>
 <div class="nbg" id="nbg"></div>
+<h3 style="color:#fbbf24;font-size:15px;margin:24px 0 8px">📊 耦合分值热力图（v3.0 公式）</h3>
+<p style="color:#94a3b8;font-size:12px">基础物理支撑 + 数字与机制协同 + 系统韧性增益 = 总分（10分制）。绿=高分，黄=中，红=低。</p>
+<div class="heatmap-wrap">
+<table class="heatmap">
+<thead>
+<tr>
+<th>网络</th>
+<th>基础物理</th>
+<th>数字机制</th>
+<th>系统韧性</th>
+<th>总分</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>🧮 算力网</td><td class="s-3_8">3.8</td><td class="s-4_0">4.0</td><td class="s-1_9">1.9</td><td class="s-9_7 total">9.7</td></tr>
+<tr><td>📡 通信网</td><td class="s-3_7">3.7</td><td class="s-4_0">4.0</td><td class="s-1_9">1.9</td><td class="s-9_6 total">9.6</td></tr>
+<tr><td>💧 水网</td><td class="s-3_9">3.9</td><td class="s-3_2">3.2</td><td class="s-1_8">1.8</td><td class="s-8_9 total">8.9</td></tr>
+<tr><td>🔧 城市地下管网</td><td class="s-3_8">3.8</td><td class="s-3_3">3.3</td><td class="s-1_7">1.7</td><td class="s-8_8 total">8.8</td></tr>
+<tr><td>🚛 物流网</td><td class="s-3_4">3.4</td><td class="s-3_1">3.1</td><td class="s-1_5">1.5</td><td class="s-8_0 total">8.0</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:#94a3b8;font-size:11px;margin-top:8px">📋 用途：项目评审与规划 · 精准定位"高分项"与"待补强项" · 3档应用（8-10 优先 / 5-7 补充 / &lt;5 压缩）</p>
 </section>
 <!-- Tab2 -->
 <section class="view" id="view-2">
