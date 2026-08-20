@@ -130,7 +130,15 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .m5rx:hover{background:rgba(239,68,68,0.15);border-color:#ef4444}
 .m5rx b{color:#fbbf24;font-size:12px;display:block;margin-bottom:4px}
 .m5rx span{color:#94a3b8;font-size:11px;line-height:1.5}
-@media (max-width:768px){.m5main{grid-template-columns:1fr}.m5cards{grid-template-columns:1fr}.m5top,.m5risk{grid-template-columns:repeat(2,1fr)}}
+.m5match{margin:20px 0}
+.match-row{display:grid;grid-template-columns:140px 1fr 200px;gap:12px;padding:10px;background:rgba(255,255,255,0.04);border-radius:8px;margin-bottom:8px;align-items:center}
+.match-id b{color:#fbbf24;font-size:14px;display:block}
+.match-id span{color:#cbd5e1;font-size:11px}
+.match-modes{display:flex;gap:6px;flex-wrap:wrap}
+.mode-rec{padding:4px 8px;background:rgba(0,0,0,0.3);border-left:3px solid var(--c);border-radius:4px;font-size:11px;cursor:pointer;color:var(--c);font-weight:600}
+.mode-rec:hover{background:rgba(0,0,0,0.5)}
+.match-reason{color:#94a3b8;font-size:11px;line-height:1.4}
+@media (max-width:768px){.m5main{grid-template-columns:1fr}.m5cards{grid-template-columns:1fr}.m5top,.m5risk{grid-template-columns:repeat(2,1fr)}.match-row{grid-template-columns:1fr}}
 .gate-mask{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center}
 .gate-mask.hide{display:none}
 .gate-box{background:#0a1628;border:1px solid rgba(251,191,36,0.3);border-radius:12px;padding:32px;width:320px;text-align:center}
@@ -277,6 +285,9 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 <div id="m5coops"></div>
 </div>
 </div>
+<h3>📊 25 项目 × 商业模式推荐表</h3>
+<p style="color:#94a3b8;font-size:12px">基于项目特性 + 政策环境 + 业主情况，推荐最适合的 3 种商业模式。点击模式查看 SWOT 详情。</p>
+<div class="m5match" id="m5match"></div>
 <div class="m5risk">
 <h3>⚠️ 4 大实操风险</h3>
 <div id="m5risks" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px"></div>
@@ -669,6 +680,43 @@ const CATEGORIES_4=[
 {name:"轻资产",color:"#fb923c",icon:"📦",note:"托管/售电+增值"},
 {name:"极轻",color:"#34d399",icon:"☁️",note:"VPP/能碳/SaaS"}
 ];
+const MODES_S={
+"BOO 建设-拥有-运营":{name:"BOO",category:"重资产",swot:{优势:["永久所有权","长期稳定收入","深度绑定业主","规模效应"],劣势:["资金占用大","回收期长（20-25年）","退出困难","受政策风险影响大"],适用:["大型园区","工厂","数据中心","公共机构","港口"],不适用:["短期项目","资金压力大的企业","政策不确定场景"],风险等级:"中",ROE:"8-12%",现金特点:"前期大额投入+长期稳定"},典型案例:["格兰仕EMC","广船储能","长虹工业园能源站"]},
+"BOT 建设-运营-移交":{name:"BOT",category:"重资产",swot:{优势:["到期移交风险有限","谈判期长绑定","公共项目优先","可获长期运营权"],劣势:["谈判周期长","移交谈判难","运营期压力大","移交后失去资产"],适用:["医院","学校","政府园区","PPP 项目"],不适用:["短期项目","商业项目","需要长期持有的场景"],风险等级:"低",ROE:"5-8%",现金特点:"中期投入+周期性回收"},典型案例:["环北部湾水利BOT"]},
+"EMC 合同能源管理":{name:"EMC",category:"中重",swot:{优势:["客户零投入","节能效益分成","政策支持","8-25 年合同"],劣势:["节能基准争议","长期绑定","业主违约风险","运营压力"],适用:["工商业屋顶光伏","工业电机改造","中央空调","厂房屋顶"],不适用:["耗能低场景","节能空间小的企业"],风险等级:"中低",ROE:"10-15%",现金特点:"分期回收+节能分成"},典型案例:["格兰仕EMC","广船国际储能"]},
+"能源托管":{name:"能源托管",category:"轻资产",swot:{优势:["稳定年度服务费","极轻资产","现金流稳定","客户粘性强"],劣势:["服务边界争议","技术依赖","竞争激烈","需专业团队"],适用:["医院","高校","轨道交通","大型园区","公共机构"],不适用:["单一项目","小型客户","高耗能企业"],风险等级:"低",ROE:"12-18%",现金特点:"年度服务费+稳定现金流"},典型案例:["佛山禅城公共机构","南方医科大学珠江医院"]},
+"VPP 虚拟电厂":{name:"VPP",category:"极轻",swot:{优势:["极轻资产","规模化复制快","响应国家政策","交易分成"],劣势:["调度权限争议","收益分成纠纷","技术复杂","业主自持设备"],适用:["海量分散资源","工商业光伏+储能+充电桩","空调可调负荷"],不适用:["单一设备","资源稀缺场景"],风险等级:"中",ROE:"15-25%",现金特点:"交易分成+服务费"},典型案例:["江苏e+ 597万kW","湖南星沙VPP"]},
+"售电+增值":{name:"售电+增值",category:"轻资产",swot:{优势:["增值收入","客户绑定","多业务交叉销售","数据积累"],劣势:["价格波动","竞争激烈","增值服务能力要求高"],适用:["工商业用户","园区","有绿电需求客户"],不适用:["居民用户","无增值需求场景"],风险等级:"中",ROE:"6-10%",现金特点:"购售价差+增值服务费"},典型案例:["南网启成"]},
+"能碳平台 SaaS":{name:"能碳平台",category:"极轻",swot:{优势:["SaaS订阅","极轻资产","规模化复制","高ROE"],劣势:["软件竞争","获客难","需持续开发","客户教育成本"],适用:["跨场景","有数字化需求企业","政府园区"],不适用:["传统客户","不愿数字化企业"],风险等级:"低",ROE:"20-30%",现金特点:"订阅收入+license费"},典型案例:["南网看能","国网e+"]},
+"算电协同":{name:"算电协同",category:"中",swot:{优势:["新兴赛道","政策强支持","高毛利","战略协同"],劣势:["技术复杂","投资大","竞争激烈","依赖AI算力需求"],适用:["AI算力中心","智算中心","数据中心集群"],不适用:["传统项目","非算力场景"],风险等级:"中",ROE:"10-18%",现金特点:"电力打包费+负荷调节收益"},典型案例:["贵安算电协同联盟","阳江海底算力"]}
+};
+const PROJECT_MODE_MAP={
+'W1':{name:'环北部湾广东',推荐:['BOT','能源托管','BOO'],理由:'政府主导大型水利+长期稳定+公共属性'},
+'W2':{name:'环北部湾广西',推荐:['BOT','能源托管','BOO'],理由:'政府水利基础设施+BOT 模式优先'},
+'W3':{name:'云南滇中引水',推荐:['BOT','BOO','能源托管'],理由:'西南最大跨流域调水+长期持有'},
+'W4':{name:'贵州黔中水利',推荐:['BOT','能源托管','EMC'],理由:'贵州水利枢纽+政府主导'},
+'W5':{name:'海南昌化江',推荐:['BOT','能源托管','EMC'],理由:'海南自贸港供水+政府背景'},
+'C1':{name:'阳江海底算力',推荐:['算电协同','VPP','EMC'],理由:'AI算力+绿电直供+VPP 调度'},
+'C2':{name:'韶关集群',推荐:['算电协同','能源托管','EMC'],理由:'大型算力集群+稳定能源需求'},
+'C3':{name:'海南算力',推荐:['算电协同','VPP','售电+增值'],理由:'海南自贸港算力+绿电'},
+'C4':{name:'中国-东盟数据',推荐:['算电协同','能碳平台','VPP'],理由:'跨境算力+SaaS化服务'},
+'C5':{name:'深广韶数据',推荐:['算电协同','能源托管','售电+增值'],理由:'大湾区算力大通道+多元服务'},
+'T1':{name:'广东5G-A',推荐:['VPP','能碳平台','售电+增值'],理由:'通信资源聚合+SaaS化'},
+'T2':{name:'广西双万兆',推荐:['VPP','能碳平台','售电+增值'],理由:'广西数字底座+增值服务'},
+'T3':{name:'海南万兆',推荐:['VPP','能碳平台','售电+增值'],理由:'海南自贸港通信+SaaS'},
+'T4':{name:'贵州5G+400G',推荐:['VPP','能碳平台','售电+增值'],理由:'贵州数字底座+网络聚合'},
+'T5':{name:'云南5G-A',推荐:['VPP','能碳平台','售电+增值'],理由:'国际通信+跨境资源'},
+'P1':{name:'广东综合管廊',推荐:['BOO','BOT','EMC'],理由:'长期资产+政府背景+重资产'},
+'P2':{name:'贵州综合管廊',推荐:['BOO','BOT','EMC'],理由:'西部管廊+长期持有'},
+'P3':{name:'云南城市管网',推荐:['BOO','BOT','EMC'],理由:'云南城市更新+管网改造'},
+'P4':{name:'海南燃气/供水',推荐:['BOO','BOT','EMC'],理由:'海南自贸港基础设施'},
+'P5':{name:'广西厂网一体',推荐:['BOO','EMC','能源托管'],理由:'广西厂网协同+轻资产'},
+'L1':{name:'南沙港岸电',推荐:['BOO','EMC','BOT'],理由:'港口基础设施+长期运营'},
+'L2':{name:'北部湾港',推荐:['BOO','EMC','BOT'],理由:'港口江海联运+长期'},
+'L3':{name:'洋浦港国际',推荐:['BOO','EMC','能源托管'],理由:'国际枢纽港+绿色港口'},
+'L4':{name:'平陆运河',推荐:['BOO','BOT','能源托管'],理由:'西部陆海新通道骨干+国家级'},
+'L5':{name:'中老铁路',推荐:['BOO','BOT','EMC'],理由:'国际物流通道+长期运营'}
+};
 
 function renderTab5(){
 document.getElementById("m5cat").innerHTML=CATEGORIES_4.map(c=>`<div class="m5cat" style="--c:${c.color}"><b>${c.icon} ${c.name}</b><span>${c.note}</span></div>`).join("");
@@ -677,6 +725,25 @@ document.getElementById("m5coops").innerHTML=COOPERATIONS_3.map((c,i)=>`<div cla
 document.getElementById("m5risks").innerHTML=RISKS_4.map((r,i)=>`<div class="m5rx" style="cursor:pointer" onclick="openRisk(${i})"><b>⚠️ ${r.name}</b><span>${r.desc}</span></div>`).join("");
 }
 renderTab5();
+
+function openModeByName(name){
+const idx=MODES_8.findIndex(m=>m.name.startsWith(name));
+if(idx>=0)openMode(idx);
+}
+
+function renderModeMatch(){
+const html=Object.entries(PROJECT_MODE_MAP).map(([id,p])=>{
+const modes=p.推荐.map((m,i)=>{
+const swot=MODES_S[m+' 建设-拥有-运营']||MODES_S[m+' 建设-运营-移交']||MODES_S[m+' 合同能源管理']||MODES_S[m+' 虚拟电厂']||MODES_S[m]||{};
+const color=swot.category==='极轻'?'#34d399':swot.category==='轻资产'?'#fbbf24':swot.category==='中'?'#a78bfa':swot.category==='中重'?'#22d3ee':'#60a5fa';
+return `<span class="mode-rec" style="--c:${color}" onclick="openModeByName('${m}')">${i+1}. ${m}</span>`;
+}).join('');
+return `<div class="match-row"><div class="match-id"><b>${id}</b><span>${p.name}</span></div><div class="match-modes">${modes}</div><div class="match-reason">${p.理由}</div></div>`;
+}).join('');
+const el=document.getElementById('m5match');
+if(el)el.innerHTML=html;
+}
+renderModeMatch();
 
 function renderTab2(){
 const plist=document.getElementById("plist");
