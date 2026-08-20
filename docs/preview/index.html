@@ -775,10 +775,35 @@ renderTab6();
 
 function generateBrief(){
 const today=(typeof TODAY!=="undefined"&&TODAY.items&&TODAY.items[0])||{title:"暂无",org:"-",date:"-"};
-const nets=[{name:"电网",icon:"⚡",score:10.0,color:"#fbbf24"},{name:"水网",icon:"💧",score:8.62,color:"#60a5fa"},{name:"算力网",icon:"🧮",score:8.71,color:"#a78bfa"},{name:"新一代通信网",icon:"📡",score:8.54,color:"#22d3ee"},{name:"城市地下管网",icon:"🔧",score:5.88,color:"#fb923c"},{name:"物流网",icon:"🚛",score:8.64,color:"#34d399"}];
-const dirs=[{name:"电碳算协同",score:8.71,color:"#fbbf24"},{name:"数智融合",score:7.00,color:"#22d3ee"},{name:"抽蓄互补",score:8.50,color:"#a78bfa"},{name:"交能融合",score:8.00,color:"#34d399"}];
-const actions=["关注算电协同（VPP 597 万 kW 案）","推进地下管网（5.88 洼地补强）","跟踪广东 e+ 平台（VPP 代运营）"];
-return{today,nets,dirs,actions,ts:new Date().toISOString().slice(0,10)};
+today.impact=today.impact||"该政策规范数据中心算力计量，对南网算电协同战略推进具里程碑意义，预计将带动阳江海底算力等21个智算项目加速落地";
+const nets=[
+{name:"电网",icon:"⚡",score:10.0,color:"#fbbf24",explain:"5 项目满协同 + 政策强：特高压/抽蓄/构网型储能密集落地"},
+{name:"水网",icon:"💧",score:8.62,color:"#60a5fa",explain:"西南最大跨流域调水：滇中引水825亿+环北部湾广东614.5亿双骨干"},
+{name:"算力网",icon:"🧮",score:8.71,color:"#a78bfa",explain:"21 项目密集协同：阳江海底1.15GW+韶关4万P算电协同"},
+{name:"新一代通信网",icon:"📡",score:8.54,color:"#22d3ee",explain:"5G-A 基础+11 项目：广东10万基站+4万万兆打底"},
+{name:"城市地下管网",icon:"🔧",score:5.88,color:"#fb923c",explain:"洼地仅2项目：6网最弱项，需补强综合管廊"},
+{name:"物流网",icon:"🚛",score:8.64,color:"#34d399",explain:"平陆运河+15 项目：多式联运骨干全面铺开"}
+];
+const dirs=[
+{name:"电碳算协同",score:8.71,color:"#fbbf24",basis:"21 项目协同 + 算电政策强：阳江/贵安/江苏 e+ 三大标杆"},
+{name:"数智融合",score:7.00,color:"#22d3ee",basis:"7 项目+数字化：5G-A+AI 调度基础已铺"},
+{name:"抽蓄互补",score:8.50,color:"#a78bfa",basis:"11 项目+长时储能：构网型+压缩空气储能并行"},
+{name:"交能融合",score:8.00,color:"#34d399",basis:"15 项目+多式联运：平陆运河+重卡换电协同"}
+];
+const industries=[
+{icon:"⚡",name:"电力新能源",invest:"8 万亿+",focus:"特高压/储能/构网型",benchmark:"格兰仕EMC"},
+{icon:"🧮",name:"算力通信",invest:"7 万亿",focus:"智算中心/5G-A",benchmark:"阳江海底算力"},
+{icon:"🏗️",name:"工程机械",invest:"6 万亿",focus:"地下管廊/水利/港口",benchmark:"西永微电园"},
+{icon:"🚛",name:"现代物流",invest:"5 万亿",focus:"多式联运/无人分拣",benchmark:"平陆运河"}
+];
+const actions=[
+{title:"关注算电协同",why:"VPP 597 万 kW 案（江苏 e+ 平台）是规模化示范",how:"参考阳江海底算力 / 贵安算电协同联盟"},
+{title:"推进地下管网",why:"5.88 洼地需补强，6 网最弱项",how:"参考广州工控零碳园区 + 西永联合体"},
+{title:"跟踪广东 e+ 平台",why:"聚合 597 万 kW 资源 + 平台费分成",how:"复用其代运营模式"}
+];
+const total="26.9 万亿元";
+const annu="年均 5.4 万亿";
+return{today,nets,dirs,industries,actions,total,annu,ts:new Date().toISOString().slice(0,10)};
 }
 
 let CB=null;
@@ -812,11 +837,11 @@ function onGen(){const d=generateBrief();CB=d;const el=document.getElementById("
 
 function onCopy(){if(!CB){toast("⚠️ 请先生成简报");return;}const txt=bText(CB),ok=()=>toast("✅ 已复制"),fb=()=>{const a=document.createElement("textarea");a.value=txt;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok();}catch(e){toast("❌ 失败");}document.body.removeChild(a);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fb);}else{fb();}}
 
-function onExport(){if(!CB){toast("⚠️ 请先生成简报");return;}const md=bMD(CB),b=new Blob([md],{type:"text/markdown;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`NSP-IM-简报-${CB.ts}.md`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ Markdown 已导出");}
+function onExport(){if(!CB){toast("⚠️ 请先生成简报");return;}const md=bMD(CB),b=new Blob([md],{type:"text/markdown;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`六网协同 每日简报-${CB.ts}.md`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ Markdown 已导出");}
 
-function onExportHTML(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML.replace(/class="[^"]*"/g,"").replace(/style="[^"]*"/g,"");const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NSP-IM 简报 - ${ts}</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;background:#fff;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;margin-top:24px;padding-bottom:6px;border-bottom:1px solid #ddd}h3{color:#0a1628;margin-top:18px}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;border-radius:6px;font-weight:600;margin:12px 0}.section{margin:20px 0}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}</style></head><body><h1>📊 NSP-IM 每日简报</h1><p><b>${ts}</b></p>${inner}</body></html>`;const b=new Blob([html],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`NSP-IM-简报-${ts}.html`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ HTML 已下载（Word 可打开）");}
+function onExportHTML(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML.replace(/class="[^"]*"/g,"").replace(/style="[^"]*"/g,"");const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NSP-IM 简报 - ${ts}</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;background:#fff;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;margin-top:24px;padding-bottom:6px;border-bottom:1px solid #ddd}h3{color:#0a1628;margin-top:18px}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;border-radius:6px;font-weight:600;margin:12px 0}.section{margin:20px 0}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}</style></head><body><h1>📊 NSP-IM 每日简报</h1><p><b>${ts}</b></p>${inner}</body></html>`;const b=new Blob([html],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`六网协同 每日简报-${ts}.html`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);document.body.removeChild(a);},100);toast("✅ HTML 已下载（Word 可打开）");}
 
-function onExportPDF(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML;const w=window.open("","_blank");if(!w){toast("⚠️ 浏览器拦截了弹窗，请允许弹窗后重试");return;}w.document.write(`<!DOCTYPE html><html><head><title>NSP-IM 简报 PDF 打印</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;border-bottom:2px solid #fbbf24;padding-bottom:6px;margin-top:20px}h3{color:#0a1628;margin-top:16px}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;margin:12px 0;border-radius:6px;font-weight:600}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}@media print{body{margin:15mm}.no-print{display:none}}</style></head><body><h1>📊 NSP-IM 每日简报 - ${ts}</h1>${inner}<script>setTimeout(function(){window.print();},500);<\/script></body></html>`);w.document.close();toast("✅ 打印窗口已打开（可另存为 PDF）");}
+function onExportPDF(){if(!CB){toast("⚠️ 请先生成简报");return;}const ts=CB.ts||new Date().toISOString().slice(0,10);const inner=document.getElementById("brief-content").innerHTML;const w=window.open("","_blank");if(!w){toast("⚠️ 浏览器拦截了弹窗，请允许弹窗后重试");return;}w.document.write(`<!DOCTYPE html><html><head><title>六网协同 每日简报 PDF 打印</title><style>body{font-family:-apple-system,sans-serif;max-width:800px;margin:40px auto;padding:20px;color:#0a1628}h1{color:#fbbf24;border-bottom:3px solid #fbbf24;padding-bottom:10px}h2{color:#60a5fa;border-bottom:2px solid #fbbf24;padding-bottom:6px;margin-top:20px}h3{color:#0a1628;margin-top:16px}.leadline{background:#fef3c7;border-left:4px solid #fbbf24;padding:12px;margin:12px 0;border-radius:6px;font-weight:600}.score{display:inline-block;padding:6px 14px;background:#0a1628;color:#fbbf24;border-radius:6px;margin:4px;font-weight:700}table{width:100%;border-collapse:collapse;margin:12px 0}td,th{padding:8px;border:1px solid #ddd;text-align:left}th{background:#f5f5f5}ul{padding-left:22px}li{margin:4px 0}@media print{body{margin:15mm}.no-print{display:none}}</style></head><body><h1>📊 NSP-IM 每日简报 - ${ts}</h1>${inner}<script>setTimeout(function(){window.print();},500);<\/script></body></html>`);w.document.close();toast("✅ 打印窗口已打开（可另存为 PDF）");}
 
 document.getElementById("btn-gen").addEventListener("click",onGen);
 document.getElementById("btn-copy").addEventListener("click",onCopy);
