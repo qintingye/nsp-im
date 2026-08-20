@@ -775,10 +775,35 @@ renderTab6();
 
 function generateBrief(){
 const today=(typeof TODAY!=="undefined"&&TODAY.items&&TODAY.items[0])||{title:"暂无",org:"-",date:"-"};
-const nets=[{name:"电网",icon:"⚡",score:10.0,color:"#fbbf24"},{name:"水网",icon:"💧",score:8.62,color:"#60a5fa"},{name:"算力网",icon:"🧮",score:8.71,color:"#a78bfa"},{name:"新一代通信网",icon:"📡",score:8.54,color:"#22d3ee"},{name:"城市地下管网",icon:"🔧",score:5.88,color:"#fb923c"},{name:"物流网",icon:"🚛",score:8.64,color:"#34d399"}];
-const dirs=[{name:"电碳算协同",score:8.71,color:"#fbbf24"},{name:"数智融合",score:7.00,color:"#22d3ee"},{name:"抽蓄互补",score:8.50,color:"#a78bfa"},{name:"交能融合",score:8.00,color:"#34d399"}];
-const actions=["关注算电协同（VPP 597 万 kW 案）","推进地下管网（5.88 洼地补强）","跟踪广东 e+ 平台（VPP 代运营）"];
-return{today,nets,dirs,actions,ts:new Date().toISOString().slice(0,10)};
+today.impact=today.impact||"该政策规范数据中心算力计量，对南网算电协同战略推进具里程碑意义，预计将带动阳江海底算力等21个智算项目加速落地";
+const nets=[
+{name:"电网",icon:"⚡",score:10.0,color:"#fbbf24",explain:"5 项目满协同 + 政策强：特高压/抽蓄/构网型储能密集落地"},
+{name:"水网",icon:"💧",score:8.62,color:"#60a5fa",explain:"西南最大跨流域调水：滇中引水825亿+环北部湾广东614.5亿双骨干"},
+{name:"算力网",icon:"🧮",score:8.71,color:"#a78bfa",explain:"21 项目密集协同：阳江海底1.15GW+韶关4万P算电协同"},
+{name:"新一代通信网",icon:"📡",score:8.54,color:"#22d3ee",explain:"5G-A 基础+11 项目：广东10万基站+4万万兆打底"},
+{name:"城市地下管网",icon:"🔧",score:5.88,color:"#fb923c",explain:"洼地仅2项目：6网最弱项，需补强综合管廊"},
+{name:"物流网",icon:"🚛",score:8.64,color:"#34d399",explain:"平陆运河+15 项目：多式联运骨干全面铺开"}
+];
+const dirs=[
+{name:"电碳算协同",score:8.71,color:"#fbbf24",basis:"21 项目协同 + 算电政策强：阳江/贵安/江苏 e+ 三大标杆"},
+{name:"数智融合",score:7.00,color:"#22d3ee",basis:"7 项目+数字化：5G-A+AI 调度基础已铺"},
+{name:"抽蓄互补",score:8.50,color:"#a78bfa",basis:"11 项目+长时储能：构网型+压缩空气储能并行"},
+{name:"交能融合",score:8.00,color:"#34d399",basis:"15 项目+多式联运：平陆运河+重卡换电协同"}
+];
+const industries=[
+{icon:"⚡",name:"电力新能源",invest:"8 万亿+",focus:"特高压/储能/构网型",benchmark:"格兰仕EMC"},
+{icon:"🧮",name:"算力通信",invest:"7 万亿",focus:"智算中心/5G-A",benchmark:"阳江海底算力"},
+{icon:"🏗️",name:"工程机械",invest:"6 万亿",focus:"地下管廊/水利/港口",benchmark:"西永微电园"},
+{icon:"🚛",name:"现代物流",invest:"5 万亿",focus:"多式联运/无人分拣",benchmark:"平陆运河"}
+];
+const actions=[
+{title:"关注算电协同",why:"VPP 597 万 kW 案（江苏 e+ 平台）是规模化示范",how:"参考阳江海底算力 / 贵安算电协同联盟"},
+{title:"推进地下管网",why:"5.88 洼地需补强，6 网最弱项",how:"参考广州工控零碳园区 + 西永联合体"},
+{title:"跟踪广东 e+ 平台",why:"聚合 597 万 kW 资源 + 平台费分成",how:"复用其代运营模式"}
+];
+const total="26.9 万亿元";
+const annu="年均 5.4 万亿";
+return{today,nets,dirs,industries,actions,total,annu,ts:new Date().toISOString().slice(0,10)};
 }
 
 let CB=null;
@@ -786,24 +811,80 @@ const sw=s=>(s/10)*100;
 const fmt2=s=>s.toFixed(2);
 
 function bHTML(d){
-const nets=d.nets.map(n=>`<div class="t7row" style="--c:${n.color}"><b>${n.icon} ${n.name}</b><span>${fmt2(n.score)} / 10</span></div>`).join("");
-const dirs=d.dirs.map(x=>`<div class="t7row" style="--c:${x.color}"><b>${x.name}</b><span>${fmt2(x.score)} / 10</span></div>`).join("");
-const acts=d.actions.map((a,i)=>`<div class="t7act"><b>${i+1}.</b>${a}</div>`).join("");
-return`<div class="leadline">📌 <b>头条：</b>${d.today.title}（${d.today.org} · ${d.today.date}）</div><h3>🌐 5 网协同（电网基准 10.0）</h3>${nets}<h3>⚡ 4 大方向</h3>${dirs}<h3>💰 核心机会</h3><p style="margin:4px 0 8px">南网 5 省协同项目总投资规模达 <b style="color:#4ade80;font-size:15px">26.9 万亿元</b>，覆盖 6 大领域 11 个央企电网落地案例。</p><h3>🎯 行动建议（3 条）</h3>${acts}<p style="margin-top:10px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06);color:#94a3b8;font-size:11px;text-align:right">简报：${d.ts} · TODAY/PROJECTS/NETS/MODES_8</p>`;
+const nets=d.nets.map(n=>`<div class="t7row" style="--c:${n.color}"><div><b>${n.icon} ${n.name}</b><div style="font-size:11px;color:#94a3b8;margin-top:2px">${n.explain}</div></div><span>${fmt2(n.score)} / 10</span></div>`).join("");
+const dirs=d.dirs.map(x=>`<div class="t7row" style="--c:${x.color}"><div><b>${x.name}</b><div style="font-size:11px;color:#94a3b8;margin-top:2px">${x.basis}</div></div><span>${fmt2(x.score)} / 10</span></div>`).join("");
+const inds=d.industries.map(i=>`<li><b>${i.icon} ${i.name}</b> · ${i.invest} · 重点：${i.focus} · 标杆：${i.benchmark}</li>`).join("");
+const netsAvg=(d.nets.reduce((s,n)=>s+n.score,0)/d.nets.length).toFixed(1);
+const dirsAvg=(d.dirs.reduce((s,x)=>s+x.score,0)/d.dirs.length).toFixed(1);
+const acts=d.actions.map((a,i)=>`<div class="t7act"><b>${i+1}. ${a.title}</b><div style="font-size:11px;color:#94a3b8;margin-top:4px;line-height:1.5">为什么：${a.why}<br>怎么做：${a.how}</div></div>`).join("");
+return`<div class="leadline">📌 <b>头条：</b>${d.today.title}（${d.today.org} · ${d.today.date}）<div style="font-size:12px;color:#666;font-weight:400;margin-top:6px">影响：${d.today.impact}</div></div><h3>🌐 5 网协同（整体 ${netsAvg}/10 · ${d.nets.length} 维均衡度）</h3>${nets}<h3>⚡ 4 大方向（整体 ${dirsAvg}/10 · 4 路径并行）</h3>${dirs}<h3>💰 核心机会</h3><p style="margin:4px 0 8px">南网 5 省总投资规模：<b style="color:#4ade80;font-size:15px">${d.total}</b>（${d.annu} · 2026 起步 >7 万亿）</p><ul style="margin:6px 0;padding-left:18px;font-size:12px;line-height:1.7">${inds}</ul><h3>🎯 行动建议（3 条）</h3>${acts}<p style="margin-top:10px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06);color:#94a3b8;font-size:11px;text-align:right">简报：${d.ts} · TODAY/PROJECTS/NETS/MODES_8</p>`;
 }
 
 function bText(d){
-const nets=d.nets.map(n=>`  ${n.icon} ${n.name}：${fmt2(n.score)} / 10\n`).join("");
-const dirs=d.dirs.map(x=>`  ${x.name}：${fmt2(x.score)} / 10\n`).join("");
-const acts=d.actions.map((a,i)=>`  ${i+1}. ${a}\n`).join("");
-return`【NSP-IM 今日简报 · ${d.ts}】\n\n📌 头条：${d.today.title}\n   来源：${d.today.org}（${d.today.date}）\n\n🌐 5 网协同：\n${nets}\n⚡ 4 大方向：\n${dirs}\n💰 核心机会：\n  南网 5 省协同项目总投资规模 26.9 万亿元，覆盖 6 大领域 11 个央企电网落地案例。\n\n🎯 行动建议：\n${acts}\n—— 数据源：TODAY/PROJECTS/NETS/MODES_8`;
+const nets=d.nets.map(n=>`  ${n.icon} ${n.name}：${fmt2(n.score)} / 10 — ${n.explain}\n`).join("");
+const dirs=d.dirs.map(x=>`  ${x.name}：${fmt2(x.score)} / 10 — ${x.basis}\n`).join("");
+const inds=d.industries.map(i=>`  • ${i.icon} ${i.name}（${i.invest}）— 重点：${i.focus} · 标杆：${i.benchmark}\n`).join("");
+const netsAvg=(d.nets.reduce((s,n)=>s+n.score,0)/d.nets.length).toFixed(1);
+const dirsAvg=(d.dirs.reduce((s,x)=>s+x.score,0)/d.dirs.length).toFixed(1);
+const acts=d.actions.map((a,i)=>`  ${i+1}. ${a.title}\n     为什么：${a.why}\n     怎么做：${a.how}\n`).join("");
+return`【NSP-IM 今日简报 · ${d.ts}】
+═══════════════════════════
+
+📌 头条
+  ${d.today.title}
+  来源：${d.today.org}（${d.today.date}）
+  影响：${d.today.impact}
+
+🌐 5 网协同（整体 ${netsAvg}/10 · ${d.nets.length} 维均衡度）
+${nets}
+⚡ 4 大方向（整体 ${dirsAvg}/10 · 4 路径并行）
+${dirs}
+💰 核心机会
+  南网 5 省总投资规模：${d.total}（${d.annu} · 2026 起步 >7 万亿）
+${inds}
+🎯 行动建议（3 条）
+${acts}
+—— 数据源：TODAY/PROJECTS/NETS/MODES_8`;
 }
 
 function bMD(d){
-const nets=d.nets.map(n=>`| ${n.icon} ${n.name} | ${fmt2(n.score)}/10 |\n`).join("");
-const dirs=d.dirs.map(x=>`| ${x.name} | ${fmt2(x.score)}/10 |\n`).join("");
-const acts=d.actions.map((a,i)=>`${i+1}. ${a}\n`).join("");
-return`# NSP-IM 今日简报 · ${d.ts}\n\n## 📌 头条\n\n**${d.today.title}**\n\n- 来源：${d.today.org}\n- 日期：${d.today.date}\n\n## 🌐 5 网协同\n\n| 网 | 协同分 |\n| --- | --- |\n${nets}\n## ⚡ 4 大方向\n\n| 方向 | 协同分 |\n| --- | --- |\n${dirs}\n## 💰 核心机会\n\n南网 5 省协同项目总投资规模 **26.9 万亿元**，覆盖 6 大领域 11 个央企电网落地案例。\n\n## 🎯 行动建议\n\n${acts}\n---\n\n*数据源：TODAY/PROJECTS/NETS/MODES_8 · ${d.ts}*`;
+const nets=d.nets.map(n=>`| ${n.icon} ${n.name} | ${fmt2(n.score)}/10 | ${n.explain} |\n`).join("");
+const dirs=d.dirs.map(x=>`| ${x.name} | ${fmt2(x.score)}/10 | ${x.basis} |\n`).join("");
+const inds=d.industries.map(i=>`- **${i.icon} ${i.name}**（${i.invest}）— 重点：${i.focus} · 标杆：${i.benchmark}\n`).join("");
+const netsAvg=(d.nets.reduce((s,n)=>s+n.score,0)/d.nets.length).toFixed(1);
+const dirsAvg=(d.dirs.reduce((s,x)=>s+x.score,0)/d.dirs.length).toFixed(1);
+const acts=d.actions.map((a,i)=>`${i+1}. **${a.title}**\n   - 为什么：${a.why}\n   - 怎么做：${a.how}\n`).join("");
+return`# NSP-IM 今日简报 · ${d.ts}
+
+## 📌 头条
+
+**${d.today.title}**
+
+- 来源：${d.today.org}
+- 日期：${d.today.date}
+- 影响：${d.today.impact}
+
+## 🌐 5 网协同（整体 ${netsAvg}/10 · ${d.nets.length} 维均衡度）
+
+| 网 | 协同分 | 说明 |
+| --- | --- | --- |
+${nets}
+## ⚡ 4 大方向（整体 ${dirsAvg}/10 · 4 路径并行）
+
+| 方向 | 协同分 | 依据 |
+| --- | --- | --- |
+${dirs}
+## 💰 核心机会
+
+南网 5 省总投资规模 **${d.total}**（${d.annu} · 2026 起步 >7 万亿），覆盖 6 大领域：
+
+${inds}
+## 🎯 行动建议（3 条）
+
+${acts}
+---
+
+*数据源：TODAY/PROJECTS/NETS/MODES_8 · ${d.ts}*`;
 }
 
 function toast(m){let t=document.getElementById("t7toast");if(!t){t=document.createElement("div");t.id="t7toast";t.className="t7toast";document.body.appendChild(t);}t.textContent=m;t.classList.remove("show");void t.offsetWidth;t.classList.add("show");}
