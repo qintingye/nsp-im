@@ -382,13 +382,15 @@ logi:{name:"物流网",color:"#34d399",icon:"🚛"}
 const NET_KEYS=["water","compute","telecom","pipe","logi"];
 
 function calcScore(net){
-const c=PROJECTS.filter(p=>p.net===net);
-if(c.length>=5)return 10;
-if(c.length===4)return 8;
-if(c.length===3)return 6;
-if(c.length===2)return 4;
-if(c.length===1)return 2;
-return 0;
+// v2.1: 3 维度加权 (项目数 40% + 投资规模 30% + 政策强度 30%)
+const projects=PROJECTS.filter(p=>p.net===net);
+const projectScore=Math.min(projects.length/5,1)*4;
+const investMap={'water':14680,'compute':10800,'telecom':1200,'pipe':6800,'logi':1000};
+const totalInvest=investMap[net]||projects.reduce((s,p)=>s+(parseFloat(String(p.invest).replace(/[^\d.]/g,''))||0),0);
+const investScore=Math.min(totalInvest/5000,1)*3;
+const policyMap={'water':3.0,'compute':2.8,'telecom':2.5,'pipe':1.5,'logi':2.2};
+const policyScore=policyMap[net]||2.0;
+return Math.round((projectScore+investScore+policyScore)*10)/10;
 }
 
 function renderTab1(){
