@@ -386,15 +386,16 @@ const NET_KEYS=["water","compute","telecom","pipe","logi"];
 const COUPLING_MAP={water:8.62,compute:8.71,telecom:8.54,pipe:5.88,logi:8.64};
 
 function calcScore(net){
-// v2.1: 3 维度加权 (项目数 40% + 投资规模 30% + 政策强度 30%)
-const projects=PROJECTS.filter(p=>p.net===net);
-const projectScore=Math.min(projects.length/5,1)*4;
-const investMap={'water':14680,'compute':10800,'telecom':1200,'pipe':6800,'logi':1000};
-const totalInvest=investMap[net]||projects.reduce((s,p)=>s+(parseFloat(String(p.invest).replace(/[^\d.]/g,''))||0),0);
-const investScore=Math.min(totalInvest/5000,1)*3;
-const policyMap={'water':3.0,'compute':2.8,'telecom':2.5,'pipe':1.5,'logi':2.2};
-const policyScore=policyMap[net]||2.0;
-return Math.round((projectScore+investScore+policyScore)*10)/10;
+// v3.0: 10分制耦合公式 (基础物理 4 + 数字机制 4 + 系统韧性 2)
+const SCORE_MAP={
+  'water':   {p1:2.0,p2:2.0,d1:1.0,d2:1.0,r1:2.0},  // 水网 8.0
+  'compute': {p1:2.0,p2:1.0,d1:2.0,d2:1.5,r1:1.5},  // 算力网 8.0
+  'telecom': {p1:1.5,p2:1.5,d1:2.0,d2:2.0,r1:1.5},  // 通信网 8.5
+  'pipe':    {p1:1.0,p2:2.0,d1:0.5,d2:0.5,r1:1.0},  // 城市地下管网 5.0
+  'logi':    {p1:1.5,p2:1.5,d1:1.0,d2:1.5,r1:1.0}   // 物流网 6.5
+};
+const s=SCORE_MAP[net]||{p1:1.0,p2:1.0,d1:1.0,d2:1.0,r1:1.0};
+return Math.round((s.p1+s.p2+s.d1+s.d2+s.r1)*10)/10;
 }
 
 function renderTab1(){
