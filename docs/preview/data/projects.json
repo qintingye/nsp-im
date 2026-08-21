@@ -1,6 +1,6 @@
 {
-  "version": "3.0-d38-plus",
-  "generated_at": "2026-08-21T07:06:05Z",
+  "version": "3.0-d39",
+  "generated_at": "2026-08-21T07:16:32Z",
   "note": "✅ NDRC 项目 + 历史快照 + 最新状态 (按 (id, date) 去重 + 最新优先)",
   "projects": [
     {
@@ -40,6 +40,20 @@
           "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260715_1402001.html"
         },
         {
+          "date": "2026-07-08",
+          "title": "🔌 配套电网开工",
+          "status": "construction",
+          "summary": "南方电网启动环北部湾广东水资源配置工程配套 500kV 输电工程建设",
+          "source_url": "https://www.csg.cn/zhengwu/202607/t20260708_2099001.html"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "📑 环评批复",
+          "status": "approved",
+          "summary": "广东省水利厅批复环北部湾广东水资源配置工程环评报告，覆盖生态影响评价",
+          "source_url": "https://gzw.gd.gov.cn/xxgk/zcfb/tz/202606/t20260610_1402100.html"
+        },
+        {
           "date": "2026-05-19",
           "title": "📋 立项批复",
           "status": "approved",
@@ -49,7 +63,51 @@
       ],
       "status": "在建 (45%)",
       "last_updated": "2026-08-20",
-      "progress": 45
+      "progress": 45,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东省发改委",
+          "title": "环北部湾广东水资源配置工程开工建设",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (45%)",
+          "date": "2026-08-20",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260715_1402001.html",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (30%)",
+          "date": "2026-07-15",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.csg.cn/zhengwu/202607/t20260708_2099001.html",
+          "org": "南方电网",
+          "title": "🔌 配套电网开工",
+          "date": "2026-07-08",
+          "type": "在建"
+        },
+        {
+          "url": "https://gzw.gd.gov.cn/xxgk/zcfb/tz/202606/t20260610_1402100.html",
+          "org": "广东省水利厅",
+          "title": "📑 环评批复",
+          "date": "2026-06-10",
+          "type": "立项"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html",
+          "org": "国家发改委",
+          "title": "📋 立项批复",
+          "date": "2026-05-19",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "W2",
@@ -90,7 +148,30 @@
       ],
       "status": "在建 (20%)",
       "last_updated": "2026-08-18",
-      "progress": 20
+      "progress": 20,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广西自治区发改委",
+          "title": "环北部湾广西工程可研获批",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260818_1406800.html",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (20%)",
+          "date": "2026-08-18",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202604/t20260410_138500.html",
+          "org": "国家发改委",
+          "title": "📋 可研获批",
+          "date": "2026-04-10",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "W3",
@@ -120,18 +201,20 @@
           "status": "operational",
           "summary": "二期工程同步推进，年供水 34 亿立方米",
           "source_url": "http://www.mwr.gov.cn/"
-        },
-        {
-          "date": "2026-06-01",
-          "title": "📋 一期通水",
-          "status": "operational",
-          "summary": "滇中引水工程一期通水，覆盖 1100 万人",
-          "source_url": "http://www.mwr.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-15",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "http://www.mwr.gov.cn/",
+          "org": "水利部",
+          "title": "滇中引水工程一期通水",
+          "date": "2026-08-15",
+          "type": "官方"
+        }
+      ]
     },
     {
       "id": "W4",
@@ -161,18 +244,20 @@
           "status": "operational",
           "summary": "配套水风光储多能互补项目投运",
           "source_url": "http://www.mwr.gov.cn/"
-        },
-        {
-          "date": "2026-03-20",
-          "title": "📋 一期建成",
-          "status": "operational",
-          "summary": "黔中水利枢纽一期建成，年调水 5.95 亿立方米",
-          "source_url": "http://www.mwr.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-10",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "http://www.mwr.gov.cn/",
+          "org": "贵州省水利厅",
+          "title": "黔中水利枢纽一期建成",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "W5",
@@ -202,18 +287,20 @@
           "status": "construction",
           "summary": "可研报告编制中，覆盖东方/昌江沿海",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-05-01",
-          "title": "📋 立项",
-          "status": "approved",
-          "summary": "海南昌化江水资源配置工程立项",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (15%)",
       "last_updated": "2026-08-12",
-      "progress": 15
+      "progress": 15,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "海南省发改委",
+          "title": "昌化江水资源配置工程立项",
+          "date": "2026-08-12",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "C1",
@@ -254,7 +341,23 @@
       ],
       "status": "在建 (25%)",
       "last_updated": "2026-08-15",
-      "progress": 25
+      "progress": 25,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html",
+          "org": "国家发改委",
+          "title": "《新型数据中心技术规范》",
+          "date": "2026-08-15",
+          "type": "招标"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260815_1406700.html",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (25%)",
+          "date": "2026-08-15",
+          "type": "在建"
+        }
+      ]
     },
     {
       "id": "C2",
@@ -284,18 +387,20 @@
           "status": "construction",
           "summary": "数据中心土建施工中，规划算力 4 万 P",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "📋 规划获批",
-          "status": "approved",
-          "summary": "粤港澳大湾区枢纽韶关集群规划获批",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (30%)",
       "last_updated": "2026-08-17",
-      "progress": 30
+      "progress": 30,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东省发改委",
+          "title": "粤港澳大湾区枢纽节点韶关集群建设方案",
+          "date": "2026-08-17",
+          "type": "招标"
+        }
+      ]
     },
     {
       "id": "C3",
@@ -325,18 +430,20 @@
           "status": "construction",
           "summary": "海南算力网建设中，依托昌江核电低碳直供",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-03-01",
-          "title": "📋 三年行动发布",
-          "status": "approved",
-          "summary": "海南算力网三年行动计划发布，规划 668 PFlops",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (35%)",
       "last_updated": "2026-08-10",
-      "progress": 35
+      "progress": 35,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "海南省工信厅",
+          "title": "海南算力网三年行动计划",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "C4",
@@ -366,18 +473,20 @@
           "status": "planning",
           "summary": "面向 RCEP 跨境数据流通试点储备",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-06-15",
-          "title": "📋 建设方案发布",
-          "status": "approved",
-          "summary": "中国-东盟算力枢纽建设方案发布",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "储备",
       "last_updated": "2026-08-14",
-      "progress": 0
+      "progress": 0,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广西自治区大数据局",
+          "title": "中国-东盟算力枢纽建设方案",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "C5",
@@ -407,18 +516,20 @@
           "status": "operational",
           "summary": "空芯光纤通道稳定运行",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-05-20",
-          "title": "📋 试运行",
-          "status": "operational",
-          "summary": "深广韶空芯光纤通道试运行",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-16",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东电网",
+          "title": "深广韶空芯光纤通道试运行",
+          "date": "2026-08-16",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "T1",
@@ -459,7 +570,23 @@
       ],
       "status": "在建 (60%)",
       "last_updated": "2026-08-19",
-      "progress": 60
+      "progress": 60,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2024/art_d4adfee5d3b94f8e8b95e1b31c9d9f3b.html",
+          "org": "工信部",
+          "title": "5G 扬帆行动升级方案",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "工信部",
+          "title": "🏗️ 在建 (60%)",
+          "date": "2026-08-19",
+          "type": "在建"
+        }
+      ]
     },
     {
       "id": "T2",
@@ -489,18 +616,20 @@
           "status": "construction",
           "summary": "19 万基站 + 100 万户万兆建设中",
           "source_url": "https://www.miit.gov.cn/"
-        },
-        {
-          "date": "2026-04-01",
-          "title": "📋 建设方案发布",
-          "status": "approved",
-          "summary": "广西双万兆建设方案发布",
-          "source_url": "https://www.miit.gov.cn/"
         }
       ],
       "status": "在建 (50%)",
       "last_updated": "2026-08-13",
-      "progress": 50
+      "progress": 50,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "广西自治区工信厅",
+          "title": "广西双万兆建设方案",
+          "date": "2026-08-13",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "T3",
@@ -530,18 +659,20 @@
           "status": "planning",
           "summary": "1515 个万兆节点 + 14 个试点园区储备",
           "source_url": "https://www.miit.gov.cn/"
-        },
-        {
-          "date": "2026-05-10",
-          "title": "📋 专项规划发布",
-          "status": "approved",
-          "summary": "海南万兆自贸港专项规划发布",
-          "source_url": "https://www.miit.gov.cn/"
         }
       ],
       "status": "储备",
       "last_updated": "2026-08-11",
-      "progress": 0
+      "progress": 0,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "海南省工信厅",
+          "title": "海南万兆自贸港专项规划",
+          "date": "2026-08-11",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "T4",
@@ -571,18 +702,20 @@
           "status": "operational",
           "summary": "贵州 400G 骨干网稳定运行",
           "source_url": "https://www.miit.gov.cn/"
-        },
-        {
-          "date": "2026-04-20",
-          "title": "📋 升级方案发布",
-          "status": "approved",
-          "summary": "贵州 400G 骨干网升级方案发布",
-          "source_url": "https://www.miit.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-09",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "贵州省大数据局",
+          "title": "贵州 400G 骨干网升级方案",
+          "date": "2026-08-09",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "T5",
@@ -612,18 +745,20 @@
           "status": "operational",
           "summary": "中老光缆稳定运行，配套 5G-A 升级",
           "source_url": "https://www.miit.gov.cn/"
-        },
-        {
-          "date": "2026-03-15",
-          "title": "📋 二期建成",
-          "status": "operational",
-          "summary": "中老光缆工程二期建成",
-          "source_url": "https://www.miit.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-08",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "云南省工信厅",
+          "title": "中老光缆工程二期建成",
+          "date": "2026-08-08",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P1",
@@ -653,18 +788,20 @@
           "status": "construction",
           "summary": "1000 公里干线 + 10 万公里支线建设中",
           "source_url": "http://www.mohurd.gov.cn/"
-        },
-        {
-          "date": "2026-02-10",
-          "title": "📋 专项规划发布",
-          "status": "approved",
-          "summary": "广东综合管廊专项规划发布",
-          "source_url": "http://www.mohurd.gov.cn/"
         }
       ],
       "status": "在建 (40%)",
       "last_updated": "2026-08-15",
-      "progress": 40
+      "progress": 40,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "广东省住建厅",
+          "title": "广东综合管廊专项规划",
+          "date": "2026-08-15",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P2",
@@ -694,18 +831,20 @@
           "status": "construction",
           "summary": "1.2 万公里综合管廊建设中",
           "source_url": "http://www.mohurd.gov.cn/"
-        },
-        {
-          "date": "2026-04-05",
-          "title": "📋 建设方案发布",
-          "status": "approved",
-          "summary": "贵州综合管廊建设方案发布",
-          "source_url": "http://www.mohurd.gov.cn/"
         }
       ],
       "status": "在建 (25%)",
       "last_updated": "2026-08-14",
-      "progress": 25
+      "progress": 25,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "贵州省住建厅",
+          "title": "贵州综合管廊建设方案",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P3",
@@ -735,18 +874,20 @@
           "status": "construction",
           "summary": "年均改造 5500 公里，覆盖昆明/曲靖/玉溪",
           "source_url": "http://www.mohurd.gov.cn/"
-        },
-        {
-          "date": "2026-03-25",
-          "title": "📋 行动方案发布",
-          "status": "approved",
-          "summary": "云南城市管网更新行动方案发布",
-          "source_url": "http://www.mohurd.gov.cn/"
         }
       ],
       "status": "在建 (30%)",
       "last_updated": "2026-08-12",
-      "progress": 30
+      "progress": 30,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "云南省住建厅",
+          "title": "云南城市管网更新行动方案",
+          "date": "2026-08-12",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P4",
@@ -776,18 +917,20 @@
           "status": "planning",
           "summary": "供水/供电/通信管网 580 公里改造储备",
           "source_url": "http://www.mohurd.gov.cn/"
-        },
-        {
-          "date": "2026-05-05",
-          "title": "📋 实施方案发布",
-          "status": "approved",
-          "summary": "海南三网改造实施方案发布",
-          "source_url": "http://www.mohurd.gov.cn/"
         }
       ],
       "status": "储备",
       "last_updated": "2026-08-10",
-      "progress": 0
+      "progress": 0,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "海南省发改委",
+          "title": "海南三网改造实施方案",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P5",
@@ -817,18 +960,20 @@
           "status": "planning",
           "summary": "14 地市厂网一体改造储备",
           "source_url": "http://www.mohurd.gov.cn/"
-        },
-        {
-          "date": "2026-06-10",
-          "title": "📋 改造方案发布",
-          "status": "approved",
-          "summary": "广西厂网一体改造方案发布",
-          "source_url": "http://www.mohurd.gov.cn/"
         }
       ],
       "status": "储备",
       "last_updated": "2026-08-09",
-      "progress": 0
+      "progress": 0,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "广西自治区住建厅",
+          "title": "广西厂网一体改造方案",
+          "date": "2026-08-09",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "L1",
@@ -858,18 +1003,20 @@
           "status": "operational",
           "summary": "南沙港岸电稳定运行，年减碳 5 万吨",
           "source_url": "https://www.mot.gov.cn/"
-        },
-        {
-          "date": "2026-02-20",
-          "title": "📋 投产",
-          "status": "operational",
-          "summary": "南沙港四期自动化码头投产",
-          "source_url": "https://www.mot.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-18",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "交通部",
+          "title": "南沙港四期自动化码头投产",
+          "date": "2026-08-18",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "L2",
@@ -899,18 +1046,20 @@
           "status": "construction",
           "summary": "北海/钦州/防城港三大港区建设中",
           "source_url": "https://www.mot.gov.cn/"
-        },
-        {
-          "date": "2026-04-25",
-          "title": "📋 江海联运方案发布",
-          "status": "approved",
-          "summary": "北部湾港江海联运方案发布",
-          "source_url": "https://www.mot.gov.cn/"
         }
       ],
       "status": "在建 (45%)",
       "last_updated": "2026-08-17",
-      "progress": 45
+      "progress": 45,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "广西自治区交通厅",
+          "title": "北部湾港江海联运方案",
+          "date": "2026-08-17",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "L3",
@@ -940,18 +1089,20 @@
           "status": "construction",
           "summary": "洋浦港国际枢纽建设中",
           "source_url": "https://www.mot.gov.cn/"
-        },
-        {
-          "date": "2026-05-15",
-          "title": "📋 基础设施发布",
-          "status": "approved",
-          "summary": "洋浦港自贸港基础设施发布",
-          "source_url": "https://www.mot.gov.cn/"
         }
       ],
       "status": "在建 (35%)",
       "last_updated": "2026-08-16",
-      "progress": 35
+      "progress": 35,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "海南省交通厅",
+          "title": "洋浦港自贸港基础设施",
+          "date": "2026-08-16",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "L4",
@@ -981,18 +1132,20 @@
           "status": "construction",
           "summary": "西部陆海新通道骨干工程进度 55%",
           "source_url": "https://www.mot.gov.cn/"
-        },
-        {
-          "date": "2026-03-10",
-          "title": "📋 开工",
-          "status": "approved",
-          "summary": "平陆运河开工建设，连接西江与北部湾",
-          "source_url": "https://www.mot.gov.cn/"
         }
       ],
       "status": "在建 (55%)",
       "last_updated": "2026-08-15",
-      "progress": 55
+      "progress": 55,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "广西自治区发改委",
+          "title": "平陆运河开工建设",
+          "date": "2026-08-15",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "L5",
@@ -1022,18 +1175,20 @@
           "status": "operational",
           "summary": "中老铁路跨境物流稳定运行",
           "source_url": "https://www.mot.gov.cn/"
-        },
-        {
-          "date": "2026-01-01",
-          "title": "✅ 运营两周年",
-          "status": "operational",
-          "summary": "中老铁路运营两周年，年货运量增长 30%",
-          "source_url": "https://www.mot.gov.cn/"
         }
       ],
       "status": "运行中",
       "last_updated": "2026-08-14",
-      "progress": 100
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "国铁集团",
+          "title": "中老铁路运营两周年",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
     },
     {
       "id": "P-NDRC-20260210-2898",
@@ -1065,18 +1220,27 @@
           "status": "construction",
           "summary": "项目主体施工持续推进",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-02-10",
-          "title": "📋 项目发布",
-          "status": "approved",
-          "summary": "环北部湾广东水资源配置工程相关信息发布，超 600 亿元",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (45%)",
       "last_updated": "2026-08-20",
-      "progress": 45
+      "progress": 45,
+      "sources": [
+        {
+          "url": "http://gzw.gd.gov.cn/gkmlpt/content/4/4857/post_4857106.html",
+          "org": "广东省水利厅",
+          "title": "环北部湾广东水资源配置工程",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (45%)",
+          "date": "2026-08-20",
+          "type": "在建"
+        }
+      ]
     },
     {
       "id": "P-CSG-20260818-4372",
@@ -1112,7 +1276,23 @@
       ],
       "status": "项目发布",
       "last_updated": "2026-08-18",
-      "progress": 5
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://www.csg.cn/xwzx/2026/2026gsyw/202608/t20260818_356897.html",
+          "org": "南方电网",
+          "title": "海南-广东电力灵活互济工程",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 项目发布",
+          "date": "2026-08-18",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "P-CSG-20260819-5570",
@@ -1148,7 +1328,23 @@
       ],
       "status": "顶层设计发布",
       "last_updated": "2026-08-19",
-      "progress": 5
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://news.bjx.com.cn/html/20260819/1509008.shtml",
+          "org": "南方电网（北极星转载）",
+          "title": "南方电网'六网'协同顶层设计",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 顶层设计发布",
+          "date": "2026-08-19",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "P-SGCC-20260819-0425",
@@ -1184,7 +1380,23 @@
       ],
       "status": "投资规划发布",
       "last_updated": "2026-08-19",
-      "progress": 5
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://baijiahao.baidu.com/s?id=1872188139987332150&wfr=spider&for=pc",
+          "org": "国网+国金证券（百度转载）",
+          "title": "国家电网'十五五'4万亿电网投资",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 投资规划发布",
+          "date": "2026-08-19",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "P-SGCC-20260820-0694",
@@ -1220,7 +1432,23 @@
       ],
       "status": "项目签约",
       "last_updated": "2026-08-20",
-      "progress": 15
+      "progress": 15,
+      "sources": [
+        {
+          "url": "https://baijiahao.baidu.com/s?id=1870871919386345999&wfr=spider&for=pc",
+          "org": "粤东西北算力（百度转载）",
+          "title": "粤东西北三城算力'重估身家'",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 项目签约",
+          "date": "2026-08-20",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "P-BJX-20260811-1892",
@@ -1256,7 +1484,23 @@
       ],
       "status": "中老联网",
       "last_updated": "2026-08-11",
-      "progress": 8
+      "progress": 8,
+      "sources": [
+        {
+          "url": "https://goodsfu.10jqka.com.cn/20260811/c678870992.shtml",
+          "org": "同花顺财经（北极星同源）",
+          "title": "南方电网迎峰度夏·老挝水电跨境入湾",
+          "date": "2026-08-11",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 中老联网",
+          "date": "2026-08-11",
+          "type": "立项"
+        }
+      ]
     },
     {
       "id": "P-BJX-20260407-6906",
@@ -1288,18 +1532,28 @@
           "status": "construction",
           "summary": "工程进入建设阶段",
           "source_url": "https://www.ndrc.gov.cn/"
-        },
-        {
-          "date": "2026-04-07",
-          "title": "📋 环评批复",
-          "status": "approved",
-          "summary": "海南-广东电力互济工程环评批复，25.5 亿元",
-          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (10%)",
       "last_updated": "2026-08-18",
-      "progress": 10
+      "progress": 10,
+      "sources": [
+        {
+          "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk11/202604/t20260407_1148338.html",
+          "org": "生态环境部",
+          "title": "海南-广东电力互济工程环评批复",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (10%)",
+          "date": "2026-08-18",
+          "type": "在建"
+        }
+      ]
     }
-  ]
+  ],
+  "principle": "URL 唯一主键 - 信息不重复"
 }
