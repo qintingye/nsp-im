@@ -480,8 +480,10 @@ fetch('./data/projects.json')
   .then(data => {
     const list = (data && data.projects) ? data.projects : (Array.isArray(data) ? data : []);
     if (list.length > 0) {
+      // V3.0 D40: 归一化 recommend 字段 (中文键 → 短键, 兼容内嵌数据)
+      normalizeProjects(list);
       PROJECTS_CACHE = list;
-      console.log(`✓ 加载 ${PROJECTS_CACHE.length} 个项目 (fetch 方案 · D38 real-fetch-v3)`);
+      console.log(`✓ 加载 ${PROJECTS_CACHE.length} 个项目 (fetch 方案 · D38 real-fetch-v3 · D40 normalized)`);
       // 重渲染 Tab1 (覆盖原 25 + 显示新增 7)
       try { renderTab1(); } catch (e) { console.warn('renderTab1 重渲染失败:', e); }
     } else {
@@ -522,6 +524,8 @@ fetch('./data/projects.json')
     if (!data || !Array.isArray(data.projects)) return;
     let added = 0, merged = 0;
     for (const rp of data.projects) {
+      // V3.0 D40: 归一化 recommend 字段 (避免弹窗崩溃)
+      normalizeProject(rp);
       const ep = PROJECTS_CACHE.find(p => p.id === rp.id);
       if (ep) { mergeProjectUpdates(ep, rp); merged++; }
       else { PROJECTS_CACHE.push(rp); added++; }
@@ -813,11 +817,35 @@ function escapeHtml(s){
   return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 }
 
+// V3.0 D40: 归一化项目数据 (兼容 中文键 / 短键 两种 recommend 字段名)
+// 内嵌 PROJECTS 用短键 (s/p/v/i/t/e), fetch 来的 projects.json 用中文键 (战略价值/政策支持/.../总分/评语)
+// 弹窗/列表硬编码了短键, 不归一化会触发 p.recommend.t.toFixed(1) → undefined.toFixed 崩溃
+function normalizeProject(p){
+  if(!p) return p;
+  if(!p.recommend) { p.recommend = {}; return p; }
+  p.recommend = p.recommend || {};
+  // 中文键 → 短键 fallback (?? 保留已有短键, 只在缺失时回退)
+  p.recommend.s = p.recommend.s ?? p.recommend['战略价值'];
+  p.recommend.p = p.recommend.p ?? p.recommend['政策支持'];
+  p.recommend.v = p.recommend.v ?? p.recommend['投资规模'];
+  p.recommend.i = p.recommend.i ?? p.recommend['实施进度'];
+  p.recommend.t = p.recommend.t ?? p.recommend['总分'];
+  p.recommend.e = p.recommend.e ?? p.recommend['评语'];
+  return p;
+}
+function normalizeProjects(list){
+  if(!Array.isArray(list)) return list;
+  for(const p of list) normalizeProject(p);
+  return list;
+}
+
 function openProject(id){
 // V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
 const PROJ=activeProjects();
 const p=PROJ.find(x=>x.id===id);
 if(!p)return;
+// V3.0 D40: 兼容中文键/短键 (fetch 后是中文键, 内嵌是短键)
+normalizeProject(p);
 // V3.0 D35: 真实政策依据 (从 POLICIES_CACHE 按 net 匹配)
 const matchedPol=findPolicy(p.net);
 // V3.0 D36: 字段名改为 title/source_url/scope/doc_number/department
