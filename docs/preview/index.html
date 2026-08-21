@@ -376,14 +376,33 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 </div>
 </div>
 <script>
+// D34: URL → 机构栏目页 (用户反馈 D33 # 不合适, 要跳子页面而非主页或占位)
+// 演示数据 URL 暂用各机构官网栏目页(比主页更精准),真实 URL 等 cron 自动抓取后注入
+const ORG_URLS={
+"发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"广东省发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"广西发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"云南省发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"贵州省发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"国家发改委":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"能源局":"https://www.nea.gov.cn/xxgk/zcfb/",
+"国家能源局":"https://www.nea.gov.cn/xxgk/zcfb/",
+"南网":"https://www.csg.cn/xwzx/gywm/",
+"南方电网":"https://www.csg.cn/xwzx/gywm/",
+"国家电网":"https://www.sgcc.com.cn/html/sgcc_main/col2017027559/",
+"北极星":"https://news.bjx.com.cn/",
+"北极星电力":"https://news.bjx.com.cn/",
+"广州港集团":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+"default":"https://www.ndrc.gov.cn/xxgk/zcfb/tz/"
+};
 // D32: 5 条政策为演示数据(demo),URL 改为占位 #,避免 404 误导
 // 真实政策由每日 10:00 cron 自动抓取并替换
 const TODAY={date:"2026-08-19",items:[
-{id:"P-ND-20260819-0001",title:"《新型数据中心算力计量与运行监测技术规范》",org:"国家发改委",url:"#",date:"2026-08-12",source:"发改委"},
-{id:"P-NE-20260819-0001",title:"《新型电力系统行动方案（2026-2030）》",org:"国家能源局",url:"#",date:"2026-08-08",source:"能源局"},
-{id:"P-CS-20260819-0001",title:"《南方电网新型电力系统建设方案》",org:"南方电网",url:"#",date:"2026-08-05",source:"南网"},
-{id:"P-BJ-20260819-0001",title:"《算电协同六网融合指导意见（示范版）》",org:"北极星电力",url:"#",date:"2026-08-18",source:"北极星"},
-{id:"P-ND-20260819-0002",title:"《多用户绿电直连通知》",org:"国家发改委",url:"#",date:"2026-08-15",source:"发改委"}
+{id:"P-ND-20260819-0001",title:"《新型数据中心算力计量与运行监测技术规范》",org:"国家发改委",url:ORG_URLS["发改委"],date:"2026-08-12",source:"发改委"},
+{id:"P-NE-20260819-0001",title:"《新型电力系统行动方案（2026-2030）》",org:"国家能源局",url:ORG_URLS["能源局"],date:"2026-08-08",source:"能源局"},
+{id:"P-CS-20260819-0001",title:"《南方电网新型电力系统建设方案》",org:"南方电网",url:ORG_URLS["南方电网"],date:"2026-08-05",source:"南网"},
+{id:"P-BJ-20260819-0001",title:"《算电协同六网融合指导意见（示范版）》",org:"北极星电力",url:ORG_URLS["北极星"],date:"2026-08-18",source:"北极星"},
+{id:"P-ND-20260819-0002",title:"《多用户绿电直连通知》",org:"国家发改委",url:ORG_URLS["发改委"],date:"2026-08-15",source:"发改委"}
 ]};
 const PROJECTS=[
 {id:"W1",net:"water",name:"环北部湾广东",intro:"广东 614.5 亿重大水利，覆盖 1800 万人",invest:"614.5 亿",source:{type:"官方",org:"广东省发改委",title:"环北部湾广东水资源配置工程 2024-2030 规划",url:"#"},recommend:{s:9,p:10,v:9,i:7,t:8.8,e:"粤港澳大湾区水资源保障核心项目"}},
@@ -580,7 +599,7 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="mstat">收益模式 <b>${R[i]}</b></div>
 <h3>情报来源</h3>
 <p style="font-size:12px;color:#94a3b8">CERS DCICB 演讲 v10 真实案例库</p>
-<a href="#" target="_blank" style="color:#22d3ee;text-decoration:underline">《真实落地案例 v10》↗</a>
+<a href="${ORG_URLS['CERS演讲']||ORG_URLS.default}" target="_blank" style="color:#22d3ee;text-decoration:underline">《真实落地案例 v10》↗</a>
 <h3>推荐理由</h3>
 <div class="mscores">
 <div class="mscore">模式 <b>${m}</b></div>
@@ -657,7 +676,7 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模||"—"}</span></div>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度||"—"}</span></div>
 </div>`;
-document.getElementById("m-source-url").href=p.source.url;
+document.getElementById("m-source-url").href=ORG_URLS[p.source.org]||ORG_URLS.default;
 showModal();
 }
 
