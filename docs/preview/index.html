@@ -196,6 +196,15 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .t7act{padding:6px 11px;background:rgba(74,222,128,0.06);border-radius:4px;margin-bottom:4px;border-left:3px solid #4ade80;font-size:12px;color:#cbd5e1}.t7act b{color:#4ade80;margin-right:5px}
 .t7actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}.t7btn{flex:1;min-width:100px;padding:9px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#cbd5e1;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}.t7btn:hover{background:rgba(255,255,255,0.12);border-color:#fbbf24;color:#fff}.t7btn-primary{background:#fbbf24;border-color:#fbbf24;color:#0a1628;font-weight:700}
 .t7toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#4ade80;color:#0a1628;padding:7px 16px;border-radius:5px;font-size:12px;font-weight:700;z-index:9999;display:none}.t7toast.show{display:block}@media (max-width:768px){.t7actions{flex-direction:column}.t7btn{min-width:0}}
+/* V3.0 D38+ */
+.timeline{display:flex;flex-direction:column;gap:8px;margin:8px 0}
+.t-row{background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:6px;border-left:3px solid #fbbf24;position:relative}
+.t-date{font-size:11px;color:#94a3b8;margin-right:8px;font-family:monospace}
+.t-title{font-size:13px;font-weight:700;color:#fbbf24}
+.t-row p{margin:4px 0 6px;font-size:12px;color:#cbd5e1;line-height:1.5}
+.t-row a{font-size:11px;color:#22d3ee}
+.t-status{margin-top:12px;padding:8px 12px;background:rgba(34,197,94,0.1);border-radius:6px;color:#86efac;font-size:12px;border-left:3px solid #4ade80}
+.t-status b{color:#4ade80;font-weight:700}
 </style>
 </head>
 <body>
@@ -471,6 +480,46 @@ fetch('./data/projects.json')
   })
   .catch(e => console.warn('✗ projects.json 加载失败 (回退内嵌 PROJECTS):', e));
 
+// V3.0 D38+: 二次 fetch - 同 (id, date) 去重叠加 updates，历史快照不覆盖
+// 用户反馈: 项目叠加不重复，已展示项目动态更新最新信息
+function mergeProjectUpdates(existing, remote) {
+  if (!existing || !remote) return existing;
+  if (!existing.updates) existing.updates = [];
+  if (!Array.isArray(remote.updates)) remote.updates = [];
+  for (const nu of remote.updates) {
+    let same = null;
+    for (const u of existing.updates) { if (u.date === nu.date) { same = u; break; } }
+    if (same) Object.assign(same, nu);   // 同日覆盖
+    else existing.updates.push(Object.assign({}, nu));  // 不同日叠加
+  }
+  existing.updates.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  if (existing.updates.length) {
+    const top = existing.updates[0];
+    existing.status = (top.title || '').replace(/^[📋🏗️✅]\s*/, '');
+    existing.last_updated = top.date;
+  }
+  if (remote.last_updated && (!existing.last_updated || remote.last_updated > existing.last_updated)) {
+    if (remote.status) existing.status = remote.status;
+    existing.last_updated = remote.last_updated;
+    if (typeof remote.progress === 'number') existing.progress = remote.progress;
+  }
+  return existing;
+}
+
+fetch('./data/projects.json')
+  .then(r => r.ok ? r.json() : null)
+  .then(data => {
+    if (!data || !Array.isArray(data.projects)) return;
+    let added = 0, merged = 0;
+    for (const rp of data.projects) {
+      const ep = PROJECTS_CACHE.find(p => p.id === rp.id);
+      if (ep) { mergeProjectUpdates(ep, rp); merged++; }
+      else { PROJECTS_CACHE.push(rp); added++; }
+    }
+    console.log(`✓ D38+ 合并: ${merged} 叠加, ${added} 新增`);
+  })
+  .catch(() => {});
+
 // V3.0 D38: 统一数据源 (fetch 优先, fallback 内嵌)
 function activeProjects(){
   return PROJECTS_CACHE.length ? PROJECTS_CACHE : PROJECTS;
@@ -693,6 +742,20 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 document.getElementById("m-case-policy-url").href=casePolicyUrl;
 showModal();
 }
+// V3.0 D38+: 渲染项目历史时间线 (按日期倒序)
+function renderProjectTimeline(p){
+  if(!p) return '';
+  const updates = Array.isArray(p.updates) ? p.updates : [];
+  const fb = (p.last_updated && p.source) ? [{date: p.last_updated, title: p.status || '📋 当前状态', summary: '', source_url: (p.source && p.source.url) || '#'}] : [];
+  const list = updates.length ? updates : fb;
+  if(!list.length) return '';
+  const nodes = list.map(u => `<div class="t-row"><span class="t-date">${u.date||''}</span><span class="t-title">${u.title||''}</span><p>${u.summary||''}</p><a href="${u.source_url||'#'}" target="_blank" rel="noopener">查看 ↗</a></div>`).join('');
+  const cur = p.status || (list[0] && (list[0].title||'').replace(/^[📋🏗️✅]\s*/, '')) || '—';
+  const dt = p.last_updated || (list[0] && list[0].date) || '—';
+  const pg = (typeof p.progress === 'number') ? ` · 进度 ${p.progress}%` : '';
+  return `<h3>📅 项目进展（${list.length} 个节点${pg}）</h3><div class="timeline">${nodes}</div><div class="t-status">当前状态: <b>${cur}</b>（${dt}更新）</div>`;
+}
+
 function openProject(id){
 // V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
 const PROJ=activeProjects();
@@ -760,7 +823,8 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">政策支持</span><span class="bd">${basis.政策||"—"}</span></div>
 <div class="basis-row"><span class="bn">投资规模</span><span class="bd">${basis.规模||"—"}</span></div>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度||"—"}</span></div>
-</div>`;
+</div>
+${renderProjectTimeline(p)}`;
 document.getElementById("m-source-url").href=ORG_URLS[p.source.org]||ORG_URLS.default;
 document.getElementById("m-policy-url").href=polUrl;
 showModal();
