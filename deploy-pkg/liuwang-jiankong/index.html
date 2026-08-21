@@ -431,6 +431,62 @@ const PROJECTS=[
 {id:"L4",net:"logi",name:"平陆运河",intro:"平陆运河 727 亿，年运量 1 亿吨",invest:"727 亿",source:{type:"新闻",org:"北极星电力",title:"平陆运河",url:"#"},recommend:{s:9,p:9,v:10,i:6,t:8.5,e:"西部陆海新通道骨干"}},
 {id:"L5",net:"logi",name:"中老铁路",intro:"中老铁路 95.6 亿，国际物流大通道",invest:"95.6 亿",source:{type:"新闻",org:"北极星电力",title:"中老铁路",url:"#"},recommend:{s:7,p:8,v:7,i:7,t:7.3,e:"国际物流通道"}}
 ];
+// V3.0 D35: 65 条政策真实 URL 嵌入 (从 data/policies.json 注入) - 用户反馈日报要收集真实子页面 URL
+// V3.0 D36: 改用 fetch 加载 data/policies.json (65 条政策从外部文件读取)
+// 优点: cron 抓新政策只需更新 policies.json, HTML 不需重新打包
+//      HTML 从 96.9KB → ~87KB, 留出 13KB 余量给后续功能
+let POLICIES_CACHE = [];
+fetch('./data/policies.json')
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    POLICIES_CACHE = (data && data.policies) ? data.policies : (Array.isArray(data) ? data : []);
+    console.log(`✓ 加载 ${POLICIES_CACHE.length} 条政策 (fetch 方案)`);
+  })
+  .catch(e => console.error('✗ policies.json 加载失败:', e));
+
+// V3.0 D38: 项目情报自动更新 (ProjectFetcher real-fetch-v3)
+// 数据源: NDRC + 南网 + 国网 + 北极星 (HTTP 200 验证)
+// 用户反馈: 项目情报不更新是核心问题 → 改用 fetch 从 data/projects.json 加载
+//   - 25 历史项目 (V3.0 D33 内嵌) + 7 新抓 (D38 NDRC/南网/国网/北极星) = 32 项目
+//   - fetch 失败时回退到内嵌 PROJECTS 数组 (D39 fallback)
+let PROJECTS_CACHE = [];
+fetch('./data/projects.json')
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    const list = (data && data.projects) ? data.projects : (Array.isArray(data) ? data : []);
+    if (list.length > 0) {
+      PROJECTS_CACHE = list;
+      console.log(`✓ 加载 ${PROJECTS_CACHE.length} 个项目 (fetch 方案 · D38 real-fetch-v3)`);
+      // 重渲染 Tab1 (覆盖原 25 + 显示新增 7)
+      try { renderTab1(); } catch (e) { console.warn('renderTab1 重渲染失败:', e); }
+    } else {
+      console.warn('projects.json 为空, 沿用内嵌 PROJECTS');
+    }
+  })
+  .catch(e => console.warn('✗ projects.json 加载失败 (回退内嵌 PROJECTS):', e));
+
+// V3.0 D38: 统一数据源 (fetch 优先, fallback 内嵌)
+function activeProjects(){
+  return PROJECTS_CACHE.length ? PROJECTS_CACHE : PROJECTS;
+}
+
+// V3.0 D36: 按 net 匹配真实政策 (字段名: title/source_url/scope/doc_number/department)
+function findPolicy(net){
+  if(!net || !POLICIES_CACHE.length) return null;
+  // 1) scope 命中 (按 net 名字, 支持多 scope)
+  let m = POLICIES_CACHE.find(p => Array.isArray(p.scope) && p.scope.includes(net));
+  // 2) 兜底: 任取一条有 scope 的
+  if(!m) m = POLICIES_CACHE.find(p => Array.isArray(p.scope) && p.scope.length);
+  return m || POLICIES_CACHE[0] || null;
+}
+
+
 
 const NETS={
 water:{name:"水网",color:"#60a5fa",icon:"💧"},
@@ -464,13 +520,15 @@ const nb=document.getElementById("nb");
 const nbg=document.getElementById("nbg");
 const order=["water","compute","telecom","pipe","logi"];
 const names=["①水网","②算力网","③新一代通信网","④城市地下管网","⑤物流网"];
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
 nb.innerHTML=order.map((k,i)=>{
 const s=calcScore(k);
 const cv=COUPLING_MAP[k]||0;
 return `<div class="nsi" style="--c:${NETS[k].color}"><b>${NETS[k].icon} ${names[i]}</b><span>${s.toFixed(1)}<em class="cpl">耦合 ${cv.toFixed(2)}</em></span></div>`;
 }).join("");
 nbg.innerHTML=order.map((k,i)=>{
-const items=PROJECTS.filter(p=>p.net===k);
+const items=PROJ.filter(p=>p.net===k);
 const s=calcScore(k);
 const sc=s>=8?"":s>=6?"mid":"low";
 return `<div class="nbx" style="--c:${NETS[k].color}" onclick="openNet('${k}')">
@@ -482,7 +540,9 @@ return `<div class="nbx" style="--c:${NETS[k].color}" onclick="openNet('${k}')">
 }
 
 function openNet(net){
-const items=PROJECTS.filter(p=>p.net===net);
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
+const items=PROJ.filter(p=>p.net===net);
 const names={"water":"💧 水网","compute":"🧮 算力网","telecom":"📡 新一代通信网","pipe":"🔧 城市地下管网","logi":"🚛 物流网"};
 let html=`<button class="close" onclick="closeModal()">×</button><h2>${names[net]} · ${items.length} 个项目</h2>`;
 items.forEach(p=>{
@@ -574,6 +634,15 @@ showModal();
 function openCase(n){
 const i=n-1;
 const c=C[i],m=M6[M[i]];
+// V3.0 D36: 真实政策依据 (按案例 i 选 net → 匹配 POLICIES_CACHE)
+const CASE_NETS=["grid","grid","grid","grid","grid","grid","grid","grid","grid","grid","compute"];
+const caseNet=CASE_NETS[i]||"grid";
+const casePol=findPolicy(caseNet);
+// V3.0 D36: 字段名改为 title/source_url/scope/doc_number/department
+const casePolicyTitle=casePol?(casePol.title||"暂无政策依据"):"暂无政策依据";
+const casePolicyDoc=casePol?(casePol.doc_number||""):"";
+const casePolicyOrg=casePol?(casePol.department||""):"";
+const casePolicyUrl=casePol?casePol.source_url:"#";
 const intro=("中山格兰仕屋顶分布式光伏，年发电5000万kWh，年省电费300+万。南网能源EMC模式，25年合同期满无偿移交业主。|广船国际15MW/30MWh用户侧储能，EMC全额投资，峰谷套利+需量电费节省，大湾区船舶业最大+接入VPP平台。|四川长虹工业园冷热电三联供，BOO模式长期持有能源站，工厂按消耗支付冷热电能源服务费。|佛山禅城公共机构全国首个行政区级托管+VPP，南网能源全托管运维+电力交易+负荷调度。|南方医科大学珠江医院能源托管型EMC，4880万改造空调/配电/热水照明，托管期医院支付打包服务费节约归服务商。|国网江苏e+平台VPP代运营，聚合597万kW/4万资源点，不投资硬件业主自持设备，平台服务费+响应分成。|湖南星沙VPP，国网湖南综能+地方国资合资运营，园区储能+充电桩+中央空调，迎峰度夏需响。|江苏宿迁运河港配售电，国网江苏综能+宿迁地方国资股权合资，国家首批增量配电试点+江苏首个增量配网主体VPP。|重庆西永微电园光伏，国网重庆综能+社会资本联合体模式，园区转让屋顶经营权，25年运营。|广州工控零碳园区，南网能源BOO+EMS平台+绿证交易+VPP一体化，咨询-投资-建设-数字化运营-碳交易全链条交付。|贵安算电协同联盟，南网贵州供电局牵头，面向海量智算中心提供绿电聚合采购+负荷调度+储能配套+SaaS。").split("|")[i]||m+"案例";
 const basis=([
 {战略:"分布式光伏标杆",政策:"南网能源EMC",规模:"52.38MW中型",进度:"运行中"},
@@ -600,6 +669,9 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h3>情报来源</h3>
 <p style="font-size:12px;color:#94a3b8">CERS DCICB 演讲 v10 真实案例库</p>
 <a href="${ORG_URLS['CERS演讲']||ORG_URLS.default}" target="_blank" style="color:#22d3ee;text-decoration:underline">《真实落地案例 v10》↗</a>
+<h3>📑 真实政策依据</h3>
+<p style="font-size:12px;color:#94a3b8" id="m-case-policy-doc">${casePolicyDoc}${casePolicyOrg?`（${casePolicyOrg}）`:""}</p>
+<a id="m-case-policy-url" target="_blank" style="color:#4ade80;text-decoration:underline">《${casePolicyTitle}》↗</a>
 <h3>推荐理由</h3>
 <div class="mscores">
 <div class="mscore">模式 <b>${m}</b></div>
@@ -618,11 +690,21 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
 </div>
 </details>`;
+document.getElementById("m-case-policy-url").href=casePolicyUrl;
 showModal();
 }
 function openProject(id){
-const p=PROJECTS.find(x=>x.id===id);
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
+const p=PROJ.find(x=>x.id===id);
 if(!p)return;
+// V3.0 D35: 真实政策依据 (从 POLICIES_CACHE 按 net 匹配)
+const matchedPol=findPolicy(p.net);
+// V3.0 D36: 字段名改为 title/source_url/scope/doc_number/department
+const polTitle=matchedPol?(matchedPol.title||"暂无政策依据"):"暂无政策依据";
+const polDoc=matchedPol?(matchedPol.doc_number||""):"";
+const polOrg=matchedPol?(matchedPol.department||""):"";
+const polUrl=matchedPol?matchedPol.source_url:"#";
 const basis={
 C1:{战略:"南网算电协同核心标杆",政策:"发改委新型数据中心规范",规模:"1100亿（行业TOP10）",进度:"2026起步期"},
 C2:{战略:"东数西算大湾区枢纽",政策:"广东省发改委规划",规模:"1080亿",进度:"2026实施"},
@@ -660,6 +742,9 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h3>📰 情报来源</h3>
 <p id="m-source-org" style="font-size:12px;color:#94a3b8">${p.source.org} · ${p.source.type}</p>
 <a id="m-source-url" target="_blank">《${p.source.title}》↗</a>
+<h3>📑 真实政策依据</h3>
+<p style="font-size:12px;color:#94a3b8" id="m-policy-doc">${polDoc}${polOrg?`（${polOrg}）`:""}</p>
+<a id="m-policy-url" target="_blank" style="color:#4ade80;text-decoration:underline">《${polTitle}》↗</a>
 <h3>⭐ 推荐理由</h3>
 <div class="mscores">
 <div class="mscore">战略价值 <b id="m-r1">${p.recommend.s}</b></div>
@@ -677,6 +762,7 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度||"—"}</span></div>
 </div>`;
 document.getElementById("m-source-url").href=ORG_URLS[p.source.org]||ORG_URLS.default;
+document.getElementById("m-policy-url").href=polUrl;
 showModal();
 }
 

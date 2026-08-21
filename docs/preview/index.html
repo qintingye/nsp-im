@@ -447,6 +447,35 @@ fetch('./data/policies.json')
   })
   .catch(e => console.error('✗ policies.json 加载失败:', e));
 
+// V3.0 D38: 项目情报自动更新 (ProjectFetcher real-fetch-v3)
+// 数据源: NDRC + 南网 + 国网 + 北极星 (HTTP 200 验证)
+// 用户反馈: 项目情报不更新是核心问题 → 改用 fetch 从 data/projects.json 加载
+//   - 25 历史项目 (V3.0 D33 内嵌) + 7 新抓 (D38 NDRC/南网/国网/北极星) = 32 项目
+//   - fetch 失败时回退到内嵌 PROJECTS 数组 (D39 fallback)
+let PROJECTS_CACHE = [];
+fetch('./data/projects.json')
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    const list = (data && data.projects) ? data.projects : (Array.isArray(data) ? data : []);
+    if (list.length > 0) {
+      PROJECTS_CACHE = list;
+      console.log(`✓ 加载 ${PROJECTS_CACHE.length} 个项目 (fetch 方案 · D38 real-fetch-v3)`);
+      // 重渲染 Tab1 (覆盖原 25 + 显示新增 7)
+      try { renderTab1(); } catch (e) { console.warn('renderTab1 重渲染失败:', e); }
+    } else {
+      console.warn('projects.json 为空, 沿用内嵌 PROJECTS');
+    }
+  })
+  .catch(e => console.warn('✗ projects.json 加载失败 (回退内嵌 PROJECTS):', e));
+
+// V3.0 D38: 统一数据源 (fetch 优先, fallback 内嵌)
+function activeProjects(){
+  return PROJECTS_CACHE.length ? PROJECTS_CACHE : PROJECTS;
+}
+
 // V3.0 D36: 按 net 匹配真实政策 (字段名: title/source_url/scope/doc_number/department)
 function findPolicy(net){
   if(!net || !POLICIES_CACHE.length) return null;
@@ -491,13 +520,15 @@ const nb=document.getElementById("nb");
 const nbg=document.getElementById("nbg");
 const order=["water","compute","telecom","pipe","logi"];
 const names=["①水网","②算力网","③新一代通信网","④城市地下管网","⑤物流网"];
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
 nb.innerHTML=order.map((k,i)=>{
 const s=calcScore(k);
 const cv=COUPLING_MAP[k]||0;
 return `<div class="nsi" style="--c:${NETS[k].color}"><b>${NETS[k].icon} ${names[i]}</b><span>${s.toFixed(1)}<em class="cpl">耦合 ${cv.toFixed(2)}</em></span></div>`;
 }).join("");
 nbg.innerHTML=order.map((k,i)=>{
-const items=PROJECTS.filter(p=>p.net===k);
+const items=PROJ.filter(p=>p.net===k);
 const s=calcScore(k);
 const sc=s>=8?"":s>=6?"mid":"low";
 return `<div class="nbx" style="--c:${NETS[k].color}" onclick="openNet('${k}')">
@@ -509,7 +540,9 @@ return `<div class="nbx" style="--c:${NETS[k].color}" onclick="openNet('${k}')">
 }
 
 function openNet(net){
-const items=PROJECTS.filter(p=>p.net===net);
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
+const items=PROJ.filter(p=>p.net===net);
 const names={"water":"💧 水网","compute":"🧮 算力网","telecom":"📡 新一代通信网","pipe":"🔧 城市地下管网","logi":"🚛 物流网"};
 let html=`<button class="close" onclick="closeModal()">×</button><h2>${names[net]} · ${items.length} 个项目</h2>`;
 items.forEach(p=>{
@@ -661,7 +694,9 @@ document.getElementById("m-case-policy-url").href=casePolicyUrl;
 showModal();
 }
 function openProject(id){
-const p=PROJECTS.find(x=>x.id===id);
+// V3.0 D38: 优先用 fetch 加载的 PROJECTS_CACHE, fallback 内嵌
+const PROJ=activeProjects();
+const p=PROJ.find(x=>x.id===id);
 if(!p)return;
 // V3.0 D35: 真实政策依据 (从 POLICIES_CACHE 按 net 匹配)
 const matchedPol=findPolicy(p.net);
