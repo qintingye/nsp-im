@@ -1,7 +1,7 @@
 {
-  "version": "3.0-d37",
-  "generated_at": "2026-08-21T06:25:41.388899Z",
-  "source": "real-fetch-v2",
+  "version": "3.0",
+  "generated_at": "2026-08-21T06:24:39Z",
+  "source": "manual-demo",
   "policies": [
     {
       "id": "P-NDRC-20260519-0001",
@@ -2833,28 +2833,5 @@
     "period": "十五五期间"
   },
   "v8_cers_dccib": true,
-  "count": 62,
-  "note": "✅ 真实抓取 2026-08-21 - 发改委/能源局 v2.0 fetcher (NDRC +20, NEA +20)",
-  "fetch_summary": {
-    "ndrc": {
-      "total_entries": 29,
-      "http_200_sample": 18
-    },
-    "nea": {
-      "total_entries": 23,
-      "http_200_sample": 10
-    },
-    "csg": {
-      "total_entries": 13,
-      "note": "CSG site blocks automated fetch"
-    },
-    "sgcc": {
-      "total_entries": 4,
-      "note": "SGCC site blocks automated fetch"
-    },
-    "bjx": {
-      "total_entries": 13,
-      "note": "BJX site blocks automated fetch"
-    }
-  }
+  "count": 62
 }
