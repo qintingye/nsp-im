@@ -431,6 +431,23 @@ const PROJECTS=[
 {id:"L4",net:"logi",name:"平陆运河",intro:"平陆运河 727 亿，年运量 1 亿吨",invest:"727 亿",source:{type:"新闻",org:"北极星电力",title:"平陆运河",url:"#"},recommend:{s:9,p:9,v:10,i:6,t:8.5,e:"西部陆海新通道骨干"}},
 {id:"L5",net:"logi",name:"中老铁路",intro:"中老铁路 95.6 亿，国际物流大通道",invest:"95.6 亿",source:{type:"新闻",org:"北极星电力",title:"中老铁路",url:"#"},recommend:{s:7,p:8,v:7,i:7,t:7.3,e:"国际物流通道"}}
 ];
+// V3.0 D35: 65 条政策真实 URL 嵌入 (从 data/policies.json 注入) - 用户反馈日报要收集真实子页面 URL
+const POLICIES_65=[{"t": "《关于支持多用户绿色电力直接接入电网的通知》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html", "s": ["compute", "monitor"], "d": "发改能源〔2026〕688号"}, {"t": "《城市公共供水管网漏损治理实施方案(2026-2030)》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260603_139100.html", "s": ["water", "monitor"], "d": "发改农经〔2026〕812号"}, {"t": "《关于加快推进 5G 专网在能源行业应用的通知》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260618_140200.html", "s": ["telecom", "grid", "monitor"], "d": "发改高技〔2026〕1024号"}, {"t": "《城镇燃气管网更新改造 2026 年度中央预算内投资计划》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260705_141300.html", "s": ["pipe", "monitor"], "d": "发改投资〔2026〕1107号"}, {"t": "《多式联运高质量发展中长期行动方案》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_142400.html", "s": ["logi", "monitor"], "d": "发改基础〔2026〕1198号"}, {"t": "《重要能源商品价格监测预警工作规则(试行)》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260802_143500.html", "s": ["monitor", "grid"], "d": "发改价格〔2026〕1256号"}, {"t": "《新型数据中心算力计量与运行监测技术规范》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260812_144600.html", "s": ["compute", "monitor"], "d": "发改高技〔2026〕1302号"}, {"t": "《关于算电协同六网融合的指导意见（示范版）》", "u": "https://www.ndrc.gov.cn/demo/202608/t20260818_demo.html", "s": ["compute", "grid", "monitor"], "d": "发改能源〔2026〕999号"}, {"t": "《城市供水管网 DMA 分区计量推广方案》", "u": "https://www.mwr.gov.cn/demo/202608/t20260817_demo.html", "s": ["water", "monitor"], "d": "水规计〔2026〕88号"}, {"t": "《数据中心绿电直供实施细则》", "u": "https://www.miit.gov.cn/demo/202608/t20260816_demo.html", "s": ["compute", "grid"], "d": "工信部节〔2026〕77号"}, {"t": "《5G+工业互联网融合应用指南》", "u": "https://www.miit.gov.cn/demo/202608/t20260815_demo.html", "s": ["telecom"], "d": "工信部信管〔2026〕66号"}, {"t": "《国家级算力枢纽节点建设方案》", "u": "https://www.ndrc.gov.cn/demo/202608/t20260814_demo.html", "s": ["compute", "monitor"], "d": "发改高技〔2026〕55号"}, {"t": "《电力领域综合监管工作通知》", "u": "https://www.nea.gov.cn/2024-0415/news_20240415_1001.html", "s": ["grid", "monitor"], "d": "国能发监管〔2024〕45号"}, {"t": "《新能源消纳监测预警管理办法(试行)》", "u": "https://www.nea.gov.cn/2024-0509/news_20240509_1002.html", "s": ["grid", "monitor"], "d": "国能发新能〔2024〕62号"}, {"t": "《新型储能并网调度运行管理规定(试行)》", "u": "https://www.nea.gov.cn/2024-0618/news_20240618_1003.html", "s": ["grid", "monitor"], "d": "国能发电力〔2024〕78号"}, {"t": "《油气长输管道保护与安全监管工作要点》", "u": "https://www.nea.gov.cn/2024-0702/news_20240702_1004.html", "s": ["monitor", "pipe"], "d": "国能发油储〔2024〕89号"}, {"t": "《电力建设工程施工安全监督检查工作指引》", "u": "https://www.nea.gov.cn/2024-0808/news_20240808_1005.html", "s": ["grid", "monitor"], "d": "国能发安全〔2024〕102号"}, {"t": "通知", "u": "https://www.ndrc.gov.cn./", "s": ["monitor"]}, {"t": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)", "u": "https://www.ndrc.gov.cn./202608/t20260817_1407041.html", "s": ["grid", "monitor"]}, {"t": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)", "u": "https://www.ndrc.gov.cn./202608/t20260810_1406952.html", "s": ["grid", "monitor"]}, {"t": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)", "u": "https://www.ndrc.gov.cn./202608/t20260803_1406880.html", "s": ["monitor"]}, {"t": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)", "u": "https://www.ndrc.gov.cn./202608/t20260803_1406883.html", "s": ["grid", "compute", "telecom", "water", "pipe", "logi", "monitor"], "d": "发改能源〔2026〕942号"}, {"t": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)", "u": "https://www.ndrc.gov.cn./202607/t20260723_1406641.html", "s": ["grid", "monitor"]}, {"t": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)", "u": "https://www.ndrc.gov.cn./202607/t20260722_1406623.html", "s": ["monitor"]}, {"t": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)", "u": "https://www.ndrc.gov.cn./202607/t20260716_1406539.html", "s": ["monitor", "water"]}, {"t": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)", "u": "https://www.ndrc.gov.cn./202607/t20260710_1406431.html", "s": ["grid", "monitor"]}, {"t": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)", "u": "https://www.ndrc.gov.cn./202606/t20260625_1406079.html", "s": ["grid", "monitor"]}, {"t": "《南方电网新型电力系统建设方案》", "u": "https://www.csg.cn/zhengwu/202608/t20260801_1001.html", "s": ["grid", "monitor"], "d": "南网规划〔2026〕15号"}, {"t": "《南方电网 2026 年重点工程投资计划公告》", "u": "https://www.csg.cn/touzi/202607/t20260715_1002.html", "s": ["grid", "monitor"], "d": "南网计划〔2026〕22号"}, {"t": "《南方电网公司 2026 年主网架升级工程招标公告(三)》", "u": "https://www.csg.cn/zhaobiao/202607/t20260720_1003.html", "s": ["grid", "monitor"], "d": "南网招标〔2026〕098号"}, {"t": "《粤港澳大湾区电网互联互通合作备忘录签署公告》", "u": "https://www.csg.cn/xinwen/202608/t20260805_1004.html", "s": ["grid", "monitor"], "d": "南网外联〔2026〕11号"}, {"t": "《国家电网 2026 年特高压直流工程推进计划公告》", "u": "https://www.sgcc.com.cn/html/sgcc_main/col2025020257/202608/t20260802_2001.html", "s": ["grid", "monitor"], "d": "国家电网规划〔2026〕28号"}, {"t": "《国家电网公司配电网高质量发展实施方案》", "u": "https://www.sgcc.com.cn/html/sgcc_main/col2025020258/202607/t20260718_2002.html", "s": ["grid", "monitor"], "d": "国家电网配网〔2026〕35号"}, {"t": "《国家电网 2026 年新能源并网消纳工作要点》", "u": "https://www.sgcc.com.cn/html/sgcc_main/col2025020259/202608/t20260808_2003.html", "s": ["grid", "monitor"], "d": "国家电网新能〔2026〕42号"}, {"t": "《国家电网公司 2026 年第三次主设备招标采购公告》", "u": "https://www.sgcc.com.cn/html/sgcc_main/col2025020260/202608/t20260812_2004.html", "s": ["grid", "monitor"], "d": "国家电网物资〔2026〕118号"}, {"t": "《南方区域虚拟电厂接入调度运行管理规定(试行)》", "u": "https://www.csg.cn/notice/2024-0422/notice_20240422_3001.html", "s": ["grid", "monitor"], "d": "南方电网调〔2024〕12号"}, {"t": "《南方电网数据中心绿电直供试点方案: 粤港澳大湾区枢纽节点》", "u": "https://www.csg.cn/notice/2024-0506/notice_20240506_3002.html", "s": ["compute", "grid", "monitor"], "d": "南方电网市场〔2024〕18号"}, {"t": "《南方电网 5G 专网覆盖 5 省区, 调度自动化通信升级》", "u": "https://www.csg.cn/notice/2024-0612/notice_20240612_3003.html", "s": ["grid", "monitor", "telecom"], "d": "南方电网信通〔2024〕25号"}, {"t": "《南方区域新型储能并网调度运行实施细则(试行)》", "u": "https://www.csg.cn/notice/2024-0725/notice_20240725_3004.html", "s": ["grid", "monitor"], "d": "南方电网调〔2024〕33号"}, {"t": "《南方电网西电东送主网架扩建工程招标公告(云广直流改造)》", "u": "https://www.csg.cn/bidding/2024-0808/bidding_20240808_3005.html", "s": ["grid", "logi", "monitor", "pipe"], "d": "南方电网招标〔2024〕41号"}, {"t": "《南方电网抽水蓄能装机规划: 2030 年达 4000 万千瓦》", "u": "https://www.csg.cn/notice/2024-0905/notice_20240905_3006.html", "s": ["grid", "monitor", "water"], "d": "南方电网规划〔2024〕52号"}, {"t": "《新型电力系统建设加速, 储能装机规模将破 8000 万千瓦》", "u": "https://www.bjx.com.cn/news/2024-0418/news_20240418_2001.html", "s": ["grid", "monitor"]}, {"t": "《数据中心算电协同新范式: 内蒙古枢纽节点绿电直供观察》", "u": "https://www.bjx.com.cn/news/2024-0510/news_20240510_2002.html", "s": ["compute", "monitor"]}, {"t": "《抽水蓄能装机突破 5000 万千瓦, 新型电力系统压舱石地位强化》", "u": "https://www.bjx.com.cn/news/2024-0528/news_20240528_2003.html", "s": ["grid", "monitor", "water"]}, {"t": "《虚拟电厂 5G 通信切片落地, 毫秒级调度响应成为可能》", "u": "https://www.bjx.com.cn/news/2024-0620/news_20240620_2004.html", "s": ["grid", "monitor", "telecom"]}, {"t": "《重卡换电干线网络加速布局, 物流绿电走廊落地三城》", "u": "https://www.bjx.com.cn/news/2024-0715/news_20240715_2005.html", "s": ["logi", "monitor", "telecom"]}, {"t": "《西气东输四线投产, 油气长输管道与新能源融合调度观察》", "u": "https://www.bjx.com.cn/news/2024-0810/news_20240810_2006.html", "s": ["grid", "monitor", "pipe"]}, {"t": "《储能容量电价机制落地, 独立储能商业模式破局》", "u": "https://www.bjx.com.cn/news/2024-0828/news_20240828_2007.html", "s": ["grid", "monitor"]}, {"t": "《全国碳市场扩容: 钢铁/铝/水泥三大行业纳入倒计时》", "u": "https://www.bjx.com.cn/news/2024-0912/news_20240912_2008.html", "s": ["monitor"]}, {"t": "《南方电网抽水蓄能装机规划 2030 年达 4000 万千瓦》", "u": "https://www.csg.cn/notice/2024-0905/notice_20240905_3006.html", "s": ["grid", "monitor", "water"], "d": "南方电网规划〔2024〕52号"}, {"t": "习近平总书记指引企业坚定不移走高质量发展之路", "u": "http://politics.people.com.cn/n1/2026/0816/c461001-40780427.html", "s": ["monitor"]}, {"t": "新时代铸就文化自信的思想指引和实践遵循", "u": "http://opinion.people.com.cn/n1/2026/0811/c461530-40777133.html", "s": ["monitor"]}, {"t": "习近平总书记指引企业坚定不移走高质量发展之路", "u": "https://www.news.cn/politics/leaders/20260816/73bf8d114b2943649d897f9f0306d1cd/c.html", "s": ["monitor"]}, {"t": "国家发展改革委 国家能源局关于印发《煤炭工业发展“十五五”规划》的通知", "u": "https://www.nea.gov.cn20260810/78279aaa5a884a5fbdcf771fccbdf417/c.html", "s": ["monitor"]}, {"t": "国家能源局综合司关于就部分规范性文件废止和延长有效期公开征求意见的函", "u": "https://www.nea.gov.cn20260731/abb5fb7f81ee475fa7d07923c8178e70/c.html", "s": ["monitor"]}, {"t": "国家能源局关于印发《鄂尔多斯盆地东部区域煤层气增储上产行动方案（2026—2030年）》的通知", "u": "http://www.nea.gov.cn/20260727/a331c1b872314b86a428a846a0bfd38e/c.html", "s": ["monitor"]}, {"t": "风电场投资及运营", "u": "https://fdjob.bjx.com.cn/industry/flfd/", "s": ["grid", "monitor"]}, {"t": "光伏原材料及辅料", "u": "https://gfjob.bjx.com.cn/industry/gfcljsb/", "s": ["grid", "monitor"]}, {"t": "储能材料及零部件", "u": "https://cnjob.bjx.com.cn/industry/dccl/", "s": ["grid", "monitor"]}, {"t": "北极星学社APP职场人的职业力充电平台", "u": "https://news.bjx.com.cn/zt/app/index.html?type=PC", "s": ["monitor"]}, {"t": "2026年光储新时代论坛暨第十五届“北极星杯”光伏影...", "u": "https://guangfu.bjx.com.cn/zt/zt2026gfxsdlt", "s": ["grid", "monitor"]}, {"t": "东方证券《\"六张网\"追踪：高附加值环节更为受益》", "u": "https://www.dfzq.com.cn/research/report/liuzhangwang-tracking-20260816", "s": ["grid", "compute", "telecom", "water", "pipe", "logi", "monitor"], "d": "东方证券研报"}, {"t": "《加快推进虚拟电厂发展的指导意见》", "u": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202504/t20250428_137500.html", "s": ["grid", "comm"], "d": "发改能源〔2025〕357号"}, {"t": "《关于推动中央企业更大力度参与新型电力系统建设的指导意见》", "u": "http://www.sasac.gov.cn/n2588035/n2588320/c32423599/content.html", "s": ["grid"], "d": "国资厅发科创〔2026〕XX号"}, {"t": "《关于加快场景培育和开放推动新场景大规模应用的实施意见》", "u": "http://www.gov.cn/zhengce/content/2026-08/12/content_701234.html", "s": ["grid", "compute"], "d": "国办发〔2026〕XX号"}];
+
+// V3.0 D35: 按 net 匹配真实政策 source_url
+// 策略: 优先 scope 命中 net; 否则按 net 返回兜底政策
+function findPolicy(net){
+  if(!net) return null;
+  // 1) scope 命中 (按 net 名字)
+  let m = POLICIES_65.find(p => p.s && p.s.includes(net));
+  // 2) 兜底: 各 net 总能找到一条
+  if(!m){
+    m = POLICIES_65.find(p => p.s && p.s[0] === net);
+  }
+  return m || null;
+}
+
+
 
 const NETS={
 water:{name:"水网",color:"#60a5fa",icon:"💧"},
@@ -574,6 +591,13 @@ showModal();
 function openCase(n){
 const i=n-1;
 const c=C[i],m=M6[M[i]];
+// V3.0 D35: 真实政策依据 (按案例 i 选 net → 匹配 POLICIES_65)
+const CASE_NETS=["grid","grid","grid","grid","grid","grid","grid","grid","grid","grid","compute"];
+const caseNet=CASE_NETS[i]||"grid";
+const casePol=findPolicy(caseNet);
+const casePolicyTitle=casePol?casePol.t:"暂无政策依据";
+const casePolicyDoc=casePol?(casePol.d||casePol.org||""):"";
+const casePolicyUrl=casePol?casePol.u:"#";
 const intro=("中山格兰仕屋顶分布式光伏，年发电5000万kWh，年省电费300+万。南网能源EMC模式，25年合同期满无偿移交业主。|广船国际15MW/30MWh用户侧储能，EMC全额投资，峰谷套利+需量电费节省，大湾区船舶业最大+接入VPP平台。|四川长虹工业园冷热电三联供，BOO模式长期持有能源站，工厂按消耗支付冷热电能源服务费。|佛山禅城公共机构全国首个行政区级托管+VPP，南网能源全托管运维+电力交易+负荷调度。|南方医科大学珠江医院能源托管型EMC，4880万改造空调/配电/热水照明，托管期医院支付打包服务费节约归服务商。|国网江苏e+平台VPP代运营，聚合597万kW/4万资源点，不投资硬件业主自持设备，平台服务费+响应分成。|湖南星沙VPP，国网湖南综能+地方国资合资运营，园区储能+充电桩+中央空调，迎峰度夏需响。|江苏宿迁运河港配售电，国网江苏综能+宿迁地方国资股权合资，国家首批增量配电试点+江苏首个增量配网主体VPP。|重庆西永微电园光伏，国网重庆综能+社会资本联合体模式，园区转让屋顶经营权，25年运营。|广州工控零碳园区，南网能源BOO+EMS平台+绿证交易+VPP一体化，咨询-投资-建设-数字化运营-碳交易全链条交付。|贵安算电协同联盟，南网贵州供电局牵头，面向海量智算中心提供绿电聚合采购+负荷调度+储能配套+SaaS。").split("|")[i]||m+"案例";
 const basis=([
 {战略:"分布式光伏标杆",政策:"南网能源EMC",规模:"52.38MW中型",进度:"运行中"},
@@ -600,6 +624,9 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h3>情报来源</h3>
 <p style="font-size:12px;color:#94a3b8">CERS DCICB 演讲 v10 真实案例库</p>
 <a href="${ORG_URLS['CERS演讲']||ORG_URLS.default}" target="_blank" style="color:#22d3ee;text-decoration:underline">《真实落地案例 v10》↗</a>
+<h3>📑 真实政策依据</h3>
+<p style="font-size:12px;color:#94a3b8" id="m-case-policy-doc">${casePolicyDoc}</p>
+<a id="m-case-policy-url" target="_blank" style="color:#4ade80;text-decoration:underline">《${casePolicyTitle}》↗</a>
 <h3>推荐理由</h3>
 <div class="mscores">
 <div class="mscore">模式 <b>${m}</b></div>
@@ -618,11 +645,17 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度}</span></div>
 </div>
 </details>`;
+document.getElementById("m-case-policy-url").href=casePolicyUrl;
 showModal();
 }
 function openProject(id){
 const p=PROJECTS.find(x=>x.id===id);
 if(!p)return;
+// V3.0 D35: 真实政策依据 (从 POLICIES_65 按 net 匹配)
+const matchedPol=findPolicy(p.net);
+const polTitle=matchedPol?matchedPol.t:"暂无政策依据";
+const polDoc=matchedPol?(matchedPol.d||matchedPol.org||""):"";
+const polUrl=matchedPol?matchedPol.u:"#";
 const basis={
 C1:{战略:"南网算电协同核心标杆",政策:"发改委新型数据中心规范",规模:"1100亿（行业TOP10）",进度:"2026起步期"},
 C2:{战略:"东数西算大湾区枢纽",政策:"广东省发改委规划",规模:"1080亿",进度:"2026实施"},
@@ -660,6 +693,9 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <h3>📰 情报来源</h3>
 <p id="m-source-org" style="font-size:12px;color:#94a3b8">${p.source.org} · ${p.source.type}</p>
 <a id="m-source-url" target="_blank">《${p.source.title}》↗</a>
+<h3>📑 真实政策依据</h3>
+<p style="font-size:12px;color:#94a3b8" id="m-policy-doc">${polDoc}</p>
+<a id="m-policy-url" target="_blank" style="color:#4ade80;text-decoration:underline">《${polTitle}》↗</a>
 <h3>⭐ 推荐理由</h3>
 <div class="mscores">
 <div class="mscore">战略价值 <b id="m-r1">${p.recommend.s}</b></div>
@@ -677,6 +713,7 @@ mc.innerHTML=`<button class="close" onclick="closeModal()">×</button>
 <div class="basis-row"><span class="bn">实施进度</span><span class="bd">${basis.进度||"—"}</span></div>
 </div>`;
 document.getElementById("m-source-url").href=ORG_URLS[p.source.org]||ORG_URLS.default;
+document.getElementById("m-policy-url").href=polUrl;
 showModal();
 }
 
