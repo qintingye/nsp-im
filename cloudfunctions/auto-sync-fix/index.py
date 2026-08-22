@@ -22,9 +22,17 @@ D48 变更：
 - ❌ 默认域名 `liwang-jiankong-...tcloudbaseapp.com` 返回 HTTP 418（CloudBase 默认域名服务不可用）
 - ✅ 改用自定义域名 `liwangqingbaozhan-liuwang-jiankong-...webapps.tcloudbaseapp.com`（V3.0 正常 200）
 - ✅ 真实 URL：`https://{CUSTOM_DOMAIN}/liuwang-jiankong/{path}`（自定义域名路径含应用路径）
+
+D49 变更：
+- ❌ 自定义域名 `https://liwangqingbaozhan-...tcloudbaseapp.com` → SSL: CERTIFICATE_VERIFY_FAILED（证书不匹配）
+- ❌ 默认域名 `https://liwang-jiankong-...tcloudbaseapp.com` → HTTP 418（部分路径 200）
+- ✅ **CloudBase 函数 outbound 走腾讯内网 —— 直接 HTTP 80 端口（无证书验证）**
+- ✅ URL 改用 `http://{CUSTOM_DOMAIN}/liuwang-jiankong/{path}` + `ssl._create_unverified_context()`
+- ✅ 自定义域名浏览器能正常 V3.0 渲染（用户已验证），HTTP 走内网同理
 """
 import os
 import json
+import ssl
 import http.client
 import urllib.request
 from datetime import datetime
@@ -33,30 +41,35 @@ from datetime import datetime
 # CloudBase 环境 ID + 静态托管基址
 # D48: 默认域名 418，改用自定义域名 `liwangqingbaozhan-...`（V3.0 验证 200）
 ENV_ID = 'liwang-jiankong-d2eatyj479b1861-1471069936'
-CUSTOM_DOMAIN = 'liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbaseapp.com'
-# 自定义域名服务静态托管时，URL 含 `/liuwang-jiankong` 应用路径前缀
-STATIC_BASE = f'https://{CUSTOM_DOMAIN}/liuwang-jiankong'
+CUSTOM_DOMAIN_HOST = 'liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbaseapp.com'
+# D49: 走 HTTP 80 端口（内网，无证书验证问题）+ unverified context（万一遇到重定向到 HTTPS）
+STATIC_BASE_HTTP = f'http://{CUSTOM_DOMAIN_HOST}/liuwang-jiankong'
+
+
+def _unverified_ctx():
+    """返回跳过证书验证的 SSL context（D49：自定义域名 SSL 证书不匹配）"""
+    return ssl._create_unverified_context()
 
 
 def fetch_json(name):
-    """HTTP GET 读 JSON（用 urllib.request，标准库）。"""
-    url = f'{STATIC_BASE}/data/{name}'
+    """HTTP GET 读 JSON（HTTP 80 端口 + unverified context，D49 走内网）"""
+    url = f'{STATIC_BASE_HTTP}/data/{name}'
     req = urllib.request.Request(
         url,
         headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
     )
-    with urllib.request.urlopen(req, timeout=10) as r:
+    with urllib.request.urlopen(req, timeout=10, context=_unverified_ctx()) as r:
         return json.loads(r.read().decode('utf-8'))
 
 
 def fetch_html():
-    """HTTP GET 读 index.html 当模板（用 urllib.request，标准库）。"""
-    url = f'{STATIC_BASE}/index.html'
+    """HTTP GET 读 index.html 模板（HTTP 80 端口 + unverified context，D49 走内网）"""
+    url = f'{STATIC_BASE_HTTP}/index.html'
     req = urllib.request.Request(
         url,
         headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
     )
-    with urllib.request.urlopen(req, timeout=10) as r:
+    with urllib.request.urlopen(req, timeout=10, context=_unverified_ctx()) as r:
         return r.read().decode('utf-8')
 
 
