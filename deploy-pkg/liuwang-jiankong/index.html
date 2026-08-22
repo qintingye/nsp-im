@@ -175,6 +175,10 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .btn-original{display:inline-block;padding:5px 12px;background:linear-gradient(135deg,#22d3ee,#0891b2);color:#0a1628 !important;text-decoration:none !important;font-size:12px;font-weight:700;border-radius:6px;transition:transform .15s,box-shadow .15s}
 .btn-original:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(34,211,238,0.4)}
 .btn-original::after{content:"↗";margin-left:4px;font-weight:600}
+/* V3.0 D56: 待人工核实标记 (首页 URL) */
+.pending-verify{display:inline-block;padding:5px 12px;background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);border-radius:6px;font-size:12px;font-weight:700;cursor:not-allowed}
+.muted{color:#94a3b8;font-size:12px;font-style:italic}
+.btn-original-small{display:inline-block;padding:3px 8px;background:rgba(34,211,238,0.1);color:#22d3ee !important;border:1px solid rgba(34,211,238,0.2);border-radius:4px;text-decoration:none !important;font-size:11px;font-weight:600}
 .t6top{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:14px}
 .t6mode{background:rgba(255,255,255,0.04);padding:8px 4px;border-radius:6px;text-align:center;border-top:2px solid var(--c,#60a5fa)}
 .t6mode b{color:var(--c);font-size:11px;display:block;letter-spacing:1px}
@@ -1029,6 +1033,21 @@ if(el)el.innerHTML=html;
 }
 renderModeMatch();
 
+// V3.0 D56: 判断 URL 是否官网首页 (无原文路径)
+function isHomepage(url){
+if(!url||url==="#")return true;
+const homepages=["https://www.ndrc.gov.cn","https://www.nea.gov.cn","https://www.mwr.gov.cn","https://www.miit.gov.cn","https://www.csg.cn","https://www.sgcc.com.cn","https://www.bjx.com.cn","https://www.nbd.com.cn","https://www.stcn.com","https://www.yicai.com"];
+return homepages.includes(url.replace(/\/$/,""));
+}
+
+// V3.0 D56: 渲染"原文"按钮 —— 首页显示 待人工核实, 真原文显示 查看原文
+function renderOriginalLink(url){
+if(!url||url==="#"||isHomepage(url)){
+return `<span class="pending-verify" title="详细全文待人工核实">📋 待人工核实</span>`;
+}
+return `<a class="btn-original" href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 查看原文</a>`;
+}
+
 function renderTab2(){
 const plist=document.getElementById("plist");
 const pdate=document.getElementById("pdate");
@@ -1041,6 +1060,10 @@ plist.innerHTML=items.map(it=>{
 const src=it.source||"";
 const srcCls=src.slice(0,2);
 const originalUrl=it.url||it.original_url||it.source_url||it.link||"#";
+const isHp=isHomepage(originalUrl);
+// 首页只显示 待人工核实 + 官网入口; 真原文显示 查看原文 + 原文链接
+const linkBtn=isHp?renderOriginalLink(originalUrl):`<a class="btn-original" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 查看原文</a>`;
+const plink=isHp?`<a class="plink" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">《官网首页》↗</a>`:`<a class="plink" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">《原文》↗</a>`;
 return `<div class="pcard" onclick="openPolicy('${it.id}')">
 <h3>${it.title}</h3>
 <div class="pmeta">
@@ -1049,8 +1072,8 @@ return `<div class="pcard" onclick="openPolicy('${it.id}')">
 <span class="date">${it.date}</span>
 </div>
 <div class="paction">
-<a class="btn-original" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 查看原文</a>
-<a class="plink" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">《原文》↗</a>
+${linkBtn}
+${plink}
 </div>
 </div>`}).join("");
 }
