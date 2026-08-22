@@ -13,6 +13,10 @@ D46 变更：
 - ✅ 改用标准库 `urllib.request`（Python 内置，零依赖）
 - ✅ 上传继续用 `http.client`（也是标准库）
 - ✅ 不再需要 requirements.txt
+
+D47 变更：
+- ❌ 去除 URL 中的 `/liuwang-jiankong` 前缀（这是 CloudBase 内部"应用路径"路由，不应出现在 URL 里）
+- ✅ 真实 URL：`https://{ENV_ID}.tcloudbaseapp.com/data/{name}`（直接走根路径）
 """
 import os
 import json
@@ -22,8 +26,9 @@ from datetime import datetime
 
 
 # CloudBase 环境 ID + 静态托管基址
+# D47: 去除 /liuwang-jiankong 前缀（这是 CloudBase 内部"应用路径"，不应出现在 URL 里）
 ENV_ID = 'liuwang-jiankong-d2eatyj479b1861-1471069936'
-STATIC_BASE = f'https://{ENV_ID}.tcloudbaseapp.com/liuwang-jiankong'
+STATIC_BASE = f'https://{ENV_ID}.tcloudbaseapp.com'
 
 
 def fetch_json(name):
