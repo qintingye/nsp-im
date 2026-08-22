@@ -17,6 +17,11 @@ D46 变更：
 D47 变更：
 - ❌ 去除 URL 中的 `/liuwang-jiankong` 前缀（这是 CloudBase 内部"应用路径"路由，不应出现在 URL 里）
 - ✅ 真实 URL：`https://{ENV_ID}.tcloudbaseapp.com/data/{name}`（直接走根路径）
+
+D48 变更：
+- ❌ 默认域名 `liwang-jiankong-...tcloudbaseapp.com` 返回 HTTP 418（CloudBase 默认域名服务不可用）
+- ✅ 改用自定义域名 `liwangqingbaozhan-liuwang-jiankong-...webapps.tcloudbaseapp.com`（V3.0 正常 200）
+- ✅ 真实 URL：`https://{CUSTOM_DOMAIN}/liuwang-jiankong/{path}`（自定义域名路径含应用路径）
 """
 import os
 import json
@@ -26,9 +31,11 @@ from datetime import datetime
 
 
 # CloudBase 环境 ID + 静态托管基址
-# D47: 去除 /liuwang-jiankong 前缀（这是 CloudBase 内部"应用路径"，不应出现在 URL 里）
-ENV_ID = 'liuwang-jiankong-d2eatyj479b1861-1471069936'
-STATIC_BASE = f'https://{ENV_ID}.tcloudbaseapp.com'
+# D48: 默认域名 418，改用自定义域名 `liwangqingbaozhan-...`（V3.0 验证 200）
+ENV_ID = 'liwang-jiankong-d2eatyj479b1861-1471069936'
+CUSTOM_DOMAIN = 'liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbaseapp.com'
+# 自定义域名服务静态托管时，URL 含 `/liuwang-jiankong` 应用路径前缀
+STATIC_BASE = f'https://{CUSTOM_DOMAIN}/liuwang-jiankong'
 
 
 def fetch_json(name):
