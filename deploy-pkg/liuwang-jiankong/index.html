@@ -1,3 +1,4 @@
+<!-- V3.0 refresh 1787389687.3791058 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -170,6 +171,10 @@ main{padding:24px;max-width:1280px;margin:0 auto}
 .pmeta .org{color:#cbd5e1}
 .pmeta .date{color:#94a3b8}
 .plink{color:#4ade80;text-decoration:underline;font-size:12px}
+.paction{display:flex;align-items:center;gap:8px;margin-top:4px}
+.btn-original{display:inline-block;padding:5px 12px;background:linear-gradient(135deg,#22d3ee,#0891b2);color:#0a1628 !important;text-decoration:none !important;font-size:12px;font-weight:700;border-radius:6px;transition:transform .15s,box-shadow .15s}
+.btn-original:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(34,211,238,0.4)}
+.btn-original::after{content:"↗";margin-left:4px;font-weight:600}
 .t6top{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:14px}
 .t6mode{background:rgba(255,255,255,0.04);padding:8px 4px;border-radius:6px;text-align:center;border-top:2px solid var(--c,#60a5fa)}
 .t6mode b{color:var(--c);font-size:11px;display:block;letter-spacing:1px}
@@ -1035,6 +1040,7 @@ if(pcount)pcount.textContent=String(items.length);
 plist.innerHTML=items.map(it=>{
 const src=it.source||"";
 const srcCls=src.slice(0,2);
+const originalUrl=it.url||it.original_url||it.source_url||it.link||"#";
 return `<div class="pcard" onclick="openPolicy('${it.id}')">
 <h3>${it.title}</h3>
 <div class="pmeta">
@@ -1042,7 +1048,10 @@ return `<div class="pcard" onclick="openPolicy('${it.id}')">
 <span class="org">${it.org}</span>
 <span class="date">${it.date}</span>
 </div>
-<a class="plink" href="${it.url}" target="_blank" onclick="event.stopPropagation()">《原文》↗</a>
+<div class="paction">
+<a class="btn-original" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 查看原文</a>
+<a class="plink" href="${originalUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">《原文》↗</a>
+</div>
 </div>`}).join("");
 }
 
