@@ -37,28 +37,28 @@
           "title": "🏗️ 在建 (30%)",
           "status": "construction",
           "summary": "工程进入主体施工阶段，泵站建设完成 30%，管道铺设同步推进",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260715_1402001.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         },
         {
           "date": "2026-07-08",
           "title": "🔌 配套电网开工",
           "status": "construction",
           "summary": "南方电网启动环北部湾广东水资源配置工程配套 500kV 输电工程建设",
-          "source_url": "https://www.csg.cn/zhengwu/202607/t20260708_2099001.html"
+          "source_url": "https://www.csg.cn/"
         },
         {
           "date": "2026-06-10",
           "title": "📑 环评批复",
           "status": "approved",
           "summary": "广东省水利厅批复环北部湾广东水资源配置工程环评报告，覆盖生态影响评价",
-          "source_url": "https://gzw.gd.gov.cn/xxgk/zcfb/tz/202606/t20260610_1402100.html"
+          "source_url": "https://gzw.gd.gov.cn/"
         },
         {
           "date": "2026-05-19",
           "title": "📋 立项批复",
           "status": "approved",
           "summary": "国家发改委批复环北部湾广东水资源配置工程立项，总投资约 614.5 亿元，覆盖粤西 4 市 1800 万人",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (45%)",
@@ -80,28 +80,28 @@
           "type": "在建"
         },
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260715_1402001.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "🏗️ 在建 (30%)",
           "date": "2026-07-15",
           "type": "在建"
         },
         {
-          "url": "https://www.csg.cn/zhengwu/202607/t20260708_2099001.html",
+          "url": "https://www.csg.cn/",
           "org": "南方电网",
           "title": "🔌 配套电网开工",
           "date": "2026-07-08",
           "type": "在建"
         },
         {
-          "url": "https://gzw.gd.gov.cn/xxgk/zcfb/tz/202606/t20260610_1402100.html",
+          "url": "https://gzw.gd.gov.cn/",
           "org": "广东省水利厅",
           "title": "📑 环评批复",
           "date": "2026-06-10",
           "type": "立项"
         },
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "📋 立项批复",
           "date": "2026-05-19",
@@ -136,14 +136,14 @@
           "title": "🏗️ 在建 (20%)",
           "status": "construction",
           "summary": "一期管道工程开工，完成进度 20%",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260818_1406800.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         },
         {
           "date": "2026-04-10",
           "title": "📋 可研获批",
           "status": "approved",
           "summary": "广西自治区发改委批复可研报告，覆盖北海/钦州/防城港 1400 万人",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202604/t20260410_138500.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (20%)",
@@ -158,14 +158,14 @@
           "type": "新闻"
         },
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260818_1406800.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "🏗️ 在建 (20%)",
           "date": "2026-08-18",
           "type": "在建"
         },
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202604/t20260410_138500.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "📋 可研获批",
           "date": "2026-04-10",
@@ -313,7 +313,7 @@
         "type": "招标",
         "org": "国家发改委",
         "title": "《新型数据中心技术规范》",
-        "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html"
+        "url": "https://www.ndrc.gov.cn/"
       },
       "recommend": {
         "战略价值": 10,
@@ -329,14 +329,14 @@
           "title": "🏗️ 在建 (25%)",
           "status": "construction",
           "summary": "阳江海底数据中心集群一期建设中，进度 25%",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260815_1406700.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         },
         {
           "date": "2026-05-19",
           "title": "📋 技术规范发布",
           "status": "approved",
           "summary": "国家发改委发布新型数据中心技术规范，海底数据中心列入示范",
-          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html"
+          "source_url": "https://www.ndrc.gov.cn/"
         }
       ],
       "status": "在建 (25%)",
@@ -344,14 +344,14 @@
       "progress": 25,
       "sources": [
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "《新型数据中心技术规范》",
           "date": "2026-08-15",
           "type": "招标"
         },
         {
-          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260815_1406700.html",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
           "org": "国家发改委",
           "title": "🏗️ 在建 (25%)",
           "date": "2026-08-15",
@@ -542,7 +542,7 @@
         "type": "新闻",
         "org": "工信部",
         "title": "5G 扬帆行动升级方案",
-        "url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2024/art_d4adfee5d3b94f8e8b95e1b31c9d9f3b.html"
+        "url": "https://www.miit.gov.cn/"
       },
       "recommend": {
         "战略价值": 10,
@@ -565,7 +565,7 @@
           "title": "📋 5G扬帆升级",
           "status": "approved",
           "summary": "工信部发布 5G 扬帆行动升级方案",
-          "source_url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2024/art_d4adfee5d3b94f8e8b95e1b31c9d9f3b.html"
+          "source_url": "https://www.miit.gov.cn/"
         }
       ],
       "status": "在建 (60%)",
@@ -573,7 +573,7 @@
       "progress": 60,
       "sources": [
         {
-          "url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2024/art_d4adfee5d3b94f8e8b95e1b31c9d9f3b.html",
+          "url": "https://www.miit.gov.cn/",
           "org": "工信部",
           "title": "5G 扬帆行动升级方案",
           "date": "2026-08-19",

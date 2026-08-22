@@ -1,0 +1,395 @@
+{
+  "stats": {
+    "OK": 32,
+    "NOT_FOUND": 8,
+    "API_ERROR": 0,
+    "SKIPPED": 0
+  },
+  "updates": [
+    {
+      "idx": 0,
+      "id": "P-NDRC-20260820-0007",
+      "doc": "（首次披露于8-19 NDRC发布会；正式发文待跟踪）",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 1,
+      "id": "P-NDRC-20260519-0001",
+      "doc": "发改能源〔2026〕688号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260520_1405313.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260520_1405313.html",
+      "hit_title": "关于有序推动多用户绿电直连发展有关事项的通知(发改能源〔2026〕688号)",
+      "hit_date": "2026-05-20",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 2,
+      "id": "P-NDRC-20260603-0002",
+      "doc": "发改农经〔2026〕812号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 3,
+      "id": "P-NDRC-20260618-0003",
+      "doc": "发改高技〔2026〕1024号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 4,
+      "id": "P-NDRC-20260705-0004",
+      "doc": "发改投资〔2026〕1107号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 5,
+      "id": "P-NDRC-20260722-0005",
+      "doc": "发改基础〔2026〕1198号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 6,
+      "id": "P-NDRC-20260802-0006",
+      "doc": "发改价格〔2026〕1256号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 7,
+      "id": "P-NDRC-20260812-0007",
+      "doc": "发改高技〔2026〕1302号",
+      "old_url": "https://www.ndrc.gov.cn/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 8,
+      "id": "P-NDRC-20260818-0001",
+      "doc": "发改能源〔2026〕999号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+      "new_url": null,
+      "reason": "NOT_FOUND"
+    },
+    {
+      "idx": 19,
+      "id": "P-NDRC-20260817-7609",
+      "doc": "发改能源〔2026〕1055号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
+      "hit_title": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
+      "hit_date": "2026-08-17",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 20,
+      "id": "P-NDRC-20260810-3231",
+      "doc": "发改能源〔2026〕979号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "hit_title": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
+      "hit_date": "2026-08-10",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 21,
+      "id": "P-NDRC-20260803-8093",
+      "doc": "发改办环资〔2026〕520号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
+      "hit_title": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
+      "hit_date": "2026-08-03",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 22,
+      "id": "P-NDRC-20260803-3328",
+      "doc": "发改能源〔2026〕942号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+      "hit_title": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
+      "hit_date": "2026-08-03",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 23,
+      "id": "P-NDRC-20260723-3087",
+      "doc": "发改能源〔2026〕1067号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
+      "hit_title": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
+      "hit_date": "2026-07-23",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 24,
+      "id": "P-NDRC-20260722-2956",
+      "doc": "发改民营〔2026〕1093号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
+      "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
+      "hit_date": "2026-07-22",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 25,
+      "id": "P-NDRC-20260716-1302",
+      "doc": "发改环资〔2026〕1062号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "hit_title": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
+      "hit_date": "2026-07-16",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 26,
+      "id": "P-NDRC-20260710-6116",
+      "doc": "发改价格〔2026〕1077号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
+      "hit_title": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
+      "hit_date": "2026-07-10",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 27,
+      "id": "P-NDRC-20260625-0563",
+      "doc": "发改能源〔2026〕884号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
+      "hit_title": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
+      "hit_date": "2026-06-25",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 54,
+      "id": "P-NEA-20260810-1279",
+      "doc": "",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/ghwb/201612/t20161230_962216.html",
+      "hit_title": "关于印发煤炭工业发展“十三五”规划的通知(发改能源〔2016〕2714号)",
+      "hit_date": "2016-12-30",
+      "match_method": "top_hit"
+    },
+    {
+      "idx": 63,
+      "id": "P-NDRC-NEA-20260820-0002",
+      "doc": "发改能源〔2025〕357号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202504/t20250411_1397162.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202504/t20250411_1397162.html",
+      "hit_title": "关于加快推进虚拟电厂发展的指导意见(发改能源〔2025〕357号)",
+      "hit_date": "2025-04-11",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 86,
+      "id": "P-NDRC-20260820-0603",
+      "doc": "发改办财金〔2026〕589号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html",
+      "hit_title": "关于印发第五批全国社会信用体系建设示范区名单的通知(发改办财金〔2026〕589号)",
+      "hit_date": "2026-08-20",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 87,
+      "id": "P-NDRC-20260817-0530",
+      "doc": "发改能源〔2026〕1055号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
+      "hit_title": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
+      "hit_date": "2026-08-17",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 88,
+      "id": "P-NDRC-20260810-8478",
+      "doc": "发改能源〔2026〕979号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "hit_title": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
+      "hit_date": "2026-08-10",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 89,
+      "id": "P-NDRC-20260803-1205",
+      "doc": "发改办环资〔2026〕520号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
+      "hit_title": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
+      "hit_date": "2026-08-03",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 90,
+      "id": "P-NDRC-20260803-0140",
+      "doc": "发改能源〔2026〕942号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+      "hit_title": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
+      "hit_date": "2026-08-03",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 91,
+      "id": "P-NDRC-20260723-5202",
+      "doc": "发改能源〔2026〕1067号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
+      "hit_title": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
+      "hit_date": "2026-07-23",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 92,
+      "id": "P-NDRC-20260722-7294",
+      "doc": "发改民营〔2026〕1093号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
+      "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
+      "hit_date": "2026-07-22",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 93,
+      "id": "P-NDRC-20260716-9355",
+      "doc": "发改环资〔2026〕1062号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "hit_title": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
+      "hit_date": "2026-07-16",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 94,
+      "id": "P-NDRC-20260821-1338",
+      "doc": "",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202607/t20260717_1406556.html",
+      "hit_title": "国家发展改革委、自然资源部、水利部联合印发《海水淡化产业发展行动方案》",
+      "hit_date": "2026-07-17",
+      "match_method": "top_hit"
+    },
+    {
+      "idx": 95,
+      "id": "P-NDRC-20260710-5015",
+      "doc": "发改价格〔2026〕1077号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
+      "hit_title": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
+      "hit_date": "2026-07-10",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 96,
+      "id": "P-NDRC-20260625-4579",
+      "doc": "发改能源〔2026〕884号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
+      "hit_title": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
+      "hit_date": "2026-06-25",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 97,
+      "id": "P-NDRC-20260615-6370",
+      "doc": "发改环资〔2026〕698号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260615_1405852.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260615_1405852.html",
+      "hit_title": "关于开展重点行业节能降碳改造攻坚三年行动的通知(发改环资〔2026〕698号)",
+      "hit_date": "2026-06-15",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 98,
+      "id": "P-NDRC-20260821-2573",
+      "doc": "",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260615_1405852.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202606/t20260615_1405864.html",
+      "hit_title": "国家发展改革委等部门印发《关于开展重点行业节能降碳改造攻坚三年行动的通知》",
+      "hit_date": "2026-06-15",
+      "match_method": "top_hit"
+    },
+    {
+      "idx": 99,
+      "id": "P-NDRC-20260608-2470",
+      "doc": "发改农经〔2026〕713号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260608_1405753.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260608_1405753.html",
+      "hit_title": "关于印发《生态保护修复领域中央预算内投资专项管理办法》的通知(发改农经〔2026〕713号)",
+      "hit_date": "2026-06-08",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 100,
+      "id": "P-NDRC-20260605-7052",
+      "doc": "发改体改〔2026〕695号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260605_1405707.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260605_1405707.html",
+      "hit_title": "关于总结推广上海浦东新区、深圳、厦门综合改革试点创新举措和经验做法的通知(发改体改〔2026〕695号)",
+      "hit_date": "2026-06-05",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 101,
+      "id": "P-NDRC-20260602-8077",
+      "doc": "发改体改〔2026〕734号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260602_1405666.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260602_1405666.html",
+      "hit_title": "关于在云霄直流开展输电权市场化交易的通知(发改体改〔2026〕734号)",
+      "hit_date": "2026-06-02",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 102,
+      "id": "P-NDRC-20260601-3662",
+      "doc": "发改能源〔2026〕622号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260601_1405606.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260601_1405606.html",
+      "hit_title": "关于印发《非化石能源电力消费核算指南(试行)》的通知(发改能源〔2026〕622号)",
+      "hit_date": "2026-06-01",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 103,
+      "id": "P-NDRC-20260528-1235",
+      "doc": "发改民营〔2026〕708号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260528_1405517.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260528_1405517.html",
+      "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第一批)的通知(发改民营〔2026〕708号)",
+      "hit_date": "2026-05-28",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 104,
+      "id": "P-NDRC-20260525-5895",
+      "doc": "发改价格〔2026〕733号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260525_1405460.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260525_1405460.html",
+      "hit_title": "关于2026—2028年棉花目标价格政策的通知(发改价格〔2026〕733号)",
+      "hit_date": "2026-05-25",
+      "match_method": "doc_number_in_title"
+    },
+    {
+      "idx": 105,
+      "id": "P-NDRC-20260522-4161",
+      "doc": "发改振兴〔2026〕697号",
+      "old_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260522_1405365.html",
+      "new_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260522_1405365.html",
+      "hit_title": "关于印发《推进生态综合补偿实施方案》的通知(发改振兴〔2026〕697号)",
+      "hit_date": "2026-05-22",
+      "match_method": "doc_number_in_title"
+    }
+  ],
+  "ts": "2026-08-23T01:55:00Z"
+}

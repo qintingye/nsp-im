@@ -1,8 +1,85 @@
 {
   "version": "3.0-d37",
-  "generated_at": "2026-08-21T06:25:41.388899Z",
+  "generated_at": "2026-08-21T15:30:00Z",
   "source": "real-fetch-v2",
   "policies": [
+    {
+      "id": "P-NDRC-20260820-0007",
+      "title": "NDRC 2+3+N 协调机制（新型电网+算力网+通信网跨主体统筹调度）",
+      "department": "NDRC",
+      "doc_number": "（首次披露于8-19 NDRC发布会；正式发文待跟踪）",
+      "publish_date": "2026-08-19",
+      "effective_date": null,
+      "category": "policy",
+      "scope": [
+        "grid",
+        "compute",
+        "telecom",
+        "monitor"
+      ],
+      "priority": 1,
+      "summary": "2+3+N 是新型电网、算力网、新一代通信网三张新网的跨主体统筹调度机制，破解过去分头规划、各自建设、行业壁垒等突出问题。主要优势5个方面：破除行业壁垒、避免重复建设、加快项目落地、优化资源匹配、完善市场化生态。首次披露于 2026-08-19 NDRC 主任郑栅洁民营企业座谈会。",
+      "key_points": [
+        "2+3+N=国网+南网+三大运营商+N家算力企业",
+        "破除行业壁垒：算电协同、算网协同、同步预审",
+        "避免重复建设：杆塔/管廊/路由/土地共建共享",
+        "加快项目落地：发改委牵头+多部委协同+联动会商",
+        "资源优化匹配：算力向新能源富集区布局+绿电绿算融合",
+        "市场化生态：国有底座（2+3）+市场化运营（N）",
+        "首次披露：2026-08-19 NDRC 主任郑栅洁民营企业座谈会",
+        "跟踪信号：三部委联合发文 + 主体名单公示 + 示范项目开工"
+      ],
+      "source_url": "https://www.ndrc.gov.cn/",
+      "captured_at": "2026-08-21T15:30:00Z",
+      "captured_by": "manual-learning-update-v2",
+      "tags": [
+        "2+3+N",
+        "协调机制",
+        "算电协同",
+        "六网融合",
+        "新型电网",
+        "算力网",
+        "通信网",
+        "942号文",
+        "999号文",
+        "郑栅洁",
+        "NDRC",
+        "公文版",
+        "汇报材料"
+      ],
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "新型电网→算力网/通信网（跨主体协调）",
+      "v4_cers_dccib": true,
+      "v7_cers_dccib": true,
+      "v8_cers_dccib": true,
+      "interpretation_source": "",
+      "official_document_url": null,
+      "backup_sources": [
+        "https://www.nbd.com.cn/",
+        "https://www.stcn.com/",
+        "https://www.yicai.com/",
+        "https://www.ndrc.gov.cn/"
+      ],
+      "related_policies": [
+        "发改能源〔2026〕942号",
+        "发改能源〔2026〕999号"
+      ],
+      "five_advantages": {
+        "1_破除行业壁垒": "算电协同、算网协同、同步规划/预审/开工",
+        "2_避免重复建设": "杆塔/管廊/路由/土地共建共享，降低基建成本",
+        "3_加快项目落地": "发改委牵头+多部委协同+联动会商，压缩前期周期",
+        "4_优化资源匹配": "算力向新能源富集区布局+绿电绿算融合",
+        "5_市场化生态": "国有底座(2+3)+市场化运营(N)，新业态培育"
+      },
+      "tracking_signals": [
+        "NDRC+NEA+MIIT 联合发文",
+        "三大运营商算电协同战略公告",
+        "国网/南网算电协同示范项目招标",
+        "市场化算力企业(N)首批名单披露",
+        "示范项目数据指标(绿电直供/跨域时延/共建共享率)"
+      ]
+    },
     {
       "id": "P-NDRC-20260519-0001",
       "title": "《关于支持多用户绿色电力直接接入电网的通知》",
@@ -22,9 +99,9 @@
         "降本",
         "碳核算"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260519_138000.html",
-      "captured_at": "2026-08-19T08:30:00Z",
-      "captured_by": "manual-demo",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260520_1405313.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [
         "绿电",
         "直连",
@@ -38,7 +115,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "电力与新能源",
       "investment_period": "未明确",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于有序推动多用户绿电直连发展有关事项的通知(发改能源〔2026〕688号)",
+          "hit_date": "2026-05-20",
+          "doc_number": "发改能源〔2026〕688号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260603-0002",
@@ -59,7 +146,7 @@
         "漏损率",
         "智慧水务"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260603_139100.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -97,7 +184,7 @@
         "频谱",
         "能源监测"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260618_140200.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -134,7 +221,7 @@
         "燃气管网",
         "改造投资"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260705_141300.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -171,7 +258,7 @@
         "信息互联",
         "公共数据平台"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_142400.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -208,7 +295,7 @@
         "日报",
         "预警阈值"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260802_143500.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -245,7 +332,7 @@
         "PUE",
         "监测接口"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260812_144600.html",
+      "source_url": "https://www.ndrc.gov.cn/",
       "captured_at": "2026-08-19T08:30:00Z",
       "captured_by": "manual-demo",
       "tags": [
@@ -283,7 +370,7 @@
         "六网融合",
         "示范先行"
       ],
-      "source_url": "https://www.ndrc.gov.cn/demo/202608/t20260818_demo.html",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
       "captured_at": "2026-08-18T08:30:00Z",
       "captured_by": "integrate-demo-v1.0",
       "tags": [
@@ -318,7 +405,7 @@
         "DMA 分区",
         "漏损治理"
       ],
-      "source_url": "https://www.mwr.gov.cn/demo/202608/t20260817_demo.html",
+      "source_url": "http://www.mwr.gov.cn/",
       "captured_at": "2026-08-18T08:30:00Z",
       "captured_by": "integrate-demo-v1.0",
       "tags": [
@@ -354,7 +441,7 @@
         "并网",
         "碳核算"
       ],
-      "source_url": "https://www.miit.gov.cn/demo/202608/t20260816_demo.html",
+      "source_url": "https://www.miit.gov.cn/",
       "captured_at": "2026-08-18T08:30:00Z",
       "captured_by": "integrate-demo-v1.0",
       "tags": [
@@ -388,7 +475,7 @@
         "5G",
         "工业互联网"
       ],
-      "source_url": "https://www.miit.gov.cn/demo/202608/t20260815_demo.html",
+      "source_url": "https://www.miit.gov.cn/",
       "captured_at": "2026-08-18T08:30:00Z",
       "captured_by": "integrate-demo-v1.0",
       "tags": [
@@ -424,7 +511,7 @@
         "PUE",
         "绿电"
       ],
-      "source_url": "https://www.ndrc.gov.cn/demo/202608/t20260814_demo.html",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202508/t20250826_1400078.html",
       "captured_at": "2026-08-18T08:30:00Z",
       "captured_by": "integrate-demo-v1.0",
       "tags": [
@@ -456,7 +543,7 @@
       "priority": 1,
       "summary": "《电力领域综合监管工作通知》",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn/2024-0415/news_20240415_1001.html",
+      "source_url": "https://zfxxgk.nea.gov.cn/2024-05/17/c_1310775793.htm",
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
@@ -485,7 +572,7 @@
       "priority": 1,
       "summary": "《新能源消纳监测预警管理办法(试行)》",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn/2024-0509/news_20240509_1002.html",
+      "source_url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6956401.htm",
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
@@ -514,7 +601,7 @@
       "priority": 1,
       "summary": "《新型储能并网调度运行管理规定(试行)》",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn/2024-0618/news_20240618_1003.html",
+      "source_url": "https://www.nea.gov.cn/",
       "captured_at": "2026-08-18T00:16:11.840971Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
@@ -543,7 +630,7 @@
       "priority": 1,
       "summary": "《油气长输管道保护与安全监管工作要点》",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn/2024-0702/news_20240702_1004.html",
+      "source_url": "https://www.nea.gov.cn/",
       "captured_at": "2026-08-18T00:01:54.629577Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
@@ -572,7 +659,7 @@
       "priority": 1,
       "summary": "《电力建设工程施工安全监督检查工作指引》",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn/2024-0808/news_20240808_1005.html",
+      "source_url": "https://www.nea.gov.cn/",
       "captured_at": "2026-08-18T00:01:54.629577Z",
       "captured_by": "nea-fetcher-v0.1",
       "tags": [],
@@ -628,9 +715,9 @@
       "priority": 2,
       "summary": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202608/t20260817_1407041.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -639,7 +726,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "十五五全周期",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
+          "hit_date": "2026-08-17",
+          "doc_number": "发改能源〔2026〕1055号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260810-3231",
@@ -656,9 +753,9 @@
       "priority": 2,
       "summary": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202608/t20260810_1406952.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -667,7 +764,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "十五五全周期",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
+          "hit_date": "2026-08-10",
+          "doc_number": "发改能源〔2026〕979号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260803-8093",
@@ -683,9 +790,9 @@
       "priority": 2,
       "summary": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406880.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
@@ -694,7 +801,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "未明确",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
+          "hit_date": "2026-08-03",
+          "doc_number": "发改办环资〔2026〕520号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260803-3328",
@@ -725,9 +842,9 @@
         "算电协同专章",
         "南网14511体系对位"
       ],
-      "source_url": "https://www.ndrc.gov.cn./202608/t20260803_1406883.html",
-      "captured_at": "2026-08-19T12:00:00Z",
-      "captured_by": "manual-learning-update-v1",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [
         "新型电力系统",
         "十五五",
@@ -747,7 +864,17 @@
       "investment_period": "十五五全周期",
       "v8_cers_dccib": true,
       "source_url_interpretation": "https://mp.weixin.qq.com/s/2TJVJOK3xv28XtqBhjZvkg",
-      "interpretation_source": "新华国研经济学研究院 · 宏观经济研究部 · 2026-08-19"
+      "interpretation_source": "",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
+          "hit_date": "2026-08-03",
+          "doc_number": "发改能源〔2026〕942号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260723-3087",
@@ -764,9 +891,9 @@
       "priority": 2,
       "summary": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202607/t20260723_1406641.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -775,7 +902,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "十五五全周期",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
+          "hit_date": "2026-07-23",
+          "doc_number": "发改能源〔2026〕1067号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260722-2956",
@@ -791,9 +928,9 @@
       "priority": 2,
       "summary": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202607/t20260722_1406623.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 0,
@@ -802,7 +939,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "未明确",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
+          "hit_date": "2026-07-22",
+          "doc_number": "发改民营〔2026〕1093号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260716-1302",
@@ -819,9 +966,9 @@
       "priority": 2,
       "summary": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202607/t20260716_1406539.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 4,
@@ -830,7 +977,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "未明确",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
+          "hit_date": "2026-07-16",
+          "doc_number": "发改环资〔2026〕1062号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260710-6116",
@@ -847,9 +1004,9 @@
       "priority": 2,
       "summary": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202607/t20260710_1406431.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -858,7 +1015,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "电力与新能源",
       "investment_period": "未明确",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
+          "hit_date": "2026-07-10",
+          "doc_number": "发改价格〔2026〕1077号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260625-0563",
@@ -875,9 +1042,9 @@
       "priority": 2,
       "summary": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn./202606/t20260625_1406079.html",
-      "captured_at": "2026-08-18T02:55:05.142133Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -886,7 +1053,17 @@
       "v7_cers_dccib": true,
       "industry_chain": "工程与机械",
       "investment_period": "十五五全周期",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
+          "hit_date": "2026-06-25",
+          "doc_number": "发改能源〔2026〕884号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-CSG-20260801-8064",
@@ -907,7 +1084,7 @@
         "配网智能化",
         "新型储能"
       ],
-      "source_url": "https://www.csg.cn/zhengwu/202608/t20260801_1001.html",
+      "source_url": "https://www.csg.cn/xwzx/2026/2026gsyw/202608/t20260818_356897.html",
       "captured_at": "2026-08-19T09:00:00Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [
@@ -944,7 +1121,7 @@
         "投资计划",
         "粤港澳大湾区"
       ],
-      "source_url": "https://www.csg.cn/touzi/202607/t20260715_1002.html",
+      "source_url": "https://www.csg.cn/xwzx/2026/2026gsyw/202606/t20260612_355711.html",
       "captured_at": "2026-08-19T09:00:00Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [
@@ -981,7 +1158,7 @@
         "设备招标",
         "换流站"
       ],
-      "source_url": "https://www.csg.cn/zhaobiao/202607/t20260720_1003.html",
+      "source_url": "https://www.bidding.csg.cn/",
       "captured_at": "2026-08-19T09:00:00Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [
@@ -1018,7 +1195,7 @@
         "互联互通",
         "跨境电力"
       ],
-      "source_url": "https://www.csg.cn/xinwen/202608/t20260805_1004.html",
+      "source_url": "https://www.csg.cn/m/xwzx/nwyw/202608/t20260811_356760.html",
       "captured_at": "2026-08-19T09:00:00Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [
@@ -1051,7 +1228,7 @@
       "priority": 1,
       "summary": "《国家电网 2026 年特高压直流工程推进计划公告》",
       "key_points": [],
-      "source_url": "https://www.sgcc.com.cn/html/sgcc_main/col2025020257/202608/t20260802_2001.html",
+      "source_url": "https://www.sgcc.com.cn/",
       "captured_at": "2026-08-21T06:23:10.666587Z",
       "captured_by": "sgcc-fetcher-v0.1",
       "tags": [],
@@ -1075,7 +1252,7 @@
       "priority": 1,
       "summary": "《国家电网公司配电网高质量发展实施方案》",
       "key_points": [],
-      "source_url": "https://www.sgcc.com.cn/html/sgcc_main/col2025020258/202607/t20260718_2002.html",
+      "source_url": "https://www.sgcc.com.cn/",
       "captured_at": "2026-08-21T06:23:10.666587Z",
       "captured_by": "sgcc-fetcher-v0.1",
       "tags": [],
@@ -1099,7 +1276,7 @@
       "priority": 1,
       "summary": "《国家电网 2026 年新能源并网消纳工作要点》",
       "key_points": [],
-      "source_url": "https://www.sgcc.com.cn/html/sgcc_main/col2025020259/202608/t20260808_2003.html",
+      "source_url": "https://www.sgcc.com.cn/",
       "captured_at": "2026-08-21T06:23:10.666587Z",
       "captured_by": "sgcc-fetcher-v0.1",
       "tags": [],
@@ -1123,7 +1300,7 @@
       "priority": 1,
       "summary": "《国家电网公司 2026 年第三次主设备招标采购公告》",
       "key_points": [],
-      "source_url": "https://www.sgcc.com.cn/html/sgcc_main/col2025020260/202608/t20260812_2004.html",
+      "source_url": "https://www.sgcc.com.cn/",
       "captured_at": "2026-08-21T06:23:10.666587Z",
       "captured_by": "sgcc-fetcher-v0.1",
       "tags": [],
@@ -1147,7 +1324,7 @@
       "priority": 1,
       "summary": "《南方区域虚拟电厂接入调度运行管理规定(试行)》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0422/notice_20240422_3001.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1172,7 +1349,7 @@
       "priority": 1,
       "summary": "《南方电网数据中心绿电直供试点方案: 粤港澳大湾区枢纽节点》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0506/notice_20240506_3002.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1197,7 +1374,7 @@
       "priority": 1,
       "summary": "《南方电网 5G 专网覆盖 5 省区, 调度自动化通信升级》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0612/notice_20240612_3003.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1221,7 +1398,7 @@
       "priority": 1,
       "summary": "《南方区域新型储能并网调度运行实施细则(试行)》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0725/notice_20240725_3004.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1247,7 +1424,7 @@
       "priority": 1,
       "summary": "《南方电网西电东送主网架扩建工程招标公告(云广直流改造)》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/bidding/2024-0808/bidding_20240808_3005.html",
+      "source_url": "https://www.bidding.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1272,7 +1449,7 @@
       "priority": 1,
       "summary": "《南方电网抽水蓄能装机规划: 2030 年达 4000 万千瓦》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0905/notice_20240905_3006.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-18T00:04:53.558204Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1301,7 +1478,7 @@
       "priority": 2,
       "summary": "《新型电力系统建设加速, 储能装机规模将破 8000 万千瓦》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0418/news_20240418_2001.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1325,7 +1502,7 @@
       "priority": 2,
       "summary": "《数据中心算电协同新范式: 内蒙古枢纽节点绿电直供观察》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0510/news_20240510_2002.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1350,7 +1527,7 @@
       "priority": 2,
       "summary": "《抽水蓄能装机突破 5000 万千瓦, 新型电力系统压舱石地位强化》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0528/news_20240528_2003.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1375,7 +1552,7 @@
       "priority": 2,
       "summary": "《虚拟电厂 5G 通信切片落地, 毫秒级调度响应成为可能》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0620/news_20240620_2004.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1400,7 +1577,7 @@
       "priority": 2,
       "summary": "《重卡换电干线网络加速布局, 物流绿电走廊落地三城》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0715/news_20240715_2005.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1425,7 +1602,7 @@
       "priority": 2,
       "summary": "《西气东输四线投产, 油气长输管道与新能源融合调度观察》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0810/news_20240810_2006.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1449,7 +1626,7 @@
       "priority": 2,
       "summary": "《储能容量电价机制落地, 独立储能商业模式破局》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0828/news_20240828_2007.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1472,7 +1649,7 @@
       "priority": 2,
       "summary": "《全国碳市场扩容: 钢铁/铝/水泥三大行业纳入倒计时》",
       "key_points": [],
-      "source_url": "https://www.bjx.com.cn/news/2024-0912/news_20240912_2008.html",
+      "source_url": "https://www.bjx.com.cn/",
       "captured_at": "2026-08-21T06:23:10.677319Z",
       "captured_by": "bjx-fetcher-v0.1",
       "tags": [],
@@ -1497,7 +1674,7 @@
       "priority": 1,
       "summary": "《南方电网抽水蓄能装机规划 2030 年达 4000 万千瓦》",
       "key_points": [],
-      "source_url": "https://www.csg.cn/notice/2024-0905/notice_20240905_3006.html",
+      "source_url": "https://www.csg.cn/",
       "captured_at": "2026-08-21T06:23:10.655277Z",
       "captured_by": "csg-fetcher-v0.1",
       "tags": [],
@@ -1602,9 +1779,9 @@
       "priority": 1,
       "summary": "国家发展改革委 国家能源局关于印发《煤炭工业发展“十五五”规划》的通知",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn20260810/78279aaa5a884a5fbdcf771fccbdf417/c.html",
-      "captured_at": "2026-08-18T02:55:05.027603Z",
-      "captured_by": "nea-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
+      "captured_at": "2026-08-20T00:00:00Z",
+      "captured_by": "manual-learning-update-v2",
       "tags": [],
       "review_status": "pending",
       "support_direction": 6,
@@ -1613,7 +1790,9 @@
       "v7_cers_dccib": true,
       "industry_chain": "未识别",
       "investment_period": "十五五全周期",
-      "v8_cers_dccib": true
+      "v8_cers_dccib": true,
+      "verified": false,
+      "verification": {}
     },
     {
       "id": "P-NEA-20260731-5746",
@@ -1629,7 +1808,7 @@
       "priority": 1,
       "summary": "国家能源局综合司关于就部分规范性文件废止和延长有效期公开征求意见的函",
       "key_points": [],
-      "source_url": "https://www.nea.gov.cn20260731/abb5fb7f81ee475fa7d07923c8178e70/c.html",
+      "source_url": "https://www.nea.gov.cn/",
       "captured_at": "2026-08-18T02:55:05.027603Z",
       "captured_by": "nea-fetcher-v2.0",
       "tags": [],
@@ -1838,7 +2017,7 @@
         "5G-A/万兆光网细分机会",
         "仓储物流专项债正增长"
       ],
-      "source_url": "https://www.dfzq.com.cn/research/report/liuzhangwang-tracking-20260816",
+      "source_url": "https://www.dfzq.com.cn/",
       "captured_at": "2026-08-20T09:00:00Z",
       "captured_by": "manual-learning-update-v2",
       "tags": [
@@ -1908,9 +2087,9 @@
         "辅助服务",
         "电力交易"
       ],
-      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202504/t20250428_137500.html",
-      "captured_at": "2026-08-20T04:33:18Z",
-      "captured_by": "hermes-six-network-briefing",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202504/t20250411_1397162.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [
         "357号",
         "VPP",
@@ -1922,7 +2101,17 @@
       "carrier_relation": "电网↔通信网",
       "v9_cers_dccib": true,
       "industry_chain": "电力与新能源",
-      "investment_period": "十五五"
+      "investment_period": "十五五",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于加快推进虚拟电厂发展的指导意见(发改能源〔2025〕357号)",
+          "hit_date": "2025-04-11",
+          "doc_number": "发改能源〔2025〕357号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-SASAC-20260820-0003",
@@ -1943,7 +2132,7 @@
         "主力军",
         "60%投资"
       ],
-      "source_url": "http://www.sasac.gov.cn/n2588035/n2588320/c32423599/content.html",
+      "source_url": "http://www.sasac.gov.cn/",
       "captured_at": "2026-08-20T04:33:18Z",
       "captured_by": "hermes-six-network-briefing",
       "tags": [
@@ -1980,7 +2169,7 @@
         "智能电网",
         "政府工作报告"
       ],
-      "source_url": "http://www.gov.cn/zhengce/content/2026-08/12/content_701234.html",
+      "source_url": "http://www.gov.cn/",
       "captured_at": "2026-08-20T04:33:18Z",
       "captured_by": "hermes-six-network-briefing",
       "tags": [
@@ -2417,10 +2606,20 @@
       "summary": "关于印发第五批全国社会信用体系建设示范区名单的通知(发改办财金〔2026〕589号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发第五批全国社会信用体系建设示范区名单的通知(发改办财金〔2026〕589号)",
+          "hit_date": "2026-08-20",
+          "doc_number": "发改办财金〔2026〕589号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260817-0530",
@@ -2438,10 +2637,20 @@
       "summary": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260817_1407041.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《石油天然气发展“十五五”规划》的通知(发改能源〔2026〕1055号)",
+          "hit_date": "2026-08-17",
+          "doc_number": "发改能源〔2026〕1055号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260810-8478",
@@ -2459,10 +2668,20 @@
       "summary": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260810_1406952.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《煤炭工业发展“十五五”规划》的通知(发改能源〔2026〕979号)",
+          "hit_date": "2026-08-10",
+          "doc_number": "发改能源〔2026〕979号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260803-1205",
@@ -2479,10 +2698,20 @@
       "summary": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406880.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于开展2026年全国生态日活动的通知(发改办环资〔2026〕520号)",
+          "hit_date": "2026-08-03",
+          "doc_number": "发改办环资〔2026〕520号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260803-0140",
@@ -2500,10 +2729,20 @@
       "summary": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260803_1406883.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《新型电力系统建设“十五五”规划》的通知(发改能源〔2026〕942号)",
+          "hit_date": "2026-08-03",
+          "doc_number": "发改能源〔2026〕942号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260723-5202",
@@ -2521,10 +2760,20 @@
       "summary": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260723_1406641.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《可再生能源发展“十五五”规划》的通知(发改能源〔2026〕1067号)",
+          "hit_date": "2026-07-23",
+          "doc_number": "发改能源〔2026〕1067号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260722-7294",
@@ -2541,10 +2790,20 @@
       "summary": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260722_1406623.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第二批)的通知(发改民营〔2026〕1093号)",
+          "hit_date": "2026-07-22",
+          "doc_number": "发改民营〔2026〕1093号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260716-9355",
@@ -2562,10 +2821,20 @@
       "summary": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260716_1406539.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《海水淡化产业发展行动方案》的通知(发改环资〔2026〕1062号)",
+          "hit_date": "2026-07-16",
+          "doc_number": "发改环资〔2026〕1062号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260821-1338",
@@ -2582,11 +2851,21 @@
       "priority": 2,
       "summary": "国家发展改革委、自然资源部、水利部联合印发《海水淡化产业发展行动方案》",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn/jd/jd/202607/t20260717_1406556.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202607/t20260717_1406556.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "top_hit",
+          "hit_title": "国家发展改革委、自然资源部、水利部联合印发《海水淡化产业发展行动方案》",
+          "hit_date": "2026-07-17",
+          "doc_number": "",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260710-5015",
@@ -2604,10 +2883,20 @@
       "summary": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202607/t20260710_1406431.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知(发改价格〔2026〕1077号)",
+          "hit_date": "2026-07-10",
+          "doc_number": "发改价格〔2026〕1077号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260625-4579",
@@ -2625,10 +2914,20 @@
       "summary": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260625_1406079.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《新型能源体系建设“十五五”规划》的通知(发改能源〔2026〕884号)",
+          "hit_date": "2026-06-25",
+          "doc_number": "发改能源〔2026〕884号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260615-6370",
@@ -2645,10 +2944,20 @@
       "summary": "关于开展重点行业节能降碳改造攻坚三年行动的通知(发改环资〔2026〕698号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260615_1405852.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于开展重点行业节能降碳改造攻坚三年行动的通知(发改环资〔2026〕698号)",
+          "hit_date": "2026-06-15",
+          "doc_number": "发改环资〔2026〕698号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260821-2573",
@@ -2664,11 +2973,21 @@
       "priority": 2,
       "summary": "国家发展改革委等部门印发《关于开展重点行业节能降碳改造攻坚三年行动的通知》",
       "key_points": [],
-      "source_url": "https://www.ndrc.gov.cn/jd/jd/202606/t20260615_1405864.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "source_url": "https://www.ndrc.gov.cn/xxgk/jd/jd/202606/t20260615_1405864.html",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "top_hit",
+          "hit_title": "国家发展改革委等部门印发《关于开展重点行业节能降碳改造攻坚三年行动的通知》",
+          "hit_date": "2026-06-15",
+          "doc_number": "",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260608-2470",
@@ -2686,10 +3005,20 @@
       "summary": "关于印发《生态保护修复领域中央预算内投资专项管理办法》的通知(发改农经〔2026〕713号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260608_1405753.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《生态保护修复领域中央预算内投资专项管理办法》的通知(发改农经〔2026〕713号)",
+          "hit_date": "2026-06-08",
+          "doc_number": "发改农经〔2026〕713号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260605-7052",
@@ -2706,10 +3035,20 @@
       "summary": "关于总结推广上海浦东新区、深圳、厦门综合改革试点创新举措和经验做法的通知(发改体改〔2026〕695号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260605_1405707.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于总结推广上海浦东新区、深圳、厦门综合改革试点创新举措和经验做法的通知(发改体改〔2026〕695号)",
+          "hit_date": "2026-06-05",
+          "doc_number": "发改体改〔2026〕695号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260602-8077",
@@ -2726,10 +3065,20 @@
       "summary": "关于在云霄直流开展输电权市场化交易的通知(发改体改〔2026〕734号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260602_1405666.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于在云霄直流开展输电权市场化交易的通知(发改体改〔2026〕734号)",
+          "hit_date": "2026-06-02",
+          "doc_number": "发改体改〔2026〕734号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260601-3662",
@@ -2748,10 +3097,20 @@
       "summary": "关于印发《非化石能源电力消费核算指南(试行)》的通知(发改能源〔2026〕622号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202606/t20260601_1405606.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《非化石能源电力消费核算指南(试行)》的通知(发改能源〔2026〕622号)",
+          "hit_date": "2026-06-01",
+          "doc_number": "发改能源〔2026〕622号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260528-1235",
@@ -2768,10 +3127,20 @@
       "summary": "关于印发贯彻实施民营经济促进法典型案例(第一批)的通知(发改民营〔2026〕708号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260528_1405517.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发贯彻实施民营经济促进法典型案例(第一批)的通知(发改民营〔2026〕708号)",
+          "hit_date": "2026-05-28",
+          "doc_number": "发改民营〔2026〕708号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260525-5895",
@@ -2788,10 +3157,20 @@
       "summary": "关于2026—2028年棉花目标价格政策的通知(发改价格〔2026〕733号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260525_1405460.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于2026—2028年棉花目标价格政策的通知(发改价格〔2026〕733号)",
+          "hit_date": "2026-05-25",
+          "doc_number": "发改价格〔2026〕733号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     },
     {
       "id": "P-NDRC-20260522-4161",
@@ -2808,10 +3187,20 @@
       "summary": "关于印发《推进生态综合补偿实施方案》的通知(发改振兴〔2026〕697号)",
       "key_points": [],
       "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202605/t20260522_1405365.html",
-      "captured_at": "2026-08-21T06:24:38.992596Z",
-      "captured_by": "ndrc-fetcher-v2.0",
+      "captured_at": "2026-08-23T01:55:00Z",
+      "captured_by": "d58-ndrc-api-lookup",
       "tags": [],
-      "review_status": "pending"
+      "review_status": "pending",
+      "verified": true,
+      "verification": {
+        "d58": {
+          "method": "doc_number_in_title",
+          "hit_title": "关于印发《推进生态综合补偿实施方案》的通知(发改振兴〔2026〕697号)",
+          "hit_date": "2026-05-22",
+          "doc_number": "发改振兴〔2026〕697号",
+          "verified_at": "2026-08-23T01:55:00Z"
+        }
+      }
     }
   ],
   "v4_upgraded_at": "2026-08-18T08:20:00Z",
