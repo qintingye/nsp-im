@@ -1,10 +1,10 @@
 """NSP-IM v3.0 实时自动同步（CloudBase 函数）
 
 每 30 分钟跑一次：
-1. HTTP 读 NSP-IM policies.json（最新政策）—— 从 CloudBase 静态托管
-2. HTTP 读 projects.json（25 项目）
-3. HTTP 读 today.json（今日数据）
-4. HTTP 读 index.html 当模板（最新部署版）
+1. 读 NSP-IM policies.json（最新政策）—— 从打包到 zip 里的 ./data/ 读
+2. 读 projects.json（25 项目）
+3. 读 today.json（今日数据）
+4. 读 index.html 当模板（打包到 zip 里的 index_template.html）
 5. 生成 HTML（替换 TODAY 数据）
 6. 上传到 CloudBase 静态托管
 
@@ -29,73 +29,69 @@ D49 变更：
 - ✅ **CloudBase 函数 outbound 走腾讯内网 —— 直接 HTTP 80 端口（无证书验证）**
 - ✅ URL 改用 `http://{CUSTOM_DOMAIN}/liuwang-jiankong/{path}` + `ssl._create_unverified_context()`
 - ✅ 自定义域名浏览器能正常 V3.0 渲染（用户已验证），HTTP 走内网同理
+
+D50 变更（实测后裁决）：
+- ❌ D49 的 HTTP 自定义域名从本网络实测仍 418
+- ❌ CloudBase "内网 API" `http://{env_id}.api.tcloudbaseapp.com/liuwang-jiankong/data/...`
+       从本网络实测也 418（8/8 路径，包括 /static/、/v1/static/、/v1/storage/、/v1/hosting/）
+       —— `api.tcloudbaseapp.com` 是云函数调用网关，不服务静态托管
+- ❌ 即便是上传端点 `POST {env_id}.api.tcloudbaseapp.com/v1/upload` 也 418
+       —— 本网络对整个 env 的网关级 418 拦截
+- ✅ **改用打包进 zip 的本地文件**：函数容器内 `./data/{name}.json` 与
+       `./index_template.html` 与 `index.py` 同级，直接 `open()` 读，零网络调用
+- ✅ 上传保留 D49 的 http.client 实现 —— 网络恢复后自动恢复
+- ✅ v12 zip 含 `index.py` + `data/{projects,policies,today}.json` +
+       `index_template.html`，自包含零依赖
 """
 import os
 import json
-import ssl
 import http.client
-import urllib.request
+import ssl
 from datetime import datetime
 
 
-# CloudBase 环境 ID + 静态托管基址
-# D48: 默认域名 418，改用自定义域名 `liwangqingbaozhan-...`（V3.0 验证 200）
+# CloudBase 环境 ID + 上传网关
 ENV_ID = 'liwang-jiankong-d2eatyj479b1861-1471069936'
-CUSTOM_DOMAIN_HOST = 'liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbaseapp.com'
-# D49: 走 HTTP 80 端口（内网，无证书验证问题）+ unverified context（万一遇到重定向到 HTTPS）
-STATIC_BASE_HTTP = f'http://{CUSTOM_DOMAIN_HOST}/liuwang-jiankong'
 
 
-def _unverified_ctx():
-    """返回跳过证书验证的 SSL context（D49：自定义域名 SSL 证书不匹配）"""
-    return ssl._create_unverified_context()
+def _read_bundled_json(name):
+    """读打包进 zip 的 ./data/{name}.json（D50：零网络依赖）"""
+    here = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(here, 'data', name)
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 
-def fetch_json(name):
-    """HTTP GET 读 JSON（HTTP 80 端口 + unverified context，D49 走内网）"""
-    url = f'{STATIC_BASE_HTTP}/data/{name}'
-    req = urllib.request.Request(
-        url,
-        headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
-    )
-    with urllib.request.urlopen(req, timeout=10, context=_unverified_ctx()) as r:
-        return json.loads(r.read().decode('utf-8'))
-
-
-def fetch_html():
-    """HTTP GET 读 index.html 模板（HTTP 80 端口 + unverified context，D49 走内网）"""
-    url = f'{STATIC_BASE_HTTP}/index.html'
-    req = urllib.request.Request(
-        url,
-        headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
-    )
-    with urllib.request.urlopen(req, timeout=10, context=_unverified_ctx()) as r:
-        return r.read().decode('utf-8')
+def _read_bundled_html():
+    """读打包进 zip 的 ./index_template.html（D50：零网络依赖）"""
+    here = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(here, 'index_template.html')
+    with open(path, 'r', encoding='utf-8') as f:
+        return f.read()
 
 
 def main_handler(event, context):
     print(f"=== V3.0 自动同步 {datetime.now().isoformat()} ===")
+    print("D50: 数据源 = 打包进 zip 的本地文件（./data/ + ./index_template.html）")
 
     try:
-        # 1. HTTP 读数据（不再依赖 ./data/，避免云端工作目录无 data/）
-        projects_doc = fetch_json('projects.json')
-        # projects.json 是 { version, generated_at, projects: [...] } 结构
+        # 1. 读打包数据（不再 HTTP 抓取，D50）
+        projects_doc = _read_bundled_json('projects.json')
         projects = (
             projects_doc['projects']
             if isinstance(projects_doc, dict) and 'projects' in projects_doc
             else projects_doc
         )
-        policies_doc = fetch_json('policies.json')
-        # policies.json 是 { version, generated_at, policies: [...] } 结构
+        policies_doc = _read_bundled_json('policies.json')
         policies = (
             policies_doc['policies']
             if isinstance(policies_doc, dict) and 'policies' in policies_doc
             else policies_doc
         )
-        today = fetch_json('today.json')
+        today = _read_bundled_json('today.json')
 
-        # 2. 模板直接用 index.html（最新部署版，含 V3.0 全部功能）
-        html = fetch_html()
+        # 2. 模板直接用打包的 index_template.html（D50）
+        html = _read_bundled_html()
 
         print(f"✓ 抓取 policies: {len(policies)} 条")
         print(f"✓ 抓取 projects: {len(projects)} 条")
@@ -130,7 +126,7 @@ def main_handler(event, context):
 
         print(f"✓ HTML 生成: {len(html)} bytes")
 
-        # 4. 上传到 CloudBase 静态托管（http.client 标准库，无需 requests）
+        # 4. 上传到 CloudBase 静态托管（D49 保留：http.client HTTPS）
         boundary = '----NSP-IM-Boundary'
         body = (
             f'--{boundary}\r\n'
@@ -143,7 +139,8 @@ def main_handler(event, context):
             'Content-Length': str(len(body)),
         }
 
-        conn = http.client.HTTPSConnection(f'{ENV_ID}.api.tcloudbaseapp.com')
+        ctx = ssl._create_unverified_context()
+        conn = http.client.HTTPSConnection(f'{ENV_ID}.api.tcloudbaseapp.com', context=ctx)
         conn.request('POST', '/v1/upload?path=/index.html', body=body, headers=headers)
         response = conn.getresponse()
         result = response.read().decode('utf-8')
@@ -163,7 +160,7 @@ def main_handler(event, context):
             print(f"⚠️ 上传响应 {response.status}: {result[:200]}")
             return {
                 'code': response.status,
-                'msg': f'上传失败：{response.status}',
+                'msg': f'上传失败：{response.status}（数据已生成，HTML {len(html)} bytes）',
                 'total': len(policies),
                 'projects': len(projects),
                 'html_bytes': len(html),
