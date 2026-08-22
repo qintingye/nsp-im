@@ -1,4 +1,5 @@
 """NSP-IM v3.0 实时自动同步（CloudBase 函数）
+
 每 30 分钟跑一次：
 1. HTTP 读 NSP-IM policies.json（最新政策）—— 从 CloudBase 静态托管
 2. HTTP 读 projects.json（25 项目）
@@ -6,11 +7,17 @@
 4. HTTP 读 index.html 当模板（最新部署版）
 5. 生成 HTML（替换 TODAY 数据）
 6. 上传到 CloudBase 静态托管
+
+D46 变更：
+- ❌ 移除 `import requests`（CloudBase Python 3.11 不内置）
+- ✅ 改用标准库 `urllib.request`（Python 内置，零依赖）
+- ✅ 上传继续用 `http.client`（也是标准库）
+- ✅ 不再需要 requirements.txt
 """
 import os
 import json
-import urllib.request
 import http.client
+import urllib.request
 from datetime import datetime
 
 
@@ -19,25 +26,26 @@ ENV_ID = 'liuwang-jiankong-d2eatyj479b1861-1471069936'
 STATIC_BASE = f'https://{ENV_ID}.tcloudbaseapp.com/liuwang-jiankong'
 
 
-def fetch_url(url, timeout=10):
-    """HTTP GET 返回 bytes；失败抛异常。"""
-    req = urllib.request.Request(url, headers={'User-Agent': 'nsp-im-trigger/1.0'})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
-
-
 def fetch_json(name):
-    """从静态托管读 JSON 文件。"""
+    """HTTP GET 读 JSON（用 urllib.request，标准库）。"""
     url = f'{STATIC_BASE}/data/{name}'
-    raw = fetch_url(url)
-    return json.loads(raw.decode('utf-8'))
+    req = urllib.request.Request(
+        url,
+        headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
+    )
+    with urllib.request.urlopen(req, timeout=10) as r:
+        return json.loads(r.read().decode('utf-8'))
 
 
-def fetch_text(path):
-    """从静态托管读文本（HTML 模板）。"""
-    url = f'{STATIC_BASE}{path}'
-    raw = fetch_url(url)
-    return raw.decode('utf-8')
+def fetch_html():
+    """HTTP GET 读 index.html 当模板（用 urllib.request，标准库）。"""
+    url = f'{STATIC_BASE}/index.html'
+    req = urllib.request.Request(
+        url,
+        headers={'User-Agent': 'NSP-IM-Trigger/1.0'},
+    )
+    with urllib.request.urlopen(req, timeout=10) as r:
+        return r.read().decode('utf-8')
 
 
 def main_handler(event, context):
@@ -62,7 +70,7 @@ def main_handler(event, context):
         today = fetch_json('today.json')
 
         # 2. 模板直接用 index.html（最新部署版，含 V3.0 全部功能）
-        html = fetch_text('/index.html')
+        html = fetch_html()
 
         print(f"✓ 抓取 policies: {len(policies)} 条")
         print(f"✓ 抓取 projects: {len(projects)} 条")
@@ -97,7 +105,7 @@ def main_handler(event, context):
 
         print(f"✓ HTML 生成: {len(html)} bytes")
 
-        # 4. 上传到 CloudBase 静态托管（直接调用 HTTP API，不用 cloudbase SDK）
+        # 4. 上传到 CloudBase 静态托管（http.client 标准库，无需 requests）
         boundary = '----NSP-IM-Boundary'
         body = (
             f'--{boundary}\r\n'
