@@ -1036,7 +1036,7 @@ renderModeMatch();
 // V3.0 D56: 判断 URL 是否官网首页 (无原文路径)
 function isHomepage(url){
 if(!url||url==="#")return true;
-const homepages=["https://www.ndrc.gov.cn","https://www.nea.gov.cn","https://www.mwr.gov.cn","https://www.miit.gov.cn","https://www.csg.cn","https://www.sgcc.com.cn","https://www.bjx.com.cn","https://www.nbd.com.cn","https://www.stcn.com","https://www.yicai.com"];
+const homepages=["https://www.ndrc.gov.cn","https://www.nea.gov.cn","https://www.mwr.gov.cn","https://www.miit.gov.cn","https://www.csg.cn","https://www.sgcc.com.cn","https://www.bjx.com.cn","https://www.nbd.com.cn","https://www.stcn.com","https://www.yicai.com","https://www.ndrc.gov.cn/xxgk/zcfb/tz","https://www.ndrc.gov.cn/xxgk/zcfb/tz/","https://www.nea.gov.cn/xxgk/zcfb","https://www.nea.gov.cn/xxgk/zcfb/","https://www.csg.cn/xwzx/gywm","https://www.csg.cn/xwzx/gywm/","https://news.bjx.com.cn","https://news.bjx.com.cn/","https://www.sgcc.com.cn/html/sgcc_main/col2017027559","https://www.sgcc.com.cn/html/sgcc_main/col2017027559/"];
 return homepages.includes(url.replace(/\/$/,""));
 }
 
