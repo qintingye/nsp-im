@@ -1,0 +1,98 @@
+name: Sync V3.0 to CloudBase liwangqingbaozhan
+
+# 触发器
+#   1. push 到 main → 自动部署
+#   2. 每天北京时间 10:00（UTC 02:00）→ cron 自动部署
+#   3. 手动触发 (Run workflow) → 部署
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # 北京时间 10:00 = UTC 02:00
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: tcb-deploy
+      cancel-in-progress: false
+
+    env:
+      TCB_ENV_ID: liwang-jiankong-d2eatyj479b1861
+      TCB_HOSTING_PATH: /liuwangqingbaozhan
+      PUBLIC_URL: https://liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbase.com/liuwangqingbaozhan/
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Python 用于拼装 deploy bundle（HTML + 数据文件）
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Node 用于 tcb CLI
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 4. 安装 tcb CLI（腾讯云 CloudBase）
+      - name: Install tcb CLI
+        run: npm install -g @cloudbase/cli
+
+      # 5. 校验源数据完整性（policies/projects/today 必须存在且 JSON 合法）
+      - name: Validate source data
+        run: |
+          python scripts/build-deploy-bundle.py --validate-only
+
+      # 6. 拼装 deploy bundle
+      #    说明：index.html 通过 fetch('./data/*.json') 读取数据，无需字符串替换
+      #    bundle = liuwang-jiankong/index.html + liuwang-jiankong/{fonts,icons,manifest.json,sw.js,offline.html,README.md}
+      #           + data/{policies,projects,today,health}.json
+      - name: Build deploy bundle
+        run: |
+          python scripts/build-deploy-bundle.py --output deploy-bundle/liuwangqingbaozhan
+
+      # 7. 列出 bundle 内容（便于排错）
+      - name: List bundle
+        run: |
+          echo "----- bundle structure -----"
+          ls -la deploy-bundle/liuwangqingbaozhan
+          echo "----- bundle/data structure -----"
+          ls -la deploy-bundle/liuwangqingbaozhan/data
+
+      # 8. CloudBase 登录（API 密钥来自 GitHub Secrets）
+      - name: CloudBase Login
+        env:
+          TCB_SECRET_ID: ${{ secrets.TCB_SECRET_ID }}
+          TCB_SECRET_KEY: ${{ secrets.TCB_SECRET_KEY }}
+        run: |
+          if [ -z "$TCB_SECRET_ID" ] || [ -z "$TCB_SECRET_KEY" ]; then
+            echo "::error::TCB_SECRET_ID / TCB_SECRET_KEY 未配置，请到 repo Settings → Secrets 添加"
+            exit 1
+          fi
+          tcb login --apiKeyId "$TCB_SECRET_ID" --apiKey "$TCB_SECRET_KEY"
+
+      # 9. 部署到 CloudBase 静态托管（覆盖 /liuwangqingbaozhan 路径）
+      - name: Deploy to liwangqingbaozhan
+        run: |
+          cd deploy-bundle/liuwangqingbaozhan
+          tcb hosting deploy . "$TCB_HOSTING_PATH" -e "$TCB_ENV_ID"
+
+      # 10. 输出最终 URL（永久固定）
+      - name: Output URL
+        if: success()
+        run: |
+          echo ""
+          echo "============================================="
+          echo "✅ Deploy success"
+          echo "   Path:        ${{ env.TCB_HOSTING_PATH }}"
+          echo "   Environment: ${{ env.TCB_ENV_ID }}"
+          echo "   Permanent URL: ${{ env.PUBLIC_URL }}"
+          echo "============================================="
