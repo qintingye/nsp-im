@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "envId": "liwang-jiankong-d2eatyj479b1861",
+  "framework": {
+    "name": "nsp-im-v3",
+    "plugins": {
+      "static": {
+        "use": "@cloudbase/framework-plugin-static",
+        "inputs": {
+          "outputPath": "deploy-pkg/liuwang-jiankong",
+          "cloudPath": "/liuwangqingbaozhan"
+        }
+      }
+    }
+  }
+}
