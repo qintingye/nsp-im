@@ -1,9 +1,9 @@
 main:
-  push:
+ push:
     stages:
       - name: deploy
         tasks:
           - name: deploy to pages
             script: |
-              # 部署到 CNB Pages
+              cp -r deploy-pkg/liuwang-jiankong/* .
               cnb-pages-deploy
