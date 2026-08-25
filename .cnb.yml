@@ -1,17 +1,12 @@
-version: v1.0
-triggers:
-- type: push
-branches:
-- main
 stages:
-- name: deploy-to-pages
-image: alpine:latest
-script: |
- echo ">>> 正在检查源文件..."
- ls -R deploy-pkg/liwang-jiankong/
- echo ">>> 正在将文件移动到根目录..."
- cp -r deploy-pkg/liwang-jiankong/* .
- echo ">>> 确认 index.html 是否存在..."
- ls -la index.html
- echo ">>> 开始部署..."
- cnb-pages-deploy
+  - name: deploy-to-pages   # 列表项开始
+    image: alpine:latest    # 属性：比短横线多缩进2格
+    script: |               # 属性：与 image 对齐
+      echo ">>> 正在检查源文件..."
+      ls -R deploy-pkg/liuwang-jiankong/
+      echo ">>> 正在将文件移动到根目录..."
+      cp -r deploy-pkg/liuwang-jiankong/* .
+      echo ">>> 确认 index.html 是否存在..."
+      ls -la index.html
+      echo ">>> 开始部署..."
+      cnb-pages-deploy      # 脚本内容：比 script: | 多缩进（通常6格或更多）
