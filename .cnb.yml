@@ -1,10 +1,11 @@
-version: v1.0
-stages:
-  - name: deploy-to-pages
-    image: alpine:latest
-    script:
-      - mkdir -p /tmp/deploy
-      - cp -r deploy-pkg/liwang-jiankong/* /tmp/deploy/
-      - ls /tmp/deploy
-    artifacts:
-      path: /tmp/deploy
+main:
+  push:
+    - stages:
+        - name: deploy-to-pages
+          image: alpine:latest
+          script:
+            - mkdir -p /tmp/deploy
+            - cp -r deploy-pkg/liwang-jiankong/* /tmp/deploy/
+            - ls /tmp/deploy
+          artifacts:
+            path: /tmp/deploy
