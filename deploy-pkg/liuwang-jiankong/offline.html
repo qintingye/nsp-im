@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>离线模式 · NSP-IM 政策雷达</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a73e8">
+<style>
+  :root {
+    --primary: #1a73e8;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #202124;
+    --muted: #5f6368;
+    --border: #e0e0e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "NotoSansSC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 480px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+  .icon {
+    width: 96px; height: 96px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff3cd, #ffe082);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    line-height: 1;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    color: var(--text);
+  }
+  p.lead {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .btn {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+  }
+  .btn-secondary {
+    background: #f0f2f5;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .status {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .status strong { color: var(--text); }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon" aria-hidden="true">📡</div>
+  <h1>当前离线</h1>
+  <p class="lead">
+    网络连接已中断，无法获取最新政策数据。<br>
+    您仍可浏览<strong>已缓存</strong>的政策内容。
+  </p>
+
+  <div class="actions">
+    <button class="btn btn-primary" onclick="location.href='./index.html'" type="button">
+      返回首页（使用缓存数据）
+    </button>
+    <button class="btn btn-secondary" onclick="retryOnline()" type="button">
+      <span id="retry-label">🔄 重新尝试联网</span>
+    </button>
+  </div>
+
+  <div class="status">
+    <strong>离线运行说明</strong> · Service Worker 已为您缓存核心资源<br>
+    <span id="net-state" class="pulse">⏳ 等待网络恢复...</span>
+  </div>
+</div>
+
+<script>
+  // ----- 自动重连探测 -----
+  let probeTimer = null;
+  function retryOnline() {
+    const label = document.getElementById('retry-label');
+    label.textContent = '⏳ 检测中...';
+    // 用 image 探测（避免 CORS）
+    const img = new Image();
+    let done = false;
+    const finish = (ok) => {
+      if (done) return; done = true;
+      if (ok) {
+        label.textContent = '✅ 已恢复，刷新页面';
+        setTimeout(() => location.reload(), 400);
+      } else {
+        label.textContent = '❌ 仍无网络，请稍后再试';
+        setTimeout(() => { label.textContent = '🔄 重新尝试联网'; }, 2000);
+      }
+    };
+    img.onload  = () => finish(true);
+    img.onerror = () => finish(false);
+    img.src = './manifest.json?t=' + Date.now();
+    setTimeout(() => finish(false), 4000);
+  }
+
+  // ----- 监听 online/offline 事件（自动切回） -----
+  function updateNetState() {
+    const el = document.getElementById('net-state');
+    if (navigator.onLine) {
+      el.textContent = '✅ 网络已恢复 — 正在刷新...';
+      el.classList.remove('pulse');
+      setTimeout(() => location.reload(), 600);
+    } else {
+      el.textContent = '⏳ 等待网络恢复...';
+      el.classList.add('pulse');
+    }
+  }
+  window.addEventListener('online',  updateNetState);
+  window.addEventListener('offline', updateNetState);
+  updateNetState();
+</script>
+</body>
+</html>
