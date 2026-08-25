@@ -68,3 +68,11 @@ python3 wdw-v3-d12-mobile.py  # Mobile 375 端 (D12 修复验证)
 
 - **D11** ✅ Tab7 智能简报生成（41.8 KB）
 - **D12** ✅ Tab3 重构（26.9 万亿）+ Tab4 新增（协同方向）+ Mobile 响应式修复（49.9 KB）
+
+---
+
+## 部署
+
+- **CODING Pages**（推荐，国内快）：https://coding.tencent.com/
+- **GitHub Actions**：https://github.com/qintingye/nsp-im
+- **CloudBase liwangqingbaozhan 应用**（当前 URL）：https://liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbase.com/liuwangqingbaozhan/
