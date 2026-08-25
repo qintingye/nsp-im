@@ -1,12 +1,22 @@
 main:
   push:
     - stages:
+        # 第一阶段：构建
+        - name: build-project
+          image: node:18-alpine  # 👈 关键修改：换成带 Node.js 的镜像
+          script:
+            - npm install        # 1. 安装依赖
+            - npm run build      # 2. 执行构建，生成 dist 目录
+            # 注意：Vite/Webpack 默认生成 dist，如果是其他名字请修改这里
+            - ls dist            # 3. 确认目录已生成
+
+        # 第二阶段：部署准备
         - name: deploy-to-pages
-          image: alpine:latest
+          image: alpine:latest   # 这里可以用 alpine，只负责搬运文件
           script:
             - mkdir -p /tmp/deploy
-            # 👇 这里改成你实际侦察到的文件夹路径
-            - cp -r public/* /tmp/deploy/ 
+            # 👈 关键修改：把上一阶段生成的 dist 复制过来
+            - cp -r dist/* /tmp/deploy/ 
             - ls /tmp/deploy
           artifacts:
             path: /tmp/deploy
