@@ -5,8 +5,7 @@ main:
           image: alpine:latest
           script:
             - mkdir -p /tmp/deploy
-            # 👇 这里改成你实际存在的目录，比如 dist 或 build
-            - cp -r dist/* /tmp/deploy/ 
+            - cp -r deploy-pkg/liwang-jiankong/* /tmp/deploy/
             - ls /tmp/deploy
           artifacts:
             path: /tmp/deploy
