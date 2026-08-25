@@ -1,9 +1,10 @@
-name: Sync V3.0 to CloudBase liwangqingbaozhan (D61)
+name: Sync V3.0 to CloudBase liwangqingbaozhan
 
 on:
   push:
     branches: [ main ]
   schedule:
+    # 每天 10:00 CST = 02:00 UTC
     - cron: '0 2 * * *'
   workflow_dispatch:
 
@@ -11,11 +12,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    concurrency: deploy-${{ github.ref }}
+
     steps:
       - uses: actions/checkout@v4
 
-      - uses: TencentCloudBase/cloudbase-action@v2
+      - uses: actions/setup-node@v4
         with:
-          secretId: ${{ secrets.TCB_SECRET_ID }}
-          secretKey: ${{ secrets.TCB_SECRET_KEY }}
-          envId: ${{ secrets.ENV_ID }}
+          node-version: '20'
+
+      - name: Install tcb CLI
+        run: npm install -g @cloudbase/cli
+
+      - name: CloudBase Login
+        run: |
+          tcb login --apiKeyId "${{ secrets.TCB_SECRET_ID }}" --apiKey "${{ secrets.TCB_SECRET_KEY }}"
+
+      - name: Deploy
+        run: |
+          tcb hosting deploy ./deploy-pkg/liuwang-jiankong /liwangqingbaozhan -e liwang-jiankong-d2eatyj479b1861
+
+      - name: Output URL
+        run: |
+          echo "✅ Deployed to: https://liuwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbase.com/liwangqingbaozhan/"
