@@ -1,0 +1,179 @@
+{
+  "html_bytes": 82970,
+  "html_kb": 81.03,
+  "html_under_85kb": true,
+  "tab_count": 7,
+  "tabs": [
+    {
+      "view": "view-1",
+      "label": "战略总览"
+    },
+    {
+      "view": "view-2",
+      "label": "每日情报"
+    },
+    {
+      "view": "view-3",
+      "label": "核心机会"
+    },
+    {
+      "view": "view-4",
+      "label": "协同方向"
+    },
+    {
+      "view": "view-5",
+      "label": "商业模式"
+    },
+    {
+      "view": "view-6",
+      "label": "真实案例"
+    },
+    {
+      "view": "view-7",
+      "label": "智能简报"
+    }
+  ],
+  "tab_render_results": [
+    {
+      "view": "view-1",
+      "label": "战略总览",
+      "visible": true
+    },
+    {
+      "view": "view-2",
+      "label": "每日情报",
+      "visible": true
+    },
+    {
+      "view": "view-3",
+      "label": "核心机会",
+      "visible": true
+    },
+    {
+      "view": "view-4",
+      "label": "协同方向",
+      "visible": true
+    },
+    {
+      "view": "view-5",
+      "label": "商业模式",
+      "visible": true
+    },
+    {
+      "view": "view-6",
+      "label": "真实案例",
+      "visible": true
+    },
+    {
+      "view": "view-7",
+      "label": "智能简报",
+      "visible": true
+    }
+  ],
+  "all_tabs_visible": true,
+  "D31_heatmap_table_count": 1,
+  "D31_heatmap_rows": 5,
+  "D31_heatmap_cells": 25,
+  "D31_heatmap_rows_text": [
+    [
+      "🧮 算力网",
+      "3.8",
+      "4.0",
+      "1.9",
+      "9.7"
+    ],
+    [
+      "📡 通信网",
+      "3.7",
+      "4.0",
+      "1.9",
+      "9.6"
+    ],
+    [
+      "💧 水网",
+      "3.9",
+      "3.2",
+      "1.8",
+      "8.9"
+    ],
+    [
+      "🔧 城市地下管网",
+      "3.8",
+      "3.3",
+      "1.7",
+      "8.8"
+    ],
+    [
+      "🚛 物流网",
+      "3.4",
+      "3.1",
+      "1.5",
+      "8.0"
+    ]
+  ],
+  "D31_heatmap_data_match": true,
+  "D31_heatmap_data_diffs": [],
+  "D31_heatmap_color_cells_with_bg": 20,
+  "D31_heatmap_color_all_have_bg": true,
+  "D31_heatmap_color_first_5": [
+    {
+      "row": 0,
+      "col": 1,
+      "text": "3.8",
+      "cls": "s-3_8",
+      "bg": "rgba(34, 197, 94, 0.25)",
+      "color": "rgb(134, 239, 172)",
+      "has_bg": true
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "text": "4.0",
+      "cls": "s-4_0",
+      "bg": "rgba(34, 197, 94, 0.4)",
+      "color": "rgb(255, 255, 255)",
+      "has_bg": true
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "text": "1.9",
+      "cls": "s-1_9",
+      "bg": "rgba(239, 68, 68, 0.25)",
+      "color": "rgb(252, 165, 165)",
+      "has_bg": true
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "text": "9.7",
+      "cls": "s-9_7 total",
+      "bg": "rgba(34, 197, 94, 0.3)",
+      "color": "rgb(255, 255, 255)",
+      "has_bg": true
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "text": "3.7",
+      "cls": "s-3_7",
+      "bg": "rgba(34, 197, 94, 0.25)",
+      "color": "rgb(134, 239, 172)",
+      "has_bg": true
+    }
+  ],
+  "D31_heatmap_overflow_x": {
+    "overflowX": "auto"
+  },
+  "D31_mobile_overflow": {
+    "wrap_client_w": 327,
+    "wrap_scroll_w": 327,
+    "overflows": false,
+    "overflow_x": "auto"
+  },
+  "D31_mobile_scroll_works": false,
+  "js_errors": [],
+  "console_errors": [],
+  "console_warnings": [],
+  "VERDICT": "PASS"
+}

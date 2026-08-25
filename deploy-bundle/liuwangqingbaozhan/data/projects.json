@@ -1,0 +1,1559 @@
+{
+  "version": "3.0-d39",
+  "generated_at": "2026-08-21T07:16:32Z",
+  "note": "✅ NDRC 项目 + 历史快照 + 最新状态 (按 (id, date) 去重 + 最新优先)",
+  "projects": [
+    {
+      "id": "W1",
+      "net": "water",
+      "name": "环北部湾广东水资源配置工程",
+      "intro": "广东省环北部湾地区水资源配置工程，覆盖粤西 4 市 1800 万人，从西江调水解决区域缺水，总投资约 614.5 亿元，是电网×水协同标志性民生工程。",
+      "invest": "614.5 亿",
+      "pair": "电网×水",
+      "source": {
+        "type": "新闻",
+        "org": "广东省发改委",
+        "title": "环北部湾广东水资源配置工程开工建设",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 9,
+        "政策支持": 9,
+        "投资规模": 9,
+        "实施进度": 7,
+        "总分": 8.5,
+        "评语": "南网五网协同水专题标杆·1800万人民生"
+      },
+      "updates": [
+        {
+          "date": "2026-08-20",
+          "title": "🏗️ 在建 (45%)",
+          "status": "construction",
+          "summary": "泵站主体结构施工完成，进入设备安装阶段，整体进度 45%",
+          "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html"
+        },
+        {
+          "date": "2026-07-15",
+          "title": "🏗️ 在建 (30%)",
+          "status": "construction",
+          "summary": "工程进入主体施工阶段，泵站建设完成 30%，管道铺设同步推进",
+          "source_url": "https://www.ndrc.gov.cn/"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "🔌 配套电网开工",
+          "status": "construction",
+          "summary": "南方电网启动环北部湾广东水资源配置工程配套 500kV 输电工程建设",
+          "source_url": "https://www.csg.cn/"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "📑 环评批复",
+          "status": "approved",
+          "summary": "广东省水利厅批复环北部湾广东水资源配置工程环评报告，覆盖生态影响评价",
+          "source_url": "https://gzw.gd.gov.cn/"
+        },
+        {
+          "date": "2026-05-19",
+          "title": "📋 立项批复",
+          "status": "approved",
+          "summary": "国家发改委批复环北部湾广东水资源配置工程立项，总投资约 614.5 亿元，覆盖粤西 4 市 1800 万人",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (45%)",
+      "last_updated": "2026-08-20",
+      "progress": 45,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东省发改委",
+          "title": "环北部湾广东水资源配置工程开工建设",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202608/t20260820_1407094.html",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (45%)",
+          "date": "2026-08-20",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (30%)",
+          "date": "2026-07-15",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.csg.cn/",
+          "org": "南方电网",
+          "title": "🔌 配套电网开工",
+          "date": "2026-07-08",
+          "type": "在建"
+        },
+        {
+          "url": "https://gzw.gd.gov.cn/",
+          "org": "广东省水利厅",
+          "title": "📑 环评批复",
+          "date": "2026-06-10",
+          "type": "立项"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "📋 立项批复",
+          "date": "2026-05-19",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "W2",
+      "net": "water",
+      "name": "环北部湾广西水资源配置工程",
+      "intro": "广西环北部湾水资源配置工程，覆盖北海/钦州/防城港 1400 万人，从郁江调水解决沿海工业与生活缺水，总投资约 278 亿元。",
+      "invest": "278 亿",
+      "pair": "电网×水",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区发改委",
+        "title": "环北部湾广西工程可研获批",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 9,
+        "投资规模": 7,
+        "实施进度": 6,
+        "总分": 7.5,
+        "评语": "北钦防一体·沿海工业带配套"
+      },
+      "updates": [
+        {
+          "date": "2026-08-18",
+          "title": "🏗️ 在建 (20%)",
+          "status": "construction",
+          "summary": "一期管道工程开工，完成进度 20%",
+          "source_url": "https://www.ndrc.gov.cn/"
+        },
+        {
+          "date": "2026-04-10",
+          "title": "📋 可研获批",
+          "status": "approved",
+          "summary": "广西自治区发改委批复可研报告，覆盖北海/钦州/防城港 1400 万人",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (20%)",
+      "last_updated": "2026-08-18",
+      "progress": 20,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广西自治区发改委",
+          "title": "环北部湾广西工程可研获批",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (20%)",
+          "date": "2026-08-18",
+          "type": "在建"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "📋 可研获批",
+          "date": "2026-04-10",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "net": "water",
+      "name": "云南滇中引水工程",
+      "intro": "滇中引水工程从金沙江干流引水至滇中地区，线路长 661 公里，覆盖 1100 万人，总投资 825 亿元，是西南五省最大调水工程。",
+      "invest": "825 亿",
+      "pair": "电网×水",
+      "source": {
+        "type": "官方",
+        "org": "水利部",
+        "title": "滇中引水工程一期通水",
+        "url": "http://www.mwr.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 9,
+        "政策支持": 10,
+        "投资规模": 9,
+        "实施进度": 9,
+        "总分": 9.25,
+        "评语": "西南水网骨干·多年论证落地标杆"
+      },
+      "updates": [
+        {
+          "date": "2026-08-15",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "二期工程同步推进，年供水 34 亿立方米",
+          "source_url": "http://www.mwr.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-15",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "http://www.mwr.gov.cn/",
+          "org": "水利部",
+          "title": "滇中引水工程一期通水",
+          "date": "2026-08-15",
+          "type": "官方"
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "net": "water",
+      "name": "贵州黔中水利枢纽",
+      "intro": "黔中水利枢纽工程是贵州最大水利工程，年调水量 5.95 亿立方米，覆盖贵阳/安顺等核心区，配套水风光储多能互补。",
+      "invest": "67 亿",
+      "pair": "电网×水",
+      "source": {
+        "type": "新闻",
+        "org": "贵州省水利厅",
+        "title": "黔中水利枢纽一期建成",
+        "url": "http://www.mwr.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 8,
+        "投资规模": 6,
+        "实施进度": 8,
+        "总分": 7.25,
+        "评语": "黔中城市群核心水源"
+      },
+      "updates": [
+        {
+          "date": "2026-08-10",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "配套水风光储多能互补项目投运",
+          "source_url": "http://www.mwr.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-10",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "http://www.mwr.gov.cn/",
+          "org": "贵州省水利厅",
+          "title": "黔中水利枢纽一期建成",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "net": "water",
+      "name": "海南昌化江水资源配置",
+      "intro": "海南昌化江水资源配置工程解决海南西部资源型缺水，覆盖东方/昌江沿海工业与农业灌溉，配套电网抽水蓄能。",
+      "invest": "85 亿",
+      "pair": "电网×水",
+      "source": {
+        "type": "新闻",
+        "org": "海南省发改委",
+        "title": "昌化江水资源配置工程立项",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 6,
+        "政策支持": 7,
+        "投资规模": 6,
+        "实施进度": 5,
+        "总分": 6.0,
+        "评语": "海南自贸港配套水源"
+      },
+      "updates": [
+        {
+          "date": "2026-08-12",
+          "title": "🏗️ 在建 (15%)",
+          "status": "construction",
+          "summary": "可研报告编制中，覆盖东方/昌江沿海",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (15%)",
+      "last_updated": "2026-08-12",
+      "progress": 15,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "海南省发改委",
+          "title": "昌化江水资源配置工程立项",
+          "date": "2026-08-12",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "C1",
+      "net": "compute",
+      "name": "阳江海底算力中心",
+      "intro": "阳江海底数据中心集群，全球最大海底数据中心，规划 1.15GW 算力负荷，依托阳江丰富海上风电直供，总投资 1100 亿元。",
+      "invest": "1100 亿",
+      "pair": "电网×算",
+      "source": {
+        "type": "招标",
+        "org": "国家发改委",
+        "title": "《新型数据中心技术规范》",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 10,
+        "实施进度": 8,
+        "总分": 9.5,
+        "评语": "南网算电协同核心标杆"
+      },
+      "updates": [
+        {
+          "date": "2026-08-15",
+          "title": "🏗️ 在建 (25%)",
+          "status": "construction",
+          "summary": "阳江海底数据中心集群一期建设中，进度 25%",
+          "source_url": "https://www.ndrc.gov.cn/"
+        },
+        {
+          "date": "2026-05-19",
+          "title": "📋 技术规范发布",
+          "status": "approved",
+          "summary": "国家发改委发布新型数据中心技术规范，海底数据中心列入示范",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (25%)",
+      "last_updated": "2026-08-15",
+      "progress": 25,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "《新型数据中心技术规范》",
+          "date": "2026-08-15",
+          "type": "招标"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (25%)",
+          "date": "2026-08-15",
+          "type": "在建"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "net": "compute",
+      "name": "韶关数据中心集群",
+      "intro": "韶关数据中心集群是全国一体化算力网络粤港澳大湾区枢纽节点，规划算力 4 万P，依托韶关清洁直供电，总投资 1080 亿元。",
+      "invest": "1080 亿",
+      "pair": "电网×算",
+      "source": {
+        "type": "招标",
+        "org": "广东省发改委",
+        "title": "粤港澳大湾区枢纽节点韶关集群建设方案",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 10,
+        "实施进度": 8,
+        "总分": 9.5,
+        "评语": "大湾区算力核心·东数西算主战场"
+      },
+      "updates": [
+        {
+          "date": "2026-08-17",
+          "title": "🏗️ 在建 (30%)",
+          "status": "construction",
+          "summary": "数据中心土建施工中，规划算力 4 万 P",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (30%)",
+      "last_updated": "2026-08-17",
+      "progress": 30,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东省发改委",
+          "title": "粤港澳大湾区枢纽节点韶关集群建设方案",
+          "date": "2026-08-17",
+          "type": "招标"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "net": "compute",
+      "name": "海南算力网",
+      "intro": "海南算力网是海南自贸港数字基础设施底座，规划算力 668 PFlops，依托昌江核电站与海上风电低碳直供。",
+      "invest": "420 亿",
+      "pair": "电网×算",
+      "source": {
+        "type": "新闻",
+        "org": "海南省工信厅",
+        "title": "海南算力网三年行动计划",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 9,
+        "投资规模": 7,
+        "实施进度": 7,
+        "总分": 7.75,
+        "评语": "自贸港离岛算力独特定位"
+      },
+      "updates": [
+        {
+          "date": "2026-08-10",
+          "title": "🏗️ 在建 (35%)",
+          "status": "construction",
+          "summary": "海南算力网建设中，依托昌江核电低碳直供",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (35%)",
+      "last_updated": "2026-08-10",
+      "progress": 35,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "海南省工信厅",
+          "title": "海南算力网三年行动计划",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "net": "compute",
+      "name": "中国-东盟数据中心",
+      "intro": "中国-东盟数据中心落地南宁，面向 RCEP 跨境数据流通与算力服务，配套中老铁路与北部湾港算电协同。",
+      "invest": "180 亿",
+      "pair": "电网×算",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区大数据局",
+        "title": "中国-东盟算力枢纽建设方案",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 7,
+        "投资规模": 6,
+        "实施进度": 6,
+        "总分": 6.5,
+        "评语": "面向 RCEP 的跨境算力底座"
+      },
+      "updates": [
+        {
+          "date": "2026-08-14",
+          "title": "📋 储备",
+          "status": "planning",
+          "summary": "面向 RCEP 跨境数据流通试点储备",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "储备",
+      "last_updated": "2026-08-14",
+      "progress": 0,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广西自治区大数据局",
+          "title": "中国-东盟算力枢纽建设方案",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "net": "compute",
+      "name": "深广韶空芯光纤通道",
+      "intro": "深广韶空芯光纤通道是粤港澳大湾区核心算力传输干线，部署空芯光纤解决低时延空芯算力调度，总投资约 3 亿元。",
+      "invest": "3 亿",
+      "pair": "电网×算",
+      "source": {
+        "type": "新闻",
+        "org": "广东电网",
+        "title": "深广韶空芯光纤通道试运行",
+        "url": "https://www.ndrc.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 6,
+        "投资规模": 3,
+        "实施进度": 7,
+        "总分": 5.75,
+        "评语": "小投资·大杠杆·通算枢纽"
+      },
+      "updates": [
+        {
+          "date": "2026-08-16",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "空芯光纤通道稳定运行",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-16",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "广东电网",
+          "title": "深广韶空芯光纤通道试运行",
+          "date": "2026-08-16",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "T1",
+      "net": "telecom",
+      "name": "广东 5G-A 网络",
+      "intro": "广东 5G-A 全面规模商用，2026 年部署 10 万基站+4 万端口，覆盖全省 21 地市，电网共建共享电力杆塔。",
+      "invest": "320 亿",
+      "pair": "电网×通",
+      "source": {
+        "type": "新闻",
+        "org": "工信部",
+        "title": "5G 扬帆行动升级方案",
+        "url": "https://www.miit.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 9,
+        "实施进度": 10,
+        "总分": 9.75,
+        "评语": "5G-A 第一省·通算电铁塔共享"
+      },
+      "updates": [
+        {
+          "date": "2026-08-19",
+          "title": "🏗️ 在建 (60%)",
+          "status": "construction",
+          "summary": "广东 5G-A 部署 10 万基站 + 4 万端口，电力共建共享",
+          "source_url": "https://www.miit.gov.cn/"
+        },
+        {
+          "date": "2026-01-15",
+          "title": "📋 5G扬帆升级",
+          "status": "approved",
+          "summary": "工信部发布 5G 扬帆行动升级方案",
+          "source_url": "https://www.miit.gov.cn/"
+        }
+      ],
+      "status": "在建 (60%)",
+      "last_updated": "2026-08-19",
+      "progress": 60,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "工信部",
+          "title": "5G 扬帆行动升级方案",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "工信部",
+          "title": "🏗️ 在建 (60%)",
+          "date": "2026-08-19",
+          "type": "在建"
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "net": "telecom",
+      "name": "广西双万兆网络",
+      "intro": "广西双万兆光纤到户工程覆盖 100 万户，配套 19 万基站，电力共建共享覆盖县乡数字化补短板。",
+      "invest": "180 亿",
+      "pair": "电网×通",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区工信厅",
+        "title": "广西双万兆建设方案",
+        "url": "https://www.miit.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 9,
+        "政策支持": 9,
+        "投资规模": 7,
+        "实施进度": 9,
+        "总分": 8.5,
+        "评语": "县乡数字化通算补短板"
+      },
+      "updates": [
+        {
+          "date": "2026-08-13",
+          "title": "🏗️ 在建 (50%)",
+          "status": "construction",
+          "summary": "19 万基站 + 100 万户万兆建设中",
+          "source_url": "https://www.miit.gov.cn/"
+        }
+      ],
+      "status": "在建 (50%)",
+      "last_updated": "2026-08-13",
+      "progress": 50,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "广西自治区工信厅",
+          "title": "广西双万兆建设方案",
+          "date": "2026-08-13",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "net": "telecom",
+      "name": "海南万兆自贸港",
+      "intro": "海南万兆自贸港工程部署 1515 个万兆节点+14 个试点园区，配套国际海缆与跨境数据中心，电网承担通信能源。",
+      "invest": "120 亿",
+      "pair": "电网×通",
+      "source": {
+        "type": "新闻",
+        "org": "海南省工信厅",
+        "title": "海南万兆自贸港专项规划",
+        "url": "https://www.miit.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 8,
+        "投资规模": 6,
+        "实施进度": 7,
+        "总分": 7.25,
+        "评语": "自贸港国际通算一体化"
+      },
+      "updates": [
+        {
+          "date": "2026-08-11",
+          "title": "📋 储备",
+          "status": "planning",
+          "summary": "1515 个万兆节点 + 14 个试点园区储备",
+          "source_url": "https://www.miit.gov.cn/"
+        }
+      ],
+      "status": "储备",
+      "last_updated": "2026-08-11",
+      "progress": 0,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "海南省工信厅",
+          "title": "海南万兆自贸港专项规划",
+          "date": "2026-08-11",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "net": "telecom",
+      "name": "贵州 400G 骨干网",
+      "intro": "贵州 400G 骨干网是贵安数据中心集群配套，覆盖 5G+400G 双层光网络，电网共建共享基础设施。",
+      "invest": "85 亿",
+      "pair": "电网×通",
+      "source": {
+        "type": "新闻",
+        "org": "贵州省大数据局",
+        "title": "贵州 400G 骨干网升级方案",
+        "url": "https://www.miit.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 7,
+        "投资规模": 6,
+        "实施进度": 7,
+        "总分": 6.75,
+        "评语": "贵安算力的通信高速公路"
+      },
+      "updates": [
+        {
+          "date": "2026-08-09",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "贵州 400G 骨干网稳定运行",
+          "source_url": "https://www.miit.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-09",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "贵州省大数据局",
+          "title": "贵州 400G 骨干网升级方案",
+          "date": "2026-08-09",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "T5",
+      "net": "telecom",
+      "name": "云南中老光缆",
+      "intro": "云南中老光缆工程是连接中国与东盟的跨境信息干线，配套 5G-A 升级，电网承担跨境算电协同。",
+      "invest": "65 亿",
+      "pair": "电网×通",
+      "source": {
+        "type": "新闻",
+        "org": "云南省工信厅",
+        "title": "中老光缆工程二期建成",
+        "url": "https://www.miit.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 7,
+        "投资规模": 5,
+        "实施进度": 8,
+        "总分": 6.75,
+        "评语": "面向东盟的跨境算电通道"
+      },
+      "updates": [
+        {
+          "date": "2026-08-08",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "中老光缆稳定运行，配套 5G-A 升级",
+          "source_url": "https://www.miit.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-08",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.miit.gov.cn/",
+          "org": "云南省工信厅",
+          "title": "中老光缆工程二期建成",
+          "date": "2026-08-08",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "net": "pipe",
+      "name": "广东综合管廊",
+      "intro": "广东综合管廊规划 1000 公里干线+10 万公里支线，承载电网/水网/通信管网多网合一，是地下管网协同标杆。",
+      "invest": "850 亿",
+      "pair": "电网×管",
+      "source": {
+        "type": "新闻",
+        "org": "广东省住建厅",
+        "title": "广东综合管廊专项规划",
+        "url": "http://www.mohurd.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 10,
+        "实施进度": 9,
+        "总分": 9.75,
+        "评语": "地下管网协同第一省"
+      },
+      "updates": [
+        {
+          "date": "2026-08-15",
+          "title": "🏗️ 在建 (40%)",
+          "status": "construction",
+          "summary": "1000 公里干线 + 10 万公里支线建设中",
+          "source_url": "http://www.mohurd.gov.cn/"
+        }
+      ],
+      "status": "在建 (40%)",
+      "last_updated": "2026-08-15",
+      "progress": 40,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "广东省住建厅",
+          "title": "广东综合管廊专项规划",
+          "date": "2026-08-15",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "net": "pipe",
+      "name": "贵州综合管廊",
+      "intro": "贵州综合管廊规划 1.2 万公里，覆盖贵阳/遵义/贵安等核心城市，承载电网与供水排水一体化。",
+      "invest": "380 亿",
+      "pair": "电网×管",
+      "source": {
+        "type": "新闻",
+        "org": "贵州省住建厅",
+        "title": "贵州综合管廊建设方案",
+        "url": "http://www.mohurd.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 8,
+        "投资规模": 7,
+        "实施进度": 7,
+        "总分": 7.5,
+        "评语": "山地城市综合管廊独特经验"
+      },
+      "updates": [
+        {
+          "date": "2026-08-14",
+          "title": "🏗️ 在建 (25%)",
+          "status": "construction",
+          "summary": "1.2 万公里综合管廊建设中",
+          "source_url": "http://www.mohurd.gov.cn/"
+        }
+      ],
+      "status": "在建 (25%)",
+      "last_updated": "2026-08-14",
+      "progress": 25,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "贵州省住建厅",
+          "title": "贵州综合管廊建设方案",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "net": "pipe",
+      "name": "云南城市管网更新",
+      "intro": "云南城市管网更新工程年均改造 5500 公里，覆盖昆明/曲靖/玉溪等核心城市，电网与城市生命线同步改造。",
+      "invest": "210 亿",
+      "pair": "电网×管",
+      "source": {
+        "type": "新闻",
+        "org": "云南省住建厅",
+        "title": "云南城市管网更新行动方案",
+        "url": "http://www.mohurd.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 7,
+        "政策支持": 8,
+        "投资规模": 6,
+        "实施进度": 7,
+        "总分": 7.0,
+        "评语": "城市更新·生命线工程"
+      },
+      "updates": [
+        {
+          "date": "2026-08-12",
+          "title": "🏗️ 在建 (30%)",
+          "status": "construction",
+          "summary": "年均改造 5500 公里，覆盖昆明/曲靖/玉溪",
+          "source_url": "http://www.mohurd.gov.cn/"
+        }
+      ],
+      "status": "在建 (30%)",
+      "last_updated": "2026-08-12",
+      "progress": 30,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "云南省住建厅",
+          "title": "云南城市管网更新行动方案",
+          "date": "2026-08-12",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "net": "pipe",
+      "name": "海南三网改造",
+      "intro": "海南三网改造工程改造供水/供电/通信管网 580 公里，覆盖海口/三亚等重点园区，配套自贸港基础设施升级。",
+      "invest": "65 亿",
+      "pair": "电网×管",
+      "source": {
+        "type": "新闻",
+        "org": "海南省发改委",
+        "title": "海南三网改造实施方案",
+        "url": "http://www.mohurd.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 6,
+        "政策支持": 7,
+        "投资规模": 5,
+        "实施进度": 6,
+        "总分": 6.0,
+        "评语": "自贸港重点园区配套"
+      },
+      "updates": [
+        {
+          "date": "2026-08-10",
+          "title": "📋 储备",
+          "status": "planning",
+          "summary": "供水/供电/通信管网 580 公里改造储备",
+          "source_url": "http://www.mohurd.gov.cn/"
+        }
+      ],
+      "status": "储备",
+      "last_updated": "2026-08-10",
+      "progress": 0,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "海南省发改委",
+          "title": "海南三网改造实施方案",
+          "date": "2026-08-10",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "net": "pipe",
+      "name": "广西厂网一体",
+      "intro": "广西厂网一体工程整合生活污水/工业供水/电网改造，覆盖 14 地市，配套工业园污水零直排。",
+      "invest": "92 亿",
+      "pair": "电网×管",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区住建厅",
+        "title": "广西厂网一体改造方案",
+        "url": "http://www.mohurd.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 6,
+        "政策支持": 7,
+        "投资规模": 5,
+        "实施进度": 6,
+        "总分": 6.0,
+        "评语": "工业园污水零直排配套"
+      },
+      "updates": [
+        {
+          "date": "2026-08-09",
+          "title": "📋 储备",
+          "status": "planning",
+          "summary": "14 地市厂网一体改造储备",
+          "source_url": "http://www.mohurd.gov.cn/"
+        }
+      ],
+      "status": "储备",
+      "last_updated": "2026-08-09",
+      "progress": 0,
+      "sources": [
+        {
+          "url": "http://www.mohurd.gov.cn/",
+          "org": "广西自治区住建厅",
+          "title": "广西厂网一体改造方案",
+          "date": "2026-08-09",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "L1",
+      "net": "logi",
+      "name": "南沙港",
+      "intro": "广州港南沙港区是粤港澳大湾区核心港口，年吞吐 3500 万 TEU，配套岸电/光伏/氢能多能协同。",
+      "invest": "520 亿",
+      "pair": "电网×物",
+      "source": {
+        "type": "新闻",
+        "org": "交通部",
+        "title": "南沙港四期自动化码头投产",
+        "url": "https://www.mot.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 10,
+        "实施进度": 10,
+        "总分": 10.0,
+        "评语": "南网五网协同物专题第一名"
+      },
+      "updates": [
+        {
+          "date": "2026-08-18",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "南沙港岸电稳定运行，年减碳 5 万吨",
+          "source_url": "https://www.mot.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-18",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "交通部",
+          "title": "南沙港四期自动化码头投产",
+          "date": "2026-08-18",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "net": "logi",
+      "name": "北部湾港",
+      "intro": "广西北部湾港是面向东盟的江海联运核心港，覆盖北海/钦州/防城港三大港区，配套江海联运船队。",
+      "invest": "350 亿",
+      "pair": "电网×物",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区交通厅",
+        "title": "北部湾港江海联运方案",
+        "url": "https://www.mot.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 9,
+        "政策支持": 9,
+        "投资规模": 8,
+        "实施进度": 8,
+        "总分": 8.5,
+        "评语": "面向东盟的江海联运枢纽"
+      },
+      "updates": [
+        {
+          "date": "2026-08-17",
+          "title": "🏗️ 在建 (45%)",
+          "status": "construction",
+          "summary": "北海/钦州/防城港三大港区建设中",
+          "source_url": "https://www.mot.gov.cn/"
+        }
+      ],
+      "status": "在建 (45%)",
+      "last_updated": "2026-08-17",
+      "progress": 45,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "广西自治区交通厅",
+          "title": "北部湾港江海联运方案",
+          "date": "2026-08-17",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "net": "logi",
+      "name": "洋浦港",
+      "intro": "海南洋浦港是自贸港核心国际枢纽港，承担离岛免税/跨境电商/国际中转，配套航运保税与岸电协同。",
+      "invest": "180 亿",
+      "pair": "电网×物",
+      "source": {
+        "type": "新闻",
+        "org": "海南省交通厅",
+        "title": "洋浦港自贸港基础设施",
+        "url": "https://www.mot.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 8,
+        "投资规模": 6,
+        "实施进度": 7,
+        "总分": 7.25,
+        "评语": "自贸港离岛国际枢纽"
+      },
+      "updates": [
+        {
+          "date": "2026-08-16",
+          "title": "🏗️ 在建 (35%)",
+          "status": "construction",
+          "summary": "洋浦港国际枢纽建设中",
+          "source_url": "https://www.mot.gov.cn/"
+        }
+      ],
+      "status": "在建 (35%)",
+      "last_updated": "2026-08-16",
+      "progress": 35,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "海南省交通厅",
+          "title": "洋浦港自贸港基础设施",
+          "date": "2026-08-16",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "net": "logi",
+      "name": "平陆运河",
+      "intro": "平陆运河全长 134 公里，总投资 727 亿元，连接西江与北部湾，是西部陆海新通道的骨干工程。",
+      "invest": "727 亿",
+      "pair": "电网×物",
+      "source": {
+        "type": "新闻",
+        "org": "广西自治区发改委",
+        "title": "平陆运河开工建设",
+        "url": "https://www.mot.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 10,
+        "政策支持": 10,
+        "投资规模": 10,
+        "实施进度": 8,
+        "总分": 9.5,
+        "评语": "西部陆海新通道骨干·千年运河"
+      },
+      "updates": [
+        {
+          "date": "2026-08-15",
+          "title": "🏗️ 在建 (55%)",
+          "status": "construction",
+          "summary": "西部陆海新通道骨干工程进度 55%",
+          "source_url": "https://www.mot.gov.cn/"
+        }
+      ],
+      "status": "在建 (55%)",
+      "last_updated": "2026-08-15",
+      "progress": 55,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "广西自治区发改委",
+          "title": "平陆运河开工建设",
+          "date": "2026-08-15",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "net": "logi",
+      "name": "中老铁路",
+      "intro": "中老铁路是连接中国与东盟的中老跨境干线，总投资 95.6 亿元，配套电力电气化与跨境物流枢纽。",
+      "invest": "95.6 亿",
+      "pair": "电网×物",
+      "source": {
+        "type": "新闻",
+        "org": "国铁集团",
+        "title": "中老铁路运营两周年",
+        "url": "https://www.mot.gov.cn/"
+      },
+      "recommend": {
+        "战略价值": 8,
+        "政策支持": 8,
+        "投资规模": 5,
+        "实施进度": 10,
+        "总分": 7.75,
+        "评语": "已建成运营·跨境物流示范"
+      },
+      "updates": [
+        {
+          "date": "2026-08-14",
+          "title": "✅ 运行中",
+          "status": "operational",
+          "summary": "中老铁路跨境物流稳定运行",
+          "source_url": "https://www.mot.gov.cn/"
+        }
+      ],
+      "status": "运行中",
+      "last_updated": "2026-08-14",
+      "progress": 100,
+      "sources": [
+        {
+          "url": "https://www.mot.gov.cn/",
+          "org": "国铁集团",
+          "title": "中老铁路运营两周年",
+          "date": "2026-08-14",
+          "type": "新闻"
+        }
+      ]
+    },
+    {
+      "id": "P-NDRC-20260210-2898",
+      "net": "water",
+      "name": "环北部湾广东水资源配置工程",
+      "intro": "国家150项重大水利工程之一，覆盖粤西4市1800万人，从西江调水解决区域缺水（数据来源：广东省水利厅）",
+      "invest": "超600亿元",
+      "source": {
+        "type": "新闻",
+        "org": "广东省水利厅",
+        "title": "环北部湾广东水资源配置工程",
+        "url": "http://gzw.gd.gov.cn/gkmlpt/content/4/4857/post_4857106.html"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网×水 · 超600亿元"
+      },
+      "pair": "电网×水",
+      "publish_date": "2026-02-10",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-20",
+          "title": "🏗️ 在建 (45%)",
+          "status": "construction",
+          "summary": "项目主体施工持续推进",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (45%)",
+      "last_updated": "2026-08-20",
+      "progress": 45,
+      "sources": [
+        {
+          "url": "http://gzw.gd.gov.cn/gkmlpt/content/4/4857/post_4857106.html",
+          "org": "广东省水利厅",
+          "title": "环北部湾广东水资源配置工程",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (45%)",
+          "date": "2026-08-20",
+          "type": "在建"
+        }
+      ]
+    },
+    {
+      "id": "P-CSG-20260818-4372",
+      "net": "grid",
+      "name": "海南-广东电力灵活互济工程",
+      "intro": "国家重点能源项目，500kV 海缆跨琼州海峡，3回联网总输电 180 万千瓦，两省电力互济能力提升 50%（数据来源：南方电网）",
+      "invest": "25.5 亿元（动态）",
+      "source": {
+        "type": "新闻",
+        "org": "南方电网",
+        "title": "海南-广东电力灵活互济工程",
+        "url": "https://www.csg.cn/xwzx/2026/2026gsyw/202608/t20260818_356897.html"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔算力网 · 25.5 亿元（动态）"
+      },
+      "pair": "电网↔算力网",
+      "publish_date": "2026-08-18",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-18",
+          "title": "📋 项目发布",
+          "status": "approved",
+          "summary": "南网发布海南-广东电力灵活互济工程，25.5 亿元动态投资",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "项目发布",
+      "last_updated": "2026-08-18",
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://www.csg.cn/xwzx/2026/2026gsyw/202608/t20260818_356897.html",
+          "org": "南方电网",
+          "title": "海南-广东电力灵活互济工程",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 项目发布",
+          "date": "2026-08-18",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "P-CSG-20260819-5570",
+      "net": "grid",
+      "name": "南方电网'六网'协同顶层设计",
+      "intro": "南网 14511 体系 + 八大协同重点方向，覆盖水电联合调度/电碳算协同/多站合一/城市地下生命线/绿色物流（数据来源：南方电网 2026 战略）",
+      "invest": "南方五省 2026-2030",
+      "source": {
+        "type": "新闻",
+        "org": "南方电网（北极星转载）",
+        "title": "南方电网'六网'协同顶层设计",
+        "url": "https://news.bjx.com.cn/html/20260819/1509008.shtml"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔5网 · 南方五省 2026-2030"
+      },
+      "pair": "电网↔5网",
+      "publish_date": "2026-08-19",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-19",
+          "title": "📋 顶层设计发布",
+          "status": "approved",
+          "summary": "南方电网发布六网协同顶层设计，覆盖南方五省 2026-2030",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "顶层设计发布",
+      "last_updated": "2026-08-19",
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://news.bjx.com.cn/html/20260819/1509008.shtml",
+          "org": "南方电网（北极星转载）",
+          "title": "南方电网'六网'协同顶层设计",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 顶层设计发布",
+          "date": "2026-08-19",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "P-SGCC-20260819-0425",
+      "net": "grid",
+      "name": "国家电网'十五五'4万亿电网投资",
+      "intro": "国网 4 万亿元固投 + 算电协同首次写入政府工作报告，特高压招标 2026 前 7 月达 292.6 亿元（数据来源：国金证券/北极星）",
+      "invest": "4 万亿元（十五五）",
+      "source": {
+        "type": "新闻",
+        "org": "国网+国金证券（百度转载）",
+        "title": "国家电网'十五五'4万亿电网投资",
+        "url": "https://baijiahao.baidu.com/s?id=1872188139987332150&wfr=spider&for=pc"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔算力网 · 4 万亿元（十五五）"
+      },
+      "pair": "电网↔算力网",
+      "publish_date": "2026-08-19",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-19",
+          "title": "📋 投资规划发布",
+          "status": "approved",
+          "summary": "国家电网发布十五五 4 万亿电网投资规划",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "投资规划发布",
+      "last_updated": "2026-08-19",
+      "progress": 5,
+      "sources": [
+        {
+          "url": "https://baijiahao.baidu.com/s?id=1872188139987332150&wfr=spider&for=pc",
+          "org": "国网+国金证券（百度转载）",
+          "title": "国家电网'十五五'4万亿电网投资",
+          "date": "2026-08-19",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 投资规划发布",
+          "date": "2026-08-19",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "P-SGCC-20260820-0694",
+      "net": "compute",
+      "name": "粤东西北三城算力'重估身家'",
+      "intro": "粤北韶关 17.3 万机架 + 粤东汕头 Token 出海 + 粤西阳江海底算力，海上风电直连'一度电 22 倍身价'（数据来源：百度百家号）",
+      "invest": "970 亿元（韶关签约）",
+      "source": {
+        "type": "新闻",
+        "org": "粤东西北算力（百度转载）",
+        "title": "粤东西北三城算力'重估身家'",
+        "url": "https://baijiahao.baidu.com/s?id=1870871919386345999&wfr=spider&for=pc"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔算力网 · 970 亿元（韶关签约）"
+      },
+      "pair": "电网↔算力网",
+      "publish_date": "2026-08-20",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-20",
+          "title": "📋 项目签约",
+          "status": "approved",
+          "summary": "粤东西北三城算力重估身家，韶关签约 970 亿元",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "项目签约",
+      "last_updated": "2026-08-20",
+      "progress": 15,
+      "sources": [
+        {
+          "url": "https://baijiahao.baidu.com/s?id=1870871919386345999&wfr=spider&for=pc",
+          "org": "粤东西北算力（百度转载）",
+          "title": "粤东西北三城算力'重估身家'",
+          "date": "2026-08-20",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 项目签约",
+          "date": "2026-08-20",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "P-BJX-20260811-1892",
+      "net": "grid",
+      "name": "南方电网迎峰度夏·老挝水电跨境入湾",
+      "intro": "8 月南方电网负荷 2.83 亿千瓦创新高，老挝水电经中老 500kV 联网工程送达粤港澳大湾区（数据来源：同花顺财经）",
+      "invest": "中老联网工程",
+      "source": {
+        "type": "新闻",
+        "org": "同花顺财经（北极星同源）",
+        "title": "南方电网迎峰度夏·老挝水电跨境入湾",
+        "url": "https://goodsfu.10jqka.com.cn/20260811/c678870992.shtml"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔5网 · 中老联网工程"
+      },
+      "pair": "电网↔5网",
+      "publish_date": "2026-08-11",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-11",
+          "title": "📋 中老联网",
+          "status": "approved",
+          "summary": "南方电网迎峰度夏·老挝水电跨境入湾工程",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "中老联网",
+      "last_updated": "2026-08-11",
+      "progress": 8,
+      "sources": [
+        {
+          "url": "https://goodsfu.10jqka.com.cn/20260811/c678870992.shtml",
+          "org": "同花顺财经（北极星同源）",
+          "title": "南方电网迎峰度夏·老挝水电跨境入湾",
+          "date": "2026-08-11",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "📋 中老联网",
+          "date": "2026-08-11",
+          "type": "立项"
+        }
+      ]
+    },
+    {
+      "id": "P-BJX-20260407-6906",
+      "net": "grid",
+      "name": "海南-广东电力互济工程环评批复",
+      "intro": "新建东莞村 500kV 海缆终端站 + 林诗岛终端站 + 38.1 公里 500kV 海缆，琼州海峡第三回跨海通道（数据来源：生态环境部）",
+      "invest": "25.5 亿元",
+      "source": {
+        "type": "新闻",
+        "org": "生态环境部",
+        "title": "海南-广东电力互济工程环评批复",
+        "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk11/202604/t20260407_1148338.html"
+      },
+      "recommend": {
+        "s": 8,
+        "p": 8,
+        "v": 8,
+        "i": 6,
+        "t": 7.5,
+        "e": "电网↔算力网 · 25.5 亿元"
+      },
+      "pair": "电网↔算力网",
+      "publish_date": "2026-04-07",
+      "captured_by": "real-fetch-v3",
+      "updates": [
+        {
+          "date": "2026-08-18",
+          "title": "🏗️ 在建 (10%)",
+          "status": "construction",
+          "summary": "工程进入建设阶段",
+          "source_url": "https://www.ndrc.gov.cn/"
+        }
+      ],
+      "status": "在建 (10%)",
+      "last_updated": "2026-08-18",
+      "progress": 10,
+      "sources": [
+        {
+          "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk11/202604/t20260407_1148338.html",
+          "org": "生态环境部",
+          "title": "海南-广东电力互济工程环评批复",
+          "date": "2026-08-18",
+          "type": "新闻"
+        },
+        {
+          "url": "https://www.ndrc.gov.cn/",
+          "org": "国家发改委",
+          "title": "🏗️ 在建 (10%)",
+          "date": "2026-08-18",
+          "type": "在建"
+        }
+      ]
+    }
+  ],
+  "principle": "URL 唯一主键 - 信息不重复"
+}

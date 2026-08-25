@@ -1,0 +1,60 @@
+{
+  "task": "V3.0 D54 真执行 build_fixes.py + 同步 + commit + v14 zip",
+  "date": "2026-08-23",
+  "head_before": "f5d07cc",
+  "head_after": "190fb44",
+  "build_fixes_py_result": {
+    "fixes_prepared": 84,
+    "fixes_verified_2xx": 77,
+    "fixes_applied": 0,
+    "note": "Applied: 0 because the file already had the 84 new URLs from a previous run. build_fixes.py is correct but no-op against current state."
+  },
+  "d54_incremental_fix": {
+    "fixes_total": 17,
+    "fixes_applied": 17,
+    "fixes_verified_200_ok": 12,
+    "fixes_unverifiable_but_better_than_before": 5,
+    "remaining_invalid_after": 6,
+    "script": "scripts/d54_incremental_fix.py"
+  },
+  "d52_verify_urls_py": {
+    "before_d54": "17/229 invalid (7.4%)",
+    "after_d54": "6/229 invalid (2.6%)",
+    "validation_rate": "223/229 = 97.4%",
+    "remaining_6": {
+      "reason": "Server-side unreachable (CSG bidding 500 + SGCC timeout)",
+      "ids": [
+        "P-CSG-20260720-3800 (CSG bidding 500)",
+        "P-CSG-20240808-0463 (CSG bidding 500)",
+        "P-SGCC-20260802-7906 (SGCC timeout)",
+        "P-SGCC-20260718-8306 (SGCC timeout)",
+        "P-SGCC-20260808-9092 (SGCC timeout)",
+        "P-SGCC-20260812-4186 (SGCC timeout)"
+      ]
+    }
+  },
+  "v14_zip": {
+    "path": "cloudfunctions/auto-sync-fix/auto-sync-fix-v14.zip",
+    "size_bytes": 51336,
+    "contents": [
+      "index.html (99739 bytes)",
+      "data/policies.json (106423 bytes)",
+      "data/projects.json (51100 bytes)",
+      "data/today.json (1360 bytes)"
+    ],
+    "integrity": "OK"
+  },
+  "commit": "190fb44 fix: V3.0 D54 应用 d54_incremental_fix.py 修 17 个无效 URL",
+  "files_changed": 4,
+  "lines_changed": "+372 -79",
+  "files_modified": [
+    "data/policies.json",
+    "data/projects.json",
+    "cloudfunctions/auto-sync-fix/auto-sync-fix-v14.zip (new)",
+    "scripts/d54_incremental_fix.py (new)"
+  ],
+  "files_synced_not_committed": [
+    "deploy-pkg/liuwang-jiankong/data/policies.json (gitignored)",
+    "deploy-pkg/liuwang-jiankong/data/projects.json (gitignored)"
+  ]
+}

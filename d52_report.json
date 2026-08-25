@@ -1,0 +1,77 @@
+{
+  "task": "V3.0 D52 Tab2 政策卡直接显示原文跳转链接",
+  "date": "2026-08-23",
+  "head_before": "v3.0 D40",
+  "head_after": "v3.0 D52",
+  "commit_hash": "f5d07ccb7269c953a0c2393ad7b8afc8a07ad01d",
+
+  "user_requirement": {
+    "truth_v30_D40": "政策卡表面已有《原文》↗链接 (target=_blank + event.stopPropagation)，但视觉上不够突出，用户仍倾向于点击卡片其它区域触发 alert() 弹窗。",
+    "demand": "政策卡表面直接显示原文跳转链接 — 不用点弹窗",
+    "evidence": "V3.0 D52 截图"
+  },
+
+  "implementation": {
+    "file_modified": "D:\\hermes-dev-team\\nsp-im\\deploy-pkg\\liuwang-jiankong\\index.html",
+    "file_size_before_bytes": 97178,
+    "file_size_after_bytes": 97938,
+    "diff_size": 11,
+    "lines_added": 10,
+
+    "code_changes": [
+      {
+        "location": "CSS @ ~line 174",
+        "change": "新增 .paction / .btn-original 样式 — 蓝青色渐变按钮 + hover 抬升 + ↗ 后缀"
+      },
+      {
+        "location": "renderTab2() @ ~line 1036",
+        "change": "新增 originalUrl = it.url||it.original_url||it.source_url||it.link||'#' URL 优先级链",
+        "change_2": "新增 📖 查看原文 按钮 (target=_blank + rel=noopener noreferrer + event.stopPropagation)",
+        "change_3": "保留并升级原《原文》↗ plink (target=_blank + rel=noopener noreferrer)",
+        "change_4": "两链接包在 .paction flex 容器里并列展示"
+      }
+    ],
+
+    "zip": {
+      "path": "D:\\hermes-dev-team\\nsp-im\\cloudfunctions\\auto-sync-fix-v13.zip",
+      "size_bytes": 28037,
+      "entries": ["index.html"],
+      "compression": "ZIP_DEFLATED"
+    }
+  },
+
+  "self_check": {
+    "7_tabs_intact": true,
+    "tab_buttons": ["view-1","view-2","view-3","view-4","view-5","view-6","view-7"],
+    "btn_original_in_html": true,
+    "btn_target_blank": true,
+    "btn_rel_noopener_noreferrer": true,
+    "btn_text_label": "📖 查看原文",
+    "url_priority_chain": "it.url||it.original_url||it.source_url||it.link||'#'",
+    "event_stopPropagation": true,
+    "fetch_logic_preserved": true,
+    "css_btn_original_defined": true,
+    "css_paction_defined": true,
+    "zip_byte_match_source": true
+  },
+
+  "user_visible_effect": "Tab2 政策卡现在表面有两个并排可见的原文链接：① 蓝青色 '📖 查看原文' 按钮 (主入口) + ② 原 '《原文》↗' 小链接。点击任一均 target=_blank 新标签页打开原文 URL，不再需要先点弹窗。",
+
+  "constraints_honored": {
+    "v3_existing_intact": true,
+    "7_tabs_preserved": true,
+    "fetch_logic_preserved": true,
+    "cd_to_root": "D:\\hermes-dev-team\\nsp-im"
+  },
+
+  "commit": {
+    "hash": "f5d07ccb7269c953a0c2393ad7b8afc8a07ad01d",
+    "branch": "feat/w3d4-pwa-offline",
+    "message": "feat: V3.0 D52 政策卡直接显示原文跳转链接",
+    "files_changed": 2,
+    "insertions": 10,
+    "deletions": 1
+  },
+
+  "status": "DONE"
+}

@@ -1,0 +1,111 @@
+{
+  "checks": [
+    [
+      "密码门",
+      true,
+      true
+    ],
+    [
+      "PROJECTS_CACHE loaded",
+      true,
+      true
+    ],
+    [
+      "Modal opened",
+      true,
+      true
+    ],
+    [
+      "modal: 总分 (toFixed OK)",
+      "8.5",
+      true
+    ],
+    [
+      "modal: 4 维度评分",
+      "9, 9, 9, 7",
+      true
+    ],
+    [
+      "modal: 评语",
+      "南网五网协同水专题标杆·1800万人民生",
+      true
+    ],
+    [
+      "modal: 标题 (含 W1)",
+      "环北部湾广东水资源配置工程",
+      true
+    ],
+    [
+      "modal: sources 区块",
+      "2 标题, 6 行",
+      true
+    ],
+    [
+      "modal: timeline 区块",
+      "1 标题, 5 行",
+      true
+    ],
+    [
+      "7 Tab PASS",
+      "7/7",
+      true
+    ],
+    [
+      "0 JS errors",
+      "page=0, console=0",
+      true
+    ],
+    [
+      "HTML ≤ 95KB",
+      "94.9KB",
+      true
+    ]
+  ],
+  "PROJECTS_CACHE_len": 32,
+  "W1_card_found": true,
+  "modal_total": "8.5",
+  "modal_r1": "9",
+  "modal_r2": "9",
+  "modal_r3": "9",
+  "modal_r4": "7",
+  "modal_eval": "南网五网协同水专题标杆·1800万人民生",
+  "modal_title": "环北部湾广东水资源配置工程",
+  "sources_block": 2,
+  "sources_rows": 6,
+  "timeline_block": 1,
+  "timeline_rows": 5,
+  "tabs": [
+    [
+      1,
+      true
+    ],
+    [
+      2,
+      true
+    ],
+    [
+      3,
+      true
+    ],
+    [
+      4,
+      true
+    ],
+    [
+      5,
+      true
+    ],
+    [
+      6,
+      true
+    ],
+    [
+      7,
+      true
+    ]
+  ],
+  "tabs_pass": "7/7",
+  "page_errors": [],
+  "console_errors": [],
+  "html_kb": 94.9
+}
