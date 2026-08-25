@@ -1,21 +1,13 @@
 main:
   push:
     - stages:
-        # 第一阶段：构建
-        - name: build-project
-          image: node:18-alpine  # 👈 关键修改：换成带 Node.js 的镜像
-          script:
-            - npm install        # 1. 安装依赖
-            - npm run build      # 2. 执行构建，生成 dist 目录
-            # 注意：Vite/Webpack 默认生成 dist，如果是其他名字请修改这里
-            - ls dist            # 3. 确认目录已生成
-
-        # 第二阶段：部署准备
         - name: deploy-to-pages
-          image: alpine:latest   # 这里可以用 alpine，只负责搬运文件
+          image: alpine:latest
           script:
+            - echo ">>> 纯静态项目，跳过构建，直接部署"
             - mkdir -p /tmp/deploy
-            - cp -r dist/* /tmp/deploy/  # 从 dist 目录复制
+            # 核心动作：直接复制你的静态文件目录
+            - cp -r deploy-pkg/liwang-jiankong/* /tmp/deploy/
             - ls -la /tmp/deploy
           artifacts:
             path: /tmp/deploy
