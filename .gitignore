@@ -57,3 +57,5 @@ d5*_report.json
 
 # NOTE: deploy-pkg/liuwang-jiankong/ is now INTENTIONALLY tracked
 # so GitHub Actions can deploy it to CloudBase liwangqingbaozhan
+.git.backup
+secrets.txt
