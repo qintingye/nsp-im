@@ -12,11 +12,11 @@
 
 ### Secret 1: TCB_SECRET_ID
 - **Name**: `TCB_SECRET_ID`
-- **Value**: `AKIDmjV4ureQIB6wiE9xa17EHJFzWr6A1vc7`
+- **Value**: `${{ secrets.TCB_SECRET_ID }}`
 
 ### Secret 2: TCB_SECRET_KEY
 - **Name**: `TCB_SECRET_KEY`
-- **Value**: `NXUKyPd2JNEsKZcT8apqfIhtoiPtHWY8`
+- **Value**:`${{ secrets.TCB_SECRET_KEY }}`
 
 > ⚠️ **注意**：`envId` (`liwang-jiankong-d2eatyj479b1861`) 已硬编码在 workflow yml 里，无需作为 Secret。
 

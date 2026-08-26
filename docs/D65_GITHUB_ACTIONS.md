@@ -25,8 +25,8 @@ CloudBase liwang-jiankong-d2eatyj479b1861
 
 | Name | Value |
 |---|---|
-| `TCB_SECRET_ID` | `AKIDmjV4ureQIB6wiE9xa17EHJFzWr6A1vc7` |
-| `TCB_SECRET_KEY` | `NXUKyPd2JNEsKZcT8apqfIhtoiPtHWY8` |
+| `TCB_SECRET_ID` | `${{ secrets.TCB_SECRET_ID }}` |
+| `TCB_SECRET_KEY` | `${{ secrets.TCB_SECRET_KEY }}` |
 
 > 注：本 workflow 把 `envId` 直接写死在 yml 里（不再读 Secret），所以只需要 2 个 Secrets。
 
