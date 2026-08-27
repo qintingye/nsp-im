@@ -1,6 +1,6 @@
 {
-  "version": "3.0-d37",
-  "generated_at": "2026-08-21T15:30:00Z",
+  "version": "3.0",
+  "generated_at": "2026-08-27T01:04:17Z",
   "source": "real-fetch-v2",
   "policies": [
     {
@@ -3201,6 +3201,214 @@
           "verified_at": "2026-08-23T01:55:00Z"
         }
       }
+    },
+    {
+      "id": "P-NDRC-20260815-1144",
+      "title": "《新型储能规模化建设专项行动方案(2025—2027年)》进展通报",
+      "department": "国家发改委 + 国家能源局",
+      "doc_number": "发改能源〔2025〕1144号",
+      "publish_date": "2025-12-15",
+      "effective_date": "2025-12-15",
+      "category": "policy",
+      "scope": [
+        "grid"
+      ],
+      "priority": 2,
+      "summary": "上海出台配套,2026年新型储能应用规模突破80万千瓦;全国新型储能装机加速,1144号文三年行动进入中期评估。",
+      "key_points": [
+        "新型储能",
+        "80万千瓦",
+        "上海配套",
+        "1144号进展"
+      ],
+      "source_url": "https://www.ndrc.gov.cn/",
+      "captured_at": "2026-08-26T01:02:41Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "六网协同",
+        "1144号",
+        "储能"
+      ],
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "电网支撑",
+      "v9_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "十五五"
+    },
+    {
+      "id": "P-NDA-20260825-COMPUTE",
+      "title": "《全国一体化算力网加速成形》报告(国家数据局口径)",
+      "department": "国家数据局 + 工信部",
+      "doc_number": "算电协同〔2026〕进展通报",
+      "publish_date": "2026-08-25",
+      "effective_date": "",
+      "category": "policy",
+      "scope": [
+        "compute",
+        "grid"
+      ],
+      "priority": 2,
+      "summary": "1361亿算力项目集中签约;2026绿色算力(人工智能)大会8月开幕,数算一体驱动未来,智算+绿电协同落地。",
+      "key_points": [
+        "全国一体化算力网",
+        "1361亿签约",
+        "算电协同",
+        "数算一体"
+      ],
+      "source_url": "http://www.ce.cn/",
+      "captured_at": "2026-08-26T01:02:41Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "六网协同",
+        "算力网",
+        "算电协同"
+      ],
+      "review_status": "pending",
+      "support_direction": 1,
+      "carrier_relation": "电网×算力网",
+      "v9_cers_dccib": true,
+      "industry_chain": "算力基础设施",
+      "investment_period": "十五五"
+    },
+    {
+      "id": "P-AHNE-20260827-688A2",
+      "title": "《关于再次征求有序推动绿电直连发展有关事项通知(征求意见稿)意见的公告》",
+      "department": "安徽省能源局",
+      "doc_number": "皖能源新能〔2026〕征求意见稿",
+      "publish_date": "2026-08-20",
+      "effective_date": "",
+      "category": "policy",
+      "scope": [
+        "grid"
+      ],
+      "priority": 3,
+      "summary": "安徽绿电直连再征意见，区分并网型/离网型，离网仅缴政府性基金、不参与电力市场化交易，配套电网未开工的新建项目纳入负荷端",
+      "key_points": [
+        "多用户绿电直连",
+        "离网型",
+        "并网型",
+        "688号文安徽落地"
+      ],
+      "source_url": "https://news.bjx.com.cn/html/20260820/1509369.shtml",
+      "captured_at": "2026-08-27T01:04:17Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "688号",
+        "绿电直连",
+        "安徽",
+        "征求意见稿"
+      ],
+      "review_status": "pending",
+      "support_direction": 2,
+      "carrier_relation": "电网-绿电直连",
+      "v9_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "十五五"
+    },
+    {
+      "id": "P-MIIT-20260826-LIUYLIN-6G",
+      "title": "《工信部\"十五五\"时期6G核心技术攻关表态》——国新办8-26发布会",
+      "department": "工业和信息化部信息通信发展司",
+      "doc_number": "国新办2026-08-26新闻发布会",
+      "publish_date": "2026-08-26",
+      "effective_date": "",
+      "category": "policy",
+      "scope": [
+        "comm"
+      ],
+      "priority": 4,
+      "summary": "工信部信通司司长刘郁林8-26国新办发布会：6G是'十五五'时期重中之重，将加快6G核心技术攻关持续开展试验；2026-05工信部向6G推进组批复6.4-7.1GHz试验频率，中国首个",
+      "key_points": [
+        "6G",
+        "十五五",
+        "新一代通信网",
+        "6.4-7.1GHz试验频率"
+      ],
+      "source_url": "https://www.eeo.com.cn/2026/0826/1011929.shtml",
+      "captured_at": "2026-08-27T01:04:17Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "6G",
+        "通信网",
+        "工信部",
+        "国新办"
+      ],
+      "review_status": "pending",
+      "support_direction": 4,
+      "carrier_relation": "通信网",
+      "v9_cers_dccib": true,
+      "industry_chain": "新一代信息通信",
+      "investment_period": "十五五"
+    },
+    {
+      "id": "P-CSG-20260828-EARNINGS",
+      "title": "《南方电网储能股份有限公司2026年半年度业绩说明会公告》",
+      "department": "南方电网储能股份有限公司(600995)",
+      "doc_number": "南网储能2026-36号公告",
+      "publish_date": "2026-08-20",
+      "effective_date": "2026-08-28",
+      "category": "policy",
+      "scope": [
+        "grid"
+      ],
+      "priority": 3,
+      "summary": "南网储能8-28召开中报业绩说明会；上半年营收41.20亿元/+24.83%，归母净利润+33.61%；抽蓄投运1268万千瓦；浪江抽蓄120万千瓦冲刺投产；东吴证券维持2026-2028归母净利17.4/18.1/19.4亿元",
+      "key_points": [
+        "南网储能",
+        "中报",
+        "业绩说明会",
+        "抽蓄"
+      ],
+      "source_url": "https://data.eastmoney.com/notices/detail/600995/AN202608201828204549.html",
+      "captured_at": "2026-08-27T01:04:17Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "南网储能",
+        "抽蓄",
+        "942号文",
+        "业绩说明会"
+      ],
+      "review_status": "pending",
+      "support_direction": 2,
+      "carrier_relation": "电网-抽水蓄能",
+      "v9_cers_dccib": true,
+      "industry_chain": "电力与新能源",
+      "investment_period": "十五五"
+    },
+    {
+      "id": "P-MIIT-20260825-DIGITALIND",
+      "title": "《2026年上半年我国数字产业运行数据》",
+      "department": "工业和信息化部",
+      "doc_number": "工信部数据通报2026-08-25",
+      "publish_date": "2026-08-25",
+      "effective_date": "",
+      "category": "policy",
+      "scope": [
+        "compute"
+      ],
+      "priority": 3,
+      "summary": "工信部8-25数据：上半年数字产业业务收入20.71万亿元/+13.6%，利润+近20%；算力网/数字产业持续高速增长；数字经济与实体经济融合基础进一步夯实",
+      "key_points": [
+        "数字产业",
+        "算力",
+        "数字经济"
+      ],
+      "source_url": "http://finance.sina.com.cn/jjxw/2026-08-27/doc-iniptaff5828660.shtml",
+      "captured_at": "2026-08-27T01:04:17Z",
+      "captured_by": "hermes-six-network-briefing-9am",
+      "tags": [
+        "算力网",
+        "数字产业",
+        "工信部",
+        "二十万亿"
+      ],
+      "review_status": "pending",
+      "support_direction": 3,
+      "carrier_relation": "算力网",
+      "v9_cers_dccib": true,
+      "industry_chain": "数字经济",
+      "investment_period": "十五五"
     }
   ],
   "v4_upgraded_at": "2026-08-18T08:20:00Z",

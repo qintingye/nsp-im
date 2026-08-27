@@ -76,3 +76,10 @@ python3 wdw-v3-d12-mobile.py  # Mobile 375 端 (D12 修复验证)
 - **CNB Pages**（**推荐**，**官方主推**）：https://cnb.cool
 - **GitHub Actions**：https://github.com/qintingye/nsp-im
 - **CloudBase liwangqingbaozhan 应用**（**当前 URL**）：https://liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbase.com/liuwangqingbaozhan/
+
+## 部署经验
+
+- **CloudBase 永久 URL**（**当前**）：https://liwangqingbaozhan-liuwang-jiankong-d2eatyj479b1861.webapps.tcloudbase.com/
+- **CNB Pages 经验**：[docs/CNB_PAGES_LESSONS_LEARNED.md](docs/CNB_PAGES_LESSONS_LEARNED.md)
+- **CNB 仓库**（**代码浏览**）：https://cnb.cool/nsp-im-team/nsp-im-v3
+- **GitHub Actions 经验**：待 D65
