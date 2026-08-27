@@ -59,3 +59,39 @@ d5*_report.json
 # so GitHub Actions can deploy it to CloudBase liwangqingbaozhan
 .git.backup
 secrets.txt
+
+# D68: 中文 unicode 文件名 debug 脚本（避免乱码路径污染仓库）
+# 任务指定的具体模式（覆盖已知前缀）
+scripts/加急_*.py
+scripts/查*.py
+scripts/*纪要*.py
+scripts/*时差*.py
+scripts/*投诉*.py
+scripts/*密钥*.py
+scripts/*验证码*.py
+scripts/*简报*.py
+scripts/*热点*.py
+scripts/*抓取*.py
+# 实际仓库中其它临时中文脚本（覆盖 36 个未跟踪文件：生成/闯关/离线/重建/真验证 等前缀）
+scripts/生成*.py
+scripts/闯关*.py
+scripts/离线*.py
+scripts/重建*.py
+scripts/加入*.py
+scripts/升级*.py
+scripts/合并*.py
+scripts/对比*.py
+scripts/打包*.py
+scripts/更新*.py
+scripts/补全*.py
+scripts/真验证*.py
+scripts/*做干净版.py
+
+# D68: 数据输入文件
+data/briefing-input/
+
+# D68: deploy-pkg 的 zip 制品（注意 deploy-pkg/liuwang-jiankong/ 故意不排除）
+deploy-pkg/auto-sync-*.zip
+
+# D68: 文档输出（避免污染仓库）
+docs/CNB_PAGES_LESSONS_LEARNED.md
