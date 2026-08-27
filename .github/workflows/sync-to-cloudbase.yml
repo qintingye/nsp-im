@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy
         run: |
-          tcb hosting deploy ./deploy-pkg/liuwang-jiankong /liwangqingbaozhan -e liwang-jiankong-d2eatyj479b1861
+          tcb hosting deploy ./deploy-pkg/liuwang-jiankong /liwangqingbaozhan -e liwang-jiankong-d2eatyj479b1861-1471069936
 
       - name: Output URL
         run: |
